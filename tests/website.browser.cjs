@@ -13,6 +13,7 @@ const captures = path.join(repo, '.impeccable/review');
     const context = await browser.newContext();
     const page = await context.newPage();
     page.setDefaultTimeout(5000);
+    page.setDefaultNavigationTimeout(30000);
     const thirdParty = new Set();
     const failures = [];
     page.on('request', request => {
