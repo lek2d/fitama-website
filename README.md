@@ -12,6 +12,12 @@ Source design: `lek2d/Fitama` branch `codex/onboarding-ui-improvements`, commit 
 
 GitHub Pages source: `main`, `/docs`. `.nojekyll` keeps it static. Do not publish the repository root. Test the GitHub-provided URL before configuring the custom domain. Bind/verify the domain before changing web DNS. Confirm HTTPS and email/DNS preservation after cutover.
 
+Deployment on October 18, 2026: private source repository `lek2d/fitama-website`; approved public artifact commit `8f255d8`; GitHub-generated domain-binding commit `85b18b6`. The GitHub-provided HTTPS URL passed desktop, mobile, small-phone, landscape, text enlargement, keyboard and resource checks before cutover. Domain ownership is verified under `lek2d`; keep the `_github-pages-challenge-lek2d` TXT record.
+
+Web DNS now uses apex A `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153` and www CNAME `lek2d.github.io.`, TTL 3600. Authoritative and public DNS checks confirmed these targets. All original non-web GoDaddy DNS rows were compared after the change and preserved, including both MX, SPF, both DKIM selectors, DMARC, autodiscover SRV, domain-connect, NS and SOA.
+
+GitHub's DNS check is successful. At 13:00 UTC, TLS certificate provisioning remained at stage 1 of 3 and validated direct HTTPS still failed the hostname check. Deployment is **not yet HTTPS-ready** until validated connections to both apex and www succeed and Enforce HTTPS can be enabled. Never bypass certificate warnings or treat an old cached GoDaddy response as proof of deployment.
+
 Local check: `python3 -m http.server 8091 --bind 127.0.0.1 --directory docs`. With Playwright and Chrome already available: `node tests/website.browser.cjs`. Set `PLAYWRIGHT_MODULE` to an existing installation if necessary; `FITAMA_COMING_SOON_URL` selects the test URL. No runtime packages, scripts, forms, trackers or external fonts are used by the public page.
 
 ## Asset origins
