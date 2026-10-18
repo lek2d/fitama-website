@@ -49,19 +49,19 @@ const captures = path.join(repo, '.impeccable/review');
         return {
           overflow: document.documentElement.scrollWidth > innerWidth,
           imageLoaded: image.complete && image.naturalWidth > 0,
-          originalArtwork: new URL(image.currentSrc).pathname,
+          artwork: new URL(image.currentSrc).pathname,
           headlineBottom: headline.bottom,
           footerTop: footer.top,
           validLinks: links.every(r => r.width >= 44 && r.height >= 44),
         };
       });
       assert.equal(metrics.overflow, false, `${viewport.name}: no horizontal scrolling`);
-      assert.equal(metrics.imageLoaded, true, `${viewport.name}: original footer artwork must load`);
-      assert.ok(metrics.originalArtwork.includes(viewport.width <= 699 ? 'ending-forest-dungeon-mobile.webp' : 'ending-forest-dungeon.webp'));
+      assert.equal(metrics.imageLoaded, true, `${viewport.name}: approved footer artwork must load`);
+      assert.ok(metrics.artwork.includes(viewport.width <= 699 ? 'ending-forest-dungeon-mobile.webp' : 'ending-forest-dungeon.webp'));
       assert.ok(metrics.headlineBottom < metrics.footerTop, `${viewport.name}: footer cannot overlap headline`);
       assert.equal(metrics.validLinks, true, `${viewport.name}: footer links have touch targets`);
       if (['desktop', 'mobile'].includes(viewport.name)) await page.screenshot({ path: path.join(captures, `${viewport.name}.png`), fullPage: true });
-      console.log(`PASS ${viewport.name}: visible heading, original artwork, accessible links, no overflow`);
+      console.log(`PASS ${viewport.name}: visible heading, approved artwork, accessible links, no overflow`);
     }
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(targetUrl);

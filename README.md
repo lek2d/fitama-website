@@ -6,7 +6,7 @@ Website-only static publication. The public site is built solely from `docs/`; t
 
 Owner approved a private website-only repository and web DNS changes for fitama.app. GoDaddy remains the registrar and DNS/email provider. Do not change MX, SPF or nameservers, purchase plans or expose app source. The initial Support-only publication excluded the unfinished Privacy draft. The owner subsequently approved finalizing and publishing Privacy with the retention rules below; the footer now links to it.
 
-Source design: `lek2d/Fitama` branch `codex/onboarding-ui-improvements`, commit `c56c8fa7bc5ac6dda565968ba9cf814e9c9313b7`; the approved Coming Soon adaptation reuses the original forest footer artwork, logo and Fredoka. No new artwork or image edits.
+Source design: `lek2d/Fitama` branch `codex/onboarding-ui-improvements`, commit `c56c8fa7bc5ac6dda565968ba9cf814e9c9313b7`; the Coming Soon adaptation retains the original forest-footer composition, logo and Fredoka. On October 18 the owner approved a smoother-shaded background edit and its matching portrait adaptation. Only the background artwork changed; layout, copy, Privacy, logo, DNS and hosting remain unchanged. Native source dimensions are 1787×880 desktop and 941×1672 mobile; this is a shading/definition improvement, not a native 4K output or artificial upscale. Generation prompts and original PNGs are recorded in the private `artwork/` source directory, outside the published `docs/` tree.
 
 ## Hosting
 
@@ -47,8 +47,8 @@ Publication rollback: revert the policy-publication commit in this website-only 
 ## Asset origins
 
 - `docs/assets/logo.png`: original SHA-256 `0ef70b778b6f844f5a9312efb17ff1822a5f43ec04151a8c549a01e548807285`.
-- `docs/assets/ending-forest-dungeon.webp`: original SHA-256 `fb9ced755bf9dfabd7e664907bb73aff2298bf380b05fd579b83d9ea4d87e6bd`.
-- `docs/assets/ending-forest-dungeon-mobile.webp`: original SHA-256 `0604db25919f2d1e1b8fc87435fdc287ce11d97a4a778a1ff521fc27025b27b1`.
+- `docs/assets/ending-forest-dungeon.webp`: approved smooth-shading edit of the original desktop forest-footer image. Original SHA-256 `fb9ced755bf9dfabd7e664907bb73aff2298bf380b05fd579b83d9ea4d87e6bd`; current source and encoding are recorded in `artwork/README.md`.
+- `docs/assets/ending-forest-dungeon-mobile.webp`: portrait shading adaptation matching the approved desktop. Original SHA-256 `0604db25919f2d1e1b8fc87435fdc287ce11d97a4a778a1ff521fc27025b27b1`; current source and encoding are recorded in `artwork/README.md`.
 - `docs/assets/fredoka-semibold.ttf`: existing self-hosted font; redistribution terms in `docs/assets/FONT-LICENSE.txt`.
 
 ## Rollback reference
