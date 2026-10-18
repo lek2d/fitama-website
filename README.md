@@ -44,6 +44,10 @@ The public Privacy URL is now usable for the next app/store/AdMob setup task. Th
 
 Publication rollback: revert the policy-publication commit in this website-only repo and deploy again. This restores the previous static artifact without touching app accounts, backend, email or DNS. Do not delete or reset the app worktree.
 
+## Larger Coming soon heading — October 18, 2026
+
+After approving the smooth background, the owner requested a larger Coming soon heading relative to the logo. The logo size is unchanged. The existing Fredoka 600 heading now scales to 96px at the 1440px desktop check, 46.8px at 390px, and 44px at 320px. At normal text size it remains one line and visibly wider than the logo; enlarged text may wrap rather than clip. The browser suite checks those rendered relationships and 200% text at both 320px and 390px. The stylesheet reference is versioned to refresh cached CSS. No other typography, copy, layout or Privacy styles changed.
+
 ## Asset origins
 
 - `docs/assets/logo.png`: original SHA-256 `0ef70b778b6f844f5a9312efb17ff1822a5f43ec04151a8c549a01e548807285`.

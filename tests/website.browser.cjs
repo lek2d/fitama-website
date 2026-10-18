@@ -43,7 +43,12 @@ const captures = path.join(repo, '.impeccable/review');
       assert.equal(await page.getByRole('main').locator('p').count(), 0, 'The owner requested no supporting sentence');
       const metrics = await page.evaluate(() => {
         const image = document.querySelector('.coming-art img');
-        const headline = document.querySelector('h1').getBoundingClientRect();
+        const heading = document.querySelector('h1');
+        const headline = heading.getBoundingClientRect();
+        const headlineRange = document.createRange();
+        headlineRange.selectNodeContents(heading);
+        const headlineText = headlineRange.getBoundingClientRect();
+        const brand = document.querySelector('.brand').getBoundingClientRect();
         const footer = document.querySelector('footer').getBoundingClientRect();
         const links = [...document.querySelectorAll('footer a')].map(a => a.getBoundingClientRect());
         return {
@@ -51,6 +56,10 @@ const captures = path.join(repo, '.impeccable/review');
           imageLoaded: image.complete && image.naturalWidth > 0,
           artwork: new URL(image.currentSrc).pathname,
           headlineBottom: headline.bottom,
+          headlineTextWidth: headlineText.width,
+          headlineTextHeight: headlineText.height,
+          headlineLineHeight: parseFloat(getComputedStyle(heading).lineHeight),
+          brandWidth: brand.width,
           footerTop: footer.top,
           validLinks: links.every(r => r.width >= 44 && r.height >= 44),
         };
@@ -59,14 +68,18 @@ const captures = path.join(repo, '.impeccable/review');
       assert.equal(metrics.imageLoaded, true, `${viewport.name}: approved footer artwork must load`);
       assert.ok(metrics.artwork.includes(viewport.width <= 699 ? 'ending-forest-dungeon-mobile.webp' : 'ending-forest-dungeon.webp'));
       assert.ok(metrics.headlineBottom < metrics.footerTop, `${viewport.name}: footer cannot overlap headline`);
+      assert.ok(metrics.headlineTextWidth > metrics.brandWidth, `${viewport.name}: Coming soon is visually wider than the logo`);
+      assert.ok(metrics.headlineTextHeight < metrics.headlineLineHeight * 1.5, `${viewport.name}: Coming soon fits on one line at the normal text size`);
       assert.equal(metrics.validLinks, true, `${viewport.name}: footer links have touch targets`);
       if (['desktop', 'mobile'].includes(viewport.name)) await page.screenshot({ path: path.join(captures, `${viewport.name}.png`), fullPage: true });
       console.log(`PASS ${viewport.name}: visible heading, approved artwork, accessible links, no overflow`);
     }
-    await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto(targetUrl);
-    await page.addStyleTag({ content: 'html{font-size:200% !important}' });
-    assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, 'Text enlargement must not create horizontal scrolling');
+    for (const viewport of [{ width: 320, height: 568 }, { width: 390, height: 844 }]) {
+      await page.setViewportSize(viewport);
+      await page.goto(targetUrl);
+      await page.addStyleTag({ content: 'html{font-size:200% !important}' });
+      assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, `${viewport.width}px: text enlargement must not create horizontal scrolling`);
+    }
     await page.keyboard.press('Tab');
     assert.equal(await page.evaluate(() => document.activeElement.textContent.trim()), 'Skip to content');
     await page.keyboard.press('Enter');
