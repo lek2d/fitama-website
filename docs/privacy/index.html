@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#1f5949">
+    <meta name="description" content="How FiTama handles account, gameplay, Apple Health, support and website information, and your privacy choices.">
+    <title>Privacy Policy | FiTama</title>
+    <link rel="stylesheet" href="../privacy.css">
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <a class="brand" href="../" aria-label="FiTama home"><img src="../assets/logo.png" alt="FiTama" width="510" height="204"></a>
+      <a href="mailto:support@fitama.app">Contact support</a>
+    </header>
+    <main id="main" tabindex="-1">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Effective and last updated: October 18, 2026</p>
+      <p>This policy explains how FiTama handles information in its iPhone app, including TestFlight versions, and at fitama.app. FiTama is operated by <strong>Fredrick Sapanlay</strong>, an individual developer in the Philippines using the brand name <strong>Red Pots Games</strong>. Red Pots Games is a brand name, not a separate registered company.</p>
+      <p>For privacy questions or requests, contact Fredrick at <a href="mailto:support@fitama.app">support@fitama.app</a>. Our initial release is intended for people aged 16 and older in the Philippines.</p>
+      <aside aria-label="Feature availability">
+        <p><strong>Group dungeon chat is not enabled at the date of this policy.</strong> Its planned handling is explained below. Features, including optional rewarded ads, may differ by app version and availability.</p>
+      </aside>
+      <nav class="contents" aria-label="Policy contents">
+        <h2>In this policy</h2>
+        <ul>
+          <li><a href="#account">Account and gameplay</a></li>
+          <li><a href="#health">Apple Health and activity</a></li>
+          <li><a href="#social">Social features</a></li>
+          <li><a href="#chat">Planned dungeon chat</a></li>
+          <li><a href="#notifications">Notifications</a></li>
+          <li><a href="#ads">Optional rewarded ads</a></li>
+          <li><a href="#website">Website and support</a></li>
+          <li><a href="#providers">Providers and overseas processing</a></li>
+          <li><a href="#retention">How long we keep information</a></li>
+          <li><a href="#choices">Your choices and rights</a></li>
+          <li><a href="#security">Security, age eligibility and updates</a></li>
+        </ul>
+      </nav>
+
+      <section aria-labelledby="account">
+        <h2 id="account">Account and gameplay</h2>
+        <p>Apple or Google sign-in, through Supabase, provides an account identifier and the identity information supplied by your sign-in provider, such as a name or email address. Session information keeps you signed in. We do not ask you to send us your Apple or Google password.</p>
+        <p>We process your username, display name, friend code and optional profile photo to identify your account. Selected profile images are uploaded to account storage. Height, weight, preferred activities and About Me are stored in the device's account-scoped save in the current implementation; they are not fields in the shared social profile.</p>
+        <p>Companion identity and appearance, levels, XP, Tama Power (TP), quests, inventory, equipment, currency, check-ins, dungeon actions and reward records operate the game and preserve progress. Records are stored on your device and, where supported, synchronized to Supabase. This is not a promise that every device-only record is backed up.</p>
+        <p>We process account and game information to provide the features you request, and use relevant action records to maintain security, apply game rules and prevent duplicate rewards or abuse. Permissions and consent are requested separately where needed; this policy is a notice, not a substitute for those choices. Game rules automatically calculate TP, XP, quest completion, rankings and reward eligibility from relevant activity and action records. Contact support if you believe a calculation is wrong.</p>
+      </section>
+
+      <section aria-labelledby="health">
+        <h2 id="health">Apple Health and activity</h2>
+        <p>With your permission, the iPhone app reads supported Apple Health categories: active energy, workouts, steps, walking and running distance, and sleep. We use them for movement-based TP, activity history, activity-specific quests and sleep quests.</p>
+        <p><strong>Some Health-derived information leaves your phone.</strong> Activity summaries synchronized to Supabase can include activity type, start and end times, duration, steps, distance, active calories, source labels, record fingerprints and TP contribution. Sleep imports can include record identifiers, source-app identifiers, sleep stages, start and end times and manual-entry status. Quest evidence and calculated progress support synchronization, duplicate handling and reward verification.</p>
+        <p>Individual activity and sleep records are not shown as a public Health feed. However, activity-derived game totals, including TP and ranking scores, can be visible through social and group-play features. We do not use Health information for advertising or send it as ad-targeting information.</p>
+        <p>You can change access in Apple Health at any time. Revoking access affects future reads and dependent features; it does not itself delete information already synchronized to FiTama. You can request deletion as described below. Deleting FiTama does not delete the original records in Apple Health. <a href="https://support.apple.com/en-us/108779">Manage Health access and data with Apple</a>.</p>
+      </section>
+
+      <section aria-labelledby="social">
+        <h2 id="social">Social features</h2>
+        <p>Other signed-in players can find shared identity details using an exact username or friend code. Shared details include your username, display name, avatar, friend code, companion information and level. Confirmed friends can also see today's synchronized TP. Player cards can show companion appearance, level, rank and resting status.</p>
+        <p>Rankings display usernames and aggregate game scores. Group dungeon participants can see party members, companion information and battle contributions. We store friendships, requests, invitations, party membership, battle actions and timestamps to operate these features. Mail stores friend-request and dungeon-invite notifications, sender and recipient identifiers, request status, timestamps and read status.</p>
+        <p>Removing a friendship does not remove your identity from every ranking, party or shared battle record. Shared dungeons may continue for remaining players after an account is deleted; their history may retain an anonymous replacement participant.</p>
+      </section>
+
+      <section aria-labelledby="chat">
+        <h2 id="chat">Planned dungeon chat</h2>
+        <p>Chat is planned for shared dungeon battles, not a separate direct-message inbox. When enabled, it will process message text and emoji, selected sticker identifiers, sender and battle identifiers, companion display details, order and timestamps. Read progress, room closure, request identifiers and account-reset version identifiers support access checks, unread counts, reliable delivery and send limits.</p>
+        <p>Eligible authenticated battle participants will be able to see messages and sender details available to them. Chat is not end-to-end encrypted: the backend processes message content. Do not send passwords, sensitive Health details or anything you do not want to share with the party.</p>
+        <p>The planned Report flow preserves the selected message's server-confirmed content and metadata, report reason, reporter identifier, related identifiers and time for authorized abuse review. Reports are not public and do not notify the reported player. Report evidence is separate from ordinary messages and may remain after an account or message is deleted.</p>
+        <p>The prepared Block feature stores the blocking and blocked accounts, selected display details, timestamps and request records. It filters that player's messages from your view; it does not remove party members, prevent invitations or stop them seeing your messages. It does not copy message content into block records.</p>
+        <p><strong>Before chat activation, we will verify the safety and moderation process, persistent blocking and cleanup operation, and update this notice if the actual handling changes.</strong> We do not claim that chat is currently available, automatically moderated or operating on a verified deletion schedule. Planned retention targets appear below.</p>
+      </section>
+
+      <section aria-labelledby="notifications">
+        <h2 id="notifications">Notifications</h2>
+        <p>When enabled, FiTama associates an Expo push token, installation identifier, device platform and notification preferences with your account. Expo and the platform notification service deliver friend-request, dungeon-invite and battle updates. Payloads contain routing identifiers and update text; previews may appear on your lock screen.</p>
+        <p>Manage notification categories in Account Settings and permissions in your phone settings. Disabling notifications does not delete your account or Mail history.</p>
+      </section>
+
+      <section aria-labelledby="ads">
+        <h2 id="ads">Optional rewarded ads</h2>
+        <p>FiTama integrates Google AdMob for Hermitanyo's optional rewarded ads. The app requests non-personalized ads and uses Google's consent tools before permitted ad requests. Ad availability and consent options depend on your app version, device, region and Google's configuration. Where available, use Ad privacy options in Hermitanyo to review your choices.</p>
+        <p>Non-personalized does not mean no data is processed. Google's Mobile Ads SDK may process IP addresses, device identifiers, ad views and interactions, diagnostic information and performance data. See <a href="https://developers.google.com/admob/ios/privacy/data-disclosure">Google's iOS ad-data disclosure</a> and <a href="https://policies.google.com/privacy">Google's Privacy Policy</a>.</p>
+        <p>FiTama stores account-linked reward requests and verified transactions, including request and transaction identifiers, ad unit and reward details, and timestamps, to grant rewards and prevent duplicate claims. Our ad-reward integration supplies an opaque reward-request identifier for server verification, not Health records or profile content. That identifier is pseudonymous, not anonymous: our backend associates it with your account.</p>
+        <p>You can choose not to request rewarded ads. This policy is not itself consent to tracking or advertising.</p>
+      </section>
+
+      <section aria-labelledby="website">
+        <h2 id="website">Website and support</h2>
+        <p>The current Coming Soon and Privacy pages use locally hosted artwork and fonts. We have not added analytics scripts, advertising, signup forms or third-party embeds to these pages. GitHub Pages hosts the website and logs visitor IP addresses for security, including for visitors who are not signed in to GitHub. See <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection">GitHub Pages data collection</a>.</p>
+        <p>Support links open your email app. If you send an email, we receive the address, message, attachments and other information you include. We use these to respond, troubleshoot and handle privacy or safety requests. Our support mailbox uses GoDaddy Professional Email powered by Titan. Do not email passwords, verification codes or your full Health history.</p>
+      </section>
+
+      <section aria-labelledby="providers">
+        <h2 id="providers">Providers and overseas processing</h2>
+        <p>Service providers process information needed for their roles: Supabase for authentication, database records, avatar storage and backend functions; Apple or Google for sign-in; Expo and platform push services for notifications; Google AdMob for optional ads; GitHub Pages for this website; and GoDaddy/Titan for support email and domain services.</p>
+        <p>These services can process information outside the Philippines. We do not promise Philippine-only storage. Supabase hosts core project data in the selected project region and describes additional overseas processing for operations, support, logs and content delivery. Provider processing locations and retention can differ by service and configuration.</p>
+        <p>For provider handling, see <a href="https://supabase.com/privacy">Supabase's Privacy Policy</a>, its <a href="https://supabase.com/legal/customer-resources/data-processing-addendum">Data Processing Addendum for application data</a> and <a href="https://supabase.com/legal/privacy-resources/data-residency-and-transfers-faq">data residency information</a>, <a href="https://expo.dev/privacy">Expo's Privacy Policy</a>, <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's Privacy Statement</a>, and <a href="https://support.titan.email/hc/en-us/articles/360038535773-Titan-Privacy-Policy">Titan's Privacy Policy</a>. Their notices do not replace our responsibility for FiTama's processing. Contact us about a specific transfer or provider-handling question.</p>
+        <p>We may disclose relevant information when required by law or necessary to address a specific security incident, abuse report or legal claim. We do not make your private Health records available to other players or supply them for ad targeting.</p>
+      </section>
+
+      <section aria-labelledby="retention">
+        <h2 id="retention">How long we keep information</h2>
+        <dl>
+          <dt>Account, gameplay and synchronized Health-derived records</dt>
+          <dd>We keep account-linked records while the account remains active, until account deletion or an applicable deletion request, subject to the exceptions below. Some records may be removed sooner when no longer needed. Signing out, uninstalling or restarting gameplay is not account deletion.</dd>
+          <dt>Support emails</dt>
+          <dd>We retain support correspondence for up to 12 months after the issue is resolved, then delete it from the active support mailbox, unless a specific legal requirement or unresolved security dispute requires relevant material to be kept longer.</dd>
+          <dt>Planned chat messages and reports</dt>
+          <dd>The planned message target is seven days after the earlier of battle resolution or scheduled expiry; the report target is 30 days after report creation. The implemented rules define deletion eligibility, not a verified automatic deletion deadline. Chat remains disabled until the cleanup schedule and safety operation are verified. Closing results removes access to chat, not every stored copy immediately.</dd>
+          <dt>Shared records, legal exceptions and provider copies</dt>
+          <dd>Shared battle history can remain for other players without your former account identity. Separately preserved report evidence, or relevant records required for a specific legal obligation or unresolved security matter, may remain beyond an account deletion; their use is limited to that purpose. Provider backups and security or operational logs can also remain after active-system deletion until the provider's applicable retention cycle ends. We do not promise instant erasure from every backup, log or recipient's copy, or a universal expiry for provider copies. Contact support for information about your request and any applicable exception.</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="choices">
+        <h2 id="choices">Your choices and rights</h2>
+        <p>You can edit available profile fields, revoke Health access, manage notifications and review available ad privacy choices. Account Settings → Delete account requests permanent deletion of the signed-in account and linked personal records, removes uploaded avatars, and clears that account's local save. If the app reports an incomplete deletion or cleanup, retry or contact support. A gameplay restart is not a substitute for deletion.</p>
+        <p>Under applicable Philippine privacy law, you may have rights to information, access, correction, objection, erasure or blocking, and data portability, subject to the law's conditions and exceptions. You can withdraw consent for consent-based processing. This affects future processing and may limit the relevant feature; it does not automatically undo earlier processing or erase synchronized data.</p>
+        <p>Email <a href="mailto:support@fitama.app">support@fitama.app</a> with the subject “Privacy request”, your FiTama username and what you want us to do. Fredrick Sapanlay handles these requests. We may ask for proportionate account verification before disclosing or changing personal information. Do not send your password or a verification code. If we need more information or cannot fulfill part of a request, we will explain the next step or relevant reason.</p>
+        <p>You can also raise a concern with the <a href="https://privacy.gov.ph/data-subject-rights/">Philippine National Privacy Commission</a>. Contacting support first is not a condition of the rights provided by law.</p>
+      </section>
+
+      <section aria-labelledby="security">
+        <h2 id="security">Security, age eligibility and updates</h2>
+        <p>FiTama uses authenticated services and access checks to restrict account and battle information. No system can guarantee absolute security. Planned chat is not end-to-end encrypted, and authorized operators may review preserved report evidence.</p>
+        <p>FiTama's initial service is intended for people aged 16 and older in the Philippines, not children under 16. If you believe an underage person has supplied personal information, contact support so we can investigate and address the account.</p>
+        <p>We will update this policy when our handling changes. The date above identifies the current version. Changes requiring additional permission will not be treated as permission merely because this page has changed. Planned chat activation and any material change in advertising or website data collection require a fresh review of this notice and the relevant in-app disclosures.</p>
+      </section>
+    </main>
+    <footer>
+      <nav aria-label="Footer"><a href="../">Coming soon</a><a href="mailto:support@fitama.app">Support</a></nav>
+      <small>© 2026 Red Pots Games · Fredrick Sapanlay</small>
+    </footer>
+  </body>
+</html>
