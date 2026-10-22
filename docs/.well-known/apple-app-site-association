@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["C96S783XG2.com.fitama.app"],
+        "components": [
+          { "/": "/r/*", "comment": "Invite links: open FiTama with the friend code" }
+        ]
+      }
+    ]
+  }
+}
