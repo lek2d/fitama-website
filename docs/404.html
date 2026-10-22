@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#1f5949">
+    <meta name="description" content="You're invited to FiTama. Adventure Moves With You.">
+    <title>FiTama</title>
+    <!-- GitHub Pages serves this file for every missing path. Invite links
+         (fitama.app/r/CODE, shared from the app) become the invite page; any
+         other path shows "Page not found". Paths are absolute because this
+         page answers at any depth. -->
+    <link rel="stylesheet" href="/coming-soon.css?v=headline-20261018">
+    <link rel="stylesheet" href="/referral.css?v=invite-20261022">
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <picture class="coming-art" aria-hidden="true">
+      <source media="(max-width: 699px)" srcset="/assets/ending-forest-dungeon-mobile.webp?v=smooth-20261018">
+      <img src="/assets/ending-forest-dungeon.webp?v=smooth-20261018" alt="" fetchpriority="high">
+    </picture>
+
+    <main id="main" tabindex="-1">
+      <div class="coming-copy invite-copy">
+        <a href="/"><img class="brand" src="/assets/logo.png" alt="FiTama. Adventure Moves With You" width="510" height="204"></a>
+
+        <section id="invite" hidden>
+          <h1>You're invited!</h1>
+          <p class="lead">Use your friend's code before your egg hatches, and you both get a gift.</p>
+          <div class="code-card">
+            <span class="code-label">Friend code</span>
+            <strong id="code" class="code" translate="no"></strong>
+            <button id="copy" class="button button-light" type="button">Copy code</button>
+            <span id="copied" class="copied" role="status" aria-live="polite"></span>
+          </div>
+          <ol class="steps">
+            <li><strong>Install FiTama</strong> on your iPhone.</li>
+            <li><strong>Create your account</strong> and pick your egg.</li>
+            <li>When FiTama asks <em>"Got a friend code?"</em>, tap <strong>Paste</strong>. You have 72 hours, and it must be before your egg hatches.</li>
+          </ol>
+          <div class="actions">
+            <a id="install" class="button" href="#">Get FiTama for iPhone</a>
+            <a id="open" class="text-link" href="fitama://">Already have FiTama? Open the app</a>
+          </div>
+        </section>
+
+        <section id="missing" hidden>
+          <h1>Page not found</h1>
+          <p class="lead">This page doesn't exist. If a friend sent you an invite, check that the link has their code at the end.</p>
+          <div class="actions"><a class="button" href="/">Go to FiTama</a></div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <nav aria-label="Footer">
+        <a href="mailto:support@fitama.app">Support</a>
+        <a href="/privacy/">Privacy</a>
+      </nav>
+      <small>© 2026 Red Pots Games</small>
+    </footer>
+
+    <script>
+      (function () {
+        // Public iPhone beta. Switch to the App Store page (id 6806227924) at launch.
+        var INSTALL_URL = 'https://testflight.apple.com/join/e3RvP5Hv';
+        var match = location.pathname.match(/^\/r\/([A-Za-z0-9]{4,16})\/?$/);
+        if (!match) {
+          document.getElementById('missing').hidden = false;
+          return;
+        }
+        var code = match[1].toUpperCase();
+        document.title = 'FiTama — Invite ' + code;
+        document.getElementById('code').textContent = code;
+        document.getElementById('install').href = INSTALL_URL;
+        document.getElementById('open').href = 'fitama://r/' + code;
+        document.getElementById('invite').hidden = false;
+
+        var copied = document.getElementById('copied');
+        document.getElementById('copy').addEventListener('click', function () {
+          var done = function () { copied.textContent = 'Copied! Paste it in FiTama.'; };
+          var fallback = function () {
+            // Older browsers: select the code so the player can copy it by hand.
+            var range = document.createRange();
+            range.selectNodeContents(document.getElementById('code'));
+            var selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            copied.textContent = 'Press and hold the code to copy it.';
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(code).then(done, fallback);
+          } else {
+            fallback();
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
