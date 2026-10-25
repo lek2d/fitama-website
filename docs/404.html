@@ -35,9 +35,9 @@
             <span id="copied" class="copied" role="status" aria-live="polite"></span>
           </div>
           <ol class="steps">
-            <li><strong>Install FiTama</strong> on your iPhone.</li>
+            <li><strong>Install FiTama</strong> on your iPhone. The button below copies your invite.</li>
             <li><strong>Create your account</strong> and pick your egg.</li>
-            <li>When FiTama asks <em>"Got a friend code?"</em>, tap <strong>Paste</strong>. You have 72 hours, and it must be before your egg hatches.</li>
+            <li>When FiTama asks <em>"Use your friend’s invite?"</em>, tap <strong>Paste</strong>. You have 72 hours, and it must be before your egg hatches.</li>
           </ol>
           <div class="actions">
             <a id="install" class="button" href="#">Get FiTama for iPhone</a>
@@ -73,7 +73,20 @@
         var code = match[1].toUpperCase();
         document.title = 'FiTama — Invite ' + code;
         document.getElementById('code').textContent = code;
-        document.getElementById('install').href = INSTALL_URL;
+        var install = document.getElementById('install');
+        install.href = INSTALL_URL;
+        // iOS can't carry the link through an install, so copy the invite first;
+        // after sign-in FiTama offers "Use your friend's invite?" with a Paste button.
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          install.addEventListener('click', function (event) {
+            event.preventDefault();
+            var go = function () { location.href = INSTALL_URL; };
+            var timer = setTimeout(go, 800);
+            navigator.clipboard.writeText('https://fitama.app/r/' + code).then(
+              function () { clearTimeout(timer); go(); },
+              function () { clearTimeout(timer); go(); });
+          });
+        }
         document.getElementById('open').href = 'fitama://r/' + code;
         document.getElementById('invite').hidden = false;
 
