@@ -1,5 +1,11 @@
 # FiTama website
 
+## October 26, 2026 — mobile closing buttons below the stairs
+
+The mobile ending now reserves the width-scaled forest scene above its controls. A copy wrapper uses a minimum height tied to the mobile artwork width; App Store / Android waitlist controls and the Android note follow below the stair edge in normal document flow. Long copy can grow the wrapper. Desktop keeps the original layout using `display: contents`, with the existing artwork and sticky-reveal fit check preserved. The Journey stylesheet URL is refreshed.
+
+Browser checks at 320, 360, 390, 430 and 699px confirmed at least 38px between the stair edge and button boxes (including space for the store decoration), a 24px note gap, controls at least 56px high, and no horizontal overflow. Boundary 700px and desktop 1440px checks retain the desktop layout. The waitlist dialog opens, closes and restores button focus; no form was submitted. No native app, backend, QA or automation change.
+
 ## October 26, 2026 — reward preview edges and mobile alignment
 
 The Rewards cards in the Journey battle-result screenshot had broken corners baked into the old JPEG. Recaptured the actual local sample victory UI at 780×1688 and encoded it as lossless WebP. Capture-only CSS clips the web card surface explicitly, draws its border above the surface, and disables the redundant nested backdrop blur while retaining the full result-overlay blur. Both animated and static Journey views use the new asset. The sample 88 XP / Power Bottle and app source are unchanged; this does not establish a native app fix. Capture provenance and exact CSS are in `capture-notes/2026-10-26/`, outside the published folder.

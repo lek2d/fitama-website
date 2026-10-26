@@ -186,7 +186,11 @@
 .journey-ending>.download-section,.journey-ending>.site-footer{position:relative;z-index:1}
 .ending-visible .prototype-bar{background:#173f36ed}
 
+.journey-ending .download-copy{display:contents}
 @media(max-width:699px){
+ /* The width-scaled mobile artwork ends its stairs at 116.4vw. Reserve
+    that scene in normal flow so controls stay below it as text grows. */
+ .journey-ending .download-copy{display:flex;flex-direction:column;justify-content:center;min-height:calc(118vw - 64px);padding-block:32px 80px}
  .ending-background img{height:auto;object-fit:contain;object-position:center top;mask-image:linear-gradient(to bottom,#000 82%,transparent 100%)}
 }
 
