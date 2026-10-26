@@ -45,7 +45,8 @@ export function journey(p, w, h) {
   const grassLift = Math.max(Math.min(18, w * .024), w * .055 - h * .18 + 4);
   // Clip only beneath the actual bottom edge, never fade the illustration.
   const worldClipBottom = Math.ceil(clamp(-groundY + 2, 0, h));
-  const grow = phase(p, mobile ? 0.72 : 0.80, 0.94);
+  // Keep the catch and full hatch at rest before framing the gameplay chapters.
+  const grow = phase(p, mobile ? 0.82 : 0.80, 0.94);
   const handoff = phase(p, 0.62, 0.66);
   const reveal = phase(p, 0.69, 0.77);
   const mobilePhoneTop = Math.max(144, h * .12);
@@ -121,10 +122,9 @@ export function journey(p, w, h) {
     foregroundOpacity: 1,
     heroOpacity: 1 - phase(p, 0.02, 0.14),
     heroY: -phase(p, 0.02, 0.20) * h * 0.25,
-    followOpacity: mobile ? phase(p, 0.30, 0.34) * (1 - phase(p, 0.43, 0.48))
-      : phase(p, .56, .61) * (1 - phase(p, .65, .68)),
-    landingOpacity: mobile ? phase(p, 0.54, 0.60) * (1 - phase(p, 0.69, 0.76))
-      : phase(p, .68, .71) * (1 - phase(p, .76, .80)),
+    // Readable holds align with the completed UI handoff and full pet reveal.
+    followOpacity: phase(p, .56, .61) * (1 - phase(p, .67, .70)),
+    landingOpacity: phase(p, .70, .73) * (1 - phase(p, .80, .82)),
     tpOpacity: phase(p, 0.82, 0.93), creamOpacity: phase(p, 0.76, 0.92),
     scene: p < 0.22 ? 0 : p < 0.51 ? 1 : p < 0.78 ? 2 : 3,
   };

@@ -1,5 +1,13 @@
 # FiTama website
 
+## October 26, 2026 — Journey slide snapping
+
+One deliberate vertical wheel burst advances one readable Journey slide; scrolling upward returns to the previous slide. Trackpad momentum is grouped so it cannot chain through multiple slides. A finite 1.1-second transition uses the existing document/timeline, including completed egg handoff and hatch poses, movement, Health, Map, Battle, Result, Equipment and Shop. The final story stop clears the fixed header above the FAQ; normal scrolling continues below it.
+
+The existing scroll driver owns all travel. Keyboard, focus, anchors, scrollbar, resizing and visibility changes interrupt travel; horizontal gestures, zoom, dialogs, forms and nested scrollers remain usable. Reduced-motion, short-screen and artwork-failure alternatives retain normal scrolling. Mobile vertical swipe handling is scoped to the animated story and yields if the browser has already committed native scrolling. A swipe returning to its origin or finishing horizontally does not advance. Native phone/Safari gesture feel remains an owner acceptance check; automated touch-event tests and mobile-width browser checks do not establish that.
+
+Verification: all 159 source website tests and 34 publisher tests passed. Regressions cover momentum, reversal, single-line mouse steps, boundary escape, canceled swipe, interruption and cleanup. An independent review sampled 120 active viewport pairs and 120,120 timeline frames without incomplete intro rests or copy overlap. Browser checks cover desktop/2K/mobile layouts, forward/back, FAQ escape, keyboard Home, download anchor, dialog scrolling and static fallback. The source mirror is synchronized. No artwork, native app, backend, form submission, app QA or automation changes.
+
 ## October 26, 2026 — supplied glossy logo
 
 The owner-supplied 1444×474 transparent PNG now appears intact in the Journey hero and header, Guide, Contact, Privacy and referral/404 page. Its bytes are preserved at `docs/assets/fitama-logo-glossy.png`. Removed the previous logo's tagline image, bottom clipping and recoloring mask; existing width rules remain, with automatic height for the new proportions. The preloader and affected stylesheet/module URLs are refreshed. The source mirror is synchronized; no app asset change.

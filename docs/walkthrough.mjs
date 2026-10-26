@@ -1,4 +1,4 @@
-import {clamp, phase, journey} from './journey-timeline.mjs?v=screens-trim-v2&release=20261026';
+import {clamp, phase, journey} from './journey-timeline.mjs?v=section-snap-v2';
 
 // Preserve the original egg-to-phone scroll distance as chapters are appended.
 export const introDistance = (w, h) => h * (w < 700 ? 3.3 : 4.5);

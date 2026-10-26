@@ -1,7 +1,8 @@
 import {setHeaderVisible} from './navigation.js?v=cutie-sync-fd0747a-local-v1&release=20261026';
-import {phase} from './journey-timeline.mjs?v=screens-trim-v2&release=20261026';
-import {walkthrough, introDistance} from './walkthrough.mjs?v=screens-trim-v2&release=20261026';
-import {installSmoothScroll} from './smooth-scroll.mjs?v=cutie-sync-fd0747a-local-v1&release=20261026';
+import {phase} from './journey-timeline.mjs?v=section-snap-v2';
+import {walkthrough, introDistance} from './walkthrough.mjs?v=section-snap-v2';
+import {installSmoothScroll} from './smooth-scroll.mjs?v=section-snap-v2';
+import {storyStops} from './section-snap.mjs?v=section-snap-v2';
 import {installPetPreviews} from './pet-preview.mjs?v=click-lock-happy-v1&release=20261026';
 import {prepareJourneyPage} from './page-loader.mjs?v=preloader-v1&release=20261026&brand=glossy-v1';
 
@@ -145,7 +146,18 @@ reduced.addEventListener('change',motionPreference);
 shortScreen.addEventListener('change',motionPreference);
 petPreviews=installPetPreviews({stage,buttons:choices,getState:()=>({available:stage.classList.contains('can-preview')&&!staticMode(),paused:false,reduced:staticMode()})});
 motionPreference();
-installSmoothScroll({enabled:()=>document.documentElement.dataset.pageLoading!=='pending'&&!staticMode()});
+installSmoothScroll({
+  enabled:()=>document.documentElement.dataset.pageLoading!=='pending'&&!staticMode(),
+  touchSurface:story,
+  getStops:()=>{
+    const stops=storyStops(stage.clientWidth,stage.clientHeight,story.offsetTop);
+    if(!stops.length)return stops;
+    // Exit the pinned story with the FAQ heading clear of the fixed header.
+    const faqTop=$('.faq-section').getBoundingClientRect().top+scrollY-112;
+    const maximum=document.documentElement.scrollHeight-innerHeight;
+    return [...stops,Math.min(maximum,Math.max(stops.at(-1)+1,faqTop))];
+  },
+});
 setHeaderVisible(staticMode());
 $('.site-header').addEventListener('focusout',schedule);
 
