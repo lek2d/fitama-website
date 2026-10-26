@@ -91,7 +91,6 @@
 .journey-ending .download-section{flex:1;display:grid;place-items:center;background:transparent;padding-block:90px 70px}
 .journey-ending .site-footer{flex:none;width:100%;padding-inline:max(6%,calc((100% - 1120px)/2));margin:0 auto;border-top:0;padding-top:32px;padding-bottom:30px}
 .journey-ending .site-footer small{color:#fff8e9cc}
-.journey-ending .strapline{filter:brightness(0) invert(1)}
 .journey-ending :focus-visible{outline:2px solid #fff8e9;outline-offset:6px}
 .journey-ending.reveal-ready:focus-within,.motion-off .journey-ending.reveal-ready{position:relative;bottom:auto}
 @media(max-width:699px){
@@ -204,8 +203,6 @@
 :is(.guide-page,.contact-page,.legal-page) .site-header{position:relative;top:auto;left:auto;transform:none;transition:none;width:var(--interior-width);max-width:none;min-height:82px;margin:0 auto;padding:16px 0;border:0;border-radius:0;background:transparent;box-shadow:none}
 :is(.guide-page,.contact-page,.legal-page) .nav-brand{margin-right:auto}
 .interior-nav-logo{position:relative;display:block}
-.interior-nav-logo img{clip-path:inset(0 0 18%)}
-.interior-nav-logo:after{content:'';position:absolute;inset:0;background:#302018;mask:url('assets/logo.png') center/100% 100% no-repeat;clip-path:inset(82% 0 0)}
 
 .guide-hero>.guide-reader{right:12px;bottom:28px;width:260px;height:260px;transform:none}
 @media(min-width:700px) and (max-width:1000px){.guide-hero>.guide-reader{right:0;bottom:30px;width:160px;height:160px}.guide-page .guide-search,.guide-page .guide-shortcuts{max-width:calc(100% - 185px)}}

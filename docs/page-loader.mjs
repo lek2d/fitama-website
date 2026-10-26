@@ -1,4 +1,4 @@
-const sharedArtwork=['assets/logo.png','assets/store-leaf-corners-v6.png'];
+const sharedArtwork=['assets/fitama-logo-glossy.png','assets/store-leaf-corners-v6.png'];
 const heroArtwork=[
   'assets/hero-parallax-v1/clouds.png','assets/hero-parallax-v1/mountains.png',
   'assets/hero-parallax-v1/lake-falls.png','assets/hero-parallax-v2/foreground-extended.png',

@@ -1,5 +1,11 @@
 # FiTama website
 
+## October 26, 2026 — supplied glossy logo
+
+The owner-supplied 1444×474 transparent PNG now appears intact in the Journey hero and header, Guide, Contact, Privacy and referral/404 page. Its bytes are preserved at `docs/assets/fitama-logo-glossy.png`. Removed the previous logo's tagline image, bottom clipping and recoloring mask; existing width rules remain, with automatic height for the new proportions. The preloader and affected stylesheet/module URLs are refreshed. The source mirror is synchronized; no app asset change.
+
+Fourteen browser layout checks covered 320–2560px Journey and mobile/desktop interior pages, with no logo clipping, stretching or horizontal overflow. All 128 website tests plus 3 invite tests pass. Policy prose and referral logic are unchanged. The design detector ran in degraded regex mode and flagged only existing font-fallback/Guide-copy patterns outside this branding change.
+
 ## October 26, 2026 — proportional navigation leaves
 
 The Get Fitama navigation decoration was stretching a 3:1 PNG into a roughly 2:1 box. It now uses `background-size: contain`, preserving the original art proportions while keeping the existing button dimensions, 44px minimum height, label and destination. The navigation stylesheet URL is refreshed on Journey, Guide and Contact; the source mirror is synchronized. No asset or app changes.
