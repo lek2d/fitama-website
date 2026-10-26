@@ -1,5 +1,9 @@
 # FiTama website
 
+## October 26, 2026 — centered mobile footer
+
+Footer links, Follow Fitama, social icons and copyright are centered below 700px across Journey, Guide and Contact. Desktop alignment is unchanged. Shared stylesheet URLs are refreshed on all three pages. Twelve browser layout checks across 320, 390, 430, 699, 700 and 1440px confirmed centered mobile link/icon groups within one pixel, centered text, no horizontal overflow and the existing desktop layout.
+
 ## October 26, 2026 — mobile closing buttons below the stairs
 
 The mobile ending now reserves the width-scaled forest scene above its controls. A copy wrapper uses a minimum height tied to the mobile artwork width; App Store / Android waitlist controls and the Android note follow below the stair edge in normal document flow. Long copy can grow the wrapper. Desktop keeps the original layout using `display: contents`, with the existing artwork and sticky-reveal fit check preserved. The Journey stylesheet URL is refreshed.

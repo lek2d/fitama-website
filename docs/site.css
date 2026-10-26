@@ -304,6 +304,6 @@
 .site-footer .footer-socials a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;min-height:44px;padding:11px;border-radius:50%;text-decoration:none}
 .footer-socials svg{display:block;width:22px;height:22px;flex-shrink:0}
 .site-footer .footer-socials a:is(:hover,:focus-visible){background:color-mix(in srgb,currentColor 10%,transparent)}
-@media(max-width:699px){.site-footer .footer-socials{grid-column:1;grid-row:auto;justify-content:flex-start}.footer-socials>span{flex-basis:100%}}
+@media(max-width:699px){.site-footer{text-align:center}.site-footer nav{justify-content:center}.site-footer .footer-socials{grid-column:1;grid-row:auto;justify-content:center}.footer-socials>span{flex-basis:100%}}
 
 .faq-section .eyebrow{color:#426844}
