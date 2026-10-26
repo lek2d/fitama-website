@@ -10,14 +10,35 @@ export function setHeaderVisible(visible) {
   header.inert = !visible;
 }
 
-// The ending can be pinned behind the story. Focus it first to expose its normal flow.
+function plainClick(event) {
+  return !event.defaultPrevented && event.button===0 && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey;
+}
+
+function scrollBehavior() {
+  return matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.classList.contains('motion-off') ? 'instant' : 'smooth';
+}
+
+// Focus first releases the pinned ending before the browser measures its scroll target.
 header?.querySelector('.nav-download')?.addEventListener('click', event => {
+  if (!plainClick(event)) return;
   const destination = event.currentTarget.getAttribute('href');
   if (destination !== '#download') return;
   const download = document.querySelector(destination);
   if (!download) return;
   event.preventDefault();
   download.focus({preventScroll:true});
-  download.scrollIntoView({behavior:'instant',block:'start'});
+  download.scrollIntoView({behavior:scrollBehavior(),block:'start'});
   history.replaceState(null,'',destination);
+});
+
+// On Journey, the logo returns through the current scene instead of reloading it.
+// Other pages retain their real home link, including modified/new-tab activation.
+header?.querySelector('.nav-brand')?.addEventListener('click', event => {
+  if (!plainClick(event)) return;
+  const destination = new URL(event.currentTarget.getAttribute('href'),location.href);
+  if (destination.origin!==location.origin || destination.pathname!==location.pathname) return;
+  event.preventDefault();
+  document.querySelector('.scroll-story')?.focus({preventScroll:true});
+  scrollTo({top:0,behavior:scrollBehavior()});
+  history.replaceState(null,'',location.pathname+location.search);
 });

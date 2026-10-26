@@ -1,5 +1,11 @@
 # FiTama website
 
+## October 27, 2026 — smooth header navigation
+
+On Journey, Get Fitama now scrolls smoothly to the download section after focus releases the pinned ending. The ending focus safety handler no longer overrides that explicit section navigation with an instant recenter. Clicking the logo smoothly returns to the hero without reloading the page; current query parameters remain and the download hash is cleared. Native browser travel yields to new user scroll input, while the existing section-snap driver remains unchanged. Reduced-motion/static views retain direct navigation, and modified clicks plus Guide/Contact links retain native cross-page behavior.
+
+Four navigation regressions reproduced the previous instant/reload behavior before the fix. All 163 source website tests and 38 publisher tests pass. Navigation module URLs are refreshed on Journey, Guide and Contact. No artwork, copy, forms, app, backend, app QA or automation change.
+
 ## October 26, 2026 — Journey slide snapping
 
 One deliberate vertical wheel burst advances one readable Journey slide; scrolling upward returns to the previous slide. Trackpad momentum is grouped so it cannot chain through multiple slides. A finite 1.1-second transition uses the existing document/timeline, including completed egg handoff and hatch poses, movement, Health, Map, Battle, Result, Equipment and Shop. The final story stop clears the fixed header above the FAQ; normal scrolling continues below it.

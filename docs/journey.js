@@ -1,4 +1,4 @@
-import {setHeaderVisible} from './navigation.js?v=cutie-sync-fd0747a-local-v1&release=20261026';
+import {setHeaderVisible} from './navigation.js?v=nav-smooth-v1';
 import {phase} from './journey-timeline.mjs?v=section-snap-v2';
 import {walkthrough, introDistance} from './walkthrough.mjs?v=section-snap-v2';
 import {installSmoothScroll} from './smooth-scroll.mjs?v=section-snap-v2';
@@ -181,6 +181,8 @@ sizeEndingReveal();
 // Focus switches the ending to normal flow; expose the control after that layout change.
 ending.addEventListener('focusin', event => requestAnimationFrame(() => {
   if(document.activeElement !== event.target)return;
+  // Header navigation already scrolls this section; do not interrupt its travel.
+  if(event.target === $('.download-section'))return;
   const bounds = event.target.getBoundingClientRect();
   if(bounds.top < 48 || bounds.bottom > innerHeight){
     event.target.scrollIntoView({block:'center',behavior:'instant'});
