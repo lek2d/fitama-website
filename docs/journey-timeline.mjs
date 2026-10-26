@@ -51,9 +51,10 @@ export function journey(p, w, h) {
   const mobilePhoneTop = Math.max(144, h * .12);
   // Use the space above the actual mobile copy block, keeping a24px reading gap.
   const mobileCopyTop = h * (h <= 700 ? .60 : .62);
-  const mobilePhoneWidth = Math.min(w * .48, Math.max(90, ((mobileCopyTop - 24 - mobilePhoneTop - 10) * 390 / 844 + 10) * .94));
+  const previewScale = .95;
+  const mobilePhoneWidth = previewScale * Math.min(w * .48, Math.max(90, ((mobileCopyTop - 24 - mobilePhoneTop - 10) * 390 / 844 + 10) * .94));
   // Width grows with roomy monitors; height always wins in short browser windows.
-  const desktopPhoneWidth = Math.min(clamp(w * .1472 + 92, 276, 405), Math.max(90, (h - 136 - 10) * 390 / 844 + 10));
+  const desktopPhoneWidth = previewScale * Math.min(clamp(w * .1472 + 92, 276, 405), Math.max(90, (h - 136 - 10) * 390 / 844 + 10));
   // Reserve the finite contact displacement below the catch, not only its rest pose.
   const desktopCatchGap = Math.max(40, h * .04);
   const desktopCatchWidth = Math.max(90, (h - 112 - desktopCatchGap - 10) * 390 / 844 + 10);

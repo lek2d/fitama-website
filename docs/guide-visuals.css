@@ -25,7 +25,7 @@
 .guide-page .guide-article caption { text-align: left; font-size: .875rem; padding: 0 0 12px; }
 .guide-page .guide-walkthrough {
   display: grid;
-  grid-template-columns: minmax(150px, 205px) minmax(0, 1fr);
+  grid-template-columns: minmax(142.5px, 194.75px) minmax(0, 1fr);
   gap: 32px;
   align-items: start;
   margin: 28px 0;
@@ -73,7 +73,7 @@
   .guide-page .guide-hero > .guide-reader { top: 180px; width: 160px; height: 160px; }
   .guide-page .guide-visual-nav { grid-template-columns: 1fr; gap: 10px; }
   .guide-visual-nav a { padding: 12px 16px; }
-  .guide-page .guide-walkthrough { grid-template-columns: 160px minmax(0, 1fr); gap: 24px; }
+  .guide-page .guide-walkthrough { grid-template-columns: 152px minmax(0, 1fr); gap: 24px; }
 }
 @media (max-width: 600px) {
   .guide-page .guide-walkthrough { grid-template-columns: 1fr; }
@@ -86,11 +86,11 @@
 }
 
 @media (min-width: 1440px) {
-  .guide-page .guide-walkthrough { grid-template-columns: 244px minmax(0, 1fr); }
+  .guide-page .guide-walkthrough { grid-template-columns: 231.8px minmax(0, 1fr); }
 }
 @media (max-width: 699px) {
   .guide-page .guide-walkthrough { grid-template-columns: minmax(0, 1fr); }
-  .guide-walkthrough figure { width: min(244px, 74%); margin-inline: auto; }
+  .guide-walkthrough figure { width: min(231.8px, 70.3%); margin-inline: auto; }
 }
 
 /* Loot uses the same catalog artwork and labels as the item reference tables. */

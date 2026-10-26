@@ -1,6 +1,6 @@
 import {setHeaderVisible} from './navigation.js?v=cutie-sync-fd0747a-local-v1&release=20261026';
-import {phase} from './journey-timeline.mjs?v=preloader-v1&release=20261026';
-import {walkthrough, introDistance} from './walkthrough.mjs?v=preloader-v1&release=20261026';
+import {phase} from './journey-timeline.mjs?v=screens-trim-v2&release=20261026';
+import {walkthrough, introDistance} from './walkthrough.mjs?v=screens-trim-v2&release=20261026';
 import {installSmoothScroll} from './smooth-scroll.mjs?v=cutie-sync-fd0747a-local-v1&release=20261026';
 import {installPetPreviews} from './pet-preview.mjs?v=click-lock-happy-v1&release=20261026';
 import {prepareJourneyPage} from './page-loader.mjs?v=preloader-v1&release=20261026';

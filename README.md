@@ -1,5 +1,9 @@
 # FiTama website
 
+## October 26, 2026 — slightly smaller screen previews
+
+Owner requested a further small reduction after the site went live. Settled gameplay previews are5% smaller on desktop/mobile; Guide and static screenshot columns are reduced proportionally. The intro/egg landing remains unchanged. Current caps: approximately385px gameplay and232px large Guide/static previews. Only sizing and associated cache versions changed; art, Rive, preloader, policies, forms and domain/invite/ad files are unchanged.128 tests passed against the production runtime; geometry audit covered584 active viewport pairs and1,169,168 forward/reverse states with zero issues. Exact intro-state comparison is unchanged. Desktop1440×900 and mobile390×844 browser checks passed without overflow or phone/copy collisions.
+
 ## October 26, 2026 — interactive website release
 
 Owner authorized publication to fitama.app. This website-only release replaces Coming Soon with the approved Journey landscape/parallax, three overlapping eggs, Rive pet previews with click-locked traits and Happy/Idle interaction, responsive sample app screens, Guide, Contact and Android waitlist. Initial loading shows three CSS eggs and the loading message, without the Fitama word; early styles are inline and failed artwork falls back to a readable static page. The later desktop/mobile screenshot size reduction is included.
