@@ -4,8 +4,8 @@
 .nav-brand{display:flex;align-items:center;min-height:44px;margin-right:0;flex-shrink:0}.nav-brand img{width:112px;height:auto;display:block}
 .site-header a{text-decoration:none}
 .site-header .nav-download{position:relative;min-height:44px;display:flex;align-items:center;justify-content:center;padding:0 19px;margin-inline:8px;border-radius:14px;background:#302018;color:#fff8e9;font-size:13px;font-weight:700;white-space:nowrap}.site-header .nav-download:hover{background:#285845}
-/* Leave space for the approved leaves inside the cream header. */
-.site-header .nav-download:after{content:'';position:absolute;inset:-8px -8px;background:url('assets/store-leaf-corners-v6.png') center/100% 100% no-repeat;pointer-events:none}
+/* Keep the approved 3:1 artwork proportional inside the existing button frame. */
+.site-header .nav-download:after{content:'';position:absolute;inset:-8px -8px;background:url('assets/store-leaf-corners-v6.png') center/contain no-repeat;pointer-events:none}
 .site-header :focus-visible{outline:3px solid #ad6c13;outline-offset:3px}
 .journey-page .download-section,.journey-page .story-summary{scroll-margin-top:112px}
 @media(max-width:699px){

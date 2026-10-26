@@ -1,5 +1,11 @@
 # FiTama website
 
+## October 26, 2026 — proportional navigation leaves
+
+The Get Fitama navigation decoration was stretching a 3:1 PNG into a roughly 2:1 box. It now uses `background-size: contain`, preserving the original art proportions while keeping the existing button dimensions, 44px minimum height, label and destination. The navigation stylesheet URL is refreshed on Journey, Guide and Contact; the source mirror is synchronized. No asset or app changes.
+
+Browser checks covered seven Journey widths from 320 through 2560px plus mobile/desktop Guide and Contact headers, with no horizontal overflow. All three headers use proportional decoration, and the Journey download action still reaches its destination. All 128 existing website tests pass. The design detector ran in degraded regex mode; its sole warning is existing Guide item-description copy, outside this styling change.
+
 ## October 26, 2026 — funded Shop showcase capture
 
 Replaced the Shop image in Journey and Guide with a fresh 1170×2532 capture of the actual shared Shop UI. The sample balance is 100 Tama-Coins (previously 6), enough for all 21 unchanged catalog prices; all listings render without the insufficient-funds dimming. The local preview adapter footer is omitted. The image uses a new URL to avoid the previous cached screenshot. Website sample-data disclosures remain visible.
