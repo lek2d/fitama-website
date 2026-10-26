@@ -1,5 +1,11 @@
 # FiTama website
 
+## October 26, 2026 — 3× app-screen captures
+
+All nine app screenshots are fresh 1170×2532 captures of the same approved 390×844 sample UI. Rive canvases also render with 3× backing buffers; these files were not enlarged from old screenshots or redrawn. The original browser JPEG bytes are preserved without another encoding pass. All nine total 1,781,774 bytes, replacing 718,500 bytes of previous images. Shop browser scrollbar chrome is omitted while preserving scrolling. Existing raster artwork retains its source detail.
+
+Updated all 14 image placements in Journey and Guide, including animated and static views. Phone/Guide sizes, animation logic, sample rewards and copy remain unchanged. Stylesheet release keys are refreshed for those two pages. Egg alignment differs by only 0.0078 logical pixels, so existing animation anchors are retained. Browser checks cover mobile through 2560×1440, including both Guide screens; 128 website tests pass. All 573 original app/preview source hashes are unchanged. Capture fixtures and provenance live outside the published folder in `capture-notes/2026-10-26-hires/`. These remain web/sample captures; no native app build, backend change, QA or automation resume.
+
 ## October 26, 2026 — centered mobile footer
 
 Footer links, Follow Fitama, social icons and copyright are centered below 700px across Journey, Guide and Contact. Desktop alignment is unchanged. Shared stylesheet URLs are refreshed on all three pages. Twelve browser layout checks across 320, 390, 430, 699, 700 and 1440px confirmed centered mobile link/icon groups within one pixel, centered text, no horizontal overflow and the existing desktop layout.
