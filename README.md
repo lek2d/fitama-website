@@ -1,5 +1,11 @@
 # FiTama website
 
+## October 26, 2026 — funded Shop showcase capture
+
+Replaced the Shop image in Journey and Guide with a fresh 1170×2532 capture of the actual shared Shop UI. The sample balance is 100 Tama-Coins (previously 6), enough for all 21 unchanged catalog prices; all listings render without the insufficient-funds dimming. The local preview adapter footer is omitted. The image uses a new URL to avoid the previous cached screenshot. Website sample-data disclosures remain visible.
+
+The capture fixture remains read-only: `enabled: false`, no gateway and no transaction callbacks. All 573 original app/preview files remain unchanged. Browser checks confirmed all artwork loaded, no dimmed listings on either catalog page, and no local-preview footer. Exact fixture and capture evidence are in `capture-notes/2026-10-26-shop/`, outside published `docs/`. No native app, game economy, backend, QA or automation change.
+
 ## October 26, 2026 — 3× app-screen captures
 
 All nine app screenshots are fresh 1170×2532 captures of the same approved 390×844 sample UI. Rive canvases also render with 3× backing buffers; these files were not enlarged from old screenshots or redrawn. The original browser JPEG bytes are preserved without another encoding pass. All nine total 1,781,774 bytes, replacing 718,500 bytes of previous images. Shop browser scrollbar chrome is omitted while preserving scrolling. Existing raster artwork retains its source detail.

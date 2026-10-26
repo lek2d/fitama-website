@@ -1,0 +1,242 @@
+{
+  "date": "2026-10-26",
+  "sourceCommit": "9e2696b8c6c8d5fc94215020ce1063c55c348c51",
+  "file": "assets/screens-2026-10-26-hires/shop-funded-v1.jpg",
+  "supersedes": "assets/screens-2026-10-26-hires/shop.jpg",
+  "dimensions": [
+    1170,
+    2532
+  ],
+  "logicalViewport": [
+    390,
+    844
+  ],
+  "format": "Original browser JPEG; no second encoding pass",
+  "bytes": 301070,
+  "sha256": "61ed24d845f9dd1674fc78ad59df4d6f486711b01be1b4dd8fca4c03114a556d",
+  "renderer": "Unmodified shared TamaShopContents with same four Fredoka weights and SafeAreaProvider",
+  "fixtureChanges": {
+    "sampleCoinBalance": {
+      "previous": 6,
+      "current": 100
+    },
+    "previewAdapterFooter": "Omitted by rendering actual Shop component directly"
+  },
+  "unchanged": [
+    "Catalog and real prices",
+    "Unaffordable-item dimming logic",
+    "App/source originals (573 files)",
+    "Public website sample-data notices"
+  ],
+  "transactions": {
+    "enabled": false,
+    "gatewayImported": false,
+    "callbacks": "No-ops"
+  },
+  "checks": {
+    "page1": {
+      "dimmedItems": 0,
+      "images": [
+        {
+          "complete": true,
+          "h": 1844,
+          "w": 853
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 819,
+          "w": 1920
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 768,
+          "w": 768
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 768,
+          "w": 768
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 768,
+          "w": 768
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 768,
+          "w": 768
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 768,
+          "w": 768
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 641,
+          "w": 641
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 641,
+          "w": 641
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 641,
+          "w": 641
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 641,
+          "w": 641
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 641,
+          "w": 641
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 641,
+          "w": 641
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 641,
+          "w": 641
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 641,
+          "w": 641
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 1254,
+          "w": 1254
+        },
+        {
+          "complete": true,
+          "h": 234,
+          "w": 256
+        }
+      ],
+      "itemCount": 16,
+      "text": "Tama Shop\nAll\nEquipment\nConsumables\n5\n22\n3\n12\n25\n10\n18\n25\n35\n35\n40\n45\n55\n55\n60\n60\nBack\n1 / 2\nNext\n21 items \u00b7 Earned Tama-Coins only\n100",
+      "viewport": [
+        390,
+        844
+      ],
+      "wallet": "Tama-Coin balance: 100"
+    },
+    "page2": {
+      "dimmedItems": 0,
+      "itemCount": 5,
+      "text": "Tama Shop\nAll\nEquipment\nConsumables\n60\n60\n65\n65\n65\nBack\n2 / 2\nNext\n21 items \u00b7 Earned Tama-Coins only\n100"
+    }
+  },
+  "originalSourceFilesVerified": 573,
+  "scope": "Website sample screenshot only. No native app build or native-device parity claim; no account,backend,QA,automation or provider changes."
+}
