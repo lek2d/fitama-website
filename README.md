@@ -1,5 +1,11 @@
 # FiTama website
 
+## October 27, 2026 — slower eased slide transitions
+
+Journey section snaps now take 1.8 seconds (previously 1.1) with quintic easing that has zero velocity and acceleration at both ends. Symmetric evaluation keeps the final frames numerically stable. The maximum speed is approximately 24% lower than the previous curve. Exact stops, gesture grouping, reversal, reduced-motion/static fallback and smooth header navigation retain their existing behavior. Runtime import and entry URLs are refreshed; the source mirror is synchronized.
+
+The new slower-travel and gentle-endpoint regressions failed against the previous implementation, then passed with the change. All 166 source website tests and 41 publisher tests pass; 1,000,001 easing samples were finite, bounded and monotonic. No artwork, metadata, policy, app, backend, app QA or automation change. Unrelated working Privacy/referral drafts remain outside this release.
+
 ## October 27, 2026 — link-sharing cover
 
 Added a 1200×630 JPEG of the approved Journey hero, preserving the actual artwork, three eggs, glossy logo and current Coming Soon badge. It is a direct CUA screenshot capture without the scrollbar, art generation or recompression; the versioned public image is `docs/assets/fitama-share-cover-v1.jpg`. Capture provenance and the metadata/crawler verification utility are in `capture-notes/2026-10-27-share/`, outside the published folder.

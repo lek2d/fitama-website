@@ -46,22 +46,22 @@ test('one wheel burst reaches exactly one slide and a fresh gesture reaches the 
   const h=harness();
   assert.equal(h.fire('wheel',{deltaY:120}).defaultPrevented,true);
   for(let n=0;n<40;n++){h.advance(16);h.fire('wheel',{deltaY:8});}
-  h.advance(1000);
+  h.advance(1500);
   assert.equal(h.y,1000,'momentum must not chain through the story');
-  h.fire('wheel',{deltaY:120});h.advance(1300);
+  h.fire('wheel',{deltaY:120});h.advance(2100);
   assert.equal(h.y,2000,'a new gesture advances one more slide');
   h.cleanup();
 });
 
 test('a new same-direction burst during the transition cannot skip a slide',()=>{
   const h=harness();h.fire('wheel',{deltaY:120});h.advance(250);
-  h.fire('wheel',{deltaY:120});h.advance(1300);
+  h.fire('wheel',{deltaY:120});h.advance(2100);
   assert.equal(h.y,1000);h.cleanup();
 });
 
 test('a single line-mode mouse step can advance and reverse without requiring several notches',()=>{
-  const h=harness();h.fire('wheel',{deltaY:1,deltaMode:1});h.advance(1300);
-  assert.equal(h.y,1000);h.fire('wheel',{deltaY:-1,deltaMode:1});h.advance(1300);
+  const h=harness();h.fire('wheel',{deltaY:1,deltaMode:1});h.advance(2100);
+  assert.equal(h.y,1000);h.fire('wheel',{deltaY:-1,deltaMode:1});h.advance(2100);
   assert.equal(h.y,0);h.cleanup();
 });
 
@@ -69,7 +69,7 @@ test('a long momentum tail stays at the FAQ exit until a fresh gesture resumes o
   const h=harness({stops:()=>[0,1000]});h.fire('wheel',{deltaY:120});
   for(let n=0;n<110;n++){h.advance(16);h.fire('wheel',{deltaY:8});}
   h.advance(100);assert.equal(h.y,1000,'finishing the transition must not release its momentum into the FAQ');
-  h.advance(200);h.fire('wheel',{deltaY:120});h.advance(1300);
+  h.advance(200);h.fire('wheel',{deltaY:120});h.advance(2100);
   assert.equal(h.y,1120,'a fresh gesture can scroll freely past the story');h.cleanup();
 });
 
@@ -78,12 +78,12 @@ test('deliberate reversal moves back from the visible position on the next frame
   const before=h.y;assert.ok(before>0&&before<1000);
   h.fire('wheel',{deltaY:-120});h.advance(16);
   assert.ok(h.y<before,'reverse immediately rather than finish the forward slide');
-  h.advance(1300);assert.equal(h.y,0);h.cleanup();
+  h.advance(2100);assert.equal(h.y,0);h.cleanup();
 });
 
 test('outside the story and at its outward boundary the ordinary wheel behavior remains',()=>{
   for(const start of [3000,5000]){
-    const h=harness({y:start});h.fire('wheel',{deltaY:120});h.advance(1300);
+    const h=harness({y:start});h.fire('wheel',{deltaY:120});h.advance(2100);
     assert.equal(h.y,start+120);h.cleanup();
   }
   const h=harness();assert.equal(h.fire('wheel',{deltaY:-120}).defaultPrevented,false);h.cleanup();
@@ -122,7 +122,7 @@ test('one mobile vertical swipe advances on release, while taps and horizontal s
   assert.equal(h.fire('touchstart',{touches:[touch(100,500)]}).defaultPrevented,false);
   const move=h.fire('touchmove',{touches:[touch(105,380)]});
   assert.equal(move.defaultPrevented,true);assert.equal(h.y,0,'wait for release');
-  h.fire('touchend',{touches:[],changedTouches:[touch(105,380)]});h.advance(1300);
+  h.fire('touchend',{touches:[],changedTouches:[touch(105,380)]});h.advance(2100);
   assert.equal(h.y,1000);h.cleanup();
   for(const end of [touch(101,499),touch(230,495)]){
     const h=harness({desktop:false});h.fire('touchstart',{touches:[touch(100,500)]});
@@ -155,4 +155,11 @@ test('a mobile drag that returns to its origin or finishes horizontally does not
 test('cleanup removes gesture capture and pending animation',()=>{
   const h=harness();h.fire('wheel',{deltaY:120});h.advance(100);h.cleanup();const stopped=h.y;
   assert.equal(h.fire('wheel',{deltaY:120}).defaultPrevented,false);h.advance(1500);assert.equal(h.y,stopped);
+});
+
+test('the installed driver stays in its slower transition without queuing an extra slide',()=>{
+  const h=harness();h.fire('wheel',{deltaY:120});h.advance(1200);
+  assert.ok(h.y>0 && h.y<1000,'the slow transition is still moving at 1.2 seconds');
+  h.fire('wheel',{deltaY:120});h.advance(1000);
+  assert.equal(h.y,1000,'a repeated gesture during travel cannot queue another slide');h.cleanup();
 });

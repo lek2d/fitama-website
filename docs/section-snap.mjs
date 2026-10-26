@@ -20,14 +20,17 @@ export function nextStop(y,delta,stops) {
   return null;
 }
 
-export function snapPosition(from,to,elapsedMs,durationMs=1100) {
-  if (!Number.isFinite(durationMs)) durationMs = 1100;
+export function snapPosition(from,to,elapsedMs,durationMs=1800) {
+  if (!Number.isFinite(durationMs)) durationMs = 1800;
   if (durationMs <= 0) return to;
   if (!(elapsedMs > 0)) return from;
   if (elapsedMs >= durationMs) return to;
   const t = elapsedMs/durationMs;
-  // Smoothstep has finite duration and zero velocity at both ends, without bounce.
-  const eased = t*t*(3-2*t);
+  // Quintic easing reaches rest with zero velocity and acceleration at both ends.
+  // Mirror the second half to avoid cancellation/overshoot near the destination.
+  const edge = t <= .5 ? t : 1-t;
+  const ramp = edge*edge*edge*(edge*(edge*6-15)+10);
+  const eased = t <= .5 ? ramp : 1-ramp;
   return from+(to-from)*eased;
 }
 

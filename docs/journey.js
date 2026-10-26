@@ -1,8 +1,8 @@
 import {setHeaderVisible} from './navigation.js?v=nav-smooth-v1';
 import {phase} from './journey-timeline.mjs?v=section-snap-v2';
 import {walkthrough, introDistance} from './walkthrough.mjs?v=section-snap-v2';
-import {installSmoothScroll} from './smooth-scroll.mjs?v=section-snap-v2';
-import {storyStops} from './section-snap.mjs?v=section-snap-v2';
+import {installSmoothScroll} from './smooth-scroll.mjs?v=slow-snap-v1';
+import {storyStops} from './section-snap.mjs?v=slow-snap-v1';
 import {installPetPreviews} from './pet-preview.mjs?v=click-lock-happy-v1&release=20261026';
 import {prepareJourneyPage} from './page-loader.mjs?v=preloader-v1&release=20261026&brand=glossy-v1';
 

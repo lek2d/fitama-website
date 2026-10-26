@@ -1,4 +1,4 @@
-import {createWheelGesture,nextStop,snapPosition} from './section-snap.mjs?v=section-snap-v2';
+import {createWheelGesture,nextStop,snapPosition} from './section-snap.mjs?v=slow-snap-v1';
 
 /** Scroll the real document, with optional readable stops in the animated story.
  * installSmoothScroll({enabled,getStops,touchSurface}) returns a cleanup function.

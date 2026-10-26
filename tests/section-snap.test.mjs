@@ -80,29 +80,29 @@ test('snapPosition reaches exact endpoints and never overshoots in either direct
   for (const [from,to] of [[100,1800],[1800,100],[300,300]]) {
     assert.equal(position(from,to,-20),from);
     assert.equal(position(from,to,0),from);
-    assert.equal(position(from,to,1100),to);
-    assert.equal(position(from,to,1200),to);
-    const samples = Array.from({length:111},(_,index) => position(from,to,index*10));
+    assert.equal(position(from,to,1800),to);
+    assert.equal(position(from,to,1900),to);
+    const samples = Array.from({length:181},(_,index) => position(from,to,index*10));
     assert.ok(samples.every(value => Number.isFinite(value) && value >= Math.min(from,to) && value <= Math.max(from,to)));
     assert.ok(samples.every((value,index) => index === 0 || (to >= from ? value >= samples[index-1] : value <= samples[index-1])));
-    assert.ok(Math.abs(position(from,to,550)-(from+to)/2)<1e-9);
+    assert.ok(Math.abs(position(from,to,900)-(from+to)/2)<1e-9);
   }
   assert.equal(position(100,500,1,0),500);
 });
 
 test('snapPosition depends on elapsed time, so 60 Hz and 144 Hz produce the same transition', () => {
   const position = snapPosition;
-  const sixty = Array.from({length:67},(_,i) => position(0,2000,i*1000/60));
-  const highRefresh = Array.from({length:160},(_,i) => position(0,2000,i*1000/144));
+  const sixty = Array.from({length:109},(_,i) => position(0,2000,i*1000/60));
+  const highRefresh = Array.from({length:261},(_,i) => position(0,2000,i*1000/144));
   assert.equal(sixty[30],highRefresh[72]);
-  assert.ok(position(0,2000,100) < 2000*100/1100,'the transition eases in');
-  assert.ok(position(0,2000,1000) > 2000*1000/1100,'the transition eases out');
+  assert.ok(position(0,2000,100) < 2000*100/1800,'the transition eases in');
+  assert.ok(position(0,2000,1700) > 2000*1700/1800,'the transition eases out');
   assert.equal(position(100,500,300,600),300);
 });
 
 test('snapPosition preserves exact fractional endpoints and handles a missing clock sample', () => {
   const position = snapPosition;
-  assert.equal(position(10000000000.3,.1,1100),.1);
+  assert.equal(position(10000000000.3,.1,1800),.1);
   assert.equal(position(.1,10000000000.3,-1),.1);
   assert.equal(position(100,500,NaN),100);
   assert.equal(position(100,500,Infinity),500);
@@ -153,4 +153,18 @@ test('gesture intent is stable across high-frequency momentum and custom thresho
   assert.equal(custom.push(-49,10),0);
   assert.equal(custom.push(-1,20),-1);
   assert.equal(custom.push(20,120),1);
+});
+
+// Catch an early/default-duration finish and abrupt acceleration at either end.
+test('the slower default snap remains in travel after 1.2 seconds and settles by 1.8 seconds',()=>{
+  const halfway=snapPosition(0,1000,1200);
+  assert.ok(halfway>0 && halfway<1000,'do not finish at the former short duration');
+  assert.equal(snapPosition(0,1000,1800),1000);
+});
+
+test('easing leaves and approaches a rest with a gentle acceleration ramp',()=>{
+  const start=snapPosition(0,1000,10,1000);
+  const finish=1000-snapPosition(0,1000,990,1000);
+  assert.ok(start>0 && start<.02,'ease into travel without the previous acceleration step');
+  assert.ok(finish>0 && finish<.02,'ease out without an acceleration step at rest');
 });
