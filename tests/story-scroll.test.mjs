@@ -42,55 +42,49 @@ function harness({y=0,reduced=false,desktop=true,enabled=()=>true,stops=()=>[0,1
   };
 }
 
-test('one wheel burst reaches exactly one slide and a fresh gesture reaches the next',()=>{
+test('wheel travel follows accumulated pixels instead of jumping to a chapter',()=>{
   const h=harness();
   assert.equal(h.fire('wheel',{deltaY:120}).defaultPrevented,true);
+  h.advance(16);assert.ok(h.y>0&&h.y<120,'ease the input rather than jump');
   for(let n=0;n<40;n++){h.advance(16);h.fire('wheel',{deltaY:8});}
-  h.advance(1500);
-  assert.equal(h.y,1000,'momentum must not chain through the story');
-  h.fire('wheel',{deltaY:120});h.advance(2100);
-  assert.equal(h.y,2000,'a new gesture advances one more slide');
-  h.cleanup();
+  h.advance(1500);assert.equal(h.y,440,'120 + forty 8px deltas');h.cleanup();
 });
 
-test('a new same-direction burst during the transition cannot skip a slide',()=>{
-  const h=harness();h.fire('wheel',{deltaY:120});h.advance(250);
-  h.fire('wheel',{deltaY:120});h.advance(2100);
-  assert.equal(h.y,1000);h.cleanup();
+test('same-direction input during travel adds distance immediately',()=>{
+  const h=harness();h.fire('wheel',{deltaY:120});h.advance(32);
+  h.fire('wheel',{deltaY:120});h.advance(1500);
+  assert.equal(h.y,240);h.cleanup();
 });
 
-test('a single line-mode mouse step can advance and reverse without requiring several notches',()=>{
-  const h=harness();h.fire('wheel',{deltaY:1,deltaMode:1});h.advance(2100);
-  assert.equal(h.y,1000);h.fire('wheel',{deltaY:-1,deltaMode:1});h.advance(2100);
+test('line-mode notches retain their actual distance without a minimum chapter step',()=>{
+  const h=harness();h.fire('wheel',{deltaY:1,deltaMode:1});h.advance(1500);
+  assert.equal(h.y,16);h.fire('wheel',{deltaY:-1,deltaMode:1});h.advance(1500);
   assert.equal(h.y,0);h.cleanup();
 });
 
-test('a long momentum tail stays at the FAQ exit until a fresh gesture resumes ordinary scrolling',()=>{
-  const h=harness({stops:()=>[0,1000]});h.fire('wheel',{deltaY:120});
-  for(let n=0;n<110;n++){h.advance(16);h.fire('wheel',{deltaY:8});}
-  h.advance(100);assert.equal(h.y,1000,'finishing the transition must not release its momentum into the FAQ');
-  h.advance(200);h.fire('wheel',{deltaY:120});h.advance(2100);
-  assert.equal(h.y,1120,'a fresh gesture can scroll freely past the story');h.cleanup();
+test('continuous momentum crosses a former story boundary without swallowing input',()=>{
+  const h=harness({y:900,stops:()=>[0,1000]});h.fire('wheel',{deltaY:120});
+  for(let n=0;n<40;n++){h.advance(16);h.fire('wheel',{deltaY:8});}
+  h.advance(1500);assert.equal(h.y,1340);h.cleanup();
 });
 
-test('deliberate reversal moves back from the visible position on the next frame',()=>{
-  const h=harness();h.fire('wheel',{deltaY:120});h.advance(400);
-  const before=h.y;assert.ok(before>0&&before<1000);
-  h.fire('wheel',{deltaY:-120});h.advance(16);
-  assert.ok(h.y<before,'reverse immediately rather than finish the forward slide');
-  h.advance(2100);assert.equal(h.y,0);h.cleanup();
+test('opposite input reverses on the next frame from the visible position',()=>{
+  const h=harness();h.fire('wheel',{deltaY:600});h.advance(48);
+  const before=h.y;assert.ok(before>0&&before<600);
+  h.fire('wheel',{deltaY:-40});h.advance(16);
+  assert.ok(h.y<before,'do not finish the pending downward travel');
+  h.advance(1500);assert.ok(Math.abs(h.y-(before-40))<.001);h.cleanup();
 });
 
-test('outside the story and at its outward boundary the ordinary wheel behavior remains',()=>{
-  for(const start of [3000,5000]){
-    const h=harness({y:start});h.fire('wheel',{deltaY:120});h.advance(2100);
-    assert.equal(h.y,start+120);h.cleanup();
+test('outward input at either document edge remains native',()=>{
+  for(const [y,deltaY] of [[0,-120],[19100,120]]){
+    const h=harness({y});assert.equal(h.fire('wheel',{deltaY}).defaultPrevented,false);
+    h.advance(1500);assert.equal(h.y,y);h.cleanup();
   }
-  const h=harness();assert.equal(h.fire('wheel',{deltaY:-120}).defaultPrevented,false);h.cleanup();
 });
 
 test('forms, nested scrollers, zoom and horizontal gestures remain native',()=>{
-  const cases=[{ctrlKey:true,deltaY:100},{metaKey:true,deltaY:100},{shiftKey:true,deltaY:100},{deltaX:150,deltaY:100}];
+  const cases=[{ctrlKey:true,deltaY:100},{metaKey:true,deltaY:100},{shiftKey:true,deltaY:100},{deltaX:150,deltaY:100},{cancelable:false,deltaY:100}];
   for(const properties of cases){const h=harness();assert.equal(h.fire('wheel',properties).defaultPrevented,false);h.advance(1500);assert.equal(h.y,0);h.cleanup();}
   for(const kind of ['form','scroll']){
     const h=harness(),node=new h.Element(kind);
@@ -100,76 +94,42 @@ test('forms, nested scrollers, zoom and horizontal gestures remain native',()=>{
   }
 });
 
-test('focus, pointer, keyboard, resize and external scrolling cancel unfinished travel',()=>{
-  for(const name of ['focusin','pointerdown','keydown','resize']){
-    const h=harness();h.fire('wheel',{deltaY:120});h.advance(200);
-    h.fire(name,{key:'End'});const stopped=h.y;h.advance(1500);
+test('focus, pointer, touch, keyboard, resize and external scrolling cancel unfinished easing',()=>{
+  for(const name of ['focusin','pointerdown','touchstart','keydown','resize']){
+    const h=harness();h.fire('wheel',{deltaY:600});h.advance(32);
+    h.fire(name,{key:'End',touches:[]});const stopped=h.y;h.advance(1500);
     assert.equal(h.y,stopped,name);h.cleanup();
   }
-  const h=harness();h.fire('wheel',{deltaY:120});h.advance(100);h.context.scrollY=2400;h.fire('scroll');h.advance(1500);
+  const h=harness();h.fire('wheel',{deltaY:600});h.advance(32);h.context.scrollY=2400;h.fire('scroll');h.advance(1500);
   assert.equal(h.y,2400);h.cleanup();
 });
 
-test('reduced motion and a disabled/static page do not capture scroll',()=>{
-  for(const options of [{reduced:true},{enabled:()=>false}]){
+test('reduced motion, mobile wheel and disabled/static views do not capture input',()=>{
+  for(const options of [{reduced:true},{desktop:false},{enabled:()=>false}]){
     const h=harness(options);assert.equal(h.fire('wheel',{deltaY:120}).defaultPrevented,false);h.advance(1500);assert.equal(h.y,0);h.cleanup();
   }
 });
 
-test('one mobile vertical swipe advances on release, while taps and horizontal swipes remain native',()=>{
-  const h=harness({desktop:false});
-  const touch=(x,y)=>({clientX:x,clientY:y});
-  assert.equal(h.fire('touchstart',{touches:[touch(100,500)]}).defaultPrevented,false);
-  const move=h.fire('touchmove',{touches:[touch(105,380)]});
-  assert.equal(move.defaultPrevented,true);assert.equal(h.y,0,'wait for release');
-  h.fire('touchend',{touches:[],changedTouches:[touch(105,380)]});h.advance(2100);
-  assert.equal(h.y,1000);h.cleanup();
-  for(const end of [touch(101,499),touch(230,495)]){
-    const h=harness({desktop:false});h.fire('touchstart',{touches:[touch(100,500)]});
-    assert.equal(h.fire('touchmove',{touches:[end]}).defaultPrevented,false);
-    assert.equal(h.fire('touchend',{touches:[],changedTouches:[end]}).defaultPrevented,false);
-    h.advance(1500);assert.equal(h.y,0);h.cleanup();
+test('mobile vertical swipes, horizontal swipes and pinch gestures remain completely native',()=>{
+  for(const points of [[{clientX:105,clientY:300}],[{clientX:300,clientY:495}],[{clientX:100,clientY:300},{clientX:180,clientY:300}]]){
+    const h=harness({desktop:false});
+    assert.equal(h.fire('touchstart',{touches:[{clientX:100,clientY:500}]}).defaultPrevented,false);
+    assert.equal(h.fire('touchmove',{touches:points}).defaultPrevented,false);
+    assert.equal(h.fire('touchend',{touches:[],changedTouches:points}).defaultPrevented,false);
+    h.advance(1500);assert.equal(h.y,0,'the driver must not start a release animation');h.cleanup();
   }
 });
 
-test('mobile pinch and touch gestures outside the story remain native',()=>{
-  const h=harness({desktop:false}),touch={clientX:100,clientY:500};
-  h.fire('touchstart',{touches:[touch,touch]});
-  assert.equal(h.fire('touchmove',{touches:[touch,touch]}).defaultPrevented,false);
-  h.fire('touchend',{touches:[],changedTouches:[touch]});h.advance(1500);assert.equal(h.y,0);
-  h.fire('touchstart',{target:h.body,composedPath:()=>[h.body],touches:[touch]});
-  assert.equal(h.fire('touchmove',{target:h.body,touches:[{...touch,clientY:300}]}).defaultPrevented,false);
-  h.fire('touchend',{target:h.body,touches:[],changedTouches:[{...touch,clientY:300}]});h.advance(1500);assert.equal(h.y,0);h.cleanup();
+test('visibility and motion preference changes cancel pending frames',()=>{
+  const hidden=harness();hidden.fire('wheel',{deltaY:600});hidden.advance(32);
+  hidden.document.hidden=true;hidden.document.fire('visibilitychange');const hiddenY=hidden.y;hidden.advance(1500);
+  assert.equal(hidden.y,hiddenY);hidden.cleanup();
+  const reduced=harness();reduced.fire('wheel',{deltaY:600});reduced.advance(32);
+  reduced.media[1].matches=true;reduced.media[1].fire('change');const reducedY=reduced.y;reduced.advance(1500);
+  assert.equal(reduced.y,reducedY);reduced.cleanup();
 });
 
-test('a mobile drag that returns to its origin or finishes horizontally does not advance',()=>{
-  for(const end of [{clientX:100,clientY:495},{clientX:300,clientY:410}]){
-    const h=harness({desktop:false});h.fire('touchstart',{touches:[{clientX:100,clientY:500}]});
-    h.fire('touchmove',{touches:[{clientX:100,clientY:380}]});
-    h.fire('touchmove',{touches:[end]});
-    h.fire('touchend',{touches:[],changedTouches:[end]});h.advance(1500);
-    assert.equal(h.y,0,'release position decides whether a slide was requested');h.cleanup();
-  }
-});
-
-test('cleanup removes gesture capture and pending animation',()=>{
-  const h=harness();h.fire('wheel',{deltaY:120});h.advance(100);h.cleanup();const stopped=h.y;
+test('cleanup removes wheel capture and pending easing',()=>{
+  const h=harness();h.fire('wheel',{deltaY:120});h.advance(32);h.cleanup();const stopped=h.y;
   assert.equal(h.fire('wheel',{deltaY:120}).defaultPrevented,false);h.advance(1500);assert.equal(h.y,stopped);
-});
-
-test('the installed driver stays in its slower transition without queuing an extra slide',()=>{
-  const h=harness();h.fire('wheel',{deltaY:120});h.advance(1200);
-  assert.ok(h.y>0 && h.y<1000,'the slow transition is still moving at 1.2 seconds');
-  h.fire('wheel',{deltaY:120});h.advance(1000);
-  assert.equal(h.y,1000,'a repeated gesture during travel cannot queue another slide');h.cleanup();
-});
-
-test('an authored intro duration slows only its first travel and still permits interruption',()=>{
-  const h=harness({getDuration:(from,to)=>from===0&&to===1000?3000:1800});
-  h.fire('wheel',{deltaY:120});h.advance(1900);
-  assert.ok(h.y>0&&h.y<1000,'the first drop has not been rushed into the standard duration');
-  h.advance(1200);assert.equal(h.y,1000);
-  h.fire('wheel',{deltaY:120});h.advance(1900);assert.equal(h.y,2000,'later slides retain their current duration');
-  h.fire('wheel',{deltaY:-120});h.advance(300);const before=h.y;
-  h.fire('pointerdown');h.advance(4000);assert.equal(h.y,before,'user interaction can cancel the longer sequence');h.cleanup();
 });

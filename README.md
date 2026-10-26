@@ -1,5 +1,12 @@
 # FiTama website
 
+## October 27, 2026 — continuous Journey scrolling
+
+Removed active section snapping and mobile swipe capture at the owner's request. Desktop wheel deltas now accumulate into continuous travel with a short, frame-rate-independent 110ms exponential easing response, immediate direction reversal and no chapter destinations or gesture lock. Touch keeps native scrolling and momentum. The existing egg-drop/parallax timeline, screenshot composition, visual smoothing and smooth logo/Get Fitama navigation are preserved. Earlier 3-second opening and 1.8-second snap durations below are historical; the visitor now controls the sequence's speed. Archived section-snap helpers are no longer imported by the live runtime.
+
+Verification: 172 source website tests and 47 publisher tests passed, including continuous delta accumulation, reversal, interruption, uncaptured touch gestures and header navigation. Desktop browser checks confirmed arbitrary intermediate scroll positions, no horizontal overflow, and completed download/home navigation. Native phone gesture feel remains unverified. Source mirror synchronized. No app build, backend, QA or automation changes.
+
+
 ## October 27, 2026 — softer opening egg drop
 
 The first hero-to-app transition now has a three-second forward sequence. Phone entry and egg release have more time, and the egg eases down to a stationary island with one continuous size change instead of a rapid initial shrink. A bounded 4–8px compression replaces the previous hard catch that abruptly moved the phone; the lift and screenshot handoff follow after settling. Interpolation has gentle position, velocity and acceleration joins. The accepted hero, egg, hatch and gameplay resting poses are unchanged. Later and reverse snaps remain 1.8 seconds; interrupted forward trips scale down toward that duration.
