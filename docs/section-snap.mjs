@@ -1,4 +1,4 @@
-import {introDistance} from './walkthrough.mjs?v=section-snap-v2';
+import {introDistance} from './walkthrough.mjs?v=egg-drop-v2';
 
 // Rest only where an existing chapter's copy and its intended screen are visible.
 export function storyStops(w,h,top=0) {
@@ -7,6 +7,16 @@ export function storyStops(w,h,top=0) {
   return [0,intro*.66,intro*.78,intro,
     intro+h,intro+2.1*h,intro+2.60*h,intro+2.75*h,intro+3.25*h,intro+4.35*h]
     .map(position => position+top);
+}
+
+// The first drop is a sequence of landscape exit, release, catch and UI handoff.
+// Give that forward trip more time; partial trips never become slower than a full one.
+export function storySnapDuration(from,to,w,h,top=0) {
+  const [hero,catchStop]=storyStops(w,h,top);
+  if(Math.abs(to-catchStop)<=2 && from>=hero-2 && from<catchStop-2){
+    return Math.max(1800,3000*Math.min(1,(catchStop-from)/(catchStop-hero)));
+  }
+  return 1800;
 }
 
 export function nextStop(y,delta,stops) {

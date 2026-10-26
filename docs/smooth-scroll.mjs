@@ -1,7 +1,7 @@
-import {createWheelGesture,nextStop,snapPosition} from './section-snap.mjs?v=slow-snap-v1';
+import {createWheelGesture,nextStop,snapPosition} from './section-snap.mjs?v=egg-drop-v2';
 
 /** Scroll the real document, with optional readable stops in the animated story.
- * installSmoothScroll({enabled,getStops,touchSurface}) returns a cleanup function.
+ * installSmoothScroll({enabled,getStops,getDuration,touchSurface}) returns a cleanup function.
  * The caller supplies its motion/pause policy; OS Reduce Motion is also respected here.
  */
 export function advanceScroll(current, target, elapsedMs) {
@@ -32,14 +32,14 @@ function innerControlConsumes(event, delta) {
   return false;
 }
 
-export function installSmoothScroll({enabled = () => true,getStops = () => [],touchSurface = null} = {}) {
+export function installSmoothScroll({enabled = () => true,getStops = () => [],getDuration = () => 1800,touchSurface = null} = {}) {
   const desktop = matchMedia('(hover: hover) and (pointer: fine)');
   const reduced = matchMedia('(prefers-reduced-motion: reduce)');
   const allowed = () => desktop.matches && !reduced.matches && enabled();
   const snapAllowed = () => !reduced.matches && enabled();
   const maximum = () => Math.max(0, document.documentElement.scrollHeight - innerHeight);
   let frame = 0, target = scrollY, position = scrollY, applied = scrollY, lastTime = 0;
-  let snapping = false, from = scrollY, started = 0, touch = null;
+  let snapping = false, from = scrollY, started = 0, duration = 1800, touch = null;
   let lastSnapDirection = 0, lastSnapWheelTime = -Infinity;
   const gesture = createWheelGesture();
 
@@ -57,6 +57,7 @@ export function installSmoothScroll({enabled = () => true,getStops = () => [],to
     cancelAnimationFrame(frame);
     from = position = applied = scrollY;
     target = Math.max(0,Math.min(maximum(),destination));
+    duration = getDuration(from,target);
     started = performance.now();
     snapping = true;
     frame = requestAnimationFrame(tick);
@@ -66,7 +67,7 @@ export function installSmoothScroll({enabled = () => true,getStops = () => [],to
     frame = 0;
     if (!(snapping ? snapAllowed() : allowed()) || document.hidden || Math.abs(scrollY - applied) > 1) return interrupt();
     target = wheelTarget(target, 0, maximum());
-    position = snapping ? snapPosition(from,target,time-started) : advanceScroll(position, target, time - lastTime);
+    position = snapping ? snapPosition(from,target,time-started,duration) : advanceScroll(position, target, time - lastTime);
     lastTime = time;
     scrollTo({top: position, left: scrollX, behavior: 'instant'});
     applied = scrollY;

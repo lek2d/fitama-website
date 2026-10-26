@@ -1,5 +1,11 @@
 # FiTama website
 
+## October 27, 2026 — softer opening egg drop
+
+The first hero-to-app transition now has a three-second forward sequence. Phone entry and egg release have more time, and the egg eases down to a stationary island with one continuous size change instead of a rapid initial shrink. A bounded 4–8px compression replaces the previous hard catch that abruptly moved the phone; the lift and screenshot handoff follow after settling. Interpolation has gentle position, velocity and acceleration joins. The accepted hero, egg, hatch and gameplay resting poses are unchanged. Later and reverse snaps remain 1.8 seconds; interrupted forward trips scale down toward that duration.
+
+Tests first reproduced the compressed entrance and phone contact kick. All 175 source website tests and 50 publisher tests pass. Independent review verified eight viewport sizes with no phone clipping or changes to accepted resting geometry. Desktop maximum phone travel per 60Hz frame drops from approximately 151px to 50px. Runtime module URLs are refreshed and the source mirror is synchronized. No art, metadata, policy, app, backend, app QA or automation change; unrelated Privacy/referral drafts are excluded.
+
 ## October 27, 2026 — slower eased slide transitions
 
 Journey section snaps now take 1.8 seconds (previously 1.1) with quintic easing that has zero velocity and acceleration at both ends. Symmetric evaluation keeps the final frames numerically stable. The maximum speed is approximately 24% lower than the previous curve. Exact stops, gesture grouping, reversal, reduced-motion/static fallback and smooth header navigation retain their existing behavior. Runtime import and entry URLs are refreshed; the source mirror is synchronized.

@@ -5,6 +5,12 @@ export function phase(p, a, b) {
   return t * t * (3 - 2 * t);
 }
 
+function glide(p,a,b) {
+  const t=clamp((p-a)/(b-a)),edge=t<=.5?t:1-t;
+  const ramp=edge*edge*edge*(edge*(edge*6-15)+10);
+  return t<=.5?ramp:1-ramp;
+}
+
 // All geometry is viewport-relative and deterministic, including reverse scroll.
 export function journey(p, w, h) {
   p = clamp(p);
@@ -47,7 +53,7 @@ export function journey(p, w, h) {
   const worldClipBottom = Math.ceil(clamp(-groundY + 2, 0, h));
   // Keep the catch and full hatch at rest before framing the gameplay chapters.
   const grow = phase(p, mobile ? 0.82 : 0.80, 0.94);
-  const handoff = phase(p, 0.62, 0.66);
+  const handoff = glide(p, 0.64, 0.66);
   const reveal = phase(p, 0.69, 0.77);
   const mobilePhoneTop = Math.max(144, h * .12);
   // Use the space above the actual mobile copy block, keeping a24px reading gap.
@@ -76,31 +82,30 @@ export function journey(p, w, h) {
   const catchPhoneY = mobile ? Math.min(h - phoneH - 40, Math.max(272, restingPhoneY + h * .13)) : Math.min(h - phoneH - desktopCatchGap, restingPhoneY + h * .13);
   const catchLift = catchPhoneY - restingPhoneY;
   const targetW = phoneContentW * 115.7 / 390;
-  const dropW = Math.min(startW, targetW * 1.35);
   // Clear the mobile copy using the actual falling shell height. The hero's
   // larger eggs must not invalidate the clearance reserved by the phone layout.
-  const releaseY = mobile ? Math.max(308, h * .24, 258 + dropW * 391 / 353 / 2) : h * .24;
+  const releaseY = mobile ? Math.max(308, h * .24, 258 + startW * 391 / 353 / 2) : h * .24;
   const catchEggY = catchPhoneY + 5 + phoneContentH * 330.3 / 844;
   const fallDistance = catchEggY - releaseY;
-  const fall = clamp((p - 0.30) / 0.18);
-  // A single soft compression. Initial velocity matches the incoming egg,
-  // then returns to rest without an elastic bounce or a position snap.
-  const settle = clamp((p - 0.48) / 0.06);
-  const impactOffset = (2 * fallDistance / 0.18) * 0.06 * settle * (1 - settle) ** 2;
-  const phoneY = mix(h * 1.12, catchPhoneY, phase(p, 0.22, 0.30))
-    + impactOffset - catchLift * phase(p, 0.56, 0.62)
+  const fall = glide(p, 0.32, 0.56);
+  // Meet the platform at rest, then give slightly without kicking the phone.
+  // This bounded pulse has zero velocity and acceleration at both ends.
+  const settle = clamp((p - 0.56) / 0.04);
+  const impactOffset = Math.min(8,h*.008) * 64 * (settle*(1-settle)) ** 3;
+  const phoneY = mix(h * 1.12, catchPhoneY, glide(p, 0.14, 0.32))
+    + impactOffset - catchLift * glide(p, 0.60, 0.64)
     - grow * (mobile ? restingPhoneY - mobilePhoneTop : 0);
   const startY = nestBase - startW * 391 / 353 / 2;
   const landX = phoneX + phoneW / 2;
   const landY = phoneY + 5 + phoneContentH * 330.3 / 844;
-  const eggW = mix(mix(startW, dropW, phase(p, 0.24, 0.30)), targetW, phase(p, 0.30, 0.48));
-  const eggX = mix(w / 2, landX, phase(p, 0.24, 0.48));
+  const eggW = mix(startW, targetW, glide(p, 0.24, 0.56));
+  const eggX = mix(w / 2, landX, glide(p, 0.24, 0.56));
   // Do not chase a rising target: the phone is ready before gravity takes over.
   // The whole nest is attached to the meadow while it is visible. Only once
   // that scene has cleared can Blukie move independently into the green catch.
   const eggY = p <= 0.24 ? startY + groundY
-    : p < 0.30 ? mix(startY - h * 0.48, releaseY, phase(p, 0.24, 0.30))
-    : p < 0.48 ? releaseY + fallDistance * fall ** 2 : landY;
+    : p < 0.32 ? mix(startY - h * 0.48, releaseY, glide(p, 0.24, 0.32))
+    : p < 0.56 ? releaseY + fallDistance * fall : landY;
   return {
     p, mobile, companionH, clovieW, ignieW, clovieX, ignieX, followCopyX, landingCopyX, pairCopyW, pairGap, pairCopyY: phoneY + phoneH / 2, foliageSize, foliageHeight, foliageTop, foliageOutset, foliageRightDrop, nestW, nestTop, nestBase, startW, worldClipBottom, phoneX, phoneY, phoneW, phoneH, eggX, eggY, eggW,
     eggH: eggW * 391 / 353,

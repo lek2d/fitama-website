@@ -5,7 +5,7 @@ import vm from 'node:vm';
 import * as snap from '../docs/section-snap.mjs';
 
 // Execute the actual scroll driver; only browser events, time and layout are virtual.
-function harness({y=0,reduced=false,desktop=true,enabled=()=>true,stops=()=>[0,1000,2000,3000]}={}) {
+function harness({y=0,reduced=false,desktop=true,enabled=()=>true,stops=()=>[0,1000,2000,3000],getDuration}={}) {
   class Events {
     handlers=new Map();
     addEventListener(name,fn){const list=this.handlers.get(name)??[];list.push(fn);this.handlers.set(name,list);}
@@ -31,7 +31,7 @@ function harness({y=0,reduced=false,desktop=true,enabled=()=>true,stops=()=>[0,1
   };
   const source=readFileSync(new URL('../docs/smooth-scroll.mjs',import.meta.url),'utf8').replace(/^import .*;\n/gm,'').replace(/^export /gm,'');
   const api=vm.runInNewContext(source+'\n({installSmoothScroll})',context);
-  const cleanup=api.installSmoothScroll({enabled,getStops:stops,touchSurface:surface});
+  const cleanup=api.installSmoothScroll({enabled,getStops:stops,getDuration,touchSurface:surface});
   const event=(properties={})=>({cancelable:true,defaultPrevented:false,deltaX:0,deltaY:0,deltaMode:0,
     ctrlKey:false,metaKey:false,shiftKey:false,target,composedPath:()=>[target,surface,body,html],
     preventDefault(){this.defaultPrevented=true;},...properties});
@@ -162,4 +162,14 @@ test('the installed driver stays in its slower transition without queuing an ext
   assert.ok(h.y>0 && h.y<1000,'the slow transition is still moving at 1.2 seconds');
   h.fire('wheel',{deltaY:120});h.advance(1000);
   assert.equal(h.y,1000,'a repeated gesture during travel cannot queue another slide');h.cleanup();
+});
+
+test('an authored intro duration slows only its first travel and still permits interruption',()=>{
+  const h=harness({getDuration:(from,to)=>from===0&&to===1000?3000:1800});
+  h.fire('wheel',{deltaY:120});h.advance(1900);
+  assert.ok(h.y>0&&h.y<1000,'the first drop has not been rushed into the standard duration');
+  h.advance(1200);assert.equal(h.y,1000);
+  h.fire('wheel',{deltaY:120});h.advance(1900);assert.equal(h.y,2000,'later slides retain their current duration');
+  h.fire('wheel',{deltaY:-120});h.advance(300);const before=h.y;
+  h.fire('pointerdown');h.advance(4000);assert.equal(h.y,before,'user interaction can cancel the longer sequence');h.cleanup();
 });

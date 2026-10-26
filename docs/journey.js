@@ -1,8 +1,8 @@
 import {setHeaderVisible} from './navigation.js?v=nav-smooth-v1';
-import {phase} from './journey-timeline.mjs?v=section-snap-v2';
-import {walkthrough, introDistance} from './walkthrough.mjs?v=section-snap-v2';
-import {installSmoothScroll} from './smooth-scroll.mjs?v=slow-snap-v1';
-import {storyStops} from './section-snap.mjs?v=slow-snap-v1';
+import {phase} from './journey-timeline.mjs?v=egg-drop-v2';
+import {walkthrough, introDistance} from './walkthrough.mjs?v=egg-drop-v2';
+import {installSmoothScroll} from './smooth-scroll.mjs?v=egg-drop-v2';
+import {storyStops,storySnapDuration} from './section-snap.mjs?v=egg-drop-v2';
 import {installPetPreviews} from './pet-preview.mjs?v=click-lock-happy-v1&release=20261026';
 import {prepareJourneyPage} from './page-loader.mjs?v=preloader-v1&release=20261026&brand=glossy-v1';
 
@@ -149,6 +149,7 @@ motionPreference();
 installSmoothScroll({
   enabled:()=>document.documentElement.dataset.pageLoading!=='pending'&&!staticMode(),
   touchSurface:story,
+  getDuration:(from,to)=>storySnapDuration(from,to,stage.clientWidth,stage.clientHeight,story.offsetTop),
   getStops:()=>{
     const stops=storyStops(stage.clientWidth,stage.clientHeight,story.offsetTop);
     if(!stops.length)return stops;
