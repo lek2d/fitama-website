@@ -1,0 +1,3 @@
+/* Sentence leads are paired in HTML by format-copy.py, including without JS. */
+:where(p, li, summary) { text-wrap: pretty; }
+:where(h1, h2, h3) { text-wrap: balance; }

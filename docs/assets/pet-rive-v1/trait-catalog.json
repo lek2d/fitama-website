@@ -1,0 +1,3349 @@
+{
+  "schemaVersion": 1,
+  "sourceRevision": "a8a6e77f9730b111330e553487d71baa03ef31a3",
+  "pets": {
+    "blukie": {
+      "combinationCount": 37800,
+      "groups": [
+        {
+          "key": "eyesBlush",
+          "options": [
+            {
+              "id": "Eye+brow_01|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": "Blush_01"
+              },
+              "images": [],
+              "numbers": {}
+            },
+            {
+              "id": "Eye+brow_01|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Eye+brow_01|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Eye+brow_01|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Eye+brow_01|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Eye+brow_02|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": "Blush_01"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 1
+              }
+            },
+            {
+              "id": "Eye+brow_02|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 1
+              }
+            },
+            {
+              "id": "Eye+brow_02|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 1
+              }
+            },
+            {
+              "id": "Eye+brow_02|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 1
+              }
+            },
+            {
+              "id": "Eye+brow_02|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 1
+              }
+            },
+            {
+              "id": "Eye+brow_03|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": "Blush_01"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 0
+              }
+            },
+            {
+              "id": "Eye+brow_03|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 0
+              }
+            },
+            {
+              "id": "Eye+brow_03|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 0
+              }
+            },
+            {
+              "id": "Eye+brow_03|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 0
+              }
+            },
+            {
+              "id": "Eye+brow_03|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 0
+              }
+            },
+            {
+              "id": "Eye+brow_04|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": "Blush_01"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 1
+              }
+            },
+            {
+              "id": "Eye+brow_04|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 1
+              }
+            },
+            {
+              "id": "Eye+brow_04|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 1
+              }
+            },
+            {
+              "id": "Eye+brow_04|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 1
+              }
+            },
+            {
+              "id": "Eye+brow_04|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 1
+              }
+            },
+            {
+              "id": "Eye+brow_05|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": "Blush_01"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 0
+              }
+            },
+            {
+              "id": "Eye+brow_05|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 0
+              }
+            },
+            {
+              "id": "Eye+brow_05|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 0
+              }
+            },
+            {
+              "id": "Eye+brow_05|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 0
+              }
+            },
+            {
+              "id": "Eye+brow_05|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 0
+              }
+            },
+            {
+              "id": "Eye+brow_06|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": "Blush_01"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": -1
+              }
+            },
+            {
+              "id": "Eye+brow_06|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": -1
+              }
+            },
+            {
+              "id": "Eye+brow_06|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": -1
+              }
+            },
+            {
+              "id": "Eye+brow_06|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": -1
+              }
+            },
+            {
+              "id": "Eye+brow_06|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": -1
+              }
+            }
+          ]
+        },
+        {
+          "key": "mouth",
+          "options": [
+            {
+              "id": "Mouth_01",
+              "traits": {
+                "mouth": "Mouth_01"
+              },
+              "images": [],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_02",
+              "traits": {
+                "mouth": "Mouth_02"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_02.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_03",
+              "traits": {
+                "mouth": "Mouth_03"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_03.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_04",
+              "traits": {
+                "mouth": "Mouth_04"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_04.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_05",
+              "traits": {
+                "mouth": "Mouth_05"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_05.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_06",
+              "traits": {
+                "mouth": "Mouth_06"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_06.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_07",
+              "traits": {
+                "mouth": "Mouth_07"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_07.png"
+                }
+              ],
+              "numbers": {}
+            }
+          ]
+        },
+        {
+          "key": "ears",
+          "options": [
+            {
+              "id": "Ears_01",
+              "traits": {
+                "ears": "Ears_01"
+              },
+              "images": [],
+              "numbers": {}
+            },
+            {
+              "id": "Ears_02",
+              "traits": {
+                "ears": "Ears_02"
+              },
+              "images": [
+                {
+                  "property": "ears",
+                  "url": "images/pets/stroke-v1/blukie/Ears_02.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Ears_03",
+              "traits": {
+                "ears": "Ears_03"
+              },
+              "images": [
+                {
+                  "property": "ears",
+                  "url": "images/pets/stroke-v1/blukie/Ears_03.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Ears_04",
+              "traits": {
+                "ears": "Ears_04"
+              },
+              "images": [
+                {
+                  "property": "ears",
+                  "url": "images/pets/stroke-v1/blukie/Ears_04.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Ears_05",
+              "traits": {
+                "ears": "Ears_05"
+              },
+              "images": [
+                {
+                  "property": "ears",
+                  "url": "images/pets/stroke-v1/blukie/Ears_05.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Ears_06",
+              "traits": {
+                "ears": "Ears_06"
+              },
+              "images": [
+                {
+                  "property": "ears",
+                  "url": "images/pets/stroke-v1/blukie/Ears_06.png"
+                }
+              ],
+              "numbers": {}
+            }
+          ]
+        },
+        {
+          "key": "feature",
+          "options": [
+            {
+              "id": "Horn_01",
+              "traits": {
+                "horns": "Horn_01"
+              },
+              "images": [],
+              "numbers": {}
+            },
+            {
+              "id": "Horn_02",
+              "traits": {
+                "horns": "Horn_02"
+              },
+              "images": [
+                {
+                  "property": "horns",
+                  "url": "images/pets/stroke-v1/blukie/Horn_02.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Horn_03",
+              "traits": {
+                "horns": "Horn_03"
+              },
+              "images": [
+                {
+                  "property": "horns",
+                  "url": "images/pets/stroke-v1/blukie/Horn_03.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Horn_04",
+              "traits": {
+                "horns": "Horn_04"
+              },
+              "images": [
+                {
+                  "property": "horns",
+                  "url": "images/pets/stroke-v1/blukie/Horn_04.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Horn_05",
+              "traits": {
+                "horns": "Horn_05"
+              },
+              "images": [
+                {
+                  "property": "horns",
+                  "url": "images/pets/stroke-v1/blukie/Horn_05.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Horn_06",
+              "traits": {
+                "horns": "Horn_06"
+              },
+              "images": [
+                {
+                  "property": "horns",
+                  "url": "images/pets/stroke-v1/blukie/Horn_06.png"
+                }
+              ],
+              "numbers": {}
+            }
+          ]
+        },
+        {
+          "key": "forehead",
+          "options": [
+            {
+              "id": "Forehead_01",
+              "traits": {
+                "forehead": "Forehead_01"
+              },
+              "images": [],
+              "numbers": {}
+            },
+            {
+              "id": "Forehead_02",
+              "traits": {
+                "forehead": "Forehead_02"
+              },
+              "images": [
+                {
+                  "property": "forehead",
+                  "url": "images/pets/blukie/Forehead_02.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Forehead_03",
+              "traits": {
+                "forehead": "Forehead_03"
+              },
+              "images": [
+                {
+                  "property": "forehead",
+                  "url": "images/pets/blukie/Forehead_03.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Forehead_04",
+              "traits": {
+                "forehead": "Forehead_04"
+              },
+              "images": [
+                {
+                  "property": "forehead",
+                  "url": "images/pets/blukie/Forehead_04.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "None",
+              "traits": {
+                "forehead": null
+              },
+              "images": [
+                {
+                  "property": "forehead",
+                  "url": "images/pets/transparent-trait.png"
+                }
+              ],
+              "numbers": {}
+            }
+          ]
+        }
+      ]
+    },
+    "clovie": {
+      "combinationCount": 30240,
+      "groups": [
+        {
+          "key": "eyesBlush",
+          "options": [
+            {
+              "id": "Eye+brow_01|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": "Blush_01"
+              },
+              "images": [],
+              "numbers": {}
+            },
+            {
+              "id": "Eye+brow_01|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -89,
+                "sleepBlushScaleX": 0.161318164587242,
+                "sleepBlushScaleY": 0.13398745755159475,
+                "blushY": 284,
+                "blushScaleX": 0.157766205,
+                "blushScaleY": 0.131037275
+              }
+            },
+            {
+              "id": "Eye+brow_01|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -92,
+                "sleepBlushScaleX": 0.15398555347091933,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "blushY": 281,
+                "blushScaleX": 0.19635,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_01|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -87,
+                "sleepBlushScaleX": 0.161318177398374,
+                "sleepBlushScaleY": 0.13398745983739838,
+                "blushY": 286,
+                "blushScaleX": 0.171052895,
+                "blushScaleY": 0.14207291
+              }
+            },
+            {
+              "id": "Eye+brow_01|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -94,
+                "sleepBlushScaleX": 0.14665290806754222,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "blushY": 279,
+                "blushScaleX": 0.187,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_01|None",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": null
+              },
+              "images": [],
+              "numbers": {
+                "sleepBlushX": 0,
+                "sleepBlushY": 0,
+                "sleepBlushScaleX": 0,
+                "sleepBlushScaleY": 0,
+                "blushOpacity": 0
+              }
+            },
+            {
+              "id": "Eye+brow_02|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": "Blush_01"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 1
+              }
+            },
+            {
+              "id": "Eye+brow_02|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -89,
+                "sleepBlushScaleX": 0.161318164587242,
+                "sleepBlushScaleY": 0.13398745755159475,
+                "eyeStyle": 1,
+                "blushY": 284,
+                "blushScaleX": 0.157766205,
+                "blushScaleY": 0.131037275
+              }
+            },
+            {
+              "id": "Eye+brow_02|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -92,
+                "sleepBlushScaleX": 0.15398555347091933,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "eyeStyle": 1,
+                "blushY": 281,
+                "blushScaleX": 0.19635,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_02|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -87,
+                "sleepBlushScaleX": 0.161318177398374,
+                "sleepBlushScaleY": 0.13398745983739838,
+                "eyeStyle": 1,
+                "blushY": 286,
+                "blushScaleX": 0.171052895,
+                "blushScaleY": 0.14207291
+              }
+            },
+            {
+              "id": "Eye+brow_02|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -94,
+                "sleepBlushScaleX": 0.14665290806754222,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "eyeStyle": 1,
+                "blushY": 279,
+                "blushScaleX": 0.187,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_02|None",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": null
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": 0,
+                "sleepBlushY": 0,
+                "sleepBlushScaleX": 0,
+                "sleepBlushScaleY": 0,
+                "eyeStyle": 1,
+                "blushOpacity": 0
+              }
+            },
+            {
+              "id": "Eye+brow_03|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": "Blush_01"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 0
+              }
+            },
+            {
+              "id": "Eye+brow_03|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -89,
+                "sleepBlushScaleX": 0.161318164587242,
+                "sleepBlushScaleY": 0.13398745755159475,
+                "eyeStyle": 0,
+                "blushY": 284,
+                "blushScaleX": 0.157766205,
+                "blushScaleY": 0.131037275
+              }
+            },
+            {
+              "id": "Eye+brow_03|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -92,
+                "sleepBlushScaleX": 0.15398555347091933,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "eyeStyle": 0,
+                "blushY": 281,
+                "blushScaleX": 0.19635,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_03|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -87,
+                "sleepBlushScaleX": 0.161318177398374,
+                "sleepBlushScaleY": 0.13398745983739838,
+                "eyeStyle": 0,
+                "blushY": 286,
+                "blushScaleX": 0.171052895,
+                "blushScaleY": 0.14207291
+              }
+            },
+            {
+              "id": "Eye+brow_03|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -94,
+                "sleepBlushScaleX": 0.14665290806754222,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "eyeStyle": 0,
+                "blushY": 279,
+                "blushScaleX": 0.187,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_03|None",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": null
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": 0,
+                "sleepBlushY": 0,
+                "sleepBlushScaleX": 0,
+                "sleepBlushScaleY": 0,
+                "eyeStyle": 0,
+                "blushOpacity": 0
+              }
+            },
+            {
+              "id": "Eye+brow_04|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": "Blush_01"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -76.5,
+                "sleepBlushScaleX": 0.14665288,
+                "sleepBlushScaleY": 0.08039249,
+                "eyeStyle": 1,
+                "blushY": 296.5,
+                "blushScaleX": 0.14665288,
+                "blushScaleY": 0.08039249
+              }
+            },
+            {
+              "id": "Eye+brow_04|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": -80,
+                "sleepBlushY": -81,
+                "sleepBlushScaleX": 0.16865081238273924,
+                "sleepBlushScaleY": 0.1071899660412758,
+                "eyeStyle": 1,
+                "blushX": 196,
+                "blushY": 292,
+                "blushScaleX": 0.1649374,
+                "blushScaleY": 0.10482982
+              }
+            },
+            {
+              "id": "Eye+brow_04|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": -80,
+                "sleepBlushY": -86,
+                "sleepBlushScaleX": 0.1613181988742964,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "eyeStyle": 1,
+                "blushX": 196,
+                "blushY": 287,
+                "blushScaleX": 0.2057,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_04|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": -80,
+                "sleepBlushY": -80.5,
+                "sleepBlushScaleX": 0.1759835245528455,
+                "sleepBlushScaleY": 0.10718998390243903,
+                "eyeStyle": 1,
+                "blushX": 196,
+                "blushY": 292.5,
+                "blushScaleX": 0.18660322,
+                "blushScaleY": 0.113658345
+              }
+            },
+            {
+              "id": "Eye+brow_04|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": -80,
+                "sleepBlushY": -87,
+                "sleepBlushScaleX": 0.15398555347091933,
+                "sleepBlushScaleY": 0.1205886866791745,
+                "eyeStyle": 1,
+                "blushX": 196,
+                "blushY": 286,
+                "blushScaleX": 0.19635,
+                "blushScaleY": 0.153765
+              }
+            },
+            {
+              "id": "Eye+brow_04|None",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": null
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": 0,
+                "sleepBlushY": 0,
+                "sleepBlushScaleX": 0,
+                "sleepBlushScaleY": 0,
+                "eyeStyle": 1,
+                "blushY": 296.5,
+                "blushScaleX": 0.14665288,
+                "blushScaleY": 0.08039249,
+                "blushOpacity": 0
+              }
+            },
+            {
+              "id": "Eye+brow_05|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": "Blush_01"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 0
+              }
+            },
+            {
+              "id": "Eye+brow_05|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -89,
+                "sleepBlushScaleX": 0.161318164587242,
+                "sleepBlushScaleY": 0.13398745755159475,
+                "eyeStyle": 0,
+                "blushY": 284,
+                "blushScaleX": 0.157766205,
+                "blushScaleY": 0.131037275
+              }
+            },
+            {
+              "id": "Eye+brow_05|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -92,
+                "sleepBlushScaleX": 0.15398555347091933,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "eyeStyle": 0,
+                "blushY": 281,
+                "blushScaleX": 0.19635,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_05|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -87,
+                "sleepBlushScaleX": 0.161318177398374,
+                "sleepBlushScaleY": 0.13398745983739838,
+                "eyeStyle": 0,
+                "blushY": 286,
+                "blushScaleX": 0.171052895,
+                "blushScaleY": 0.14207291
+              }
+            },
+            {
+              "id": "Eye+brow_05|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -94,
+                "sleepBlushScaleX": 0.14665290806754222,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "eyeStyle": 0,
+                "blushY": 279,
+                "blushScaleX": 0.187,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_05|None",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": null
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": 0,
+                "sleepBlushY": 0,
+                "sleepBlushScaleX": 0,
+                "sleepBlushScaleY": 0,
+                "eyeStyle": 0,
+                "blushOpacity": 0
+              }
+            },
+            {
+              "id": "Eye+brow_06|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": "Blush_01"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": -1
+              }
+            },
+            {
+              "id": "Eye+brow_06|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -89,
+                "sleepBlushScaleX": 0.161318164587242,
+                "sleepBlushScaleY": 0.13398745755159475,
+                "eyeStyle": -1,
+                "blushY": 284,
+                "blushScaleX": 0.157766205,
+                "blushScaleY": 0.131037275
+              }
+            },
+            {
+              "id": "Eye+brow_06|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -92,
+                "sleepBlushScaleX": 0.15398555347091933,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "eyeStyle": -1,
+                "blushY": 281,
+                "blushScaleX": 0.19635,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_06|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -87,
+                "sleepBlushScaleX": 0.161318177398374,
+                "sleepBlushScaleY": 0.13398745983739838,
+                "eyeStyle": -1,
+                "blushY": 286,
+                "blushScaleX": 0.171052895,
+                "blushScaleY": 0.14207291
+              }
+            },
+            {
+              "id": "Eye+brow_06|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -94,
+                "sleepBlushScaleX": 0.14665290806754222,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "eyeStyle": -1,
+                "blushY": 279,
+                "blushScaleX": 0.187,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_06|None",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": null
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": 0,
+                "sleepBlushY": 0,
+                "sleepBlushScaleX": 0,
+                "sleepBlushScaleY": 0,
+                "eyeStyle": -1,
+                "blushOpacity": 0
+              }
+            }
+          ]
+        },
+        {
+          "key": "mouth",
+          "options": [
+            {
+              "id": "Mouth_01",
+              "traits": {
+                "mouth": "Mouth_01"
+              },
+              "images": [],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_02",
+              "traits": {
+                "mouth": "Mouth_02"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_02.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_03",
+              "traits": {
+                "mouth": "Mouth_03"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_03.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_04",
+              "traits": {
+                "mouth": "Mouth_04"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_04.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_05",
+              "traits": {
+                "mouth": "Mouth_05"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_05.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_06",
+              "traits": {
+                "mouth": "Mouth_06"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_06.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_07",
+              "traits": {
+                "mouth": "Mouth_07"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_07.png"
+                }
+              ],
+              "numbers": {}
+            }
+          ]
+        },
+        {
+          "key": "ears",
+          "options": [
+            {
+              "id": "Ears_01",
+              "traits": {
+                "ears": "Ears_01"
+              },
+              "images": [],
+              "numbers": {}
+            },
+            {
+              "id": "Ears_02",
+              "traits": {
+                "ears": "Ears_02"
+              },
+              "images": [
+                {
+                  "property": "earsLeft",
+                  "url": "images/pets/stroke-v1/clovie/Clovie_Ears_02_Left.png"
+                },
+                {
+                  "property": "earsRight",
+                  "url": "images/pets/stroke-v1/clovie/Clovie_Ears_02_Right.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Ears_03",
+              "traits": {
+                "ears": "Ears_03"
+              },
+              "images": [
+                {
+                  "property": "earsLeft",
+                  "url": "images/pets/stroke-v1/clovie/Clovie_Ears_03_Left.png"
+                },
+                {
+                  "property": "earsRight",
+                  "url": "images/pets/stroke-v1/clovie/Clovie_Ears_03_Right.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Ears_04",
+              "traits": {
+                "ears": "Ears_04"
+              },
+              "images": [
+                {
+                  "property": "earsLeft",
+                  "url": "images/pets/stroke-v1/clovie/Clovie_Ears_04_Left.png"
+                },
+                {
+                  "property": "earsRight",
+                  "url": "images/pets/stroke-v1/clovie/Clovie_Ears_04_Right.png"
+                }
+              ],
+              "numbers": {}
+            }
+          ]
+        },
+        {
+          "key": "feature",
+          "options": [
+            {
+              "id": "Tail_01",
+              "traits": {
+                "tail": "Tail_01"
+              },
+              "images": [],
+              "numbers": {}
+            },
+            {
+              "id": "Tail_02",
+              "traits": {
+                "tail": "Tail_02"
+              },
+              "images": [
+                {
+                  "property": "tail",
+                  "url": "images/pets/stroke-v1/clovie/Tail_02.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Tail_03",
+              "traits": {
+                "tail": "Tail_03"
+              },
+              "images": [
+                {
+                  "property": "tail",
+                  "url": "images/pets/stroke-v1/clovie/Tail_03.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Tail_04",
+              "traits": {
+                "tail": "Tail_04"
+              },
+              "images": [
+                {
+                  "property": "tail",
+                  "url": "images/pets/stroke-v1/clovie/Tail_04.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Tail_05",
+              "traits": {
+                "tail": "Tail_05"
+              },
+              "images": [
+                {
+                  "property": "tail",
+                  "url": "images/pets/stroke-v1/clovie/Tail_05.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Tail_06",
+              "traits": {
+                "tail": "Tail_06"
+              },
+              "images": [
+                {
+                  "property": "tail",
+                  "url": "images/pets/stroke-v1/clovie/Tail_06.png"
+                }
+              ],
+              "numbers": {}
+            }
+          ]
+        },
+        {
+          "key": "forehead",
+          "options": [
+            {
+              "id": "Forehead_01",
+              "traits": {
+                "forehead": "Forehead_01"
+              },
+              "images": [],
+              "numbers": {}
+            },
+            {
+              "id": "Forehead_02",
+              "traits": {
+                "forehead": "Forehead_02"
+              },
+              "images": [
+                {
+                  "property": "forehead",
+                  "url": "images/pets/clovie/Clovie_Forehead_02.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Forehead_03",
+              "traits": {
+                "forehead": "Forehead_03"
+              },
+              "images": [
+                {
+                  "property": "forehead",
+                  "url": "images/pets/clovie/Clovie_Forehead_03.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Forehead_04",
+              "traits": {
+                "forehead": "Forehead_04"
+              },
+              "images": [
+                {
+                  "property": "forehead",
+                  "url": "images/pets/clovie/Clovie_Forehead_04.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "None",
+              "traits": {
+                "forehead": null
+              },
+              "images": [],
+              "numbers": {
+                "foreheadOpacity": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "ignie": {
+      "combinationCount": 36288,
+      "groups": [
+        {
+          "key": "eyesBlush",
+          "options": [
+            {
+              "id": "Eye+brow_01|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": "Blush_01"
+              },
+              "images": [],
+              "numbers": {}
+            },
+            {
+              "id": "Eye+brow_01|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -67,
+                "sleepBlushScaleX": 0.161318164587242,
+                "sleepBlushScaleY": 0.13398745755159475,
+                "blushY": 319,
+                "blushScaleX": 0.157766205,
+                "blushScaleY": 0.131037275
+              }
+            },
+            {
+              "id": "Eye+brow_01|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -70,
+                "sleepBlushScaleX": 0.15398555347091933,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "blushY": 316,
+                "blushScaleX": 0.19635,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_01|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -65,
+                "sleepBlushScaleX": 0.161318177398374,
+                "sleepBlushScaleY": 0.13398745983739838,
+                "blushY": 321,
+                "blushScaleX": 0.171052895,
+                "blushScaleY": 0.14207291
+              }
+            },
+            {
+              "id": "Eye+brow_01|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -67,
+                "sleepBlushScaleX": 0.1246549718574109,
+                "sleepBlushScaleY": 0.1205886866791745,
+                "blushY": 319,
+                "blushScaleX": 0.15895,
+                "blushScaleY": 0.153765
+              }
+            },
+            {
+              "id": "Eye+brow_01|None",
+              "traits": {
+                "eyes": "Eye+brow_01",
+                "blush": null
+              },
+              "images": [],
+              "numbers": {
+                "sleepBlushX": 0,
+                "sleepBlushY": 0,
+                "sleepBlushScaleX": 0,
+                "sleepBlushScaleY": 0,
+                "blushOpacity": 0
+              }
+            },
+            {
+              "id": "Eye+brow_02|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": "Blush_01"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 1
+              }
+            },
+            {
+              "id": "Eye+brow_02|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -67,
+                "sleepBlushScaleX": 0.161318164587242,
+                "sleepBlushScaleY": 0.13398745755159475,
+                "eyeStyle": 1,
+                "blushY": 319,
+                "blushScaleX": 0.157766205,
+                "blushScaleY": 0.131037275
+              }
+            },
+            {
+              "id": "Eye+brow_02|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -70,
+                "sleepBlushScaleX": 0.15398555347091933,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "eyeStyle": 1,
+                "blushY": 316,
+                "blushScaleX": 0.19635,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_02|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -65,
+                "sleepBlushScaleX": 0.161318177398374,
+                "sleepBlushScaleY": 0.13398745983739838,
+                "eyeStyle": 1,
+                "blushY": 321,
+                "blushScaleX": 0.171052895,
+                "blushScaleY": 0.14207291
+              }
+            },
+            {
+              "id": "Eye+brow_02|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -67,
+                "sleepBlushScaleX": 0.1246549718574109,
+                "sleepBlushScaleY": 0.1205886866791745,
+                "eyeStyle": 1,
+                "blushY": 319,
+                "blushScaleX": 0.15895,
+                "blushScaleY": 0.153765
+              }
+            },
+            {
+              "id": "Eye+brow_02|None",
+              "traits": {
+                "eyes": "Eye+brow_02",
+                "blush": null
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_02.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": 0,
+                "sleepBlushY": 0,
+                "sleepBlushScaleX": 0,
+                "sleepBlushScaleY": 0,
+                "eyeStyle": 1,
+                "blushOpacity": 0
+              }
+            },
+            {
+              "id": "Eye+brow_03|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": "Blush_01"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 0
+              }
+            },
+            {
+              "id": "Eye+brow_03|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -67,
+                "sleepBlushScaleX": 0.161318164587242,
+                "sleepBlushScaleY": 0.13398745755159475,
+                "eyeStyle": 0,
+                "blushY": 319,
+                "blushScaleX": 0.157766205,
+                "blushScaleY": 0.131037275
+              }
+            },
+            {
+              "id": "Eye+brow_03|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -70,
+                "sleepBlushScaleX": 0.15398555347091933,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "eyeStyle": 0,
+                "blushY": 316,
+                "blushScaleX": 0.19635,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_03|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -65,
+                "sleepBlushScaleX": 0.161318177398374,
+                "sleepBlushScaleY": 0.13398745983739838,
+                "eyeStyle": 0,
+                "blushY": 321,
+                "blushScaleX": 0.171052895,
+                "blushScaleY": 0.14207291
+              }
+            },
+            {
+              "id": "Eye+brow_03|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -67,
+                "sleepBlushScaleX": 0.1246549718574109,
+                "sleepBlushScaleY": 0.1205886866791745,
+                "eyeStyle": 0,
+                "blushY": 319,
+                "blushScaleX": 0.15895,
+                "blushScaleY": 0.153765
+              }
+            },
+            {
+              "id": "Eye+brow_03|None",
+              "traits": {
+                "eyes": "Eye+brow_03",
+                "blush": null
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_03.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": 0,
+                "sleepBlushY": 0,
+                "sleepBlushScaleX": 0,
+                "sleepBlushScaleY": 0,
+                "eyeStyle": 0,
+                "blushOpacity": 0
+              }
+            },
+            {
+              "id": "Eye+brow_04|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": "Blush_01"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": -38,
+                "sleepBlushY": -55.5,
+                "sleepBlushScaleX": 0.1833161,
+                "sleepBlushScaleY": 0.08039249,
+                "eyeStyle": 1,
+                "blushX": 218,
+                "blushY": 330.5,
+                "blushScaleX": 0.1833161,
+                "blushScaleY": 0.08039249
+              }
+            },
+            {
+              "id": "Eye+brow_04|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": -38,
+                "sleepBlushY": -59,
+                "sleepBlushScaleX": 0.16865081238273924,
+                "sleepBlushScaleY": 0.1071899660412758,
+                "eyeStyle": 1,
+                "blushX": 218,
+                "blushY": 327,
+                "blushScaleX": 0.1649374,
+                "blushScaleY": 0.10482982
+              }
+            },
+            {
+              "id": "Eye+brow_04|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": -38,
+                "sleepBlushY": -59.5,
+                "sleepBlushScaleX": 0.14665290806754222,
+                "sleepBlushScaleY": 0.10718994371482175,
+                "eyeStyle": 1,
+                "blushX": 218,
+                "blushY": 326.5,
+                "blushScaleX": 0.187,
+                "blushScaleY": 0.13668
+              }
+            },
+            {
+              "id": "Eye+brow_04|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": -38,
+                "sleepBlushY": -58.5,
+                "sleepBlushScaleX": 0.1759835245528455,
+                "sleepBlushScaleY": 0.10718998390243903,
+                "eyeStyle": 1,
+                "blushX": 218,
+                "blushY": 327.5,
+                "blushScaleX": 0.18660322,
+                "blushScaleY": 0.113658345
+              }
+            },
+            {
+              "id": "Eye+brow_04|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -58,
+                "sleepBlushScaleX": 0.1246549718574109,
+                "sleepBlushScaleY": 0.08039245778611633,
+                "eyeStyle": 1,
+                "blushY": 328,
+                "blushScaleX": 0.15895,
+                "blushScaleY": 0.10251
+              }
+            },
+            {
+              "id": "Eye+brow_04|None",
+              "traits": {
+                "eyes": "Eye+brow_04",
+                "blush": null
+              },
+              "images": [
+                {
+                  "property": "sleepEyes",
+                  "url": "images/pets/sleep/Glasses.png"
+                },
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": 0,
+                "sleepBlushY": 0,
+                "sleepBlushScaleX": 0,
+                "sleepBlushScaleY": 0,
+                "eyeStyle": 1,
+                "blushX": 218,
+                "blushY": 330.5,
+                "blushScaleX": 0.1833161,
+                "blushScaleY": 0.08039249,
+                "blushOpacity": 0
+              }
+            },
+            {
+              "id": "Eye+brow_05|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": "Blush_01"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": 0
+              }
+            },
+            {
+              "id": "Eye+brow_05|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -67,
+                "sleepBlushScaleX": 0.161318164587242,
+                "sleepBlushScaleY": 0.13398745755159475,
+                "eyeStyle": 0,
+                "blushY": 319,
+                "blushScaleX": 0.157766205,
+                "blushScaleY": 0.131037275
+              }
+            },
+            {
+              "id": "Eye+brow_05|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -70,
+                "sleepBlushScaleX": 0.15398555347091933,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "eyeStyle": 0,
+                "blushY": 316,
+                "blushScaleX": 0.19635,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_05|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -65,
+                "sleepBlushScaleX": 0.161318177398374,
+                "sleepBlushScaleY": 0.13398745983739838,
+                "eyeStyle": 0,
+                "blushY": 321,
+                "blushScaleX": 0.171052895,
+                "blushScaleY": 0.14207291
+              }
+            },
+            {
+              "id": "Eye+brow_05|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -67,
+                "sleepBlushScaleX": 0.1246549718574109,
+                "sleepBlushScaleY": 0.1205886866791745,
+                "eyeStyle": 0,
+                "blushY": 319,
+                "blushScaleX": 0.15895,
+                "blushScaleY": 0.153765
+              }
+            },
+            {
+              "id": "Eye+brow_05|None",
+              "traits": {
+                "eyes": "Eye+brow_05",
+                "blush": null
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_05_blink.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": 0,
+                "sleepBlushY": 0,
+                "sleepBlushScaleX": 0,
+                "sleepBlushScaleY": 0,
+                "eyeStyle": 0,
+                "blushOpacity": 0
+              }
+            },
+            {
+              "id": "Eye+brow_06|Blush_01",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": "Blush_01"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                }
+              ],
+              "numbers": {
+                "eyeStyle": -1
+              }
+            },
+            {
+              "id": "Eye+brow_06|Blush_02",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": "Blush_02"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_02.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -67,
+                "sleepBlushScaleX": 0.161318164587242,
+                "sleepBlushScaleY": 0.13398745755159475,
+                "eyeStyle": -1,
+                "blushY": 319,
+                "blushScaleX": 0.157766205,
+                "blushScaleY": 0.131037275
+              }
+            },
+            {
+              "id": "Eye+brow_06|Blush_03",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": "Blush_03"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_03.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -70,
+                "sleepBlushScaleX": 0.15398555347091933,
+                "sleepBlushScaleY": 0.1339874296435272,
+                "eyeStyle": -1,
+                "blushY": 316,
+                "blushScaleX": 0.19635,
+                "blushScaleY": 0.17085
+              }
+            },
+            {
+              "id": "Eye+brow_06|Blush_04",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": "Blush_04"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_04.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -65,
+                "sleepBlushScaleX": 0.161318177398374,
+                "sleepBlushScaleY": 0.13398745983739838,
+                "eyeStyle": -1,
+                "blushY": 321,
+                "blushScaleX": 0.171052895,
+                "blushScaleY": 0.14207291
+              }
+            },
+            {
+              "id": "Eye+brow_06|Blush_05",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": "Blush_05"
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                },
+                {
+                  "property": "blush",
+                  "url": "images/pets/blukie/Blush_05.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushY": -67,
+                "sleepBlushScaleX": 0.1246549718574109,
+                "sleepBlushScaleY": 0.1205886866791745,
+                "eyeStyle": -1,
+                "blushY": 319,
+                "blushScaleX": 0.15895,
+                "blushScaleY": 0.153765
+              }
+            },
+            {
+              "id": "Eye+brow_06|None",
+              "traits": {
+                "eyes": "Eye+brow_06",
+                "blush": null
+              },
+              "images": [
+                {
+                  "property": "eyes",
+                  "url": "images/pets/blukie/Eye_brow_06.png"
+                }
+              ],
+              "numbers": {
+                "sleepBlushX": 0,
+                "sleepBlushY": 0,
+                "sleepBlushScaleX": 0,
+                "sleepBlushScaleY": 0,
+                "eyeStyle": -1,
+                "blushOpacity": 0
+              }
+            }
+          ]
+        },
+        {
+          "key": "mouth",
+          "options": [
+            {
+              "id": "Mouth_01",
+              "traits": {
+                "mouth": "Mouth_01"
+              },
+              "images": [],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_02",
+              "traits": {
+                "mouth": "Mouth_02"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_02.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_03",
+              "traits": {
+                "mouth": "Mouth_03"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_03.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_04",
+              "traits": {
+                "mouth": "Mouth_04"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_04.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_05",
+              "traits": {
+                "mouth": "Mouth_05"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_05.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_06",
+              "traits": {
+                "mouth": "Mouth_06"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_06.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Mouth_07",
+              "traits": {
+                "mouth": "Mouth_07"
+              },
+              "images": [
+                {
+                  "property": "mouth",
+                  "url": "images/pets/blukie/Mouth_07.png"
+                }
+              ],
+              "numbers": {}
+            }
+          ]
+        },
+        {
+          "key": "ears",
+          "options": [
+            {
+              "id": "Ears_01",
+              "traits": {
+                "ears": "Ears_01"
+              },
+              "images": [],
+              "numbers": {}
+            },
+            {
+              "id": "Ears_02",
+              "traits": {
+                "ears": "Ears_02"
+              },
+              "images": [
+                {
+                  "property": "earsLeft",
+                  "url": "images/pets/ignie/fitted-v2/Ignie_Ears_02_Left.png"
+                },
+                {
+                  "property": "earRootBlend",
+                  "url": "images/pets/ignie/fitted-v2/Ignie_Ears_02_Left_RootBlend.png"
+                },
+                {
+                  "property": "earsRight",
+                  "url": "images/pets/ignie/fitted-v2/Ignie_Ears_02_Right.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Ears_03",
+              "traits": {
+                "ears": "Ears_03"
+              },
+              "images": [
+                {
+                  "property": "earsLeft",
+                  "url": "images/pets/ignie/fitted-v2/Ignie_Ears_03_Left.png"
+                },
+                {
+                  "property": "earRootBlend",
+                  "url": "images/pets/ignie/fitted-v2/Ignie_Ears_03_Left_RootBlend.png"
+                },
+                {
+                  "property": "earsRight",
+                  "url": "images/pets/ignie/fitted-v2/Ignie_Ears_03_Right.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Ears_04",
+              "traits": {
+                "ears": "Ears_04"
+              },
+              "images": [
+                {
+                  "property": "earsLeft",
+                  "url": "images/pets/ignie/fitted-v2/Ignie_Ears_04_Left.png"
+                },
+                {
+                  "property": "earRootBlend",
+                  "url": "images/pets/ignie/fitted-v2/Ignie_Ears_04_Left_RootBlend.png"
+                },
+                {
+                  "property": "earsRight",
+                  "url": "images/pets/ignie/fitted-v2/Ignie_Ears_04_Right.png"
+                }
+              ],
+              "numbers": {}
+            }
+          ]
+        },
+        {
+          "key": "feature",
+          "options": [
+            {
+              "id": "FlameHair_01",
+              "traits": {
+                "flameHair": "FlameHair_01"
+              },
+              "images": [],
+              "numbers": {}
+            },
+            {
+              "id": "FlameHair_02",
+              "traits": {
+                "flameHair": "FlameHair_02"
+              },
+              "images": [
+                {
+                  "property": "sleepHair",
+                  "url": "images/pets/sleep/ignie/FlameHair_02_fuller.png"
+                },
+                {
+                  "property": "flameHair",
+                  "url": "images/pets/awake/ignie/FlameHair_02_fuller_v2.png"
+                }
+              ],
+              "numbers": {
+                "sleepHairY": -104,
+                "sleepHairRotation": 0.20943951023931953,
+                "awakeHairX": 5.099999999999994
+              }
+            },
+            {
+              "id": "FlameHair_03",
+              "traits": {
+                "flameHair": "FlameHair_03"
+              },
+              "images": [
+                {
+                  "property": "sleepHair",
+                  "url": "images/pets/sleep/ignie/FlameHair_03_fuller.png"
+                },
+                {
+                  "property": "flameHair",
+                  "url": "images/pets/awake/ignie/FlameHair_03_fuller_v3.png"
+                }
+              ],
+              "numbers": {
+                "sleepHairX": -2,
+                "awakeHairX": 3.5999999999999943,
+                "awakeHairRotation": 0.05235987755982988
+              }
+            },
+            {
+              "id": "FlameHair_04",
+              "traits": {
+                "flameHair": "FlameHair_04"
+              },
+              "images": [
+                {
+                  "property": "sleepHair",
+                  "url": "images/pets/sleep/ignie/FlameHair_04_fuller_v3.png"
+                },
+                {
+                  "property": "flameHair",
+                  "url": "images/pets/awake/ignie/FlameHair_04_fuller_v2.png"
+                }
+              ],
+              "numbers": {
+                "sleepHairX": -2,
+                "sleepHairRotation": 0.24434609527920614,
+                "awakeHairX": -3,
+                "awakeHairRotation": 0.12217304763960307
+              }
+            },
+            {
+              "id": "FlameHair_05",
+              "traits": {
+                "flameHair": "FlameHair_05"
+              },
+              "images": [
+                {
+                  "property": "sleepHair",
+                  "url": "images/pets/sleep/ignie/FlameHair_05_fuller_v3.png"
+                },
+                {
+                  "property": "flameHair",
+                  "url": "images/pets/awake/ignie/FlameHair_05_fuller.png"
+                }
+              ],
+              "numbers": {
+                "sleepHairX": -2,
+                "sleepHairY": -104,
+                "sleepHairRotation": 0.20943951023931953,
+                "awakeHairX": 2,
+                "awakeHairRotation": 0.17453292519943295
+              }
+            },
+            {
+              "id": "FlameHair_06",
+              "traits": {
+                "flameHair": "FlameHair_06"
+              },
+              "images": [
+                {
+                  "property": "sleepHair",
+                  "url": "images/pets/sleep/ignie/FlameHair_06_fuller_v3.png"
+                },
+                {
+                  "property": "flameHair",
+                  "url": "images/pets/awake/ignie/FlameHair_06_fuller_v3.png"
+                }
+              ],
+              "numbers": {
+                "sleepHairY": -104,
+                "sleepHairRotation": 0.20943951023931953,
+                "awakeHairX": 3.5999999999999943,
+                "awakeHairRotation": 0.05235987755982988
+              }
+            }
+          ]
+        },
+        {
+          "key": "forehead",
+          "options": [
+            {
+              "id": "Forehead_01",
+              "traits": {
+                "forehead": "Forehead_01"
+              },
+              "images": [],
+              "numbers": {}
+            },
+            {
+              "id": "Forehead_02",
+              "traits": {
+                "forehead": "Forehead_02"
+              },
+              "images": [
+                {
+                  "property": "forehead",
+                  "url": "images/pets/ignie/Ignie_Forehead_02.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Forehead_03",
+              "traits": {
+                "forehead": "Forehead_03"
+              },
+              "images": [
+                {
+                  "property": "forehead",
+                  "url": "images/pets/ignie/Ignie_Forehead_03.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Forehead_04",
+              "traits": {
+                "forehead": "Forehead_04"
+              },
+              "images": [
+                {
+                  "property": "forehead",
+                  "url": "images/pets/ignie/Ignie_Forehead_04.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "Forehead_05",
+              "traits": {
+                "forehead": "Forehead_05"
+              },
+              "images": [
+                {
+                  "property": "forehead",
+                  "url": "images/pets/ignie/Ignie_Forehead_05.png"
+                }
+              ],
+              "numbers": {}
+            },
+            {
+              "id": "None",
+              "traits": {
+                "forehead": null
+              },
+              "images": [],
+              "numbers": {
+                "foreheadOpacity": 0
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,4 +1,22 @@
-# FiTama Coming Soon
+# FiTama website
+
+## October 26, 2026 — interactive website release
+
+Owner authorized publication to fitama.app. This website-only release replaces Coming Soon with the approved Journey landscape/parallax, three overlapping eggs, Rive pet previews with click-locked traits and Happy/Idle interaction, responsive sample app screens, Guide, Contact and Android waitlist. Initial loading shows three CSS eggs and the loading message, without the Fitama word; early styles are inline and failed artwork falls back to a readable static page. The later desktop/mobile screenshot size reduction is included.
+
+Publish only `docs/` from main through the existing GitHub Pages configuration. App source, backend, QA, native binaries, provider settings, email/DNS and automations are outside this release. Runtime-only packaging excludes source tests, private art prompts, local paths and historical review artifacts. Runtime/font licenses remain included.
+
+The public App Store URL returned404 and the official Philippines lookup returned resultCount0, so the App Store badge says Coming soon and is disabled. Existing `/r/CODE` invite fallback and TestFlight routing are preserved byte-for-byte. No beta group or Apple release setting changed. `CNAME`, `.nojekyll`, `app-ads.txt` and `.well-known/apple-app-site-association` are preserved.
+
+Privacy adds only the website contact-form and Android waitlist handling prepared with those features: fields, purposes, Google Apps Script/Sheets, support delivery, duplicate/abuse records and waitlist withdrawal/retention. Existing account, Health, social, planned-chat, notifications and ads sections are unchanged. App/ads policy revisions and proposed Terms remain excluded from the public artifact; the Terms footer link is omitted until finalization. This does not enable chat or real rewarded ads or settle SDK privacy questions.
+
+Pre-publication checks:128 existing website tests passed; all production-root JavaScript syntax checks and494 local asset/route/fragment references passed. Current Rive/trait asset closure is included. Browser checks of the exact package confirmed3-egg loading, desktop/mobile layout, actual Clovie Rive Happy selection, waitlist dialog and nested public Privacy. The temporary preview server was made quiet to prevent its output pipe from blocking requests; stale local response caches were refreshed. These are source/browser checks, not physical Safari/VoiceOver acceptance.
+
+Both existing form endpoints returned valid read-only GET responses. No email or waitlist entry was submitted during this publication task; production acknowledgment/delivery, receiving Reply-To and sheet persistence remain separate acceptance checks. Never report successful delivery from a timeout or opaque response.
+
+Deployment acceptance and exact source/live hashes are recorded outside the public document root. The previous deployed baseline is `f3637291516bb237beab43dfd7ea0b27f014bd14`; rollback by reverting this release commit and pushing main so Pages rebuilds. No DNS rebind is required.
+
+---
 
 Website-only static publication. The public site is built solely from `docs/`; the app, backend, account records, source repository history and draft policies are not included.
 

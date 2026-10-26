@@ -1,0 +1,32 @@
+.contact-page{background:#faf6e9;position:relative;isolation:isolate}
+.contact-page:before{content:'';position:absolute;inset:0;z-index:-1;background:url('assets/onboarding-icon-pattern.svg') center top/560px auto;opacity:.32;pointer-events:none}
+.contact-page main{width:var(--interior-width);margin:auto;padding:50px 0 64px}
+.contact-intro{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:center;gap:60px}
+.contact-intro h1{font-size:clamp(38px,4.5vw,58px);max-width:650px;text-wrap:balance}
+.contact-intro p{font-size:16px;line-height:1.7;max-width:520px;margin-top:18px}
+.contact-companion{width:100%;height:auto;max-width:360px;justify-self:center}
+#contact-form{margin-top:28px;max-width:560px}
+#contact-form fieldset{border:0;margin:0;padding:0;min-width:0;display:grid;gap:18px}
+.contact-field{display:grid;gap:8px}
+.contact-field label{font-size:13px;font-weight:700}
+.contact-field :is(input,select,textarea){width:100%;min-width:0;border:1px solid #9f9487;border-radius:12px;padding:13px 15px;background:#fffcf5;color:#302018;font:400 16px/1.5 Arial,sans-serif;min-height:48px}
+.contact-field select{appearance:none;-webkit-appearance:none;padding-right:46px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='m4 6 4 4 4-4' fill='none' stroke='%23302018' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;background-size:16px 16px}
+@media(forced-colors:active){.contact-field select{appearance:auto;-webkit-appearance:auto;background-image:none}}
+.contact-field textarea{resize:vertical;min-height:132px}
+.contact-field :is(input,textarea)::placeholder{color:#776d62;opacity:1}
+.contact-intro .contact-note{font-size:12px;line-height:1.65;margin-top:14px;color:#594a3d}
+.contact-note a{text-underline-offset:4px}
+.contact-send{margin-top:20px;min-height:48px;padding:13px 24px;border:0;border-radius:13px;background:#302018;color:#fff8e9;font:700 14px/1.5 Arial,sans-serif;cursor:pointer}
+.contact-send:hover{background:#285845}.contact-send:disabled{cursor:wait}
+.contact-intro .contact-status{font-size:13px;line-height:1.6;min-height:24px;margin-top:12px;color:#594a3d}.contact-status[data-state=error]{color:#8c3022}.contact-status[data-state=success]{color:#285845}
+.contact-aside{display:grid;justify-items:center;gap:22px;min-width:0}
+.contact-guide-banner{width:100%;max-width:360px;display:flex;align-items:center;justify-content:space-between;gap:13px;padding:16px 20px;border:1px solid #28584530;border-radius:16px;background:#e9eddf;color:#302018;text-decoration:none;min-height:76px}
+.guide-banner-prompt{display:block;font-size:12px;line-height:1.5;margin-bottom:3px;color:#4b5b46}.contact-guide-banner strong{font-size:15px;line-height:1.5}.guide-banner-book{width:43px;height:43px;object-fit:contain;flex-shrink:0}.guide-banner-copy{flex:1;min-width:0}.guide-banner-arrow{width:25px;height:25px;flex-shrink:0;color:#285845}.contact-guide-banner:hover{background:#dde6d2;color:#285845}
+.contact-trap,.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.contact-page .site-footer{border-top:1px solid #30201829}
+.contact-page :is(input,textarea,select,button,a):focus-visible{outline:3px solid #ad6c13;outline-offset:4px}
+@media(max-width:699px){.contact-page main{padding-top:28px;padding-bottom:42px}.contact-intro{grid-template-columns:1fr;gap:24px}.contact-intro h1{font-size:39px}.contact-intro p{font-size:15px;margin-top:16px}.contact-companion{max-width:220px}.contact-intro .contact-note{font-size:12px}.contact-intro .contact-status{font-size:13px}.contact-send{width:100%}.contact-aside{gap:16px}.contact-guide-banner{padding:15px 16px;gap:10px}.guide-banner-book{width:36px;height:36px}.guide-banner-arrow{width:22px;height:22px}}
+
+/* Match the Guide search field: highlight its own rounded border on focus. */
+.contact-page .contact-field :is(input,select,textarea):focus{outline:none;border-color:#326954;box-shadow:0 0 0 1px #326954}
+@media(forced-colors:active){.contact-page .contact-field :is(input,select,textarea):focus{border-color:Highlight;outline:1px solid Highlight;outline-offset:0;box-shadow:none}}

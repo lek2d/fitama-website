@@ -1,0 +1,208 @@
+{
+  "sourceRevision": "a8a6e77f9730b111330e553487d71baa03ef31a3",
+  "rig": "fitama-pets.riv",
+  "rigSha256": "a2058b7867321df5f10ae27971c1259ec17d0247252fdfbebdaf3f7a2b17a55c",
+  "pets": [
+    {
+      "id": "blukie",
+      "name": "Blukie",
+      "artboard": "Blukie",
+      "stateMachine": "State Machine 1",
+      "viewModel": "ViewModel1",
+      "numbers": {
+        "sleeping": 0,
+        "sleepBlushX": -69,
+        "sleepBlushY": -81.19999999999999,
+        "sleepBlushScaleX": 0.1725328330206379,
+        "sleepBlushScaleY": 0.15763227016885553,
+        "eyeStyle": 2,
+        "ambientActivity": 0
+      },
+      "frame": {
+        "heightRatio": 0.875,
+        "canvasWidthPercent": 128,
+        "canvasHeightPercent": 146.286,
+        "leftPercent": -14,
+        "topPercent": -22.857
+      },
+      "images": [
+        {
+          "property": "sleepEyes",
+          "url": "images/pets/sleep/Eyes.png"
+        },
+        {
+          "property": "eyes",
+          "url": "images/pets/blukie/Eye_brow_01.png"
+        },
+        {
+          "property": "mouth",
+          "url": "images/pets/blukie/Mouth_01.png"
+        },
+        {
+          "property": "ears",
+          "url": "images/pets/stroke-v1/blukie/Ears_01.png"
+        },
+        {
+          "property": "horns",
+          "url": "images/pets/stroke-v1/blukie/Horn_01.png"
+        },
+        {
+          "property": "blush",
+          "url": "images/pets/blukie/Blush_01.png"
+        },
+        {
+          "property": "forehead",
+          "url": "images/pets/blukie/Forehead_01.png"
+        }
+      ]
+    },
+    {
+      "id": "clovie",
+      "name": "Clovie",
+      "artboard": "Clovie",
+      "stateMachine": "State Machine 1",
+      "viewModel": "ClovieTraits",
+      "numbers": {
+        "sleeping": 0,
+        "sleepBlushX": -76,
+        "sleepBlushY": -81.5,
+        "sleepBlushScaleX": 0.161318185,
+        "sleepBlushScaleY": 0.120588735,
+        "eyeStyle": 2,
+        "blushX": 200,
+        "blushY": 291.5,
+        "blushScaleX": 0.161318185,
+        "blushScaleY": 0.120588735,
+        "mouthScaleY": 0.11,
+        "blushOpacity": 1,
+        "foreheadOpacity": 1,
+        "ambientActivity": 0
+      },
+      "frame": {
+        "heightRatio": 0.875,
+        "canvasWidthPercent": 113.0242825607064,
+        "canvasHeightPercent": 129.1706086408073,
+        "leftPercent": -6.622516556291391,
+        "topPercent": -13.875748975086724
+      },
+      "images": [
+        {
+          "property": "sleepEyes",
+          "url": "images/pets/sleep/Eyes.png"
+        },
+        {
+          "property": "tail",
+          "url": "images/pets/stroke-v1/clovie/Tail_01.png"
+        },
+        {
+          "property": "earsLeft",
+          "url": "images/pets/stroke-v1/clovie/Clovie_Ears_01_Left.png"
+        },
+        {
+          "property": "earRootBlend",
+          "url": "images/pets/transparent-trait.png"
+        },
+        {
+          "property": "earsRight",
+          "url": "images/pets/stroke-v1/clovie/Clovie_Ears_01_Right.png"
+        },
+        {
+          "property": "forehead",
+          "url": "images/pets/clovie/Clovie_Forehead_01.png"
+        },
+        {
+          "property": "eyes",
+          "url": "images/pets/blukie/Eye_brow_01.png"
+        },
+        {
+          "property": "blush",
+          "url": "images/pets/blukie/Blush_01.png"
+        },
+        {
+          "property": "mouth",
+          "url": "images/pets/blukie/Mouth_01.png"
+        }
+      ]
+    },
+    {
+      "id": "ignie",
+      "name": "Ignie",
+      "artboard": "Ignie",
+      "stateMachine": "State Machine 1",
+      "viewModel": "IgnieTraits",
+      "numbers": {
+        "sleepHairX": 0,
+        "sleepHairY": -106,
+        "sleepHairRotation": 0.17453292519943295,
+        "sleepHairScaleX": 0.43,
+        "sleepHairScaleY": 0.40829346,
+        "sleeping": 0,
+        "sleepBlushX": -34,
+        "sleepBlushY": -60.5,
+        "sleepBlushScaleX": 0.17598348999999996,
+        "sleepBlushScaleY": 0.120588735,
+        "awakeHairX": 3.8000000000000114,
+        "awakeHairY": 48,
+        "awakeHairRotation": 0.08726646259971647,
+        "eyeStyle": 2,
+        "blushX": 222,
+        "blushY": 325.5,
+        "blushScaleX": 0.17598349,
+        "blushScaleY": 0.120588735,
+        "mouthScaleY": 0.11,
+        "blushOpacity": 1,
+        "foreheadOpacity": 1,
+        "ambientActivity": 0
+      },
+      "frame": {
+        "heightRatio": 0.875,
+        "canvasWidthPercent": 113.0242825607064,
+        "canvasHeightPercent": 129.1706086408073,
+        "leftPercent": -6.622516556291391,
+        "topPercent": -13.875748975086724
+      },
+      "images": [
+        {
+          "property": "sleepEyes",
+          "url": "images/pets/sleep/Eyes.png"
+        },
+        {
+          "property": "sleepHair",
+          "url": "images/pets/sleep/ignie/FlameHair_01_fuller_v3.png"
+        },
+        {
+          "property": "earsLeft",
+          "url": "images/pets/ignie/fitted-v2/Ignie_Ears_01_Left.png"
+        },
+        {
+          "property": "earRootBlend",
+          "url": "images/pets/ignie/fitted-v2/Ignie_Ears_01_Left_RootBlend.png"
+        },
+        {
+          "property": "flameHair",
+          "url": "images/pets/awake/ignie/FlameHair_01_fuller.png"
+        },
+        {
+          "property": "earsRight",
+          "url": "images/pets/ignie/fitted-v2/Ignie_Ears_01_Right.png"
+        },
+        {
+          "property": "forehead",
+          "url": "images/pets/ignie/Ignie_Forehead_01.png"
+        },
+        {
+          "property": "eyes",
+          "url": "images/pets/blukie/Eye_brow_01.png"
+        },
+        {
+          "property": "blush",
+          "url": "images/pets/blukie/Blush_01.png"
+        },
+        {
+          "property": "mouth",
+          "url": "images/pets/blukie/Mouth_01.png"
+        }
+      ]
+    }
+  ]
+}

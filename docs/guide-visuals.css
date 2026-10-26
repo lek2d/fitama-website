@@ -1,0 +1,167 @@
+/* Illustrated reference sections, scoped to the guide. */
+.guide-page .guide-hero > .guide-reader { top: 110px; bottom: auto; width: min(330px, calc(100% - 640px)); height: auto; aspect-ratio: 1; }
+.guide-page .guide-visual-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+.guide-visual-nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 14px;
+  border: 1px solid #c9cbb9;
+  border-radius: 16px;
+  text-decoration: none;
+  background: #fffaf0;
+}
+.guide-visual-nav img { width: 54px; height: 54px; object-fit: contain; flex: none; }
+.guide-visual-nav strong, .guide-visual-nav small { display: block; }
+.guide-visual-nav small { margin-top: 5px; line-height: 1.5; }
+.guide-visual-nav a > span { min-width: 0; }
+.guide-visual-nav a .link-arrow { width: 20px; height: 20px; margin-left: auto; }
+.guide-page .guide-article h3 { font-size: 1.22rem; line-height: 1.35; margin: 28px 0 12px; }
+.guide-page .guide-article caption { text-align: left; font-size: .875rem; padding: 0 0 12px; }
+.guide-page .guide-walkthrough {
+  display: grid;
+  grid-template-columns: minmax(150px, 205px) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+  margin: 28px 0;
+}
+.guide-walkthrough figure { margin: 0; }
+.guide-walkthrough figure img { display: block; width: 100%; height: auto; border-radius: 18px; border: 2px solid #332317; }
+.guide-walkthrough figcaption { font-size: .75rem; line-height: 1.5; margin-top: 10px; text-align: center; }
+.guide-page .guide-walkthrough h3 { margin-top: 0; }
+.guide-page .guide-steps { padding-left: 24px; }
+.guide-steps li { padding-left: 5px; margin-bottom: 16px; }
+.guide-page .guide-note { border-left: 3px solid #557863; padding: 12px 18px; background: #eeeedf; }
+.guide-reward-track, .guide-shop-grid { list-style: none; padding: 0; display: grid; gap: 12px; margin: 24px 0; }
+.guide-page .guide-article .guide-reward-track, .guide-page .guide-article .guide-shop-grid { padding: 0; margin: 24px 0; }
+.guide-page .guide-article .guide-reward-track li, .guide-page .guide-article .guide-shop-grid li { margin: 0; }
+.guide-reward-track { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.guide-shop-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.guide-reward-track li, .guide-shop-grid li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #f0eddf;
+  border: 1px solid #d9d5c5;
+  border-radius: 14px;
+  padding: 18px 12px;
+  gap: 8px;
+  line-height: 1.4;
+}
+.guide-reward-track img, .guide-shop-grid img { object-fit: contain; width: 76px; height: 76px; }
+.guide-reward-track strong, .guide-shop-grid strong { font-size: .94rem; }
+.guide-shop-grid li > span { font-size: .875rem; color: #365e4f; }
+.guide-card-grid, .guide-enemy-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin: 24px 0; }
+.guide-character-card, .guide-enemy-card { padding: 24px; border: 1px solid #d4d3c1; border-radius: 18px; background: #fffaf0; }
+.guide-character-card > img, .guide-enemy-card > img { object-fit: contain; display: block; margin: 0 auto 12px; max-width: 100%; }
+.guide-page .guide-kicker { font-size: .75rem; letter-spacing: .06em; font-weight: 700; color: #426450; margin: 8px 0; }
+.guide-page .guide-character-card h3, .guide-page .guide-enemy-card h3 { margin-top: 6px; }
+.guide-page .guide-character-card p, .guide-page .guide-enemy-card p { font-size: .94rem; line-height: 1.6; }
+.guide-page .guide-character-card .guide-goal { font-weight: 700; font-size: 1.08rem; }
+.guide-enemy-card dl { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; border-block: 1px solid #dedaca; padding: 14px 0; margin: 16px 0; font-size: .85rem; }
+.guide-enemy-card dt { font-weight: 700; color: #426450; margin-bottom: 5px; }
+.guide-enemy-card dd { margin: 0; line-height: 1.65; }
+.guide-page a:focus-visible, .guide-page button:focus-visible { outline: 3px solid #326954; outline-offset: 5px; }
+.guide-page #main:focus { outline: none; }
+@media (max-width: 1000px) {
+  .guide-page .guide-hero > .guide-reader { top: 180px; width: 160px; height: 160px; }
+  .guide-page .guide-visual-nav { grid-template-columns: 1fr; gap: 10px; }
+  .guide-visual-nav a { padding: 12px 16px; }
+  .guide-page .guide-walkthrough { grid-template-columns: 160px minmax(0, 1fr); gap: 24px; }
+}
+@media (max-width: 600px) {
+  .guide-page .guide-walkthrough { grid-template-columns: 1fr; }
+  .guide-walkthrough figure { width: min(205px, 70%); margin-inline: auto; }
+  .guide-card-grid, .guide-enemy-grid { grid-template-columns: 1fr; }
+  .guide-reward-track, .guide-shop-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .guide-character-card, .guide-enemy-card { padding: 20px; }
+  .guide-shop-grid li, .guide-reward-track li { padding: 14px 8px; }
+  .guide-page .guide-table th, .guide-page .guide-table td { overflow-wrap: anywhere; padding: 12px 7px; }
+}
+
+@media (min-width: 1440px) {
+  .guide-page .guide-walkthrough { grid-template-columns: 244px minmax(0, 1fr); }
+}
+@media (max-width: 699px) {
+  .guide-page .guide-walkthrough { grid-template-columns: minmax(0, 1fr); }
+  .guide-walkthrough figure { width: min(244px, 74%); margin-inline: auto; }
+}
+
+/* Loot uses the same catalog artwork and labels as the item reference tables. */
+.guide-page .loot-label{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 9px;margin:20px 0 10px;font-size:13px}
+.loot-label>span{font-size:11px;color:#426450}
+.guide-page .guide-article .loot-icons{list-style:none;display:grid;gap:8px;margin:0;padding:0}
+.guide-page .guide-article .loot-icons li{margin:0;min-width:0;padding:0}
+.loot-icons a{display:flex;align-items:center;gap:10px;min-height:64px;padding:6px;border-radius:10px;text-decoration:none;font-size:13px;line-height:1.4;color:#302018}
+.loot-icons a:hover{background:#e6eddb;text-decoration:underline;text-underline-offset:3px}
+.loot-icons img{width:48px;height:48px;object-fit:contain;flex:none}
+.loot-icons span{overflow-wrap:anywhere}.loot-icons small{display:block;font-size:11px;color:#426450;margin-top:4px}
+.guide-page .guide-article .loot-items{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.loot-items a{height:100%;flex-direction:column;text-align:center;font-size:12px;padding:8px 4px;gap:6px}
+.guide-page .loot-items-label{border-top:1px solid #dedaca;padding-top:18px;margin-top:20px}
+.guide-page .loot-empty{font-size:13px;color:#594a3d}
+.guide-page .guide-illustrated-table tr[id]{scroll-margin-top:28px}
+.guide-page .guide-illustrated-table tr[id]:target{background:#e6eddb}
+.guide-page .guide-illustrated-table tr[id]:focus{outline:2px solid #326954;outline-offset:-2px}
+
+/* Readable HTML sequence: source → shared Health data → Fitama conversion. */
+.health-flow{margin:28px 0 32px;padding:26px 22px;border:1px solid #d4d3c1;border-radius:18px;background:#fffaf0}
+.health-flow>figcaption{font:500 27px/1.2 Fredoka,sans-serif;max-width:560px;text-wrap:balance}
+.guide-page .guide-article .health-flow-steps{list-style:none;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:18px;margin:28px 0;padding:0}
+.guide-page .health-flow-steps li{position:relative;min-width:0;margin:0;text-align:left}
+.health-flow-steps li>img{width:78px;height:78px;display:block;margin:0 auto 18px;object-fit:contain}
+.health-flow-steps li:not(:last-child):after{content:'';position:absolute;top:33px;right:-13px;width:10px;height:10px;border-top:2px solid #638568;border-right:2px solid #638568;transform:rotate(45deg)}
+.health-flow-steps strong{display:block;font-size:14px;line-height:1.35;color:#302018}
+.guide-page .health-flow-steps p{font-size:13px;line-height:1.6;margin-top:9px}
+.guide-page .health-flow-note{font-size:12px;line-height:1.7;margin-top:16px}
+.health-flow-link{font-weight:700}
+@media(max-width:1100px){
+ .guide-page .guide-article .health-flow-steps{grid-template-columns:1fr;gap:30px;margin-block:26px}
+ .guide-page .health-flow-steps li{display:grid;grid-template-columns:68px minmax(0,1fr);gap:18px;align-items:center}
+ .health-flow-steps li>img{width:64px;height:64px;margin:0}
+ .health-flow-steps li:not(:last-child):after{top:auto;bottom:-19px;right:auto;left:28px;transform:rotate(135deg)}
+ .health-flow-steps strong{font-size:15px}.guide-page .health-flow-steps p{font-size:14px;margin-top:6px}
+}
+@media(max-width:600px){
+ .health-flow{padding:22px 16px;margin-inline:0}.health-flow>figcaption{font-size:25px}
+ .guide-page .health-flow-steps li{grid-template-columns:54px minmax(0,1fr);gap:14px}.health-flow-steps li>img{width:54px;height:54px}.health-flow-steps li:not(:last-child):after{left:22px}
+}
+.guide-enemy-card{scroll-margin-top:28px}
+.guide-enemy-card:focus{outline:2px solid #326954;outline-offset:3px}
+@media(max-width:1000px){.guide-enemy-grid{grid-template-columns:1fr}}
+/* Let narrow Guide columns shrink without pushing deep-linked articles sideways. */
+.guide-page #guide-results{min-width:0}
+@media(max-width:699px){.guide-page .guide-table thead th{white-space:normal;overflow-wrap:anywhere}}
+
+/* A single rounded field focus indicator replaces the input's inset outline. */
+.guide-page .search-line:focus-within{border-color:#326954;box-shadow:0 0 0 1px #326954}
+.guide-page .search-line input:focus-visible{outline:none}
+.guide-page .search-line input::-webkit-search-cancel-button{appearance:none;-webkit-appearance:none;display:none}
+.guide-page .search-line button:focus-visible{outline:none;background:#326954;color:#fff8ed}
+@media(forced-colors:active){
+ .guide-page .search-line:focus-within{border-color:Highlight;outline:1px solid Highlight;outline-offset:0;box-shadow:none}
+ .guide-page .search-line button:focus-visible{outline:2px solid Highlight;outline-offset:-4px}
+}
+#guide-results{scroll-margin-top:28px}
+/* This is a programmatic section destination; its links keep their own focus rings. */
+.guide-page #guide-results:focus{outline:none}
+
+/* Search replaces the browsing layout with concise links to complete answers. */
+.guide-page .guide-body.is-searching{display:block}
+.guide-body.is-searching #guide-results{max-width:860px}
+.guide-search-heading h2{font-size:clamp(28px,3.4vw,40px);line-height:1.2;margin:10px 0 16px;overflow-wrap:anywhere}
+.guide-match-category{font-size:10px;line-height:1.5;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;color:#426844}
+.guide-match-list{list-style:none;margin:10px 0 0;padding:0}
+.guide-match-list>li{padding:25px 0;border-bottom:1px solid var(--rule)}
+.guide-match-list h3{font-size:24px;line-height:1.3;margin:8px 0 10px}
+.guide-match-link{text-decoration:none;overflow-wrap:anywhere}
+.guide-match-link:hover .arrow-link-label{text-decoration:underline}
+.guide-match-link .link-arrow{width:20px;height:20px;margin-left:8px}
+.guide-match-excerpt{font-size:15px;line-height:1.7;color:#594a3d;max-width:78ch}
+@media(max-width:699px){.guide-match-list h3{font-size:22px}.guide-match-excerpt{font-size:14px}.guide-match-list>li{padding:22px 0}}

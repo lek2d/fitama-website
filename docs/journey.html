@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Fitama | Your movement. A new adventure.</title><link rel="icon" type="image/png" href="assets/tama-power.png?v=tp-favicon-v1"><meta name="description" content="Turn everyday movement into Tama Power. Meet your companion, explore Fitama, and learn how Apple Health connects your routine to your adventure."><style id="page-loader-critical">.page-loader{display:none}html.page-preparing{overflow:hidden;scrollbar-gutter:stable}html.page-preparing body>:not(.page-loader):not(script){visibility:hidden}html.page-preparing .page-loader{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;padding:24px;text-align:center;background:#faf6e9;color:#302018}.page-loader p{font:15px/1.6 Arial,sans-serif;margin:0;color:#34534b}.loader-eggs{display:flex;align-items:end;gap:10px;height:39px}.loader-eggs span{width:23px;height:31px;border-radius:52% 52% 45% 45%;background:#89bd70;animation:loader-breathe 1.2s ease-in-out infinite}.loader-eggs span:nth-child(2){background:#45ace5;animation-delay:.16s}.loader-eggs span:nth-child(3){background:#f0b142;animation-delay:.32s}@keyframes loader-breathe{0%,70%,100%{transform:translateY(0)}35%{transform:translateY(-7px)}}@media(prefers-reduced-motion:reduce){.loader-eggs span{animation:none}}.page-art-fallback .scroll-story{display:none}.page-art-fallback .story-summary{display:block}</style>
+<script id="page-loader-boot">
+(()=>{
+  const root=document.documentElement;
+  root.classList.add('page-preparing');root.dataset.pageLoading='pending';
+  let watchdog;
+  const finish=fallback=>{
+    if(root.dataset.pageLoading!=='pending')return;
+    clearTimeout(watchdog);
+    root.dataset.pageLoading=fallback?'fallback':'ready';
+    if(fallback){root.classList.add('page-art-fallback','motion-off');document.body?.classList.add('reduced-motion');}
+    root.classList.remove('page-preparing');root.classList.add('page-ready');
+    const main=document.querySelector('main');
+    if(main){main.inert=false;main.removeAttribute('aria-busy');}
+    document.querySelector('.page-loader')?.setAttribute('aria-hidden','true');
+    if(fallback){const header=document.querySelector('.site-header');if(header){header.dataset.visible='true';header.inert=false;}}
+    document.dispatchEvent(new Event('fitama:loading-finished'));
+  };
+  const expire=()=>{if(document.hidden){watchdog=setTimeout(expire,12000);return;}finish(true);};
+  watchdog=setTimeout(expire,12000);
+  document.addEventListener('fitama:page-ready',()=>finish(false),{once:true});
+  document.addEventListener('fitama:page-fallback',()=>finish(true),{once:true});
+  document.addEventListener('DOMContentLoaded',()=>{
+    const main=document.querySelector('main');
+    if(main&&root.dataset.pageLoading==='pending'){main.inert=true;main.setAttribute('aria-busy','true');}
+  },{once:true});
+  document.addEventListener('error',event=>{if(event.target?.tagName==='IMG')event.target.classList.add('image-unavailable');},true);
+})();
+</script>
+<link rel="stylesheet" href="page-loader.css?v=preloader-v1&release=20261026">
+<link rel="stylesheet" href="journey.css?v=clovie-size-v3&release=20261026"><link rel="stylesheet" href="site.css?v=preloader-v1&release=20261026"><link rel="stylesheet" href="typography.css?v=sentence-wrap-v1&release=20261026"><link rel="stylesheet" href="waitlist.css?v=android-waitlist-v1&release=20261026"><link rel="stylesheet" href="navigation.css?v=logo-download-v7&release=20261026"><link rel="stylesheet" href="pet-preview.css?v=clovie-size-v3&release=20261026"></head>
+<body class="journey-page">
+<div class="page-loader" role="status" aria-live="polite"><div class="loader-eggs" aria-hidden="true"><span></span><span></span><span></span></div><p>Getting your adventure ready…</p></div>
+
+<a class="skip" href="#story-summary">Skip the scroll animation</a>
+<header class="site-header" aria-label="Site header">
+  <a class="nav-brand" href="journey.html" aria-label="Fitama home"><span class="interior-nav-logo"><img src="assets/logo.png" alt="Fitama" width="112" height="46"></span></a>
+  <a class="nav-download" href="#download">Get Fitama</a>
+</header>
+<main class="journey-content">
+<div class="content-pattern" aria-hidden="true"></div>
+<section class="scroll-story" tabindex="-1" aria-label="Blukie's journey from the clearing into Fitama">
+<div class="stage">
+<div class="world-scene">
+<div class="world-background" aria-hidden="true">
+<div class="sky" aria-hidden="true"></div>
+<div class="scenery hero-plane cloud-banks" aria-hidden="true"><img class="hero-plane-art cloud-field" src="assets/hero-parallax-v1/clouds.png" width="1774" height="887" alt="" decoding="async"></div>
+<img class="scenery hero-plane mountains" src="assets/hero-parallax-v1/mountains.png" width="1774" height="887" alt="" aria-hidden="true" decoding="async">
+<div class="scenery hero-plane lake-falls" aria-hidden="true">
+<img class="hero-plane-art" src="assets/hero-parallax-v1/lake-falls.png" width="1774" height="887" alt="" decoding="async">
+<svg class="waterfall-motion" viewBox="0 0 1774 887" aria-hidden="true">
+<defs>
+<linearGradient id="hero-water-edge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="black"/><stop offset=".18" stop-color="white"/><stop offset=".8" stop-color="white"/><stop offset="1" stop-color="black"/></linearGradient>
+<radialGradient id="hero-foam-edge"><stop offset=".35" stop-color="white"/><stop offset="1" stop-color="black"/></radialGradient>
+<mask id="hero-upper-fall" maskUnits="userSpaceOnUse" x="1688" y="353" width="55" height="112"><path d="M1697 353 L1743 353 L1731 465 L1688 465 Z" fill="url(#hero-water-edge)"/></mask>
+<mask id="hero-lower-fall" maskUnits="userSpaceOnUse" x="1666" y="496" width="44" height="84"><path d="M1672 496 L1710 496 L1700 580 L1666 580 Z" fill="url(#hero-water-edge)"/></mask>
+<mask id="hero-upper-foam" maskUnits="userSpaceOnUse" x="1657" y="461" width="76" height="26"><ellipse cx="1695" cy="474" rx="38" ry="13" fill="url(#hero-foam-edge)"/></mask>
+<mask id="hero-lower-foam" maskUnits="userSpaceOnUse" x="1620" y="584" width="70" height="24"><ellipse cx="1655" cy="596" rx="35" ry="12" fill="url(#hero-foam-edge)"/></mask>
+</defs>
+<g mask="url(#hero-upper-fall)"><g class="water-curtain" style="--curtain-period:80px;--curtain-duration:3.8s;--curtain-delay:-1.1s"><image href="assets/water-curtain-flow-v1.webp" x="1688" y="273" width="55" height="100" preserveAspectRatio="none"/><image href="assets/water-curtain-flow-v1.webp" x="1688" y="353" width="55" height="100" preserveAspectRatio="none"/><image href="assets/water-curtain-flow-v1.webp" x="1688" y="433" width="55" height="112" preserveAspectRatio="none"/></g></g>
+<g mask="url(#hero-lower-fall)"><g class="water-curtain" style="--curtain-period:65px;--curtain-duration:3.2s;--curtain-delay:-2.3s"><image href="assets/water-curtain-flow-v1.webp" x="1666" y="431" width="44" height="84" preserveAspectRatio="none"/><image href="assets/water-curtain-flow-v1.webp" x="1666" y="496" width="44" height="84" preserveAspectRatio="none"/><image href="assets/water-curtain-flow-v1.webp" x="1666" y="561" width="44" height="84" preserveAspectRatio="none"/></g></g>
+<g mask="url(#hero-upper-foam)"><image class="water-splash" href="assets/hero-parallax-v1/lake-falls.png" width="1774" height="887" style="--splash-time:2.9s;--splash-delay:-1.1s"/></g>
+<g mask="url(#hero-lower-foam)"><image class="water-splash" href="assets/hero-parallax-v1/lake-falls.png" width="1774" height="887" style="--splash-time:3.6s;--splash-delay:-2.3s"/></g>
+</svg>
+<svg class="chimney-smoke" viewBox="0 0 1774 887" aria-hidden="true">
+<g transform="translate(110 239)"><image class="chimney-wisp" href="assets/chimney-smoke.webp" x="-20" y="-86" width="40" height="90" style="--smoke-delay:-1s"/><image class="chimney-wisp" href="assets/chimney-smoke.webp" x="-20" y="-86" width="40" height="90" style="--smoke-delay:-4.5s"/></g>
+<g transform="translate(197 387)"><image class="chimney-wisp" href="assets/chimney-smoke.webp" x="-16" y="-68" width="32" height="72" style="--smoke-delay:-2.7s"/><image class="chimney-wisp" href="assets/chimney-smoke.webp" x="-16" y="-68" width="32" height="72" style="--smoke-delay:-6.2s"/></g>
+</svg>
+</div>
+<div class="clearing-ground" aria-hidden="true"></div>
+</div>
+<div class="scenery hero-plane valley" aria-hidden="true">
+<img class="hero-plane-art clearing-art" src="assets/hero-parallax-v2/foreground-extended.png" width="1672" height="941" alt="" decoding="async">
+
+</div>
+<div class="hero-grass" aria-hidden="true"></div>
+<div class="hero-copy"><div class="logo"><img src="assets/logo.png" alt="Fitama. Adventure Moves With You"><img class="strapline" src="assets/logo.png" alt=""></div><h1>Your movement. <br>A new adventure.</h1><p>Meet your new adventure buddy. Your everyday movement powers the fun.</p><div class="actions"><a class="store" role="link" aria-disabled="true" tabindex="-1" aria-label="Coming soon on the App Store"><svg viewBox="0 0 24 28" aria-hidden="true"><path fill="currentColor" d="M17 0c.4 3-1.9 5.4-4.7 5.4C12 3 14.4.4 17 0ZM21 19c-.6 1.5-1 2.2-1.8 3.5-1.2 1.8-2.8 4-4.8 4-1.8 0-2.3-1.2-4.7-1.2S6.8 26.5 5 26.5C.8 26.5-3.3 15.8.8 9.7 2.3 7.5 4.8 6.2 7 6.2c2 0 3.2 1.2 4.8 1.2 1.4 0 3.3-1.3 5.6-1.1 1.8.2 3.1 1 4.1 2.3-4.3 2.4-3.6 8.3-.5 10.4Z"/></svg><span><small>Coming soon on the</small><b>App Store</b></span></a><button class="android" type="button" data-open-waitlist aria-haspopup="dialog" aria-controls="android-waitlist">Join the Android waitlist</button></div></div>
+<div class="clearing-plants plants-left" aria-hidden="true"><img src="assets/journey-edge-plants-v6.webp" alt=""></div>
+<div class="clearing-plants plants-right" aria-hidden="true"><img src="assets/journey-edge-plants-v6.webp" alt=""></div>
+</div>
+<div class="pet-layer">
+<div class="nest-group"><button class="egg-choice clovie" aria-label="Preview Clovie" aria-pressed="false"><svg class="shell" viewBox="90 49 332 391" aria-hidden="true"><image href="assets/storyboard/egg-clovie.png" width="512" height="512"/></svg><img class="pet" src="assets/clovie.svg?v=7" alt="Clovie"><span class="pet-label">Clovie</span></button><button class="egg-choice ignie" aria-label="Preview Ignie" aria-pressed="false"><svg class="shell" viewBox="106 50 300 391" aria-hidden="true"><image href="assets/storyboard/egg-ignie.png" width="512" height="512"/></svg><img class="pet" src="assets/ignie.svg?v=6" alt="Ignie"><span class="pet-label">Ignie</span></button></div>
+<button class="traveller egg-choice" aria-label="Preview Blukie" aria-pressed="false"><svg class="shell" viewBox="80 49 353 391" aria-hidden="true"><image href="assets/storyboard/egg-blukie.png" width="512" height="512"/></svg><img class="pet" src="assets/blukie.svg?v=4" alt="Blukie"><span class="pet-label">Blukie</span></button>
+</div>
+<div class="cream" aria-hidden="true"></div>
+<div class="nest-front" aria-hidden="true"><img class="nest-bush-left" src="assets/hero-garden-v4/garden-clumps.png" alt=""><img class="nest-grass-sprigs" src="assets/hero-garden-v4/garden-clumps.png" alt=""><img class="nest-bush-right" src="assets/hero-garden-v4/garden-clumps.png" alt=""></div>
+<div class="follow-copy"><h2>You move. <br>The adventure begins.</h2><p>Your everyday movement becomes Tama Power. Put it toward your first hatch.</p></div>
+<div class="landing-copy"><h2>Put that energy <br>into play.</h2><p>Take on quests, challenge dungeon monsters, and power your next adventure.</p></div>
+<div class="activity-bubbles" aria-hidden="true"><img class="activity-bubble bubble-run" src="assets/activity-run.png" alt="" decoding="async"><img class="activity-bubble bubble-bike" src="assets/activity-bike.png" alt="" decoding="async"><img class="activity-bubble bubble-gym" src="assets/activity-gym.png" alt="" decoding="async"></div>
+<div class="progress-items" aria-hidden="true" hidden><img class="progress-sword" src="assets/guide/vitaslash.webp" alt=""><img class="progress-potion" src="assets/guide/health-potion.webp" alt=""><img class="progress-coin" src="assets/guide/tama-coins-tama-coin.webp" alt=""></div>
+<div class="battle-flanks" aria-hidden="true" hidden><img class="enemy-left" src="assets/battle-crampikat.png" alt=""><img class="enemy-right" src="assets/battle-dehydra.png" alt=""></div>
+<div class="side-quest-peek" aria-hidden="true" hidden><img class="quest-ghost" src="assets/side-quest-ghost.png" alt=""><img class="quest-monkey" src="assets/side-quest-monkey.png" alt=""></div>
+<div class="health-connection" aria-hidden="true"><img class="health-watch" src="assets/health-watch.png" alt=""><img class="health-device" src="assets/health-phone.png" alt=""></div>
+<div class="phone" role="img" aria-label="Blukie's egg lands on a Home island, then reveals Blukie in a sample Fitama screen"><div class="phone-placeholder"><img src="assets/storyboard/platform-pet.png" alt=""></div><img class="egg-screen" src="assets/screens-2026-10-23/egg-home.jpg" alt=""><img class="grown-screen" src="assets/screens-2026-10-23/home.jpg" alt=""><div class="walkthrough-screens" aria-hidden="true"><img class="walkthrough-screen screen-movement" src="assets/movement-panels-clean.png" alt="" decoding="async"><img class="walkthrough-screen screen-home" src="assets/screens-2026-10-23/home.jpg" alt="" decoding="async"><img class="walkthrough-screen screen-health" src="assets/screens-2026-10-23/health-activities.jpg" alt="" decoding="async"><img class="walkthrough-screen screen-map" src="assets/screens-2026-10-23/map.jpg" alt="" decoding="async"><img class="walkthrough-screen screen-battle" src="assets/screens-2026-10-23/battle-before.jpg" alt="" decoding="async"><img class="walkthrough-screen screen-result" src="assets/screens-2026-10-23/battle-result.jpg" alt="" decoding="async"><img class="walkthrough-screen screen-equipment" src="assets/screens-2026-10-23/equipment.jpg" alt="" decoding="async"><img class="walkthrough-screen screen-shop" src="assets/screens-2026-10-23/shop.jpg" alt="" decoding="async"></div></div>
+
+<div class="tp-copy" id="gameplay"><article class="chapter-panel" data-chapter="0" aria-hidden="true" inert><h2>Move your way. <br>Make Tama Power.</h2><p class="chapter-description">Walk, dance, ride, or do your thing. Active calories recorded in Apple Health become Tama Power for your next adventure.</p><a class="solid-link chapter-cta arrow-link" href="guide.html#tama-power">Get to know Tama Power <svg class="link-arrow" viewBox="0 0 28 28" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22 22 6M8 6h14v14"/></svg></a></article><article class="chapter-panel" data-chapter="1" aria-hidden="true" inert><h2>Connect with <br>Apple Health.</h2><p class="chapter-description">Connect Apple Health to turn recorded active calories into Tama Power. Compatible wearables and workout apps can sync through it, too.</p><a class="solid-link chapter-cta arrow-link" href="guide.html#apple-health">Set up Apple Health <svg class="link-arrow" viewBox="0 0 28 28" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22 22 6M8 6h14v14"/></svg></a></article><article class="chapter-panel" data-chapter="2" aria-hidden="true" inert><h2>Your workout <br>has a side quest.</h2><p class="chapter-description">Take on dungeon monsters with the Tama Power you’ve earned. Turns out that walk had a plot.</p><a class="solid-link chapter-cta arrow-link" href="guide.html#dungeons">See how dungeons work <svg class="link-arrow" viewBox="0 0 28 28" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22 22 6M8 6h14v14"/></svg></a></article><article class="chapter-panel" data-chapter="3" aria-hidden="true" inert><h2>Small wins. <br>Bigger adventures.</h2><p class="chapter-description">Complete quests, collect useful items, and gear up your companion for what comes next.</p><a class="solid-link chapter-cta arrow-link" href="guide.html#equipment">Explore items and equipment <svg class="link-arrow" viewBox="0 0 28 28" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22 22 6M8 6h14v14"/></svg></a></article></div>
+</div></section>
+<section class="story-summary" id="story-summary" tabindex="-1"><div class="artwork-note" role="status">The artwork is taking a little longer. You can still explore below, or <a href="journey.html">try loading it again</a>.</div><p class="eyebrow">HOW FITAMA WORKS</p><h1>Your movement. <br>Your next adventure.</h1><p>Pick an egg, connect Apple Health, and earn 100 TP to hatch your new buddy. That’s where your story together begins.</p><div class="static-walkthrough"><article class="static-chapter"><img class="movement-artwork" loading="lazy" src="assets/movement-panels-clean.png" alt="Fitama onboarding showing dog walking, cycling and a workout"><div><h2>Move your way. <br>Make Tama Power.</h2><p class="chapter-description">Walk, dance, ride, or do your thing. Active calories recorded in Apple Health become Tama Power for your next adventure.</p><a class="solid-link chapter-cta arrow-link" href="guide.html#tama-power">Get to know Tama Power <svg class="link-arrow" viewBox="0 0 28 28" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22 22 6M8 6h14v14"/></svg></a></div></article><article class="static-chapter"><img loading="lazy" src="assets/screens-2026-10-23/health-activities.jpg" alt="Sample Fitama Activities screen showing cycling, active calories and Tama Power"><div><h2>Connect with <br>Apple Health.</h2><p class="chapter-description">Connect Apple Health to turn recorded active calories into Tama Power. Compatible wearables and workout apps can sync through it, too.</p><a class="solid-link chapter-cta arrow-link" href="guide.html#apple-health">Set up Apple Health <svg class="link-arrow" viewBox="0 0 28 28" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22 22 6M8 6h14v14"/></svg></a></div></article><article class="static-chapter"><img loading="lazy" src="assets/screens-2026-10-23/battle-result.jpg" alt="Sample dungeon result showing a defeated monster and an XP reward"><div><h2>Your workout <br>has a side quest.</h2><p class="chapter-description">Take on dungeon monsters with the Tama Power you’ve earned. Turns out that walk had a plot.</p><a class="solid-link chapter-cta arrow-link" href="guide.html#dungeons">See how dungeons work <svg class="link-arrow" viewBox="0 0 28 28" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22 22 6M8 6h14v14"/></svg></a></div></article><article class="static-chapter"><img loading="lazy" src="assets/screens-2026-10-23/equipment.jpg" alt="Sample Fitama equipment and item inventory"><div><h2>Small wins. <br>Bigger adventures.</h2><p class="chapter-description">Complete quests, collect useful items, and gear up your companion for what comes next.</p><a class="solid-link chapter-cta arrow-link" href="guide.html#equipment">Explore items and equipment <svg class="link-arrow" viewBox="0 0 28 28" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22 22 6M8 6h14v14"/></svg></a></div></article></div><p class="prototype-note">App previews use sample data. The opening animation compresses time: hatching requires 100 TP and claiming your hatch in the app. Mochi is a sample nickname. Blukie is the species.</p></section>
+<section class="faq-section section-wrap" aria-labelledby="faq-title"><div><p class="eyebrow">BEFORE YOU SET OFF</p><h2 id="faq-title">Glad you <br>asked.</h2><a class="solid-link arrow-link" href="guide.html"><span class="arrow-link-label">Find more answers</span><svg class="link-arrow" viewBox="0 0 28 28" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 22 22 6M8 6h14v14"/></svg></a></div><div class="faq-list">
+<details><summary>Do I need a special workout?</summary><p>No special routine needed. Walk, cycle, dance, or move in a way you enjoy. To count toward TP, your activity needs to record compatible active calories in Apple Health.</p></details>
+<details><summary>Can I use my wearable?</summary><p>It can join the adventure if it, or its companion app, shares Active Energy with Apple Health. Fitama reads that activity on your iPhone, so compatibility depends on what your device shares. <a href="guide.html#wearables">Let’s check your setup.</a></p></details>
+<details><summary>Moved around, but no TP yet?</summary><p>Let’s check the connection. Make sure Active Energy appears in Apple Health and Fitama has permission to read it. Then sync your wearable’s app and refresh activity in Fitama. Steps alone won’t generate TP. <a href="guide.html#missing-activity">Get a hand with syncing.</a></p></details>
+<details><summary>What can I do with Tama Power?</summary><p>Hatch your egg, work toward quest goals, and take on dungeon monsters with your available TP. Earned quest progress and the TP you have left to spend are tracked separately. <a href="guide.html#tama-power">Get the TP basics.</a></p></details>
+<details><summary>Is Fitama coming to Android?</summary><p>Yes, Android is in the plans. We don’t have a date to share just yet, but you can join the Android waitlist below.</p></details>
+</div></section>
+</main>
+<div class="journey-ending">
+<picture class="ending-background" aria-hidden="true"><source media="(max-width:699px)" srcset="assets/ending-forest-dungeon-mobile.webp?v=smooth-20261018"><img src="assets/ending-forest-dungeon.webp?v=smooth-20261018" alt="" loading="lazy" decoding="async"></picture>
+<section class="download-section" id="download" tabindex="-1" aria-labelledby="download-title"><div class="section-wrap"><h2 id="download-title">Ready for your <br>next adventure?</h2><p class="download-intro">Turn your everyday activity into Tama Power, gear up your buddy, and discover a new adventure together.</p><div class="actions"><a class="store" role="link" aria-disabled="true" tabindex="-1" aria-label="Coming soon on the App Store"><svg viewBox="0 0 24 28" aria-hidden="true"><path fill="currentColor" d="M17 0c.4 3-1.9 5.4-4.7 5.4C12 3 14.4.4 17 0ZM21 19c-.6 1.5-1 2.2-1.8 3.5-1.2 1.8-2.8 4-4.8 4-1.8 0-2.3-1.2-4.7-1.2S6.8 26.5 5 26.5C.8 26.5-3.3 15.8.8 9.7 2.3 7.5 4.8 6.2 7 6.2c2 0 3.2 1.2 4.8 1.2 1.4 0 3.3-1.3 5.6-1.1 1.8.2 3.1 1 4.1 2.3-4.3 2.4-3.6 8.3-.5 10.4Z"/></svg><span><small>Coming soon on the</small><b>App Store</b></span></a><button class="android" type="button" data-open-waitlist aria-haspopup="dialog" aria-controls="android-waitlist">Join the Android waitlist</button></div><p class="download-note">Android is on its way. Be first to hear when it arrives.</p></div></section>
+<footer class="site-footer"><nav aria-label="Footer"><a href="guide.html">Fitama Guide</a><a href="contact.html">Contact Us</a><a href="privacy/">Privacy</a></nav><nav class="footer-socials" aria-label="Fitama social media"><span>Follow Fitama</span><a href="https://www.facebook.com/FitamaApp" target="_blank" rel="noopener noreferrer" aria-label="Fitama on Facebook (opens in a new tab)" title="Facebook"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.8-4.67 4.54-4.67 1.32 0 2.69.24 2.69.24v2.95h-1.52c-1.49 0-1.95.93-1.95 1.88V12h3.33l-.53 3.47h-2.8v8.38A12 12 0 0 0 24 12Z"/></svg></a><a href="https://www.instagram.com/FitamaApp/" target="_blank" rel="noopener noreferrer" aria-label="Fitama on Instagram (opens in a new tab)" title="Instagram"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></a><a href="https://www.tiktok.com/@fitama.app" target="_blank" rel="noopener noreferrer" aria-label="Fitama on TikTok (opens in a new tab)" title="TikTok"><svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16.6 0c.4 3.4 2.3 5.4 5.6 5.6v4.1a9.7 9.7 0 0 1-5.6-1.8v8.4a7.7 7.7 0 1 1-6.6-7.6v4.2a3.5 3.5 0 1 0 2.4 3.4V0Z"/></svg></a></nav><small>© 2026 Red Pots Games.</small></footer>
+</div>
+<script type="module" src="journey.js?v=preloader-v1&release=20261026"></script><noscript><style>.scroll-story{display:none}.story-summary{display:block}</style></noscript>
+<dialog class="waitlist-dialog" id="android-waitlist" aria-labelledby="waitlist-title" aria-describedby="waitlist-description">
+  <div class="waitlist-shell">
+    <img class="waitlist-topper" src="assets/waitlist-clovie-topper.png" width="1000" height="400" alt="">
+    <div class="waitlist-panel">
+      <div class="waitlist-intro">
+        <h2 id="waitlist-title" tabindex="-1">Android is next in line.</h2>
+        <p id="waitlist-description">Your Android adventure is on its way. Leave your email and we’ll let you know when it’s ready.</p>
+      </div>
+      <form class="waitlist-form" novalidate>
+        <label for="waitlist-email">Email address</label>
+        <input id="waitlist-email" name="email" type="email" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" placeholder="you@example.com" maxlength="254" required aria-describedby="waitlist-consent waitlist-error">
+        <div class="waitlist-trap" aria-hidden="true"><label for="waitlist-website">Website</label><input id="waitlist-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <p class="waitlist-consent" id="waitlist-consent">By joining, you agree to receive Fitama’s Android launch email. No daily quests for your inbox. <a href="privacy/#android-waitlist" target="_blank" rel="noopener">Privacy Policy<span class="visually-hidden"> (opens in a new tab)</span></a></p>
+        <p class="waitlist-error" id="waitlist-error" role="alert"></p>
+        <button class="waitlist-primary" type="submit" aria-disabled="false"><span>Notify me at launch</span></button>
+        <button class="waitlist-secondary" type="button" data-close-waitlist>Maybe later</button>
+      </form>
+      <div class="waitlist-success" hidden>
+        <h2 id="waitlist-success-title" tabindex="-1">You’re on the list.</h2>
+        <p id="waitlist-success-description">We’ll email you when Fitama launches on Android. Until then, keep those steps coming.</p>
+        <button class="waitlist-primary" type="button" data-close-waitlist>Got it</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+<script type="module" src="waitlist.js?v=review-v2&release=20261026"></script>
+</body></html>

@@ -1,0 +1,28 @@
+/* Keep the egg visible until the first complete Rive appearance has painted. */
+.egg-choice .pet-rive{--rive-size:124%;display:block;position:absolute;bottom:-8.04%;left:calc((100% - var(--rive-size)) * .5);width:var(--rive-size);aspect-ratio:8/7;opacity:0;z-index:2;pointer-events:none;overflow:visible;transition:opacity .18s}
+.egg-choice.clovie .pet-rive{--rive-size:161.02%;bottom:-9.7679%}
+.egg-choice.ignie .pet-rive{--rive-size:151.25%;bottom:-8.5184%;transform:scaleX(-1)}
+.pet-rive canvas{display:block;position:absolute;max-width:none;pointer-events:none}
+.rive-previews-enabled.can-preview .egg-choice .shell{opacity:1}
+.rive-previews-enabled.can-preview .egg-choice :is(.pet,.pet-label,.pet-rive){opacity:0}
+.rive-previews-enabled.can-preview .egg-choice[data-rive-view="fallback"] .shell,
+.rive-previews-enabled.can-preview .egg-choice[data-rive-view="rive"] .shell{opacity:0}
+.rive-previews-enabled.can-preview .egg-choice[data-rive-view="fallback"] :is(.pet,.pet-label){opacity:1}
+.rive-previews-enabled.can-preview .egg-choice[data-rive-view="rive"] :is(.pet-rive,.pet-label){opacity:1}
+@media(prefers-reduced-motion:reduce){.egg-choice .pet-rive{transition:none}}
+
+/* Keep pet reordering inside a stable layer above the phone and below plants. */
+.pet-layer{position:absolute;inset:0;z-index:9;isolation:isolate;pointer-events:none}
+.pet-layer .traveller{z-index:1}
+.can-preview .egg-choice:hover,
+.can-preview:not(:has(.egg-choice:hover)) .egg-choice:focus-visible{z-index:2}
+
+/* Follow each pet's face rather than the center and top of its old egg box. */
+.egg-choice.clovie{--pet-label-x:29.921%;--pet-label-anchor:93.12%}
+.egg-choice.ignie{--pet-label-x:61.5%;--pet-label-anchor:90%}
+.egg-choice.traveller{--pet-label-x:37.6%;--pet-label-anchor:88%}
+.egg-choice>.pet-label{
+ left:var(--pet-label-x,50%);
+ bottom:calc(var(--pet-label-anchor,100%) + 8px * var(--pet-label-scale,1));
+ white-space:nowrap;
+}
