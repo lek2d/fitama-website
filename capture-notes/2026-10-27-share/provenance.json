@@ -1,0 +1,39 @@
+{
+  "method": "Unmodified CUA JPEG screenshot bytes of approved local Journey hero; 1215x630 viewport and 1200x630 content clip omit the scrollbar. No art regeneration or image recompression.",
+  "cover": "docs/assets/fitama-share-cover-v1.jpg",
+  "source_commit": "d5a6bb49e4a6f56617d1e071737b59162b4d4196",
+  "sha256": "b9109108c6b0a06650fe36eee78b91baff2aebbae69f2dedf69b9c071db59aa4",
+  "pages": [
+    {
+      "file": "index.html",
+      "canonical": "https://fitama.app/journey.html",
+      "body_unchanged": true,
+      "image": "https://fitama.app/assets/fitama-share-cover-v1.jpg"
+    },
+    {
+      "file": "journey.html",
+      "canonical": "https://fitama.app/journey.html",
+      "body_unchanged": true,
+      "image": "https://fitama.app/assets/fitama-share-cover-v1.jpg"
+    },
+    {
+      "file": "guide.html",
+      "canonical": "https://fitama.app/guide.html",
+      "body_unchanged": true,
+      "image": "https://fitama.app/assets/fitama-share-cover-v1.jpg"
+    },
+    {
+      "file": "contact.html",
+      "canonical": "https://fitama.app/contact.html",
+      "body_unchanged": true,
+      "image": "https://fitama.app/assets/fitama-share-cover-v1.jpg"
+    },
+    {
+      "file": "privacy/index.html",
+      "canonical": "https://fitama.app/privacy/",
+      "body_unchanged": true,
+      "image": "https://fitama.app/assets/fitama-share-cover-v1.jpg"
+    }
+  ],
+  "specification": "https://ogp.me/"
+}

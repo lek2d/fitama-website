@@ -1,5 +1,13 @@
 # FiTama website
 
+## October 27, 2026 — link-sharing cover
+
+Added a 1200×630 JPEG of the approved Journey hero, preserving the actual artwork, three eggs, glossy logo and current Coming Soon badge. It is a direct CUA screenshot capture without the scrollbar, art generation or recompression; the versioned public image is `docs/assets/fitama-share-cover-v1.jpg`. Capture provenance and the metadata/crawler verification utility are in `capture-notes/2026-10-27-share/`, outside the published folder.
+
+Root, Journey, Guide, Contact and Privacy now provide static Open Graph and large-image Twitter card metadata with absolute HTTPS image URLs, dimensions, image alt text, page-specific descriptions and canonical links. Root metadata precedes its unchanged meta/JavaScript redirect; root and Journey identify the rendered Journey URL consistently. Existing page bodies, policy prose, app/invite routing and runtime behavior are unchanged. The source mirror carries the same cover and metadata.
+
+Verification covers the raw publisher HTML and JPEG, duplicate/missing metadata, canonical URLs and anonymous GETs with Facebook/Twitter crawler user agents. This establishes public discoverability, not that existing platform caches or old messages have refreshed; no social post or message is sent. All 163 source website tests and 38 publisher tests pass. No native app, backend, app QA or automation change.
+
 ## October 27, 2026 — smooth header navigation
 
 On Journey, Get Fitama now scrolls smoothly to the download section after focus releases the pinned ending. The ending focus safety handler no longer overrides that explicit section navigation with an instant recenter. Clicking the logo smoothly returns to the hero without reloading the page; current query parameters remain and the download hash is cleared. Native browser travel yields to new user scroll input, while the existing section-snap driver remains unchanged. Reduced-motion/static views retain direct navigation, and modified clicks plus Guide/Contact links retain native cross-page behavior.
