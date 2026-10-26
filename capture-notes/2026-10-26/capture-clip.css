@@ -1,0 +1,6 @@
+/* Website capture correction: nested expo-blur web layers require their own
+   rounded clip under the scaled battle canvas. Actual reward UI/data unchanged. */
+#preview-label{display:none}
+[aria-label^="Reward "]{isolation:isolate;clip-path:inset(0 round 16px);border-color:transparent!important}
+[aria-label^="Reward "]>:first-child{border-radius:15px;overflow:hidden;clip-path:inset(0 round 15px);backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+[aria-label^="Reward "]::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.24);border-radius:16px;pointer-events:none;box-sizing:border-box}

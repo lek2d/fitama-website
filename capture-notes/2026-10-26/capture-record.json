@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-26",
+  "sourceCommit": "9e2696b8c6c8d5fc94215020ce1063c55c348c51",
+  "captureType": "Actual local Expo web preview using sample data; not a native device capture",
+  "url": "http://127.0.0.1:8095/reward-capture.html?scene=battle&dungeon=dungeon-1&variant=blue",
+  "flow": "Existing TP Attack button to victory; capture after finite confetti completes",
+  "viewport": [
+    780,
+    1688
+  ],
+  "devicePixelRatio": 1,
+  "format": "Lossless WebP",
+  "sha256": "15c6893928d0010e7a322e653836faea91f03a34a221ce46fe6ec29144d3b5be",
+  "bytes": 149322,
+  "retouching": false,
+  "appSourceChanged": false,
+  "captureOnlyChanges": [
+    "Explicit rounded clipping for web reward cards",
+    "Border drawn above card surface",
+    "Disable redundant nested backdrop blur; parent result overlay blur retained",
+    "Hide local preview sample-data badge; public site sample-data notice retained"
+  ],
+  "sampleRewards": [
+    "88 xp",
+    "Power Bottle"
+  ],
+  "nativeParity": "Not tested or claimed; no native build/deployment"
+}

@@ -1,5 +1,11 @@
 # FiTama website
 
+## October 26, 2026 — reward preview edges and mobile alignment
+
+The Rewards cards in the Journey battle-result screenshot had broken corners baked into the old JPEG. Recaptured the actual local sample victory UI at 780×1688 and encoded it as lossless WebP. Capture-only CSS clips the web card surface explicitly, draws its border above the surface, and disables the redundant nested backdrop blur while retaining the full result-overlay blur. Both animated and static Journey views use the new asset. The sample 88 XP / Power Bottle and app source are unchanged; this does not establish a native app fix. Capture provenance and exact CSS are in `capture-notes/2026-10-26/`, outside the published folder.
+
+Below 700px, the movement chapter’s title, description and guide button are centered, including the static fallback. Desktop alignment is unchanged. The Journey stylesheet URL is versioned to refresh existing browser caches. Checks:63 timeline/walkthrough tests and494 local references passed; browser checks at320/390/430/699/700/1440px found no horizontal overflow, centered mobile copy/buttons, and unchanged desktop alignment. The short-screen static fallback was also checked at430×500.
+
 ## October 26, 2026 — slightly smaller screen previews
 
 Owner requested a further small reduction after the site went live. Settled gameplay previews are5% smaller on desktop/mobile; Guide and static screenshot columns are reduced proportionally. The intro/egg landing remains unchanged. Current caps: approximately385px gameplay and232px large Guide/static previews. Only sizing and associated cache versions changed; art, Rive, preloader, policies, forms and domain/invite/ad files are unchanged.128 tests passed against the production runtime; geometry audit covered584 active viewport pairs and1,169,168 forward/reverse states with zero issues. Exact intro-state comparison is unchanged. Desktop1440×900 and mobile390×844 browser checks passed without overflow or phone/copy collisions.

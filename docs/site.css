@@ -260,6 +260,11 @@
 @media(prefers-reduced-motion:reduce){.arrow-link .link-arrow{transition:none}}
 .motion-off .arrow-link .link-arrow,.clouds-paused .arrow-link .link-arrow{transition:none}
 @media(max-width:699px){.chapter-cta{max-width:100%;gap:12px;padding-inline:14px}.static-chapter>div{min-width:0}}
+/* Keep the movement introduction centered beneath its phone on mobile. */
+@media(max-width:699px){
+ .tp-copy .chapter-panel[data-chapter="0"],.static-chapter:has(>.movement-artwork)>div{text-align:center}
+ .tp-copy .chapter-panel[data-chapter="0"] .chapter-description,.static-chapter:has(>.movement-artwork) .chapter-description{margin-inline:auto}
+}
 @media(max-width:399px){.static-chapter{grid-template-columns:1fr;gap:24px}.static-chapter>img{width:200px;max-width:65%;margin:auto}}
 
 /* Screens stay prominent on roomy displays and readable in the still version. */
