@@ -26,3 +26,6 @@
  bottom:calc(var(--pet-label-anchor,100%) + 8px * var(--pet-label-scale,1));
  white-space:nowrap;
 }
+
+/* A new hover must never fade the previous look through its replacement. */
+.rive-previews-enabled.can-preview .egg-choice[data-rive-view="egg"] :is(.shell,.pet-rive){transition:none}

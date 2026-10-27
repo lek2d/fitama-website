@@ -80,13 +80,13 @@ function loadRuntime() {
 }
 
 export function installPetPreviews({stage,buttons,getState}) {
-  let disposed=false;
+  let disposed=false, warming=null;
   const entries=buttons.map(button=>{
     const id=button.classList.contains('clovie')?'clovie':button.classList.contains('ignie')?'ignie':'blukie';
     const frame=document.createElement('span');frame.className='pet-rive';frame.setAttribute('aria-hidden','true');
     const canvas=document.createElement('canvas');canvas.setAttribute('aria-hidden','true');canvas.setAttribute('role','presentation');
     frame.append(canvas);button.append(frame);button.dataset.rivePet=id;button.dataset.riveState='idle';button.dataset.riveView='egg';
-    return {button,id,frame,canvas,hovered:false,selected:false,session:null,retiring:null,failed:false,version:0,desired:null,committed:null,committedPlan:null,lockedPlan:null};
+    return {button,id,frame,canvas,hovered:false,selected:false,session:null,retiring:null,failed:false,version:0,desired:null,committed:null,committedPlan:null,lockedPlan:null,nextPlan:null};
   });
   stage.classList.add('rive-previews-enabled');
   const current=(entry,session)=>!!session&&!disposed&&entry.session===session&&!session.abort.signal.aborted;
@@ -94,9 +94,9 @@ export function installPetPreviews({stage,buttons,getState}) {
 
   function present(entry,state=policy(entry)) {
     const motion=getState();
-    // Hover is intent, not pixel readiness. A cold load retains the egg rather
-    // than briefly showing the unrelated saved SVG before its chosen Rive look.
-    entry.button.dataset.riveView=!state.open?'egg':entry.session?.ready?'rive'
+    // Hover is intent, not pixel readiness. Keep the egg until this request's
+    // complete look has painted; an older ready canvas is not the new look.
+    entry.button.dataset.riveView=!state.open?'egg':entry.session?.ready&&entry.session.presentedVersion===entry.version?'rive'
       :entry.failed||motion.paused||motion.reduced?'fallback':'egg';
   }
 
@@ -140,7 +140,7 @@ export function installPetPreviews({stage,buttons,getState}) {
   function playback(entry,session) {
     if(!session.bound)return;
     const play=policy(entry).animate;
-    if(!play){
+    if(!play||session.boundVersion!==entry.version){
       // Rive.play() can draw synchronously. Never restart a suspended machine.
       try{if(session.playing)session.player.pause();}catch(error){fail(entry,session,error);return;}
       session.playing=false;entry.button.dataset.rivePlaying='false';return;
@@ -171,7 +171,10 @@ export function installPetPreviews({stage,buttons,getState}) {
   }
   function requestLook(entry) {
     if(entry.selected)return;
-    entry.version++;entry.desired=null;entry.failed=false;
+    entry.version++;
+    entry.desired=entry.nextPlan?{version:entry.version,plan:entry.nextPlan}:null;
+    entry.nextPlan=null;entry.failed=false;
+    if(entry.desired)entry.button.dataset.riveTarget=entry.desired.plan.choice.key;
     entry.session?.candidate?.abort.abort();
   }
   function select(entry) {
@@ -179,19 +182,11 @@ export function installPetPreviews({stage,buttons,getState}) {
     entry.selected=true;
     entry.button.setAttribute('aria-pressed','true');
     entry.button.dataset.riveLocked='true';
-    const visibleCandidate=entry.session?.ready&&entry.session.paint?.advances>0?entry.session.paint.plan:null;
-    const visiblePlan=visibleCandidate||entry.committedPlan;
+    const visiblePlan=entry.button.dataset.riveView==='rive'?entry.committedPlan:null;
     if(visiblePlan){
       entry.lockedPlan=visiblePlan;
-      if(visibleCandidate){
-        // Runtime advance and drawing finish in the same task before clicks.
-        // The candidate can already be visible while the publication gate waits.
-        entry.committed=visiblePlan.choice;entry.committedPlan=visiblePlan;
-        entry.button.dataset.riveAppearance=visiblePlan.choice.key;
-        entry.button.dataset.riveTraits=JSON.stringify(visiblePlan.traits);
-      }
-      // Keep the displayed look, whether a replacement is still decoding or
-      // has already drawn its first frame into the visible canvas.
+      // A pending hidden look is selected when its own paint gate completes.
+      // Only an actually published look may replace the pending request here.
       if(entry.desired?.plan!==entry.lockedPlan){
         entry.version++;
         entry.desired={version:entry.version,plan:entry.lockedPlan};
@@ -202,7 +197,8 @@ export function installPetPreviews({stage,buttons,getState}) {
   }
   function desiredLook(entry,session) {
     if(!entry.desired||entry.desired.version!==entry.version){
-      const plan=entry.lockedPlan||chooseAppearance(session.base,session.catalog,entry.committed);
+      const plan=entry.lockedPlan||entry.nextPlan||chooseAppearance(session.base,session.catalog,entry.committed);
+      entry.nextPlan=null;
       entry.desired={version:entry.version,plan};
       entry.button.dataset.riveTarget=plan.choice.key;
     }
@@ -217,7 +213,7 @@ export function installPetPreviews({stage,buttons,getState}) {
     nextFrame(session,()=>nextFrame(session,()=>{
       if(!current(entry,session)||session.paint!==paint)return;
       if(entry.version!==paint.version||!policy(entry).animate){paint.revealing=false;return;}
-      session.ready=true;session.paint=null;entry.committed=paint.plan.choice;entry.committedPlan=paint.plan;
+      session.ready=true;session.presentedVersion=paint.version;session.paint=null;entry.committed=paint.plan.choice;entry.committedPlan=paint.plan;
       if(entry.selected&&!entry.lockedPlan)entry.lockedPlan=paint.plan;
       entry.button.classList.add('rive-ready');entry.button.dataset.riveState='ready';
       entry.button.dataset.riveAppearance=paint.plan.choice.key;
@@ -255,8 +251,11 @@ export function installPetPreviews({stage,buttons,getState}) {
       }catch(error){
         if(current(entry,session)&&!candidate.abort.signal.aborted&&entry.version===candidate.version){
           session.failedVersion=candidate.version;
-          if(session.ready&&!candidate.bound){
-            entry.button.dataset.riveState='ready';
+          if(session.ready&&!candidate.bound&&session.plan===entry.committedPlan){
+            session.boundVersion=session.presentedVersion=entry.version;
+            entry.desired={version:entry.version,plan:session.plan};
+            entry.button.dataset.riveTarget=session.plan.choice.key;
+            session.mood=null;entry.button.dataset.riveState='ready';present(entry);playback(entry,session);
             console.warn(`FiTama ${entry.id} kept its previous traits:`,error?.message||error);
           }else fail(entry,session,error);
         }
@@ -270,6 +269,28 @@ export function installPetPreviews({stage,buttons,getState}) {
         if(current(entry,session))queueMicrotask(()=>drain(entry,session));
       }
     });
+  }
+  // Prepare bytes after the page is visible and between interactions. This
+  // never instantiates or animates a renderer, and never blocks the page loader.
+  function warm() {
+    const state=getState();
+    if(disposed||document.hidden||!state.available||state.paused||state.reduced)return Promise.resolve();
+    if(warming)return warming;
+    warming=Promise.all([loadRuntime(),loadManifest(),loadCatalog()]).then(async([,manifest,catalog])=>{
+      if(disposed||document.hidden)return;
+      if(catalog.sourceRevision!==manifest.sourceRevision)return;
+      const tasks=[fetchBytes(localUrl(manifest.rig))];
+      for(const entry of entries){
+        if(entry.selected||policy(entry).open)continue;
+        const base=manifest.pets.find(pet=>pet.id===entry.id),traits=catalog.pets[entry.id];
+        if(!base||!traits)continue;
+        entry.nextPlan??=chooseAppearance(base,traits,entry.committed);
+        tasks.push(...entry.nextPlan.images.map(image=>fetchBytes(localUrl(image.url))));
+      }
+      await Promise.all(tasks);
+    }).catch(()=>{ /* Optional preparation may retry through the normal hover path. */ })
+      .finally(()=>{warming=null;});
+    return warming;
   }
   function start(entry) {
     if(entry.session||entry.retiring||entry.failed||disposed)return;
@@ -322,7 +343,7 @@ export function installPetPreviews({stage,buttons,getState}) {
   const listen=(target,name,handler)=>{target.addEventListener(name,handler);removers.push(()=>target.removeEventListener(name,handler));};
   for(const entry of entries){
     listen(entry.button,'pointerenter',event=>{entry.hovered=event.pointerType!=='touch';entry.failed=false;if(entry.hovered)requestLook(entry);syncEntry(entry);});
-    listen(entry.button,'pointerleave',()=>{entry.hovered=false;syncEntry(entry);});
+    listen(entry.button,'pointerleave',()=>{entry.hovered=false;syncEntry(entry);void warm();});
     listen(entry.button,'focusin',()=>queueMicrotask(()=>{
       if(entry.button.matches(':focus-visible')&&!entry.hovered&&entry.button.getAttribute('aria-pressed')!=='true')requestLook(entry);
       syncEntry(entry);
@@ -337,5 +358,5 @@ export function installPetPreviews({stage,buttons,getState}) {
   listen(window,'pagehide',event=>{if(event.persisted){entries.forEach(entry=>entry.session?.player?.pause());}else dispose();});
   listen(window,'pageshow',()=>{entries.forEach(entry=>{if(entry.session)entry.session.playing=false;});sync();});
   sync();
-  return {sync,dispose};
+  return {sync,warm,dispose};
 }

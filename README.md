@@ -1,5 +1,14 @@
 # FiTama website
 
+## October 27, 2026 — one complete pet look per hover
+
+Unselected pets previously revealed their last Rive look on re-entry, then changed again when new random traits finished decoding. Preview visibility now belongs to the requested appearance version: the egg stays until that complete look has painted. The previous canvas hides immediately instead of fading through a replacement. The warm renderer is reused; the shared local runtime, rig and one next appearance per pet are fetched after page readiness and between interactions without hidden animation loops or delaying the page loader. A first renderer setup can still take time, and optional prefetch is not a promise of instantaneous response on every device or connection.
+
+Clicking a published pet locks those traits; clicking while the egg is waiting locks the current request when it finishes. Subsequent interactions only change idle/happy reaction. Failed replacements retain an animated last published look only when it is still the bound canvas; otherwise the existing saved-art fallback avoids mismatched appearance metadata. No pet artwork or rig changes.
+
+Verification: 176 source website tests and 64 publisher tests passed. The 17 controller regressions cover warm/cold reveals, stale paint cancellation, click locking and both replacement-failure paths. A local browser fixture using the actual Rive renderer showed one published appearance per synthetic pointer enter across Clovie, Blukie and Ignie, and stable selected traits on repeated Clovie reactions. Physical mouse-edge behavior was not automated. Source mirror synchronized; unrelated privacy whitespace preserved. No native app build, backend, QA or automation change.
+
+
 ## October 27, 2026 — continuous Journey scrolling
 
 Removed active section snapping and mobile swipe capture at the owner's request. Desktop wheel deltas now accumulate into continuous travel with a short, frame-rate-independent 110ms exponential easing response, immediate direction reversal and no chapter destinations or gesture lock. Touch keeps native scrolling and momentum. The existing egg-drop/parallax timeline, screenshot composition, visual smoothing and smooth logo/Get Fitama navigation are preserved. Earlier 3-second opening and 1.8-second snap durations below are historical; the visitor now controls the sequence's speed. Archived section-snap helpers are no longer imported by the live runtime.
