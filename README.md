@@ -1,5 +1,9 @@
 # FiTama website
 
+## October 27, 2026 — dark-green header
+
+Changed the shared header and mobile menu from black to dark green `#123b2c`, retaining 40% opacity, 16px backdrop blur and no border. Publisher and source mirror match; Journey, Guide and Contact request the refreshed navigation stylesheet. Desktop 1440px and mobile 390px browser checks confirm the requested color/alpha, blur, border and no horizontal overflow. No navigation behavior changes.
+
 ## October 27, 2026 — lighter borderless header
 
 Reduced the shared header and mobile menu background from 70% to 40% black and removed the header border. The 16px backdrop blur and existing content colors remain. Navigation stylesheet cache URLs and the source mirror are synchronized. Desktop 1440px and mobile 390px browser checks confirm 40% background, zero border, retained blur and no horizontal overflow. This styling-only change does not alter navigation behavior.

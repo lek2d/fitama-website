@@ -2,7 +2,7 @@
 .site-header{position:fixed;z-index:40;top:max(14px,env(safe-area-inset-top));left:50%;width:min(1120px,88%);min-height:82px;padding:18px 24px;display:flex;align-items:center;gap:28px;border:0;border-radius:24px;background:transparent;color:#fff8e9;box-shadow:0 8px 28px #00000024;transform:translateX(-50%);transition:opacity .22s ease,transform .22s ease,visibility .22s}
 /* Blur a separate background plane so text/logo stay opaque and the mobile panel
    can blur the page independently, without a nested backdrop-filter root. */
-.site-header:before{content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;background:rgb(0 0 0 / 40%);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);pointer-events:none}
+.site-header:before{content:'';position:absolute;inset:0;z-index:-1;border-radius:inherit;background:rgb(18 59 44 / 40%);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);pointer-events:none}
 .site-header[data-visible=false]{opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,-12px)}
 .nav-brand{display:flex;align-items:center;min-height:44px;margin-left:0;margin-right:auto;flex-shrink:0}.nav-brand img{width:112px;height:auto;display:block}
 .site-header a{text-decoration:none}
@@ -24,7 +24,7 @@
  .nav-brand img{width:92px}
  .header-menu{flex-wrap:wrap;gap:16px;width:100%}
  .nav-enhanced .nav-toggle{display:inline-flex}
- .nav-enhanced .header-menu{display:grid;grid-template-columns:1fr auto;position:absolute;top:calc(100% + 8px);left:0;width:100%;padding:20px 16px;background:rgb(0 0 0 / 40%);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-radius:16px;box-shadow:0 8px 28px #00000024;max-height:calc(100svh - 110px);overflow-y:auto}
+ .nav-enhanced .header-menu{display:grid;grid-template-columns:1fr auto;position:absolute;top:calc(100% + 8px);left:0;width:100%;padding:20px 16px;background:rgb(18 59 44 / 40%);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-radius:16px;box-shadow:0 8px 28px #00000024;max-height:calc(100svh - 110px);overflow-y:auto}
  .header-socials{margin-left:auto}
  .nav-enhanced .nav-download{grid-column:1/-1;justify-self:center;min-width:120px;margin-top:8px}
  .site-header .nav-download{padding-inline:12px;font-size:12px;margin-inline:6px}.site-header .nav-download:after{inset:-7px -7px}
