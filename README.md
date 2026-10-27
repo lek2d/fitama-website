@@ -1,5 +1,13 @@
 # FiTama website
 
+## October 28, 2026 — Tama-Guide source reconciliation
+
+Reconciled public Guide copy against the latest GitHub `lek2d/Fitama` default branch, `main` at `da5498044911a3e8e962d918701552fca306114a` (verified October 28). Updated 28 existing articles and added Invite Friends, bringing the guide to 41 topics. Items, potion limits, dungeon entry/rest/leave/loot rules, NPC goals, ranking rewards, referrals and Parcel terminology now reflect that source. The 21 shop prices, 24 equipment entries and 12 enemy cards were compared and retained where already correct. Existing accepted quest/run cards remain authoritative for version-dependent rules.
+
+Tama Power earning descriptions now mention workouts and movement without exposing the base calculation or earning-cap formula; matching Journey descriptions and FAQs were reconciled. Numeric quest targets, item effects and storage capacities remain as player-facing rules. Grilled Talakitok uses the original app asset from this commit (`assets/items/grilled-talakitok.png`, Git blob `4adaf710b9981a2efc35f5aec84692b0790d09e9`). The source website mirror is synchronized for these content changes.
+
+Verification: 16 existing Guide/walkthrough tests passed; article IDs, local links/fragments/assets and absence of the removed earning formula passed structural checks. Browser checks at 1440, 390 and 320px confirmed readable tables, no page overflow, the new asset, search indexing and result-to-article navigation. Independent source/copy review found no blockers. This is a website copy/source audit, not native-app or production-feature-flag acceptance. Policy pages, chat/ads rollout settings and backend records were not modified. Private audit and browser evidence are in the task workspace under `work/tama-guide-audit-2026-10-28/` and `outputs/Fitama-Guide-Audit-2026-10-28/`.
+
 ## October 27, 2026 — dark-green header
 
 Changed the shared header and mobile menu from black to dark green `#123b2c`, retaining 40% opacity, 16px backdrop blur and no border. Publisher and source mirror match; Journey, Guide and Contact request the refreshed navigation stylesheet. Desktop 1440px and mobile 390px browser checks confirm the requested color/alpha, blur, border and no horizontal overflow. No navigation behavior changes.
