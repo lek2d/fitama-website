@@ -1,0 +1,31 @@
+{
+  "screens": 9,
+  "avifVariants": 27,
+  "unchangedOriginalImgTags": true,
+  "regularLayoutComparisons": 56,
+  "staticLayoutComparisons": 6,
+  "layoutTolerancePx": 0.1,
+  "tests": {
+    "publisher": 82,
+    "source": 194
+  },
+  "fallback": "Unsupported-type fixtures selected original WebP in Journey and Guide",
+  "totals": {
+    "780": {
+      "avifBytes": 1737142,
+      "webpBytes": 5277636,
+      "savingPercent": 67.08
+    },
+    "1170": {
+      "avifBytes": 2915616,
+      "webpBytes": 10114184,
+      "savingPercent": 71.17
+    },
+    "1560": {
+      "avifBytes": 3838125,
+      "webpBytes": 13894288,
+      "savingPercent": 72.38
+    }
+  },
+  "quality": "Lossy q94,4:4:4; PNG masters and lossless WebP unchanged"
+}

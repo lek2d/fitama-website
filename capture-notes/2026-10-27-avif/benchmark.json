@@ -1,0 +1,68 @@
+[
+  {
+    "screen": "shop-funded-v1",
+    "quality": 90,
+    "bytes": 248619,
+    "seconds": 0.7,
+    "meanAbsoluteError": 1.1363131999969482,
+    "p99AbsoluteError": 7.0,
+    "maxError": 35,
+    "psnr": 43.187,
+    "pixelIdentical": false
+  },
+  {
+    "screen": "shop-funded-v1",
+    "quality": 100,
+    "bytes": 999974,
+    "seconds": 1.13,
+    "meanAbsoluteError": 0.5997746586799622,
+    "p99AbsoluteError": 2.0,
+    "maxError": 3,
+    "psnr": 49.679,
+    "pixelIdentical": false
+  },
+  {
+    "screen": "health-activities",
+    "quality": 90,
+    "bytes": 72023,
+    "seconds": 0.23,
+    "meanAbsoluteError": 0.8716979026794434,
+    "p99AbsoluteError": 4.0,
+    "maxError": 30,
+    "psnr": 46.971,
+    "pixelIdentical": false
+  },
+  {
+    "screen": "health-activities",
+    "quality": 100,
+    "bytes": 179482,
+    "seconds": 0.35,
+    "meanAbsoluteError": 0.7780058979988098,
+    "p99AbsoluteError": 2.0,
+    "maxError": 3,
+    "psnr": 49.089,
+    "pixelIdentical": false
+  },
+  {
+    "screen": "map",
+    "quality": 90,
+    "bytes": 317769,
+    "seconds": 0.26,
+    "meanAbsoluteError": 1.3079479932785034,
+    "p99AbsoluteError": 6.0,
+    "maxError": 32,
+    "psnr": 42.656,
+    "pixelIdentical": false
+  },
+  {
+    "screen": "map",
+    "quality": 100,
+    "bytes": 1295022,
+    "seconds": 0.45,
+    "meanAbsoluteError": 0.6800155639648438,
+    "p99AbsoluteError": 2.0,
+    "maxError": 3,
+    "psnr": 48.857,
+    "pixelIdentical": false
+  }
+]

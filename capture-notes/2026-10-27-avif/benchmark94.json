@@ -1,0 +1,35 @@
+[
+  {
+    "screen": "shop-funded-v1",
+    "quality": 94,
+    "bytes": 325246,
+    "seconds": 0.73,
+    "meanAbsoluteError": 0.9672178030014038,
+    "p99AbsoluteError": 5.0,
+    "maxError": 17,
+    "psnr": 45.201,
+    "pixelIdentical": false
+  },
+  {
+    "screen": "health-activities",
+    "quality": 94,
+    "bytes": 86505,
+    "seconds": 0.25,
+    "meanAbsoluteError": 0.8338260054588318,
+    "p99AbsoluteError": 3.0,
+    "maxError": 19,
+    "psnr": 47.915,
+    "pixelIdentical": false
+  },
+  {
+    "screen": "map",
+    "quality": 94,
+    "bytes": 411794,
+    "seconds": 0.29,
+    "meanAbsoluteError": 1.09837007522583,
+    "p99AbsoluteError": 5.0,
+    "maxError": 18,
+    "psnr": 44.447,
+    "pixelIdentical": false
+  }
+]

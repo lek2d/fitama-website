@@ -1,5 +1,15 @@
 # FiTama website
 
+## October 27, 2026 — AVIF screenshot delivery
+
+Nine approved screenshots now prefer high-quality AVIF through native picture/source selection, with the existing lossless WebP images retained as fallbacks. All27 AVIFs come directly from the same native4× PNG masters at quality94,4:4:4 full-range color. These delivery files are lossy, not pixel-identical; the source masters, approved content, resolutions and original img attributes remain unchanged.
+
+The nine-image payload falls from5.28MB to1.74MB at780px(67.08%),10.11MB to2.92MB at1170px(71.17%), and13.89MB to3.84MB at1560px(72.38%). These are image-payload savings, not whole-page speed claims. Unsupported AVIF types use WebP. Missing/corrupt preferred files still require correction; format fallback is not network-error recovery.
+
+Verification:82 publisher and194 source tests;27 decoded AVIF dimensions/hashes and mirror copies;56 regular plus six visible static-image geometry comparisons at six viewport sizes with no differences over0.1px. A source-element grid item found during short-screen checks was corrected by explicitly hiding source layout boxes. AVIF and unsupported-type WebP selection worked in the browser. No native app/backend changes; QA and automation remain paused.
+
+Preferred assets: `assets/screens-2026-10-27-avif/manifest.json`; unchanged fallback provenance: `assets/screens-2026-10-27-lossless/manifest.json`. Reproduction: publisher `capture-notes/2026-10-27-avif/encode.py`. Earlier dated entries remain historical.
+
 ## October 27, 2026 — lossless app screenshots
 
 Replaced all nine active app screenshots with fresh native PNG captures of the same approved sample screens at a real 4× browser density (1560×3376, logical390×844). The previous1170×2532 files came from a CSS-scaled iframe and JPEG-quality80 transport; increasing their dimensions could not recover sharp text. These captures use no scaled iframe or JavaScript DPR override. No screenshot was AI-redrawn, sharpened or enlarged from an older capture.

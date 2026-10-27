@@ -1,0 +1,494 @@
+{
+  "date": "2026-10-27",
+  "sourceCommit": "9e2696b8c6c8d5fc94215020ce1063c55c348c51",
+  "source": "Same approved native4x PNG screenshot masters from the October27 local sample capture; no recapture or redesign.",
+  "encoder": {
+    "Pillow": "12.3.0",
+    "libavif": "1.4.2",
+    "quality": 94,
+    "subsampling": "4:4:4",
+    "range": "full",
+    "speed": 6
+  },
+  "quality": "High-quality lossy AVIF; not pixel-lossless.4:4:4 avoids chroma subsampling; all retained source resolutions. Original lossless WebP fallbacks remain unchanged.",
+  "integration": "Native picture/source type=image/avif; original img attributes, responsive candidates and WebPfallbacks retained.",
+  "scope": "Nine website screenshot images only. No native app, backend, account, provider, QA or automation changes.",
+  "screens": [
+    {
+      "name": "egg-home",
+      "sourcePngSha256": "4e484f018a8ca340615e144e2091f99b09d46237929b4720397ec100651ccbfa",
+      "variants": [
+        {
+          "file": "egg-home.2x.avif",
+          "dimensions": [
+            780,
+            1688
+          ],
+          "bytes": 137206,
+          "sha256": "68672d2691fd8597e2348a556971153fcef2dbcb2d401ffdd2bb0aa0ebfe4f10",
+          "fallbackFile": "egg-home.2x.webp",
+          "fallbackBytes": 383244,
+          "savingPercent": 64.2,
+          "psnrDb": 46.621,
+          "meanAbsoluteError": 0.8923,
+          "pixelIdentical": false
+        },
+        {
+          "file": "egg-home.3x.avif",
+          "dimensions": [
+            1170,
+            2532
+          ],
+          "bytes": 239939,
+          "sha256": "cc2e9d8f0f63b9be8f01ccbc758c6fec5ac6ca7633b7f47e88c911d9bcda2932",
+          "fallbackFile": "egg-home.3x.webp",
+          "fallbackBytes": 754402,
+          "savingPercent": 68.19,
+          "psnrDb": 46.879,
+          "meanAbsoluteError": 0.8716,
+          "pixelIdentical": false
+        },
+        {
+          "file": "egg-home.avif",
+          "dimensions": [
+            1560,
+            3376
+          ],
+          "bytes": 308328,
+          "sha256": "9a3fcf5f433191ee6641d36119f6530781ef0f94acf0498aa4aadd6aa2fba334",
+          "fallbackFile": "egg-home.webp",
+          "fallbackBytes": 1049618,
+          "savingPercent": 70.62,
+          "psnrDb": 47.29,
+          "meanAbsoluteError": 0.8412,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "home",
+      "sourcePngSha256": "f90c0c3412a5aae43eaf0b2e5f9f14afd023f3c69bc2c5d0eda78fdd0d0ebaf7",
+      "variants": [
+        {
+          "file": "home.2x.avif",
+          "dimensions": [
+            780,
+            1688
+          ],
+          "bytes": 155186,
+          "sha256": "45c2e02c7d86dcf9ee107a2b4cc7e91874c29b475eae9711e17c1be71016240b",
+          "fallbackFile": "home.2x.webp",
+          "fallbackBytes": 417686,
+          "savingPercent": 62.85,
+          "psnrDb": 46.366,
+          "meanAbsoluteError": 0.9114,
+          "pixelIdentical": false
+        },
+        {
+          "file": "home.3x.avif",
+          "dimensions": [
+            1170,
+            2532
+          ],
+          "bytes": 269420,
+          "sha256": "cdf43bb3476039cc8d0c576fde5752737e2c0a7de993746111a2539ae226b7eb",
+          "fallbackFile": "home.3x.webp",
+          "fallbackBytes": 818992,
+          "savingPercent": 67.1,
+          "psnrDb": 46.637,
+          "meanAbsoluteError": 0.8945,
+          "pixelIdentical": false
+        },
+        {
+          "file": "home.avif",
+          "dimensions": [
+            1560,
+            3376
+          ],
+          "bytes": 350872,
+          "sha256": "6714e81612e107ffbf5bb5c776dfd55063866465c5976870276f02490a5f65bc",
+          "fallbackFile": "home.webp",
+          "fallbackBytes": 1127614,
+          "savingPercent": 68.88,
+          "psnrDb": 47.078,
+          "meanAbsoluteError": 0.8617,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "health-activities",
+      "sourcePngSha256": "d7ff6d96563eea4daba7dc1916c09b6bc8f74855a8d417dbbbaa0de131f05f67",
+      "variants": [
+        {
+          "file": "health-activities.2x.avif",
+          "dimensions": [
+            780,
+            1688
+          ],
+          "bytes": 86505,
+          "sha256": "e4757722db179290b63d9418cecacea002b6de342641ea3d12ca8884db392e95",
+          "fallbackFile": "health-activities.2x.webp",
+          "fallbackBytes": 169830,
+          "savingPercent": 49.06,
+          "psnrDb": 47.915,
+          "meanAbsoluteError": 0.8338,
+          "pixelIdentical": false
+        },
+        {
+          "file": "health-activities.3x.avif",
+          "dimensions": [
+            1170,
+            2532
+          ],
+          "bytes": 144900,
+          "sha256": "c24a1a815bb961aad24966ce8dbf12eec112a423152e3f7b5a0cf074adf7fe0b",
+          "fallbackFile": "health-activities.3x.webp",
+          "fallbackBytes": 299610,
+          "savingPercent": 51.64,
+          "psnrDb": 48.122,
+          "meanAbsoluteError": 0.8219,
+          "pixelIdentical": false
+        },
+        {
+          "file": "health-activities.avif",
+          "dimensions": [
+            1560,
+            3376
+          ],
+          "bytes": 159956,
+          "sha256": "a12e7d83905f8d145f61658e641e3cafec7e22ad0f9204d74a4fefdd05b7cc3b",
+          "fallbackFile": "health-activities.webp",
+          "fallbackBytes": 304214,
+          "savingPercent": 47.42,
+          "psnrDb": 48.482,
+          "meanAbsoluteError": 0.8066,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "map",
+      "sourcePngSha256": "2923b1f871718662ad5235320eef5140352297fc124e3db5f30706e764d7d1ca",
+      "variants": [
+        {
+          "file": "map.2x.avif",
+          "dimensions": [
+            780,
+            1688
+          ],
+          "bytes": 411794,
+          "sha256": "bd0049faeb10a6eb735ee178df830a741c9681ce7a78fba1e1689282e2c702cf",
+          "fallbackFile": "map.2x.webp",
+          "fallbackBytes": 1323404,
+          "savingPercent": 68.88,
+          "psnrDb": 44.447,
+          "meanAbsoluteError": 1.0984,
+          "pixelIdentical": false
+        },
+        {
+          "file": "map.3x.avif",
+          "dimensions": [
+            1170,
+            2532
+          ],
+          "bytes": 661598,
+          "sha256": "259d29649ac5ec9962491065dd0d7c182c8d907a8a22d7c9e61964c6a9e1ba83",
+          "fallbackFile": "map.3x.webp",
+          "fallbackBytes": 2467632,
+          "savingPercent": 73.19,
+          "psnrDb": 45.473,
+          "meanAbsoluteError": 0.9746,
+          "pixelIdentical": false
+        },
+        {
+          "file": "map.avif",
+          "dimensions": [
+            1560,
+            3376
+          ],
+          "bytes": 907389,
+          "sha256": "5438eb4a594d64a5c8eafcdfb7e8b9d1a35203a2b91a3a0f33560a8b1f902708",
+          "fallbackFile": "map.webp",
+          "fallbackBytes": 3441422,
+          "savingPercent": 73.63,
+          "psnrDb": 46.281,
+          "meanAbsoluteError": 0.8854,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "battle-before",
+      "sourcePngSha256": "644b8a1fb67b6e5a3ec3d7dd93689d5ea5d6e9836bb0df7902b9dd192936bfd8",
+      "variants": [
+        {
+          "file": "battle-before.2x.avif",
+          "dimensions": [
+            780,
+            1688
+          ],
+          "bytes": 269919,
+          "sha256": "16eaa19ab2f401c1e3c6b8f73151d6e096b147caf1273ac11435a57bf4b192d4",
+          "fallbackFile": "battle-before.2x.webp",
+          "fallbackBytes": 1043666,
+          "savingPercent": 74.14,
+          "psnrDb": 46.06,
+          "meanAbsoluteError": 0.9164,
+          "pixelIdentical": false
+        },
+        {
+          "file": "battle-before.3x.avif",
+          "dimensions": [
+            1170,
+            2532
+          ],
+          "bytes": 442508,
+          "sha256": "b6e023148c0fb1e8bcbf8116917053f26b3936c8bfccc6c4d96927b37aa9e53f",
+          "fallbackFile": "battle-before.3x.webp",
+          "fallbackBytes": 2172338,
+          "savingPercent": 79.63,
+          "psnrDb": 46.712,
+          "meanAbsoluteError": 0.8541,
+          "pixelIdentical": false
+        },
+        {
+          "file": "battle-before.avif",
+          "dimensions": [
+            1560,
+            3376
+          ],
+          "bytes": 590293,
+          "sha256": "210ae743dd1cad4f95899e9f9fb76121640e9b5d44ab7028decb380a1b799078",
+          "fallbackFile": "battle-before.webp",
+          "fallbackBytes": 3093476,
+          "savingPercent": 80.92,
+          "psnrDb": 47.41,
+          "meanAbsoluteError": 0.7899,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "battle-result",
+      "sourcePngSha256": "7720b75988900ef94892869e804a352df404e8ad54053d4d11c244426e309c64",
+      "variants": [
+        {
+          "file": "battle-result.2x.avif",
+          "dimensions": [
+            780,
+            1688
+          ],
+          "bytes": 69795,
+          "sha256": "ee1a7847c3ad994c39b9cc57e2dc157f7b081202e060ca7b44083219ec083191",
+          "fallbackFile": "battle-result.2x.webp",
+          "fallbackBytes": 226850,
+          "savingPercent": 69.23,
+          "psnrDb": 48.192,
+          "meanAbsoluteError": 0.7282,
+          "pixelIdentical": false
+        },
+        {
+          "file": "battle-result.3x.avif",
+          "dimensions": [
+            1170,
+            2532
+          ],
+          "bytes": 124177,
+          "sha256": "e87d97627dcbcc379a67bb60945da513e25f7359b203a6881c92b25729775191",
+          "fallbackFile": "battle-result.3x.webp",
+          "fallbackBytes": 377106,
+          "savingPercent": 67.07,
+          "psnrDb": 48.332,
+          "meanAbsoluteError": 0.7227,
+          "pixelIdentical": false
+        },
+        {
+          "file": "battle-result.avif",
+          "dimensions": [
+            1560,
+            3376
+          ],
+          "bytes": 156329,
+          "sha256": "116535a8867a8e6828a1902bd1bab41a203b62025c29f7e9cd5392fa24f968eb",
+          "fallbackFile": "battle-result.webp",
+          "fallbackBytes": 462866,
+          "savingPercent": 66.23,
+          "psnrDb": 48.545,
+          "meanAbsoluteError": 0.7094,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "equipment",
+      "sourcePngSha256": "0289bb164ad461bf01bb753e2bd94c87ff242679b5a331bf8f96a5e9426bab35",
+      "variants": [
+        {
+          "file": "equipment.2x.avif",
+          "dimensions": [
+            780,
+            1688
+          ],
+          "bytes": 186201,
+          "sha256": "6ca654933064c592e7fdea7e40000a9c1ec2f595c423f674708b259e8e2f51a1",
+          "fallbackFile": "equipment.2x.webp",
+          "fallbackBytes": 465230,
+          "savingPercent": 59.98,
+          "psnrDb": 46.778,
+          "meanAbsoluteError": 0.6955,
+          "pixelIdentical": false
+        },
+        {
+          "file": "equipment.3x.avif",
+          "dimensions": [
+            1170,
+            2532
+          ],
+          "bytes": 313372,
+          "sha256": "aa773e0cd66afb53fc0f9a21cc6cdb3a3c1118bc01a12c07a1f1b7874739c790",
+          "fallbackFile": "equipment.3x.webp",
+          "fallbackBytes": 888442,
+          "savingPercent": 64.73,
+          "psnrDb": 47.241,
+          "meanAbsoluteError": 0.6614,
+          "pixelIdentical": false
+        },
+        {
+          "file": "equipment.avif",
+          "dimensions": [
+            1560,
+            3376
+          ],
+          "bytes": 423393,
+          "sha256": "24bdf6c6206f96fdc27775a4026de96a765629029ed39ba7a7b332d903835246",
+          "fallbackFile": "equipment.webp",
+          "fallbackBytes": 1313208,
+          "savingPercent": 67.76,
+          "psnrDb": 47.914,
+          "meanAbsoluteError": 0.6155,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "shop-funded-v1",
+      "sourcePngSha256": "0a0d0e276831004679809a84f173fe70f6b98572b8d9548d7d5dc9a9c4b715d8",
+      "variants": [
+        {
+          "file": "shop-funded-v1.2x.avif",
+          "dimensions": [
+            780,
+            1688
+          ],
+          "bytes": 325246,
+          "sha256": "f79d07d523e1cd9e4d9a01af1dc0803badace1aada45603bb01b8118d956b026",
+          "fallbackFile": "shop-funded-v1.2x.webp",
+          "fallbackBytes": 1045910,
+          "savingPercent": 68.9,
+          "psnrDb": 45.201,
+          "meanAbsoluteError": 0.9672,
+          "pixelIdentical": false
+        },
+        {
+          "file": "shop-funded-v1.3x.avif",
+          "dimensions": [
+            1170,
+            2532
+          ],
+          "bytes": 550208,
+          "sha256": "8eaf952c7aa3e44c913f7f930769c7432596bea8c8481b3e170e0ea89af69c32",
+          "fallbackFile": "shop-funded-v1.3x.webp",
+          "fallbackBytes": 1978252,
+          "savingPercent": 72.19,
+          "psnrDb": 45.751,
+          "meanAbsoluteError": 0.9081,
+          "pixelIdentical": false
+        },
+        {
+          "file": "shop-funded-v1.avif",
+          "dimensions": [
+            1560,
+            3376
+          ],
+          "bytes": 753157,
+          "sha256": "83dab35cb5c0a70865470caff5b0dc5ef69873a50dc181030bd7eeb1e192c5a3",
+          "fallbackFile": "shop-funded-v1.webp",
+          "fallbackBytes": 2721176,
+          "savingPercent": 72.32,
+          "psnrDb": 46.383,
+          "meanAbsoluteError": 0.8441,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "quests-claimed",
+      "sourcePngSha256": "175bb538d20cfb7de66f042c15dc9426d46906857ce56d3a8de4396886883148",
+      "variants": [
+        {
+          "file": "quests-claimed.2x.avif",
+          "dimensions": [
+            780,
+            1688
+          ],
+          "bytes": 95290,
+          "sha256": "fa3d69db7f81b36e2261ed7f23c9d2277dda338f96f70add20df7c2ddd9e781d",
+          "fallbackFile": "quests-claimed.2x.webp",
+          "fallbackBytes": 201816,
+          "savingPercent": 52.78,
+          "psnrDb": 47.422,
+          "meanAbsoluteError": 0.853,
+          "pixelIdentical": false
+        },
+        {
+          "file": "quests-claimed.3x.avif",
+          "dimensions": [
+            1170,
+            2532
+          ],
+          "bytes": 169494,
+          "sha256": "c4ac792a1667c7a06a78bc350a7501eae1ceae9490eb172d3de82de2e1f3096a",
+          "fallbackFile": "quests-claimed.3x.webp",
+          "fallbackBytes": 357410,
+          "savingPercent": 52.58,
+          "psnrDb": 47.705,
+          "meanAbsoluteError": 0.8377,
+          "pixelIdentical": false
+        },
+        {
+          "file": "quests-claimed.avif",
+          "dimensions": [
+            1560,
+            3376
+          ],
+          "bytes": 188408,
+          "sha256": "ca7d62d3894d144c74109b428b909217b99057eb9e555998531afd4f9f223055",
+          "fallbackFile": "quests-claimed.webp",
+          "fallbackBytes": 380694,
+          "savingPercent": 50.51,
+          "psnrDb": 48.062,
+          "meanAbsoluteError": 0.8218,
+          "pixelIdentical": false
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "780": {
+      "avifBytes": 1737142,
+      "webpBytes": 5277636,
+      "savingPercent": 67.08
+    },
+    "1170": {
+      "avifBytes": 2915616,
+      "webpBytes": 10114184,
+      "savingPercent": 71.17
+    },
+    "1560": {
+      "avifBytes": 3838125,
+      "webpBytes": 13894288,
+      "savingPercent": 72.38
+    }
+  }
+}
