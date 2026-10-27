@@ -1,5 +1,12 @@
 # FiTama website
 
+## October 27, 2026 — responsive hero grounding
+
+Tall tablet layouts placed the eggs above the painted lawn: the old baseline depended only on viewport height, while the foreground artwork scales by its registered canvas width. At768×1024, contact points projected into transparent foreground rows around545. The shared egg/pet/front-plant baseline now stays at or below a measured opaque lawn row620 of the1672px source. Healthy desktop and phone compositions retain their existing baseline. The correction travels with the meadow and smoothly rejoins the original release position; egg drop, phone and chapter geometry after progress.32 remain unchanged. No artwork, Rive framing or hover behavior changed.
+
+Verification:194 source tests and82 publisher tests passed. New regressions sample the actual PNG alpha under all three egg footprints at16 responsive sizes, including699/700px breakpoints; six previously failing tall-screen cases now pass. Independent review sampled305 active viewport pairs and65,861 lawn pixels (minimum alpha252, zero failures) and verified290,970 exact post-release field comparisons. Browser checks cover390×844,768×1024,820×1180,1440×900 and2560×1440, plus all three Rive previews on tablet, with no horizontal overflow. Source mirror synchronized. Native app QA and automation remain paused.
+
+
 ## October 27, 2026 — one complete pet look per hover
 
 Unselected pets previously revealed their last Rive look on re-entry, then changed again when new random traits finished decoding. Preview visibility now belongs to the requested appearance version: the egg stays until that complete look has painted. The previous canvas hides immediately instead of fading through a replacement. The warm renderer is reused; the shared local runtime, rig and one next appearance per pet are fetched after page readiness and between interactions without hidden animation loops or delaying the page loader. A first renderer setup can still take time, and optional prefetch is not a promise of instantaneous response on every device or connection.

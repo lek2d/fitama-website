@@ -26,8 +26,12 @@ export function journey(p, w, h) {
   const ignieX=w/2+((startW+ignieW)/2-shellOverlap)*.7;
   const nestW = startW * 3.6;
   const nestH = nestW / 3;
-  // Ground the eggs on the bright clearing, above its shaded continuation.
-  const nestBase = h * 0.91 - nestH * .21;
+  // The lawn scales with its registered canvas width, not viewport height.
+  // Row620 is solid painted grass across the central contact footprint of the
+  // 1672px artwork. Tall tablet layouts must not place eggs over its clear sky.
+  const heroCanvasW = w * (mobile ? 2.4 : 1);
+  const lawnFloorY = h - heroCanvasW * .5 + heroCanvasW * 620 / 1672;
+  const nestBase = Math.max(h * .91 - nestH * .21, lawnFloorY);
   const nestTop = nestBase - nestH * .90;
   // Separate woodland clusters leave irregular ground visible beside the cradle.
   const foliageOutset = w * (mobile ? .08 : .035);

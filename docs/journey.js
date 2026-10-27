@@ -1,6 +1,6 @@
 import {setHeaderVisible} from './navigation.js?v=nav-smooth-v1';
-import {phase} from './journey-timeline.mjs?v=egg-drop-v2';
-import {walkthrough, introDistance} from './walkthrough.mjs?v=egg-drop-v2';
+import {phase} from './journey-timeline.mjs?v=grounding-v1';
+import {walkthrough, introDistance} from './walkthrough.mjs?v=grounding-v1';
 import {installSmoothScroll} from './smooth-scroll.mjs?v=free-scroll-v1';
 import {installPetPreviews} from './pet-preview.mjs?v=hover-single-v1&release=20261026';
 import {prepareJourneyPage} from './page-loader.mjs?v=preloader-v1&release=20261026&brand=glossy-v1';
