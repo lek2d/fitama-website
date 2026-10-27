@@ -1,5 +1,11 @@
 # FiTama website
 
+## October 27, 2026 — logo-left dark header
+
+Journey, Guide and Contact now place the logo first on the left, with Guide, social links and Get Fitama on the right. The header background is 70% black with a 16px backdrop blur; its separate background plane preserves fully opaque content and allows the mobile disclosure to blur independently. Mobile uses the same dark treatment, warm-white controls and a visible gold keyboard focus outline. Source mirrors and stylesheet cache URLs are synchronized.
+
+Verification: all 10 existing navigation/disclosure tests passed. Browser checks at 320, 390, 699, 700, 1024 and 1440px confirmed the alignment, no horizontal overflow, and computed 70% black/16px blur. Desktop Journey and Contact plus the open mobile Journey menu were visually checked; mobile targets remain at least 44px. Independent review found no blockers.
+
 ## October 27, 2026 — clear foreground beneath the eggs
 
 Removed the separate foreground image layer containing the three small leaf clusters directly in front of the eggs. The two side bushes continue using the same shared artwork; egg placement and preview behavior are unchanged. Desktop 1440×900 and mobile 390×844 browser checks confirm all three eggs, both bushes, no middle sprig layer and no page overflow. Source mirror synchronized and Journey's CSS URL refreshed.
