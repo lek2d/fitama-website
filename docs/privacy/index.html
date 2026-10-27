@@ -24,7 +24,6 @@
 <meta name="twitter:image" content="https://fitama.app/assets/fitama-share-cover-v1.jpg">
 <meta name="twitter:image:alt" content="Fitama logo above three companion eggs in a bright mountain valley with a lake, waterfalls and flowers.">
 
-
     <link rel="stylesheet" href="../privacy.css">
   </head>
   <body>
@@ -35,11 +34,11 @@
     </header>
     <main id="main" tabindex="-1">
       <h1>Privacy Policy</h1>
-      <p class="updated">App notice updated October 27, 2026 · Website form notice updated October 26, 2026</p>
+      <p class="updated">App notice updated October 28, 2026 · Website form notice updated October 26, 2026</p>
       <p>This policy explains how FiTama handles information in its iPhone app, including TestFlight versions, and at fitama.app. FiTama is operated by <strong>Fredrick Sapanlay</strong>, an individual developer in the Philippines using the brand name <strong>Red Pots Games</strong>. Red Pots Games is a brand name, not a separate registered company.</p>
       <p>For privacy questions or requests, contact Fredrick at <a href="mailto:support@fitama.app">support@fitama.app</a>. Our initial release is intended for people aged 16 and older in the Philippines.</p>
       <aside aria-label="Feature availability">
-        <p><strong>Group dungeon chat is not enabled at the date of this policy.</strong> Its planned handling is explained below. Features, including optional rewarded ads, may differ by app version and availability.</p>
+        <p><strong>Group dungeon chat is available to players in the same Group dungeon battle.</strong> Its handling is explained below, and its rules are in our <a href="../terms/">Terms of Use</a>. Features, including optional rewarded ads, may differ by app version and availability.</p>
       </aside>
       <nav class="contents" aria-label="Policy contents">
         <h2>In this policy</h2>
@@ -47,7 +46,7 @@
           <li><a href="#account">Account and gameplay</a></li>
           <li><a href="#health">Apple Health and activity</a></li>
           <li><a href="#social">Social features</a></li>
-          <li><a href="#chat">Planned dungeon chat</a></li>
+          <li><a href="#chat">Dungeon chat</a></li>
           <li><a href="#notifications">Notifications</a></li>
           <li><a href="#ads">Optional rewarded ads</a></li>
           <li><a href="#website">Website and support</a></li>
@@ -87,12 +86,13 @@
 
       <span id="mail-chat" aria-hidden="true"></span>
       <section aria-labelledby="chat">
-        <h2 id="chat">Planned dungeon chat</h2>
-        <p>Chat is planned for shared dungeon battles, not a separate direct-message inbox. When enabled, it will process message text and emoji, selected sticker identifiers, sender and battle identifiers, companion display details, order and timestamps. Read progress, room closure, request identifiers and account-reset version identifiers support access checks, unread counts, reliable delivery and send limits.</p>
-        <p>Eligible authenticated battle participants will be able to see messages and sender details available to them. Chat is not end-to-end encrypted: the backend processes message content. Do not send passwords, sensitive Health details or anything you do not want to share with the party.</p>
-        <p>The planned Report flow preserves the selected message's server-confirmed content and metadata, report reason, reporter identifier, related identifiers and time for authorized abuse review. Reports are not public and do not notify the reported player. Report evidence is separate from ordinary messages and may remain after an account or message is deleted.</p>
-        <p>The prepared Block feature stores the blocking and blocked accounts, selected display details, timestamps and request records. It filters that player's messages from your view; it does not remove party members, prevent invitations or stop them seeing your messages. It does not copy message content into block records.</p>
-        <p><strong>Before chat activation, we will verify the safety and moderation process, persistent blocking and cleanup operation, and update this notice if the actual handling changes.</strong> We do not claim that chat is currently available, automatically moderated or operating on a verified deletion schedule. Planned retention targets appear below.</p>
+        <h2 id="chat">Dungeon chat</h2>
+        <p>Players in the same Group dungeon battle can chat. There is no direct-message inbox, global chat, Lobby chat or Solo/Training chat. Chat processes message text and emoji, selected sticker identifiers, sender and battle identifiers, companion display details, order and timestamps. Read progress, room closure, request identifiers and account-reset version identifiers support access checks, unread counts, reliable delivery and send limits.</p>
+        <p>Players in the battle can see messages and sender details available to them. Chat is not end-to-end encrypted: the backend processes message content. Do not send passwords, sensitive Health details or anything you do not want to share with the party.</p>
+        <p>Before accepting a message, FiTama's server checks its text against a word filter. The filter can miss harmful content and can reject harmless wording; it is not a substitute for Report and Block. A rejected message is not delivered, and the record of a rejected attempt does not keep its text.</p>
+        <p>Report preserves the selected message's server-confirmed content and metadata, report reason, reporter identifier, related identifiers and time for authorized abuse review. FiTama's support mailbox receives a notice with the report identifier, time and reason only, not the message. Reports are not public and do not notify the reported player. Report evidence is separate from ordinary messages and may remain after an account or message is deleted.</p>
+        <p>Block stores the blocking and blocked accounts, selected display details, timestamps and request records. It hides that player's messages from your view in every dungeon; it does not remove party members, prevent invitations or stop them seeing your messages. It does not copy message content into block records.</p>
+        <p>Authorized operators can review preserved report evidence, remove a message from ordinary chat and pause an account's chat sending for 24 hours. A chat pause does not change equipment, TP, rewards or Fitama progress. Removing a message hides its body from later server responses; offline devices and copies already received cannot be recalled instantly.</p>
       </section>
 
       <section aria-labelledby="notifications">
@@ -141,8 +141,8 @@
           <dd>We keep the entry for the Android launch notification, or until you withdraw your signup or request deletion. Once the notification has been sent, or if the launch is cancelled, we remove entries that are no longer needed. Any specific legal or security exception is limited to that purpose. This is separate from your game account: deleting a game account does not automatically identify and remove a waitlist entry registered with another address.</dd>
           <dt>Support emails</dt>
           <dd>We retain support correspondence for up to 12 months after the issue is resolved, then delete it from the active support mailbox, unless a specific legal requirement or unresolved security dispute requires relevant material to be kept longer.</dd>
-          <dt>Planned chat messages and reports</dt>
-          <dd>The planned message target is seven days after the earlier of battle resolution or scheduled expiry; the report target is 30 days after report creation. The implemented rules define deletion eligibility, not a verified automatic deletion deadline. Chat remains disabled until the cleanup schedule and safety operation are verified. Closing results removes access to chat, not every stored copy immediately.</dd>
+          <dt>Chat messages and reports</dt>
+          <dd>Ordinary chat messages become eligible for deletion seven days after the earlier of battle resolution or scheduled expiry. Report evidence, rejected-attempt records and moderation records become eligible 30 days after they were created. An hourly cleanup job deletes eligible records in batches, so deletion can follow eligibility by some time. Closing results removes your access to that chat, not every stored copy immediately; provider backups and copies already on players’ devices can last longer.</dd>
           <dt>Sign-in records kept after deletion</dt>
           <dd>After account deletion we keep two one-way hashes, neither linked to a FiTama account. The first, of the sign-in provider and account identifier used with a friend code, stops the same sign-in from redeeming another friend code. The second, of the Apple account identifier with the time FiTama's Apple access was revoked, stops a revoked Apple sign-in from being reused. The encrypted Apple tokens are removed with the account.</dd>
           <dt>Shared records, legal exceptions and provider copies</dt>
@@ -161,9 +161,9 @@
 
       <section aria-labelledby="security">
         <h2 id="security">Security, age eligibility and updates</h2>
-        <p>FiTama uses authenticated services and access checks to restrict account and battle information. No system can guarantee absolute security. Planned chat is not end-to-end encrypted, and authorized operators may review preserved report evidence.</p>
+        <p>FiTama uses authenticated services and access checks to restrict account and battle information. No system can guarantee absolute security. Dungeon chat is not end-to-end encrypted, and authorized operators may review preserved report evidence.</p>
         <p>FiTama's initial service is intended for people aged 16 and older in the Philippines, not children under 16. If you believe an underage person has supplied personal information, contact support so we can investigate and address the account.</p>
-        <p>We will update this policy when our handling changes. The date above identifies the current version. Changes requiring additional permission will not be treated as permission merely because this page has changed. Planned chat activation and any material change in advertising or website data collection require a fresh review of this notice and the relevant in-app disclosures.</p>
+        <p>We will update this policy when our handling changes. The date above identifies the current version. Changes requiring additional permission will not be treated as permission merely because this page has changed. Any material change in chat, advertising or website data collection requires a fresh review of this notice and the relevant in-app disclosures.</p>
       </section>
     </main>
     <footer>
