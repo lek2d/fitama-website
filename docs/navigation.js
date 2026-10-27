@@ -1,4 +1,42 @@
 const header = document.querySelector('.site-header');
+const menuToggle = header?.querySelector('.nav-toggle');
+const menu = header?.querySelector('.header-menu');
+let closeHeaderMenu = () => {};
+
+if (menuToggle && menu) {
+  const narrow = matchMedia('(max-width: 699px)');
+  function setMenuOpen(open, restoreFocus = false) {
+    if (restoreFocus && menu.contains(document.activeElement)) menuToggle.focus({preventScroll:true});
+    menuToggle.setAttribute('aria-expanded', String(open));
+    menu.hidden = narrow.matches && !open;
+  }
+  closeHeaderMenu = () => setMenuOpen(false);
+  header.classList.add('nav-enhanced');
+  menuToggle.hidden = !narrow.matches;
+  setMenuOpen(false);
+  menuToggle.addEventListener('click', () => setMenuOpen(menuToggle.getAttribute('aria-expanded') !== 'true'));
+  header.addEventListener('keydown', event => {
+    if (event.key !== 'Escape' || menuToggle.getAttribute('aria-expanded') !== 'true') return;
+    event.preventDefault();
+    setMenuOpen(false, true);
+  });
+  menu.addEventListener('click', event => {
+    if (event.target.closest('a')) setMenuOpen(false, narrow.matches);
+  });
+  document.addEventListener('click', event => {
+    if (!header.contains(event.target)) setMenuOpen(false, narrow.matches);
+  });
+  header.addEventListener('focusout', event => {
+    if (event.relatedTarget && !header.contains(event.relatedTarget)) setMenuOpen(false);
+  });
+  narrow.addEventListener('change', () => {
+    // Keep focused links reachable when desktop navigation collapses.
+    const toggleHadFocus = document.activeElement === menuToggle;
+    menuToggle.hidden = !narrow.matches;
+    setMenuOpen(false, narrow.matches);
+    if (!narrow.matches && toggleHadFocus) menu.querySelector('a')?.focus({preventScroll:true});
+  });
+}
 
 // Keep keyboard focus in the visible story when the header leaves the tab order.
 export function setHeaderVisible(visible) {
@@ -6,6 +44,7 @@ export function setHeaderVisible(visible) {
   if (!visible && header.contains(document.activeElement)) {
     document.querySelector('.scroll-story')?.focus({preventScroll:true});
   }
+  if (!visible) closeHeaderMenu();
   header.dataset.visible = String(visible);
   header.inert = !visible;
 }

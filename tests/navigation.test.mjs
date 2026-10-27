@@ -9,7 +9,7 @@ function navigation({reduced=false,staticMode=false,path='/journey.html'}={}) {
   const brand=link('journey.html'),cta=link(path==='/journey.html'?'#download':'journey.html#download');
   const section=name=>({focus(options){calls.push(['focus',name,options]);},scrollIntoView(options){calls.push(['scroll',name,options]);}});
   const download=section('download'),story=section('story');
-  const header={querySelector:selector=>selector==='.nav-brand'?brand:cta};
+  const header={querySelector:selector=>({'.nav-brand':brand,'.nav-download':cta})[selector]||null};
   const document={querySelector:selector=>({'.site-header':header,'#download':download,'.scroll-story':story})[selector],documentElement:{classList:{contains:()=>staticMode}}};
   const location=new URL('https://fitama.app'+path+'?revision=keep#download');
   const source=readFileSync(new URL('../docs/navigation.js',import.meta.url),'utf8').replace(/^export /gm,'');

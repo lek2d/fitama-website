@@ -200,8 +200,8 @@
 /* Interior pages follow the Contact layout and share its content width. */
 :is(.guide-page,.contact-page,.legal-page){--interior-width:min(1080px,88%)}
 .guide-page :is(.guide-hero,.guide-body),:is(.guide-page,.contact-page) .site-footer{width:var(--interior-width)}
-:is(.guide-page,.contact-page,.legal-page) .site-header{position:relative;top:auto;left:auto;transform:none;transition:none;width:var(--interior-width);max-width:none;min-height:82px;margin:0 auto;padding:16px 0;border:0;border-radius:0;background:transparent;box-shadow:none}
-:is(.guide-page,.contact-page,.legal-page) .nav-brand{margin-right:auto}
+:is(.guide-page,.contact-page,.legal-page) .site-header{position:relative;top:auto;left:auto;transform:none;transition:none;width:var(--interior-width);max-width:none;margin:16px auto 0}
+:is(.guide-page,.contact-page,.legal-page) .nav-brand{margin-right:0}
 .interior-nav-logo{position:relative;display:block}
 
 .guide-hero>.guide-reader{right:12px;bottom:28px;width:260px;height:260px;transform:none}

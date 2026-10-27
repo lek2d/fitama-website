@@ -1,5 +1,11 @@
 # FiTama website
 
+## October 27, 2026 — container-width header navigation
+
+Journey, Guide and Contact share a header as wide as their content container, with Guide, the existing Facebook/Instagram/TikTok links and Get Fitama on the left, and the glossy logo on the right as requested. Below 700px a labeled Menu button opens a non-modal disclosure with the same links and 44px touch targets. Closed links leave the tab order; Escape restores focus, link/outside activation closes the menu, and responsive changes preserve reachable keyboard focus. Journey hiding resets the disclosure; logo and Get Fitama retain their existing smooth navigation and reduced-motion behavior. Script/import cache URLs are aligned to avoid duplicate navigation initialization.
+
+Verification: 88 publisher tests and 200 source tests passed, including six new disclosure behavior cases. Browser checks at 320, 390, 699, 700, 1440 and 2560px confirmed no header/page overflow, logo alignment, mobile target sizes, Escape/outside dismissal, breakpoint focus, cross-page Get Fitama, and Journey's smooth-link focus/anchor handling. Guide and Contact match their 1080px content containers; Journey matches its 1120px container. A local cross-page preview initially missed styles; reload restored all styles and no overflow, so deployment acceptance includes fresh live checks. Layout detector and independent review found no remaining blockers. Source mirror synchronized; no native app, provider, form submission or automation changes.
+
 ## October 27, 2026 — mobile QA layout fixes
 
 All four Journey chapters now center headings, copy and CTAs below their phone on mobile, including the static view. The mobile FAQ heading fits on one line at normal text size and may wrap when enlarged. Guide quick links and category buttons each use one horizontally scrolling row below 700px; selected categories remain visible after filtering/search reset, and keyboard focus stays visible through a resize. The desktop help link now uses inline flex so its existing 7px arrow gap applies. Desktop layout is preserved, and matching source files are synchronized.

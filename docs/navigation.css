@@ -1,18 +1,30 @@
-/* A simple logo and leafy download link on every screen size. */
-.site-header{position:fixed;z-index:40;top:max(14px,env(safe-area-inset-top));left:50%;width:max-content;max-width:calc(100% - 32px);min-height:82px;padding:18px 24px;display:flex;align-items:center;gap:28px;border:1px solid #30201820;border-radius:24px;background:#faf6e9;color:#302018;box-shadow:0 8px 28px #30201814;transform:translateX(-50%);transition:opacity .22s ease,transform .22s ease,visibility .22s}
+/* The header shares the content width, with navigation left and the logo right. */
+.site-header{position:fixed;z-index:40;top:max(14px,env(safe-area-inset-top));left:50%;width:min(1120px,88%);min-height:82px;padding:18px 24px;display:flex;align-items:center;gap:28px;border:1px solid #30201820;border-radius:24px;background:#faf6e9;color:#302018;box-shadow:0 8px 28px #30201814;transform:translateX(-50%);transition:opacity .22s ease,transform .22s ease,visibility .22s}
 .site-header[data-visible=false]{opacity:0;visibility:hidden;pointer-events:none;transform:translate(-50%,-12px)}
-.nav-brand{display:flex;align-items:center;min-height:44px;margin-right:0;flex-shrink:0}.nav-brand img{width:112px;height:auto;display:block}
+.nav-brand{display:flex;align-items:center;min-height:44px;margin-left:auto;margin-right:0;flex-shrink:0}.nav-brand img{width:112px;height:auto;display:block}
 .site-header a{text-decoration:none}
+.header-menu{display:flex;align-items:center;gap:24px;min-width:0}
+.nav-guide{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px;font-size:14px;font-weight:700;border-radius:8px}
+.nav-guide[aria-current=page]{text-decoration:underline;text-underline-offset:5px}
+.header-socials{display:flex;align-items:center;gap:4px}
+.header-socials a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:50%}
+.header-socials svg{width:20px;height:20px;display:block;flex-shrink:0}
+.site-header :is(.nav-guide,.header-socials a,.nav-toggle):hover{background:#e2e9d8}
+.nav-toggle{display:none;align-items:center;gap:8px;min-height:44px;padding:8px;border:0;border-radius:8px;background:transparent;color:inherit;font:700 14px Arial;cursor:pointer}
 .site-header .nav-download{position:relative;min-height:44px;display:flex;align-items:center;justify-content:center;padding:0 19px;margin-inline:8px;border-radius:14px;background:#302018;color:#fff8e9;font-size:13px;font-weight:700;white-space:nowrap}.site-header .nav-download:hover{background:#285845}
 /* Keep the approved 3:1 artwork proportional inside the existing button frame. */
 .site-header .nav-download:after{content:'';position:absolute;inset:-8px -8px;background:url('assets/store-leaf-corners-v6.png') center/contain no-repeat;pointer-events:none}
 .site-header :focus-visible{outline:3px solid #ad6c13;outline-offset:3px}
 .journey-page .download-section,.journey-page .story-summary{scroll-margin-top:112px}
 @media(max-width:699px){
- .site-header{top:max(10px,env(safe-area-inset-top));width:max-content;max-width:calc(100% - 24px);min-height:0;padding:16px;gap:16px;border-radius:22px}
+ .site-header{top:max(10px,env(safe-area-inset-top));min-height:0;padding:12px 16px;gap:16px;flex-wrap:wrap;border-radius:22px}
  .nav-brand img{width:92px}
+ .header-menu{flex-wrap:wrap;gap:16px;width:100%}
+ .nav-enhanced .nav-toggle{display:inline-flex}
+ .nav-enhanced .header-menu{display:grid;grid-template-columns:1fr auto;position:absolute;top:calc(100% + 8px);left:0;width:100%;padding:20px 16px;background:#faf6e9;border-radius:16px;box-shadow:0 8px 28px #30201824;max-height:calc(100svh - 110px);overflow-y:auto}
+ .header-socials{margin-left:auto}
+ .nav-enhanced .nav-download{grid-column:1/-1;justify-self:center;min-width:120px;margin-top:8px}
  .site-header .nav-download{padding-inline:12px;font-size:12px;margin-inline:6px}.site-header .nav-download:after{inset:-7px -7px}
- :is(.guide-page,.contact-page,.legal-page) .site-header{padding:20px 0}
  .journey-page .download-section,.journey-page .story-summary{scroll-margin-top:142px}
  .journey-page .stage :is(.follow-copy,.landing-copy){top:max(142px,9svh)}
 }
@@ -20,3 +32,6 @@
 .motion-off .site-header{transition:none}
 /* Programmatic story focus is a section target, not a visible control. */
 .scroll-story:focus{outline:none}
+
+/* Hidden disclosure controls must win over responsive display rules. */
+.site-header [hidden]{display:none}

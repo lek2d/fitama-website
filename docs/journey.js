@@ -1,4 +1,4 @@
-import {setHeaderVisible} from './navigation.js?v=nav-smooth-v1';
+import {setHeaderVisible} from './navigation.js?v=wide-header-v2';
 import {phase} from './journey-timeline.mjs?v=grounding-v1';
 import {walkthrough, introDistance} from './walkthrough.mjs?v=grounding-v1';
 import {installSmoothScroll} from './smooth-scroll.mjs?v=free-scroll-v1';
