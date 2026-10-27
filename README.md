@@ -1,5 +1,9 @@
 # FiTama website
 
+## October 27, 2026 — tablet chapter centering
+
+Extended the existing mobile chapter centering through the site's 1099px tablet breakpoint. All four chapter headings, constrained paragraphs and inline CTA buttons are centered in animated and static views; desktop alignment resumes at 1100px. Journey's stylesheet URL is refreshed. Browser checks at 320, 390, 680, 700, 768, 820, 1024, 1099, 1100 and 1440px confirm alignment, centered button/paragraph bounds and no horizontal page overflow after preview assets loaded. Source mirror synchronized. No timeline, artwork or navigation changes.
+
 ## October 27, 2026 — container-width header navigation
 
 Journey, Guide and Contact share a header as wide as their content container, with Guide, the existing Facebook/Instagram/TikTok links and Get Fitama on the left, and the glossy logo on the right as requested. Below 700px a labeled Menu button opens a non-modal disclosure with the same links and 44px touch targets. Closed links leave the tab order; Escape restores focus, link/outside activation closes the menu, and responsive changes preserve reachable keyboard focus. Journey hiding resets the disclosure; logo and Get Fitama retain their existing smooth navigation and reduced-motion behavior. Script/import cache URLs are aligned to avoid duplicate navigation initialization.
