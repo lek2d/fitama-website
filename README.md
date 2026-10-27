@@ -1,5 +1,9 @@
 # FiTama website
 
+## October 27, 2026 — clear foreground beneath the eggs
+
+Removed the separate foreground image layer containing the three small leaf clusters directly in front of the eggs. The two side bushes continue using the same shared artwork; egg placement and preview behavior are unchanged. Desktop 1440×900 and mobile 390×844 browser checks confirm all three eggs, both bushes, no middle sprig layer and no page overflow. Source mirror synchronized and Journey's CSS URL refreshed.
+
 ## October 27, 2026 — tablet chapter centering
 
 Extended the existing mobile chapter centering through the site's 1099px tablet breakpoint. All four chapter headings, constrained paragraphs and inline CTA buttons are centered in animated and static views; desktop alignment resumes at 1100px. Journey's stylesheet URL is refreshed. Browser checks at 320, 390, 680, 700, 768, 820, 1024, 1099, 1100 and 1440px confirm alignment, centered button/paragraph bounds and no horizontal page overflow after preview assets loaded. Source mirror synchronized. No timeline, artwork or navigation changes.

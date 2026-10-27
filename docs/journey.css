@@ -140,9 +140,8 @@ html.motion-off{scroll-behavior:auto}
    Decorative layers must never intercept preview hover or touch. */
 .nest-front{position:absolute;inset:0;z-index:10;pointer-events:none;will-change:transform,opacity}
 .nest-front img{position:absolute;left:50%;top:var(--nest-top);width:var(--nest-width);height:calc(var(--nest-width) * .333333);transform:translateX(-50%);pointer-events:none}
-/* Transparent source columns separate both bushes from the unchanged sprigs. */
+/* Clip the two side bushes, leaving the lawn in front of the eggs clear. */
 .nest-front .nest-bush-left{clip-path:inset(0 68.75% 0 0);transform:translateX(calc(-50% - var(--hero-egg)*.4))}
-.nest-front .nest-grass-sprigs{clip-path:inset(0 28% 0 31.25%)}
 .nest-front .nest-bush-right{clip-path:inset(0 0 0 72%);transform:translateX(calc(-50% + var(--hero-egg)*.4))}
 
 /* Preserve room between the copy and the taller eggs on short desktop windows. */
