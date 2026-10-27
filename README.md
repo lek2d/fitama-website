@@ -1,5 +1,9 @@
 # FiTama website
 
+## October 27, 2026 — lighter borderless header
+
+Reduced the shared header and mobile menu background from 70% to 40% black and removed the header border. The 16px backdrop blur and existing content colors remain. Navigation stylesheet cache URLs and the source mirror are synchronized. Desktop 1440px and mobile 390px browser checks confirm 40% background, zero border, retained blur and no horizontal overflow. This styling-only change does not alter navigation behavior.
+
 ## October 27, 2026 — logo-left dark header
 
 Journey, Guide and Contact now place the logo first on the left, with Guide, social links and Get Fitama on the right. The header background is 70% black with a 16px backdrop blur; its separate background plane preserves fully opaque content and allows the mobile disclosure to blur independently. Mobile uses the same dark treatment, warm-white controls and a visible gold keyboard focus outline. Source mirrors and stylesheet cache URLs are synchronized.
