@@ -2,7 +2,7 @@
 
 ## October 27, 2026 — footer credit
 
-Journey, Guide and Contact now use the requested shared footer credit, “Fueled by Redpots games”. Only the credit text changed; matching source pages are synchronized.
+Journey, Guide and Contact now use the requested shared footer credit, “© 2026 Fueled by Redpots games”. Only the credit text changed; matching source pages are synchronized.
 
 ## October 27, 2026 — staggered chapter copy
 
