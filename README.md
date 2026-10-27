@@ -1,5 +1,11 @@
 # FiTama website
 
+## October 27, 2026 — floating companion items
+
+The Health watch and sync phone, plus the equipment/shop sword, potion and coin, now drift gently up and down with independent 5.9–7.7-second timing. Individual CSS translate preserves their existing tilt and scroll-positioned parent transforms. Movement is bounded to 5–9px above the anchor, with no layout changes. Loops pause outside the stage or while their chapter is hidden; the existing document visibility handler also pauses them. Reduced motion and static mode disable the loops. Journey runtime URLs are versioned.
+
+Verification: 82 publisher tests and 194 source tests passed. Browser checks at 1440×900 and 390×844 confirmed motion, preserved rotations/parent transforms, no horizontal overflow, chapter hiding, offscreen pause and static-mode removal. The actual visibility/observer handlers passed source-fragment VM checks; the in-app browser did not expose a native hidden-document state, so background-tab acceptance is not claimed. Source mirror synchronized. No native app/backend changes; QA and automation remain paused.
+
 ## October 27, 2026 — AVIF screenshot delivery
 
 Nine approved screenshots now prefer high-quality AVIF through native picture/source selection, with the existing lossless WebP images retained as fallbacks. All27 AVIFs come directly from the same native4× PNG masters at quality94,4:4:4 full-range color. These delivery files are lossy, not pixel-identical; the source masters, approved content, resolutions and original img attributes remain unchanged.

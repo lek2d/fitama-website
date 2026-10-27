@@ -8,6 +8,15 @@ import {prepareJourneyPage} from './page-loader.mjs?v=preloader-v1&release=20261
 const $ = selector => document.querySelector(selector);
 const story = $('.scroll-story');
 const stage = $('.stage');
+
+// Decorative loops run only while the pinned scene intersects the viewport.
+if(typeof IntersectionObserver==='function'){
+  const decorVisibility=new IntersectionObserver(([entry])=>{
+    stage.classList.toggle('decor-in-view',entry.isIntersecting&&entry.intersectionRatio>0);
+  });
+  decorVisibility.observe(stage);
+}
+
 const worldBackground = $('.world-background');
 const heroGrass = $('.hero-grass');
 const nestFront = $('.nest-front');
@@ -140,6 +149,7 @@ addEventListener('resize',schedule);
 new ResizeObserver(schedule).observe(stage);
 function syncVisibility(){document.body.classList.toggle('clouds-paused',document.hidden);petPreviews?.sync();}
 document.addEventListener('visibilitychange',syncVisibility);
+syncVisibility();
 function motionPreference(){renderedProgress=null;document.documentElement.classList.toggle('motion-off',staticMode());document.body.classList.toggle('reduced-motion',staticMode());schedule();}
 reduced.addEventListener('change',motionPreference);
 shortScreen.addEventListener('change',motionPreference);
