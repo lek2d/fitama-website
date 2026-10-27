@@ -28,6 +28,11 @@ const battleFlanks = $('.battle-flanks');
 const progressItems = $('.progress-items');
 const nodes = Object.fromEntries(['sky','cloud-banks','mountains','lake-falls','valley','cream','hero-copy','nest-group','traveller','phone','egg-screen','grown-screen','follow-copy','landing-copy','tp-copy'].map(name=>[name,$('.'+name)]));
 const chapterPanels=[...document.querySelectorAll('[data-chapter]')];
+chapterPanels.forEach(panel=>{
+  panel.classList.add('copy-reveal');
+  // Keyboard focus reveals the whole message immediately for this visit.
+  panel.addEventListener('focusin',()=>{if(!panel.inert)panel.classList.add('copy-immediate');});
+});
 const screenLayers=Object.fromEntries(['movement','home','health','map','battle','result','equipment','shop'].map(name=>[name,$('.screen-'+name)]));
 const choices = [...document.querySelectorAll('.egg-choice')];
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
@@ -46,7 +51,7 @@ function opacity(name,value) { nodes[name].style.opacity=value; }
 function update(time) {
   scheduled=false;
   document.body.classList.toggle('ending-visible', $('.journey-content').getBoundingClientRect().bottom <= 42);
-  if(staticMode()){setHeaderVisible(true);petPreviews?.sync();acknowledgeLayout();return;}
+  if(staticMode()){chapterPanels.forEach(panel=>panel.classList.remove('copy-entered','copy-immediate'));setHeaderVisible(true);petPreviews?.sync();acknowledgeLayout();return;}
   const h=stage.clientHeight,w=stage.clientWidth;
   const distance=introDistance(w,h);
   const progress=Math.max(0,(scrollY-story.offsetTop)/distance);
@@ -82,7 +87,18 @@ function update(time) {
   Object.assign(battleFlanks.style,{transform:`translate3d(${s.phoneX}px,${s.phoneY}px,0)`,width:`${s.phoneW}px`,height:`${s.phoneH}px`});
   Object.assign(sideQuestPeek.style,{transform:`translate3d(${s.phoneX}px,${s.phoneY}px,0)`,width:`${s.phoneW}px`,height:`${s.phoneH}px`});
   for(const [name,value] of Object.entries(weights)) screenLayers[name].style.opacity=value;
-  chapterPanels.forEach((panel,i)=>{panel.style.opacity=view.textOpacity[i];panel.style.transform=`translateY(${(1-view.textOpacity[i])*8}px)`;panel.inert=i!==view.active||s.tpOpacity<.5||view.textOpacity[i]<.1;panel.setAttribute('aria-hidden',panel.inert);});
+  chapterPanels.forEach((panel,i)=>{
+    panel.style.opacity=view.textOpacity[i];
+    panel.style.transform=`translateY(${(1-view.textOpacity[i])*8}px)`;
+    panel.inert=i!==view.active||s.tpOpacity<.5||view.textOpacity[i]<.1;
+    panel.setAttribute('aria-hidden',panel.inert);
+    // Latch the entrance through scroll/resize updates; re-arm only after leaving.
+    if(i!==view.active||s.tpOpacity===0||view.textOpacity[i]===0){
+      panel.classList.remove('copy-entered','copy-immediate');
+    }else if(!panel.inert){
+      panel.classList.add('copy-entered');
+    }
+  });
   nodes['tp-copy'].inert=s.tpOpacity<.5;
   nodes.phone.setAttribute('aria-label',s.p<.93?'Blukie’s egg lands in the Fitama app':`Sample Fitama screen: ${Object.entries(weights).sort((a,b)=>b[1]-a[1])[0][0]}`);
   worldBackground.style.height=`${h-s.worldClipBottom}px`;

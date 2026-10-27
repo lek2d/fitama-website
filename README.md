@@ -1,5 +1,11 @@
 # FiTama website
 
+## October 27, 2026 — staggered chapter copy
+
+The four Journey chapters now reveal their heading, paragraph and CTA in reading order, with 120ms spacing, a 560ms ease-out and 8–12px upward movement. Entry begins only when the chapter becomes visible, stays latched during scroll/resize updates, and re-arms after leaving. Keyboard focus reveals the whole message immediately for that visit. Short-screen, static and reduced-motion views retain immediately visible content. Existing panel accessibility and scroll transforms remain authoritative; no timers or new dependencies were added.
+
+Verification: 82 publisher and 194 source tests passed. Browser checks cover desktop 1440×900, mobile 390×844, short-screen 320×568, fast scroll, reverse entry, within-chapter stability, keyboard focus/blur and motion-off. The early desktop sample showed the title entering while paragraph/button remained at zero opacity; all settled at full opacity. Independent review found no blockers. The design detector returned no findings in its degraded regex mode; browser checks provide the visual evidence. Source mirror synchronized; native app QA and automation remain paused.
+
 ## October 27, 2026 — floating companion items
 
 The Health watch and sync phone, plus the equipment/shop sword, potion and coin, now drift gently up and down with independent 5.9–7.7-second timing. Individual CSS translate preserves their existing tilt and scroll-positioned parent transforms. Movement is bounded to 5–9px above the anchor, with no layout changes. Loops pause outside the stage or while their chapter is hidden; the existing document visibility handler also pauses them. Reduced motion and static mode disable the loops. Journey runtime URLs are versioned.
