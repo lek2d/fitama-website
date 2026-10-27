@@ -1,5 +1,9 @@
 # FiTama website
 
+## October 27, 2026 — footer credit
+
+Journey, Guide and Contact now use the requested shared footer credit, “Fueled by Redpots games”. Only the credit text changed; matching source pages are synchronized.
+
 ## October 27, 2026 — staggered chapter copy
 
 The four Journey chapters now reveal their heading, paragraph and CTA in reading order, with 120ms spacing, a 560ms ease-out and 8–12px upward movement. Entry begins only when the chapter becomes visible, stays latched during scroll/resize updates, and re-arms after leaving. Keyboard focus reveals the whole message immediately for that visit. Short-screen, static and reduced-motion views retain immediately visible content. Existing panel accessibility and scroll transforms remain authoritative; no timers or new dependencies were added.
