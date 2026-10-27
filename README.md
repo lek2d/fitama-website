@@ -1,5 +1,13 @@
 # FiTama website
 
+## October 27, 2026 — mobile QA layout fixes
+
+All four Journey chapters now center headings, copy and CTAs below their phone on mobile, including the static view. The mobile FAQ heading fits on one line at normal text size and may wrap when enlarged. Guide quick links and category buttons each use one horizontally scrolling row below 700px; selected categories remain visible after filtering/search reset, and keyboard focus stays visible through a resize. The desktop help link now uses inline flex so its existing 7px arrow gap applies. Desktop layout is preserved, and matching source files are synchronized.
+
+Verification: 82 publisher and 194 source tests passed; the four Guide UI tests passed again after the focused-category resize refinement. Browser checks at 320, 390, 699, 700 and 1440px found no horizontal page overflow, verified centered mobile chapters, the normal-size one-line FAQ, horizontal navigation, keyboard focus, search/reset and quick-link navigation. Independent review found no blockers. The design detector reported one pre-existing content warning in a game-item description, not a new layout defect. Evidence is saved outside the public document root.
+
+The reported Contact dropdown was observed in desktop responsive emulation. Its native select works and its ancestors have no transform or zoom offset; no custom dropdown or positioning workaround was added. The browser capture does not include the native popup, so actual phone/native popup placement remains unverified. No forms were submitted. Native app QA and automation remain paused.
+
 ## October 27, 2026 — footer credit
 
 Journey, Guide and Contact now use the requested shared footer credit, “© 2026 Fueled by Redpots games”. Only the credit text changed; matching source pages are synchronized.

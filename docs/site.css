@@ -35,7 +35,7 @@
 /* Guide pages use the same colors, characters and type as the journey. */
 .document-header{height:82px;display:flex;justify-content:space-between;align-items:center;width:min(1180px,88%);margin:auto;border-bottom:1px solid var(--rule)}.document-header .logo{width:110px;margin:0}.document-header nav{display:flex;gap:25px;font-size:13px}.document-header nav a{text-decoration:none;padding:15px 0}.document-header nav a[aria-current]{text-decoration:underline;text-underline-offset:5px}
 .guide-hero{position:relative;padding:70px 0 45px;width:min(1180px,88%);margin:auto}.guide-hero h1{font-size:clamp(45px,6vw,76px)}.guide-hero .intro{font-size:17px;line-height:1.7;max-width:540px;margin-top:20px}.guide-hero>img{position:absolute;right:45px;bottom:34px;width:150px;height:180px;object-fit:contain;transform:rotate(9deg)}.guide-search{max-width:600px;margin-top:35px}.guide-search label{display:block;font-size:12px;font-weight:700;margin-bottom:10px}.search-line{display:flex;border:1px solid #30201866;border-radius:12px;background:#fffcf5;overflow:hidden}.search-line input{min-width:0;width:100%;border:0;background:none;font:inherit;padding:18px;color:var(--ink);outline-offset:-4px}.search-line button{border:0;background:transparent;font-size:12px;padding:0 18px}
-.guide-body{width:min(1180px,88%);margin:0 auto 100px;display:grid;grid-template-columns:210px 1fr;gap:65px;border-top:1px solid var(--rule);padding-top:35px}.guide-sidebar{align-self:start;position:sticky;top:30px}.guide-sidebar h2{font:700 11px Arial;letter-spacing:1.4px;margin:0 0 20px}.guide-categories{display:grid;gap:4px}.guide-categories button{text-align:left;border:0;border-radius:9px;padding:14px 12px;min-height:44px;background:none;font-size:13px}.guide-categories button[aria-pressed=true]{background:#e2e9d8;font-weight:700}.guide-sidebar>a{font-size:12px;display:inline-block;margin:30px 12px 0}
+.guide-body{width:min(1180px,88%);margin:0 auto 100px;display:grid;grid-template-columns:210px 1fr;gap:65px;border-top:1px solid var(--rule);padding-top:35px}.guide-sidebar{align-self:start;position:sticky;top:30px}.guide-sidebar h2{font:700 11px Arial;letter-spacing:1.4px;margin:0 0 20px}.guide-categories{display:grid;gap:4px}.guide-categories button{text-align:left;border:0;border-radius:9px;padding:14px 12px;min-height:44px;background:none;font-size:13px}.guide-categories button[aria-pressed=true]{background:#e2e9d8;font-weight:700}.guide-sidebar>a{font-size:12px;display:inline-flex;margin:30px 12px 0}
 .result-status{font-size:12px;color:var(--muted);margin:5px 0 18px}.guide-article{padding:27px 0;border-bottom:1px solid var(--rule);scroll-margin-top:28px}.guide-article .category{font-size:10px;letter-spacing:1.1px;font-weight:700;color:#426844;margin-bottom:10px}.guide-article h2{font-size:29px;line-height:1.2}.guide-article h2 a{text-decoration:none}.guide-article h2 a:hover{text-decoration:underline;text-underline-offset:5px}.guide-article p,.guide-article li{font-size:15px;line-height:1.8;color:#594a3d}.guide-article p{margin-top:14px}.guide-article ul,.guide-article ol{padding-left:22px;margin-bottom:0}.guide-article li+li{margin-top:7px}.guide-article a{text-underline-offset:3px}.guide-article:target{background:#e8eddd;padding:27px 24px;margin-inline:-24px;border-radius:12px}.no-results{padding:45px 0;font-size:17px;line-height:1.7}.guide-fineprint{font-size:11px!important;line-height:1.7!important;color:var(--muted);margin-top:30px!important}
 .legal-document{width:min(740px,88%);margin:65px auto 100px}.legal-document h1{font-size:52px}.legal-document h2{font-size:27px;margin:32px 0 12px}.legal-document p,.legal-document li{font-size:15px;line-height:1.8}.legal-document p{margin-top:15px}.draft-notice{background:#eee4ca;padding:20px;border-radius:12px;margin:26px 0}.draft-notice strong{display:block;margin-bottom:5px}
 @media(max-width:900px){.guide-invite,.faq-section{gap:35px}.guide-invite{grid-template-columns:1fr 240px}.download-section>.section-wrap{gap:40px;grid-template-columns:220px 1fr}.download-options{gap:25px;flex-wrap:wrap}.guide-body{gap:30px;grid-template-columns:170px 1fr}.guide-hero>img{right:0;width:120px}.site-footer nav{gap:16px}}
@@ -261,10 +261,10 @@
 @media(prefers-reduced-motion:reduce){.arrow-link .link-arrow{transition:none}}
 .motion-off .arrow-link .link-arrow,.clouds-paused .arrow-link .link-arrow{transition:none}
 @media(max-width:699px){.chapter-cta{max-width:100%;gap:12px;padding-inline:14px}.static-chapter>div{min-width:0}}
-/* Keep the movement introduction centered beneath its phone on mobile. */
+/* Every mobile chapter is centered beneath its phone, including the still view. */
 @media(max-width:699px){
- .tp-copy .chapter-panel[data-chapter="0"],.static-chapter:has(>.movement-artwork)>div{text-align:center}
- .tp-copy .chapter-panel[data-chapter="0"] .chapter-description,.static-chapter:has(>.movement-artwork) .chapter-description{margin-inline:auto}
+ .tp-copy .chapter-panel,.static-chapter>div{text-align:center}
+ .tp-copy .chapter-panel .chapter-description,.static-chapter .chapter-description{margin-inline:auto}
 }
 @media(max-width:399px){.static-chapter{grid-template-columns:1fr;gap:24px}.static-chapter>img,.static-chapter>:where(.screen-image)>img{width:200px;max-width:65%;margin:auto}}
 
@@ -328,3 +328,16 @@
 .clouds-paused .chapter-panel.copy-entered>:is(h2,.chapter-description,.chapter-cta){animation-play-state:paused}
 .chapter-panel.copy-immediate>:is(h2,.chapter-description,.chapter-cta),.motion-off .chapter-panel.copy-reveal>:is(h2,.chapter-description,.chapter-cta),.reduced-motion .chapter-panel.copy-reveal>:is(h2,.chapter-description,.chapter-cta){animation:none;opacity:1;translate:none}
 @media(prefers-reduced-motion:reduce){.chapter-panel.copy-reveal>:is(h2,.chapter-description,.chapter-cta){animation:none;opacity:1;translate:none}}
+
+/* Mobile Guide navigation stays on one swipeable row without widening the page. */
+@media(max-width:699px){
+ .faq-section #faq-title{font-size:clamp(28px,7.6vw,34px)}
+ .faq-section #faq-title br{display:none}
+ .guide-sidebar{min-width:0}
+ .guide-shortcuts,.guide-categories{display:flex;flex-wrap:nowrap;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:#6f8067 transparent;padding:8px;scroll-padding-inline:8px}
+ .guide-shortcuts{gap:20px}
+ .guide-categories{gap:8px}
+ .guide-shortcuts>a,.guide-categories>button{flex:0 0 auto;white-space:nowrap}
+ .guide-categories>button{border:1px solid var(--rule);font-size:12px}
+ .guide-shortcuts>:focus-visible,.guide-categories>:focus-visible{outline-offset:3px}
+}

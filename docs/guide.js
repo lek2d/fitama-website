@@ -8,6 +8,7 @@ const filters=[...document.querySelectorAll('[data-category-filter]')];
 const status=document.querySelector('.result-status');
 const browse=document.querySelector('.guide-body');
 const sidebar=document.querySelector('.guide-sidebar');
+const categoryNav=document.querySelector('.guide-categories');
 const featured=document.querySelector('.guide-visual-nav');
 const searchHeading=document.querySelector('.guide-search-heading');
 const searchTitle=document.querySelector('#guide-search-title');
@@ -19,6 +20,17 @@ const topics=articles.map(article=>({
   excerpt:[...article.querySelectorAll('p')].find(p=>!p.classList.contains('category'))?.textContent||'',
 }));
 let category='all';
+function keepCategoryVisible(preferFocus=false){
+  if(!categoryNav||sidebar.hidden||categoryNav.scrollWidth<=categoryNav.clientWidth)return;
+  const selected=(preferFocus&&filters.includes(document.activeElement)?document.activeElement:null)
+    ||filters.find(button=>button.dataset.categoryFilter===category);
+  if(!selected)return;
+  const row=categoryNav.getBoundingClientRect(), item=selected.getBoundingClientRect();
+  // Adjust only this row; filtering and clearing search must not scroll the page.
+  if(item.left<row.left+8)categoryNav.scrollLeft+=item.left-row.left-8;
+  else if(item.right>row.right-8)categoryNav.scrollLeft+=item.right-row.right+8;
+}
+addEventListener('resize',()=>keepCategoryVisible(true),{passive:true});
 function render(){
   const query=input.value.trim();
   const searching=Boolean(query);
@@ -49,6 +61,7 @@ function render(){
     row.append(label,heading,excerpt); return row;
   }));
   filters.forEach(button=>button.setAttribute('aria-pressed',button.dataset.categoryFilter===category));
+  keepCategoryVisible();
   status.textContent=`${count} ${count===1?'topic':'topics'}${input.value.trim()?' found':' to explore'}`;
   status.hidden=searching||category==='all';
   document.querySelector('.no-results').hidden=count!==0;
