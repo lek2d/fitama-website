@@ -1,0 +1,4161 @@
+{
+  "records": [
+    {
+      "name": "shop-funded-v1",
+      "file": "raw/shop-funded-v1.png",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "sampleAppearance": null,
+      "capturedAt": "2026-10-27T07:10:47.617Z",
+      "text": "Tama Shop\nAll\nEquipment\nConsumables\n5\n22\n3\n12\n25\n10\n18\n25\n35\n35\n40\n45\n55\n55\n60\n60\nBack\n1 / 2\nNext\n21 items \u00b7 Earned Tama-Coins only\n100",
+      "root": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/background.runtime.avif",
+          "w": 853,
+          "h": 1844,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/merchant-tama-coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/counter.runtime.avif",
+          "w": 1920,
+          "h": 819,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/potion.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets/hi-heart-potion.runtime.webp",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fitems/treat.runtime.webp",
+          "w": 768,
+          "h": 768,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets/protein-bar.runtime.webp",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fitems/rest-stopper.runtime.webp",
+          "w": 768,
+          "h": 768,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fitems/xp-book-1.runtime.webp",
+          "w": 768,
+          "h": 768,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fitems/xp-book-2.runtime.webp",
+          "w": 768,
+          "h": 768,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fitems/xp-book-3.runtime.webp",
+          "w": 768,
+          "h": 768,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fequipment/rep-ripper.runtime.webp",
+          "w": 641,
+          "h": 641,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fequipment/grow-getter.runtime.webp",
+          "w": 641,
+          "h": 641,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fequipment/quest-inspector.runtime.webp",
+          "w": 641,
+          "h": 641,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fequipment/sweat-dreams.runtime.webp",
+          "w": 641,
+          "h": 641,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fequipment/point-of-wellness.runtime.webp",
+          "w": 641,
+          "h": 641,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fequipment/heart-to-get.runtime.webp",
+          "w": 641,
+          "h": 641,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fequipment/wit-happens.runtime.webp",
+          "w": 641,
+          "h": 641,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fequipment/leaf-me-alone.runtime.webp",
+          "w": 641,
+          "h": 641,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fpreview%2Fassets%2Fshop/coin.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/equipment-close-clean.png",
+          "w": 256,
+          "h": 234,
+          "complete": true
+        }
+      ],
+      "canvases": []
+    },
+    {
+      "name": "egg-home",
+      "file": "raw/egg-home.png",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "sampleAppearance": null,
+      "capturedAt": "2026-10-27T07:10:49.501Z",
+      "text": "Tama-Egg\n900\n900\nReady to hatch\nEarn 100 TP through real-world activity.\n100 / 100 TP\nGet your Tama-pet\nFitama\nQuest\nMap\nYou",
+      "root": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-5.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-5.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-1.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-1.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-2.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-2.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-4.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-4.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/mail-envelope-glossy.runtime.avif",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/tp-transparent.png",
+          "w": 259,
+          "h": 255,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/nav-egg-clean.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Frive/platform-pet-clean.png",
+          "w": 1000,
+          "h": 720,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-platform.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Frive/egg-blukie.png",
+          "w": 512,
+          "h": 512,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Frive/egg-blukie.png",
+          "w": 512,
+          "h": 512,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-quest-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-map-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-profile-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        }
+      ],
+      "canvases": [
+        {
+          "w": 1440,
+          "h": 1036,
+          "rect": {
+            "x": 14.999988555908203,
+            "y": 302.7906188964844,
+            "width": 360,
+            "height": 259.1999816894531,
+            "top": 302.7906188964844,
+            "right": 374.9999885559082,
+            "bottom": 561.9906005859375,
+            "left": 14.999988555908203
+          }
+        },
+        {
+          "w": 671,
+          "h": 671,
+          "rect": {
+            "x": 110.92498779296875,
+            "y": 250.17813110351562,
+            "width": 167.83123779296875,
+            "height": 167.83126831054688,
+            "top": 250.17813110351562,
+            "right": 278.7562255859375,
+            "bottom": 418.0093994140625,
+            "left": 110.92498779296875
+          }
+        }
+      ]
+    },
+    {
+      "name": "home",
+      "file": "raw/home.png",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      },
+      "capturedAt": "2026-10-27T07:10:51.831Z",
+      "text": "Mochi\nLvl 6\n900\n900\nDaily\nWeekly\nDaily Check-in\nDay 1 \u00b7 Visit daily to keep your streak\n1 / 1 check-in\nView rewards\nFitama\nQuest\nMap\nYou",
+      "root": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-5.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-5.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-1.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-1.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-2.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-2.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-4.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-4.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fconcepts%2Fshop/tama-coin-shop-v1.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/mail-envelope-glossy.runtime.avif",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/equipment-closed.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/tp-transparent.png",
+          "w": 259,
+          "h": 255,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/quest-scroll.png",
+          "w": 89,
+          "h": 95,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Frive/platform-pet-clean.png",
+          "w": 1000,
+          "h": 720,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-platform.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blukie_Body.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blush_01.png",
+          "w": 1599,
+          "h": 1599,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Forehead_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Eye_brow_03.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Mouth_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-fitama-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-quest-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-map-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-profile-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        }
+      ],
+      "canvases": [
+        {
+          "w": 1440,
+          "h": 1036,
+          "rect": {
+            "x": 14.999988555908203,
+            "y": 250.79061889648438,
+            "width": 360,
+            "height": 259.20001220703125,
+            "top": 250.79061889648438,
+            "right": 374.9999885559082,
+            "bottom": 509.9906311035156,
+            "left": 14.999988555908203
+          }
+        },
+        {
+          "w": 860,
+          "h": 860,
+          "rect": {
+            "x": 87.48748779296875,
+            "y": 182.859375,
+            "width": 215.0250244140625,
+            "height": 215.0250244140625,
+            "top": 182.859375,
+            "right": 302.51251220703125,
+            "bottom": 397.8843994140625,
+            "left": 87.48748779296875
+          }
+        }
+      ]
+    },
+    {
+      "name": "quests-claimed",
+      "file": "raw/quests-claimed.png",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      },
+      "capturedAt": "2026-10-27T07:10:52.746Z",
+      "text": "Mochi\nLvl 6\n900\n900\nDaily\nWeekly\nDaily Check-in\nDay 1 \u00b7 Visit daily to keep your streak\n1 / 1 check-in\nView rewards\nFitama\nQuest\nMap\nYou\nDaily\nWeekly\nDaily Check-in\nDay 1 \u00b7 Visit daily to keep your streak\n1 / 1 check-in\nView rewards\nWarm Up\nPower up 300 today\n300 / 300 TP\nClaimed\nDaily Strength\nPower up 650 today\n650 / 650 TP\nClaim:\n84\nPeak Power\nPower up 1000 today\n900 / 1000 TP\n160 XP\nFitama\nQuest\nMap\nYou",
+      "root": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-5.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-5.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-1.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-1.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-2.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-2.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-4.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-4.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fconcepts%2Fshop/tama-coin-shop-v1.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/mail-envelope-glossy.runtime.avif",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/equipment-closed.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/tp-transparent.png",
+          "w": 259,
+          "h": 255,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/quest-scroll.png",
+          "w": 89,
+          "h": 95,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Frive/platform-pet-clean.png",
+          "w": 1000,
+          "h": 720,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-platform.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blukie_Body.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blush_01.png",
+          "w": 1599,
+          "h": 1599,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Forehead_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Eye_brow_03.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Mouth_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-fitama-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-quest-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-map-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-profile-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/quest-scroll.png",
+          "w": 89,
+          "h": 95,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/quest-scroll.png",
+          "w": 89,
+          "h": 95,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/quest-scroll.png",
+          "w": 89,
+          "h": 95,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/xp-star.png",
+          "w": 98,
+          "h": 93,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/quest-scroll.png",
+          "w": 89,
+          "h": 95,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-fitama-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-quest-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-map-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-profile-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        }
+      ],
+      "canvases": [
+        {
+          "w": 1440,
+          "h": 1036,
+          "rect": {
+            "x": 14.999988555908203,
+            "y": 250.79061889648438,
+            "width": 360,
+            "height": 259.20001220703125,
+            "top": 250.79061889648438,
+            "right": 374.9999885559082,
+            "bottom": 509.9906311035156,
+            "left": 14.999988555908203
+          }
+        },
+        {
+          "w": 860,
+          "h": 860,
+          "rect": {
+            "x": 87.48748779296875,
+            "y": 182.859375,
+            "width": 215.0250244140625,
+            "height": 215.0250244140625,
+            "top": 182.859375,
+            "right": 302.51251220703125,
+            "bottom": 397.8843994140625,
+            "left": 87.48748779296875
+          }
+        }
+      ]
+    },
+    {
+      "name": "map",
+      "file": "raw/map.png",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      },
+      "capturedAt": "2026-10-27T07:10:53.750Z",
+      "text": "Mochi\nLvl 6\n900\n900\nDaily\nWeekly\nDaily Check-in\nDay 1 \u00b7 Visit daily to keep your streak\n1 / 1 check-in\nView rewards\nFitama\nQuest\nMap\nYou\nHermitanyo\nFishda\nKabutehan\nMonkey D. Licious\nEstranghero\nCoo coo.\nMumu\nKaibigang Oso\nD1\nLvl 1\nTraining Camp\nLvl 1\nFitama\nQuest\nMap\nYou",
+      "root": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-5.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-5.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-1.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-1.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-2.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-2.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-4.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-4.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fconcepts%2Fshop/tama-coin-shop-v1.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/mail-envelope-glossy.runtime.avif",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/equipment-closed.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/tp-transparent.png",
+          "w": 259,
+          "h": 255,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/quest-scroll.png",
+          "w": 89,
+          "h": 95,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Frive/platform-pet-clean.png",
+          "w": 1000,
+          "h": 720,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-platform.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blukie_Body.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blush_01.png",
+          "w": 1599,
+          "h": 1599,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Forehead_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Eye_brow_03.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Mouth_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-fitama-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-quest-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-map-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-profile-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fmaps/map-idle-poster.runtime.webp",
+          "w": 940,
+          "h": 2008,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-ground.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fnpcs/01-mysterious-man.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-ground.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fnpcs/02-old-fisherman.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-ground.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Femotes/struggling-thin.png",
+          "w": 2172,
+          "h": 724,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Femotes/struggling-thin.png",
+          "w": 2172,
+          "h": 724,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Femotes/struggling-thin.png",
+          "w": 2172,
+          "h": 724,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fnpcs/03-trapped-mushroom.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-ground.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/dungeon-popup-portal.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-ground.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/map-lock-purple.png",
+          "w": 512,
+          "h": 512,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-ground.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/map-lock-purple.png",
+          "w": 512,
+          "h": 512,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-ground.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/map-lock-purple.png",
+          "w": 512,
+          "h": 512,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/map-hidden-lock.png",
+          "w": 512,
+          "h": 512,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-platform.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blukie_Body.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blush_01.png",
+          "w": 1599,
+          "h": 1599,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Forehead_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Eye_brow_03.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Mouth_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-fitama-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-quest-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-map-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-profile-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        }
+      ],
+      "canvases": [
+        {
+          "w": 1440,
+          "h": 1036,
+          "rect": {
+            "x": 14.999988555908203,
+            "y": 250.79061889648438,
+            "width": 360,
+            "height": 259.20001220703125,
+            "top": 250.79061889648438,
+            "right": 374.9999885559082,
+            "bottom": 509.9906311035156,
+            "left": 14.999988555908203
+          }
+        },
+        {
+          "w": 860,
+          "h": 860,
+          "rect": {
+            "x": 87.48748779296875,
+            "y": 182.859375,
+            "width": 215.0250244140625,
+            "height": 215.0250244140625,
+            "top": 182.859375,
+            "right": 302.51251220703125,
+            "bottom": 397.8843994140625,
+            "left": 87.48748779296875
+          }
+        },
+        {
+          "w": 384,
+          "h": 384,
+          "rect": {
+            "x": 418.5526123046875,
+            "y": 297.466552734375,
+            "width": 96,
+            "height": 96,
+            "top": 297.466552734375,
+            "right": 514.5526123046875,
+            "bottom": 393.466552734375,
+            "left": 418.5526123046875
+          }
+        },
+        {
+          "w": 384,
+          "h": 384,
+          "rect": {
+            "x": -58.4942626953125,
+            "y": 211.341552734375,
+            "width": 96,
+            "height": 96,
+            "top": 211.341552734375,
+            "right": 37.5057373046875,
+            "bottom": 307.341552734375,
+            "left": -58.4942626953125
+          }
+        },
+        {
+          "w": 384,
+          "h": 384,
+          "rect": {
+            "x": 18.0526123046875,
+            "y": 374.966552734375,
+            "width": 96,
+            "height": 96,
+            "top": 374.966552734375,
+            "right": 114.0526123046875,
+            "bottom": 470.966552734375,
+            "left": 18.0526123046875
+          }
+        },
+        {
+          "w": 384,
+          "h": 384,
+          "rect": {
+            "x": 408.8807373046875,
+            "y": -158.939697265625,
+            "width": 96,
+            "height": 96,
+            "top": -158.939697265625,
+            "right": 504.8807373046875,
+            "bottom": -62.939697265625,
+            "left": 408.8807373046875
+          }
+        },
+        {
+          "w": 384,
+          "h": 384,
+          "rect": {
+            "x": 72.0369873046875,
+            "y": -145.158447265625,
+            "width": 96,
+            "height": 96,
+            "top": -145.158447265625,
+            "right": 168.0369873046875,
+            "bottom": -49.158447265625,
+            "left": 72.0369873046875
+          }
+        }
+      ]
+    },
+    {
+      "name": "health-activities",
+      "file": "raw/health-activities.png",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      },
+      "capturedAt": "2026-10-27T07:10:56.279Z",
+      "text": "L\nOverview\nActivities\nRanking\nSeptember 1, 2026\nCycling\nSample data\n240 added\n30 min\nDuration\n10.0 km\nDistance\n120 kcal\nActive Calories\n10:00 PM\nStarted\n10:30 PM\nFinished\n20 km/h\nAvg. speed\nRunning\nSample data\n240 added\nSwimming\nSample data\n240 added\nWalking\nSample data\n240 added\nStrength Training\nSample data\n240 added\nDaily Movement\nSample data\n900 added\nFitama\nQuest\nMap\nYou",
+      "root": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/profile-settings.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-03.png",
+          "w": 291,
+          "h": 343,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-04.png",
+          "w": 344,
+          "h": 324,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-05.png",
+          "w": 386,
+          "h": 386,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-06.png",
+          "w": 323,
+          "h": 284,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-07.png",
+          "w": 408,
+          "h": 407,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-09.png",
+          "w": 426,
+          "h": 426,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-10.png",
+          "w": 376,
+          "h": 376,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-11.png",
+          "w": 545,
+          "h": 455,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-12.png",
+          "w": 466,
+          "h": 388,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-13.png",
+          "w": 447,
+          "h": 445,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fbg/fitama-bg-icons-02.png",
+          "w": 417,
+          "h": 339,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets/cycling-icon.png",
+          "w": 112,
+          "h": 85,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/tp-transparent.png",
+          "w": 259,
+          "h": 255,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets/runicon.png",
+          "w": 155,
+          "h": 123,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/tp-transparent.png",
+          "w": 259,
+          "h": 255,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fworkouts/swimming.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/tp-transparent.png",
+          "w": 259,
+          "h": 255,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets/steps-icon.png",
+          "w": 132,
+          "h": 127,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-fitama-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-quest-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-map-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-profile-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        }
+      ],
+      "canvases": [
+        {
+          "w": 0,
+          "h": 0,
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 0,
+            "height": 0,
+            "top": 0,
+            "right": 0,
+            "bottom": 0,
+            "left": 0
+          }
+        }
+      ]
+    },
+    {
+      "name": "battle-before",
+      "file": "raw/battle-before.png",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      },
+      "capturedAt": "2026-10-27T07:10:57.632Z",
+      "text": "Mochi\nLvl 6\n900\n900\nDaily\nWeekly\nKeep It Going\nReach 320 TP today\n320 / 320 TP\nClaim:\n1\nFitama\nQuest\nMap\nYou\nDay 1 of 1\n12:50\nSour Candymaw\nLvl 1\n300/300\nMochi\nLvl 1\n370 / 370 TP\nTP Attack",
+      "root": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-5.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-5.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-1.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-1.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-2.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-2.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-4.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-4.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fconcepts%2Fshop/tama-coin-shop-v1.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/mail-envelope-glossy.runtime.avif",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/equipment-closed.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/tp-transparent.png",
+          "w": 259,
+          "h": 255,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/health-potion.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/health-potion.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Frive/platform-pet-clean.png",
+          "w": 1000,
+          "h": 720,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-platform.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blukie_Body.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blush_01.png",
+          "w": 1599,
+          "h": 1599,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Forehead_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Eye_brow_03.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Mouth_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-fitama-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-quest-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-map-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-profile-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fmaps/forest.runtime.webp",
+          "w": 553,
+          "h": 991,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/inventory-back-arrow.png",
+          "w": 72,
+          "h": 62,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/training-info-clock.png",
+          "w": 140,
+          "h": 140,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/dungeon-leave.png",
+          "w": 127,
+          "h": 127,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-ground.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Frive/monster-sour-candymaw.png",
+          "w": 512,
+          "h": 512,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-ground.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blukie_Body.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blush_01.png",
+          "w": 1599,
+          "h": 1599,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Forehead_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Eye_brow_03.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Mouth_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/equipment-closed.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        }
+      ],
+      "canvases": [
+        {
+          "w": 1440,
+          "h": 1036,
+          "rect": {
+            "x": 14.999988555908203,
+            "y": 250.79061889648438,
+            "width": 360,
+            "height": 259.20001220703125,
+            "top": 250.79061889648438,
+            "right": 374.9999885559082,
+            "bottom": 509.9906311035156,
+            "left": 14.999988555908203
+          }
+        },
+        {
+          "w": 860,
+          "h": 860,
+          "rect": {
+            "x": 87.48748779296875,
+            "y": 182.859375,
+            "width": 215.0250244140625,
+            "height": 215.0250244140625,
+            "top": 182.859375,
+            "right": 302.51251220703125,
+            "bottom": 397.8843994140625,
+            "left": 87.48748779296875
+          }
+        },
+        {
+          "w": 1014,
+          "h": 1014,
+          "rect": {
+            "x": 68.2018814086914,
+            "y": 154.5352020263672,
+            "width": 253.59622192382812,
+            "height": 253.5962371826172,
+            "top": 154.5352020263672,
+            "right": 321.79810333251953,
+            "bottom": 408.1314392089844,
+            "left": 68.2018814086914
+          }
+        },
+        {
+          "w": 568,
+          "h": 568,
+          "rect": {
+            "x": 211.1748046875,
+            "y": 343.2774353027344,
+            "width": 142.0133056640625,
+            "height": 142.01327514648438,
+            "top": 343.2774353027344,
+            "right": 353.1881103515625,
+            "bottom": 485.29071044921875,
+            "left": 211.1748046875
+          }
+        }
+      ]
+    },
+    {
+      "name": "battle-result",
+      "file": "raw/battle-result.png",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      },
+      "capturedAt": "2026-10-27T07:11:07.004Z",
+      "text": "Mochi\nLvl 6\n900\n900\nDaily\nWeekly\nKeep It Going\nReach 320 TP today\n320 / 320 TP\nClaim:\n1\nFitama\nQuest\nMap\nYou\nDay 1 of 1\n12:49\nSour Candymaw\nLvl 1\n0/300\nYou hit 300 TP at 03:10 pm\nMochi\nLvl 1\n0 / 0 TP\nDungeon Cleared\nYou Win!\nYou defeated the enemy\nSolo\nTP DMG\nMochi (You)\nLvl 1\nItem used: \u2014\n370\nRewards\n88 xp\nPower Bottle\nReturn",
+      "root": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-5.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-5.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-1.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-1.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-2.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-2.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-4.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-4.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/cloud-3.png",
+          "w": 314,
+          "h": 314,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fconcepts%2Fshop/tama-coin-shop-v1.runtime.avif",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/mail-envelope-glossy.runtime.avif",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/equipment-closed.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/tp-transparent.png",
+          "w": 259,
+          "h": 255,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/health-potion.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/health-potion.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Frive/platform-pet-clean.png",
+          "w": 1000,
+          "h": 720,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-platform.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blukie_Body.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blush_01.png",
+          "w": 1599,
+          "h": 1599,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Forehead_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Eye_brow_03.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Mouth_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-fitama-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-quest-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-map-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/nav-profile-glossy.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fmaps/forest.runtime.webp",
+          "w": 553,
+          "h": 991,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/inventory-back-arrow.png",
+          "w": 72,
+          "h": 62,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/training-info-clock.png",
+          "w": 140,
+          "h": 140,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-ground.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Frive/monster-sour-candymaw.png",
+          "w": 512,
+          "h": 512,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-ground.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blukie_Body.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blush_01.png",
+          "w": 1599,
+          "h": 1599,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Forehead_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Eye_brow_03.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Mouth_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/equipment-closed.png",
+          "w": 256,
+          "h": 256,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blukie_Body.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blush_01.png",
+          "w": 1599,
+          "h": 1599,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Forehead_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Eye_brow_03.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Mouth_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/tp-transparent.png",
+          "w": 259,
+          "h": 255,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/xp-star.png",
+          "w": 98,
+          "h": 93,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fitems/power-bottle-empty.runtime.webp",
+          "w": 768,
+          "h": 768,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/equipment-close-clean.png",
+          "w": 256,
+          "h": 234,
+          "complete": true
+        }
+      ],
+      "canvases": [
+        {
+          "w": 1440,
+          "h": 1036,
+          "rect": {
+            "x": 14.999988555908203,
+            "y": 250.79061889648438,
+            "width": 360,
+            "height": 259.20001220703125,
+            "top": 250.79061889648438,
+            "right": 374.9999885559082,
+            "bottom": 509.9906311035156,
+            "left": 14.999988555908203
+          }
+        },
+        {
+          "w": 860,
+          "h": 860,
+          "rect": {
+            "x": 87.48748779296875,
+            "y": 182.859375,
+            "width": 215.0250244140625,
+            "height": 215.0250244140625,
+            "top": 182.859375,
+            "right": 302.51251220703125,
+            "bottom": 397.8843994140625,
+            "left": 87.48748779296875
+          }
+        },
+        {
+          "w": 1014,
+          "h": 1014,
+          "rect": {
+            "x": 68.2018814086914,
+            "y": 154.5352020263672,
+            "width": 253.59622192382812,
+            "height": 253.5962371826172,
+            "top": 154.5352020263672,
+            "right": 321.79810333251953,
+            "bottom": 408.1314392089844,
+            "left": 68.2018814086914
+          }
+        },
+        {
+          "w": 568,
+          "h": 568,
+          "rect": {
+            "x": 211.1748046875,
+            "y": 343.2774353027344,
+            "width": 142.0133056640625,
+            "height": 142.01327514648438,
+            "top": 343.2774353027344,
+            "right": 353.1881103515625,
+            "bottom": 485.29071044921875,
+            "left": 211.1748046875
+          }
+        }
+      ]
+    },
+    {
+      "name": "equipment",
+      "file": "raw/equipment.png",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      },
+      "capturedAt": "2026-10-27T07:11:10.097Z",
+      "text": "Mochi\nLvl 6\nXP\n38%\nReady for more training\n115%\n2 Magic\n100\n0\nInventory\nAll\nEquipment\nConsumables\n2\n6\n5\n1\n2\n2\n2\n1\nE\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\nE\n1\n1\n1\n1\n1\nE\n1\n1\n1\n1\n1\n1\n1",
+      "root": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 844,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "left": 0
+      },
+      "images": [
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/heart-transparent.png",
+          "w": 70,
+          "h": 63,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Frive/platform-pet-clean.png",
+          "w": 1000,
+          "h": 720,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/contact-shadow-platform.svg",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blukie_Body.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Horn_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fstroke-v1%2Fblukie/Ears_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Blush_01.png",
+          "w": 1599,
+          "h": 1599,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Forehead_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Eye_brow_03.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fpets%2Fblukie/Mouth_01.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fequipment/rep-ripper.runtime.webp",
+          "w": 641,
+          "h": 641,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fequipment/quest-inspector.runtime.webp",
+          "w": 641,
+          "h": 641,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fequipment/grow-getter.runtime.webp",
+          "w": 641,
+          "h": 641,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/attack.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/magic.png",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/hunger.png",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fui/bond.png",
+          "w": 100,
+          "h": 100,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fitems/mystery-package-v2.runtime.webp",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets/tama-coin.png",
+          "w": 150,
+          "h": 155,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets/protein-bar.runtime.webp",
+          "w": 1254,
+          "h": 1254,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fitems/rest-stopper.runtime.webp",
+          "w": 768,
+          "h": 768,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fitems/xp-book-1.runtime.webp",
+          "w": 768,
+          "h": 768,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fitems/xp-book-2.runtime.webp",
+          "w": 768,
+          "h": 768,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fitems/xp-book-3.runtime.webp",
+          "w": 768,
+          "h": 768,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Fequipment/vitaslash.runtime.webp",
+          "w": 768,
+          "h": 768,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/equipment-tab.png",
+          "w": 384,
+          "h": 384,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/achievement-tab.png",
+          "w": 384,
+          "h": 384,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma/changelog-tab.png",
+          "w": 384,
+          "h": 384,
+          "complete": true
+        },
+        {
+          "src": "http://127.0.0.1:8106/assets/?unstable_path=.%2Fassets%2Ffigma%2Fhandoff/equipment-close-clean.png",
+          "w": 256,
+          "h": 234,
+          "complete": true
+        }
+      ],
+      "canvases": [
+        {
+          "w": 1440,
+          "h": 1036,
+          "rect": {
+            "x": 14.999988555908203,
+            "y": 276.3999938964844,
+            "width": 360,
+            "height": 259.1999816894531,
+            "top": 276.3999938964844,
+            "right": 374.9999885559082,
+            "bottom": 535.5999755859375,
+            "left": 14.999988555908203
+          }
+        },
+        {
+          "w": 860,
+          "h": 860,
+          "rect": {
+            "x": 87.48748779296875,
+            "y": 208.46875,
+            "width": 215.0250244140625,
+            "height": 215.0250244140625,
+            "top": 208.46875,
+            "right": 302.51251220703125,
+            "bottom": 423.4937744140625,
+            "left": 87.48748779296875
+          }
+        }
+      ]
+    }
+  ],
+  "blocked": []
+}

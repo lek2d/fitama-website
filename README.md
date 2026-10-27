@@ -1,5 +1,15 @@
 # FiTama website
 
+## October 27, 2026 — lossless app screenshots
+
+Replaced all nine active app screenshots with fresh native PNG captures of the same approved sample screens at a real 4× browser density (1560×3376, logical390×844). The previous1170×2532 files came from a CSS-scaled iframe and JPEG-quality80 transport; increasing their dimensions could not recover sharp text. These captures use no scaled iframe or JavaScript DPR override. No screenshot was AI-redrawn, sharpened or enlarged from an older capture.
+
+Production serves lossless WebP: full4× pixels are verified identical to each PNG master, with780×1688 and1170×2532 derivatives and responsive source selection to reduce downloads. The same14 image placements, phone sizes, timeline, funded100-coin Shop,88XP/PowerBottle result and Blukie traits are preserved. Sample data and native-release limitations remain disclosed. All1495 snapshot files matching app-source commit9e2696b were byte-identical after capture; only capture HTML helpers were added outside those originals. QA and automation remain paused.
+
+Verification:82 publisher and194 source tests passed; all27 asset hashes/dimensions and mirror copies match. Allnine4× WebPs decode identically to their native PNG masters. Browser checks at320×568,390×844,768×1024,1440×900 and2560×1440 show loaded screens without horizontal overflow. The nine-screen set is5.28MB at2×,10.11MB at3× or13.89MB at4× versus1.81MB for the older JPEGs; responsive selection reduces transfer relative to the new full masters.
+
+Current assets/provenance: `assets/screens-2026-10-27-lossless/manifest.json`; reproducible local capture controls and state evidence: `capture-notes/2026-10-27-lossless/`. Older dated manifests remain historical.
+
 ## October 27, 2026 — responsive hero grounding
 
 Tall tablet layouts placed the eggs above the painted lawn: the old baseline depended only on viewport height, while the foreground artwork scales by its registered canvas width. At768×1024, contact points projected into transparent foreground rows around545. The shared egg/pet/front-plant baseline now stays at or below a measured opaque lawn row620 of the1672px source. Healthy desktop and phone compositions retain their existing baseline. The correction travels with the meadow and smoothly rejoins the original release position; egg drop, phone and chapter geometry after progress.32 remain unchanged. No artwork, Rive framing or hover behavior changed.

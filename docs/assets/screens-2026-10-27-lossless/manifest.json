@@ -1,0 +1,388 @@
+{
+  "date": "2026-10-27",
+  "sourceCommit": "9e2696b8c6c8d5fc94215020ce1063c55c348c51",
+  "source": "Unmodified isolated app web/sample snapshot and the previously approved funded Shop fixture",
+  "capture": "Playwright Chromium, actual deviceScaleFactor 4, logical viewport390x844, direct native PNG; no iframe scaling or JavaScript DPR override",
+  "format": "Lossless WebP; full-size pixels verified identical to native PNG. 2\u00d7 and3\u00d7 derivatives are downsampled from native PNG with LANCZOS and encoded losslessly.",
+  "scope": "Website screenshots only. Same approved content, logical layout, catalog and traits. Sample data; no native release/runtime parity claim. No native app build, account access, backend, QA or automation change.",
+  "network": "Fresh browser context; every browser request restricted to localhost; no external requests observed.",
+  "preserved": [
+    "100-coin funded Shop sample and actual catalog/prices",
+    "Blukie Eye+brow_03; Mouth/Ears/Horns/Blush/Forehead_01",
+    "88 XP and Power Bottle result fixture",
+    "Existing capture-only reward rounded clipping and parent result backdrop blur",
+    "Website dimensions, timeline, egg landing coordinates and all public sample disclosures"
+  ],
+  "originalSourceIntegrity": {
+    "ref": "9e2696b8c6c8d5fc94215020ce1063c55c348c51",
+    "checked": 1495,
+    "changed": []
+  },
+  "screens": [
+    {
+      "name": "shop-funded-v1",
+      "file": "assets/screens-2026-10-27-lossless/shop-funded-v1.webp",
+      "dimensions": [
+        1560,
+        3376
+      ],
+      "bytes": 2721176,
+      "sha256": "5d1ff91b788dc376ddfaeae8e1ce91714d6fbe8a65a78f992fa206908b5f49c3",
+      "pixelIdenticalToNativePng": true,
+      "compactFile": "assets/screens-2026-10-27-lossless/shop-funded-v1.2x.webp",
+      "compactDimensions": [
+        780,
+        1688
+      ],
+      "compactBytes": 1045910,
+      "compactSha256": "ab86a29a04f644531ec9a8ce899c746af02221e7d2345f454a5620b66e0c57e7",
+      "supersedes": "assets/screens-2026-10-26-hires/shop-funded-v1.jpg",
+      "capturedAt": "2026-10-27T07:10:47.617Z",
+      "logicalViewport": [
+        390,
+        844
+      ],
+      "sampleAppearance": null,
+      "intermediateFile": "assets/screens-2026-10-27-lossless/shop-funded-v1.3x.webp",
+      "intermediateDimensions": [
+        1170,
+        2532
+      ],
+      "intermediateBytes": 1978252,
+      "intermediateSha256": "6ad626ff53547fe7fce4daf59a2c33aadb49a82e3732632b957036de9667a7b7"
+    },
+    {
+      "name": "egg-home",
+      "file": "assets/screens-2026-10-27-lossless/egg-home.webp",
+      "dimensions": [
+        1560,
+        3376
+      ],
+      "bytes": 1049618,
+      "sha256": "e81a8054dc9273b9b8899d3a395a8de72f9db9df4c8e74ef4a77d3d0a87781b0",
+      "pixelIdenticalToNativePng": true,
+      "compactFile": "assets/screens-2026-10-27-lossless/egg-home.2x.webp",
+      "compactDimensions": [
+        780,
+        1688
+      ],
+      "compactBytes": 383244,
+      "compactSha256": "07de3478742876d3998f6630c88d86b2c2d794df4a8336a6c4ff9dfb4d7ee8a6",
+      "supersedes": "assets/screens-2026-10-26-hires/egg-home.jpg",
+      "capturedAt": "2026-10-27T07:10:49.501Z",
+      "logicalViewport": [
+        390,
+        844
+      ],
+      "sampleAppearance": null,
+      "intermediateFile": "assets/screens-2026-10-27-lossless/egg-home.3x.webp",
+      "intermediateDimensions": [
+        1170,
+        2532
+      ],
+      "intermediateBytes": 754402,
+      "intermediateSha256": "bc5fe4741a412258461be804958765d99dbc3df356457930ee6b901e3ffe296d"
+    },
+    {
+      "name": "home",
+      "file": "assets/screens-2026-10-27-lossless/home.webp",
+      "dimensions": [
+        1560,
+        3376
+      ],
+      "bytes": 1127614,
+      "sha256": "8a05550929bdc0e5d7ff2f03bf6c799a8f757a80361166d5cdde586acd396d54",
+      "pixelIdenticalToNativePng": true,
+      "compactFile": "assets/screens-2026-10-27-lossless/home.2x.webp",
+      "compactDimensions": [
+        780,
+        1688
+      ],
+      "compactBytes": 417686,
+      "compactSha256": "a3c8be4ecdd3f5ef56128f9404618fe2e979b1d3764682a0bb2d4a0331818113",
+      "supersedes": "assets/screens-2026-10-26-hires/home.jpg",
+      "capturedAt": "2026-10-27T07:10:51.831Z",
+      "logicalViewport": [
+        390,
+        844
+      ],
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      },
+      "intermediateFile": "assets/screens-2026-10-27-lossless/home.3x.webp",
+      "intermediateDimensions": [
+        1170,
+        2532
+      ],
+      "intermediateBytes": 818992,
+      "intermediateSha256": "2c0079dba960ac78303b430bdf9274d411cd47e9590c91ebfbb3519ff6d3151b"
+    },
+    {
+      "name": "quests-claimed",
+      "file": "assets/screens-2026-10-27-lossless/quests-claimed.webp",
+      "dimensions": [
+        1560,
+        3376
+      ],
+      "bytes": 380694,
+      "sha256": "f0c26268348a7c6fd80e72f21c9bc2b92adddfda4da6f2e0ab4b4fef366be653",
+      "pixelIdenticalToNativePng": true,
+      "compactFile": "assets/screens-2026-10-27-lossless/quests-claimed.2x.webp",
+      "compactDimensions": [
+        780,
+        1688
+      ],
+      "compactBytes": 201816,
+      "compactSha256": "c6a10e039b57613066591826b94d01e7f79b219bb4e5529323c94c3acbfbaa54",
+      "supersedes": "assets/screens-2026-10-26-hires/quests-claimed.jpg",
+      "capturedAt": "2026-10-27T07:10:52.746Z",
+      "logicalViewport": [
+        390,
+        844
+      ],
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      },
+      "intermediateFile": "assets/screens-2026-10-27-lossless/quests-claimed.3x.webp",
+      "intermediateDimensions": [
+        1170,
+        2532
+      ],
+      "intermediateBytes": 357410,
+      "intermediateSha256": "de65717a671f4a91639867298962f1e8472ec8e1655b9a33269f2c7e6a2fbbe2"
+    },
+    {
+      "name": "map",
+      "file": "assets/screens-2026-10-27-lossless/map.webp",
+      "dimensions": [
+        1560,
+        3376
+      ],
+      "bytes": 3441422,
+      "sha256": "7f5f47eef9dc6b369885951df5b13e66c1cde28b6774a3990b1b21dd000d824c",
+      "pixelIdenticalToNativePng": true,
+      "compactFile": "assets/screens-2026-10-27-lossless/map.2x.webp",
+      "compactDimensions": [
+        780,
+        1688
+      ],
+      "compactBytes": 1323404,
+      "compactSha256": "aa63db34c581f05d4550879cee0af9b1b94b28f09036926849171f87051a0129",
+      "supersedes": "assets/screens-2026-10-26-hires/map.jpg",
+      "capturedAt": "2026-10-27T07:10:53.750Z",
+      "logicalViewport": [
+        390,
+        844
+      ],
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      },
+      "intermediateFile": "assets/screens-2026-10-27-lossless/map.3x.webp",
+      "intermediateDimensions": [
+        1170,
+        2532
+      ],
+      "intermediateBytes": 2467632,
+      "intermediateSha256": "e1b0ae6a4042327e0bfb2e59218ac1d4b4eeb24d176ea541ad70333b9f3a281b"
+    },
+    {
+      "name": "health-activities",
+      "file": "assets/screens-2026-10-27-lossless/health-activities.webp",
+      "dimensions": [
+        1560,
+        3376
+      ],
+      "bytes": 304214,
+      "sha256": "b9fa4123bfb4c054ef6a30e48ee2bae199c770315527875a8fade915620e1412",
+      "pixelIdenticalToNativePng": true,
+      "compactFile": "assets/screens-2026-10-27-lossless/health-activities.2x.webp",
+      "compactDimensions": [
+        780,
+        1688
+      ],
+      "compactBytes": 169830,
+      "compactSha256": "80e9c763006e62016a220c15b27bdaeef8c701ef39f290deba94374a1a907255",
+      "supersedes": "assets/screens-2026-10-26-hires/health-activities.jpg",
+      "capturedAt": "2026-10-27T07:10:56.279Z",
+      "logicalViewport": [
+        390,
+        844
+      ],
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      },
+      "intermediateFile": "assets/screens-2026-10-27-lossless/health-activities.3x.webp",
+      "intermediateDimensions": [
+        1170,
+        2532
+      ],
+      "intermediateBytes": 299610,
+      "intermediateSha256": "553a0c6becc6d4153bdbffdc7bcd050031163c28e1906ba4143a2cd9b519f4bd"
+    },
+    {
+      "name": "battle-before",
+      "file": "assets/screens-2026-10-27-lossless/battle-before.webp",
+      "dimensions": [
+        1560,
+        3376
+      ],
+      "bytes": 3093476,
+      "sha256": "ac08bdd790c6ad5283dae7cb9d55a8cc8fdbbc43e210e3e5de7827e2fc662e2f",
+      "pixelIdenticalToNativePng": true,
+      "compactFile": "assets/screens-2026-10-27-lossless/battle-before.2x.webp",
+      "compactDimensions": [
+        780,
+        1688
+      ],
+      "compactBytes": 1043666,
+      "compactSha256": "916234c64e74e32cd10e9ea1558e58629484eb13608a4c499f2700d137a7208f",
+      "supersedes": "assets/screens-2026-10-26-hires/battle-before.jpg",
+      "capturedAt": "2026-10-27T07:10:57.632Z",
+      "logicalViewport": [
+        390,
+        844
+      ],
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      },
+      "intermediateFile": "assets/screens-2026-10-27-lossless/battle-before.3x.webp",
+      "intermediateDimensions": [
+        1170,
+        2532
+      ],
+      "intermediateBytes": 2172338,
+      "intermediateSha256": "ce172daaa53b34a6ddf824954f00bcb26126c9a442028cbe20e468cd162d4ea1"
+    },
+    {
+      "name": "battle-result",
+      "file": "assets/screens-2026-10-27-lossless/battle-result.webp",
+      "dimensions": [
+        1560,
+        3376
+      ],
+      "bytes": 462866,
+      "sha256": "09a6f3a7b19186d56f41933f3467f5fa4126068c817a3dca61132fb4342f28b0",
+      "pixelIdenticalToNativePng": true,
+      "compactFile": "assets/screens-2026-10-27-lossless/battle-result.2x.webp",
+      "compactDimensions": [
+        780,
+        1688
+      ],
+      "compactBytes": 226850,
+      "compactSha256": "37e0681be99664082f333be82eea6e465b7b809c6a8aaaa86cfdad1f8c02e64e",
+      "supersedes": "assets/screens-2026-10-26-hires/battle-result.jpg",
+      "capturedAt": "2026-10-27T07:11:07.004Z",
+      "logicalViewport": [
+        390,
+        844
+      ],
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      },
+      "intermediateFile": "assets/screens-2026-10-27-lossless/battle-result.3x.webp",
+      "intermediateDimensions": [
+        1170,
+        2532
+      ],
+      "intermediateBytes": 377106,
+      "intermediateSha256": "03b7284edc0e4ec7e295394ed968aec08188be2864f038bcd1c75b76cd174be9"
+    },
+    {
+      "name": "equipment",
+      "file": "assets/screens-2026-10-27-lossless/equipment.webp",
+      "dimensions": [
+        1560,
+        3376
+      ],
+      "bytes": 1313208,
+      "sha256": "d5aadcee697cac4a53ddc2beaa9225221e0c3a2d15b64099869fc09d1de9774d",
+      "pixelIdenticalToNativePng": true,
+      "compactFile": "assets/screens-2026-10-27-lossless/equipment.2x.webp",
+      "compactDimensions": [
+        780,
+        1688
+      ],
+      "compactBytes": 465230,
+      "compactSha256": "4cc63a86420bbfea09a47b8ed2da1123e075974ed5cf4af347b81514e91859da",
+      "supersedes": "assets/screens-2026-10-26-hires/equipment.jpg",
+      "capturedAt": "2026-10-27T07:11:10.097Z",
+      "logicalViewport": [
+        390,
+        844
+      ],
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      },
+      "intermediateFile": "assets/screens-2026-10-27-lossless/equipment.3x.webp",
+      "intermediateDimensions": [
+        1170,
+        2532
+      ],
+      "intermediateBytes": 888442,
+      "intermediateSha256": "087155741bf86746f66e3d3c52c585e35edede596119ff940d167dae2f0c63bc"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "uniqueScreens": 9,
+  "verifiedAssets": 27,
+  "placementsPerTree": 14,
+  "sourceTestsPassed": 194,
+  "publisherTestsPassed": 82,
+  "sourceFilesByteIdentical": 1495,
+  "downloadsBytes": {
+    "bytes": 13894288,
+    "compactBytes": 5277636,
+    "intermediateBytes": 10114184
+  },
+  "scope": "Website images/HTML/provenance only; CSS, runtime modules and app originals unchanged."
+}

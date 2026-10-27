@@ -1,0 +1,11 @@
+<!doctype html><html><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" /><style>html,body,#root{width:100%;height:100%;margin:0;overflow:hidden}body{display:flex}#root{display:flex;flex:1}#preview-label{position:fixed;top:4px;right:7px;z-index:99;pointer-events:none;border-radius:8px;padding:3px 6px;background:#302624d9;color:#fff;font:600 9px system-ui,sans-serif}
+/* Website capture correction: nested expo-blur web layers require their own
+   rounded clip under the scaled battle canvas. Actual reward UI/data unchanged. */
+#preview-label{display:none}
+[aria-label^="Reward "]{isolation:isolate;clip-path:inset(0 round 16px);border-color:transparent!important}
+[aria-label^="Reward "]>:first-child{border-radius:15px;overflow:hidden;clip-path:inset(0 round 15px);backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+[aria-label^="Reward "]::after{content:"";position:absolute;inset:0;border:1px solid rgba(255,255,255,.24);border-radius:16px;pointer-events:none;box-sizing:border-box}
+
+/* Omit web browser scrollbars from the app-only Shop capture. */
+*{scrollbar-width:none}*::-webkit-scrollbar{display:none}
+</style></head><body><div id="root"></div><div id="preview-label">UI preview · sample data</div><script src="/preview/index.bundle?platform=web&dev=true&minify=false"></script></body></html>
