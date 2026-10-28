@@ -1,4 +1,4 @@
-/* The header shares the content width, with the logo left and navigation right. */
+/* Shared logo, links, social icons and Play Fitama navigation. */
 .site-header{position:fixed;z-index:40;top:max(14px,env(safe-area-inset-top));left:50%;width:min(1120px,88%);min-height:82px;padding:18px 24px;display:flex;align-items:center;gap:28px;border:0;border-radius:24px;background:transparent;color:#fff8e9;box-shadow:0 8px 28px #00000024;transform:translateX(-50%);transition:opacity .22s ease,transform .22s ease,visibility .22s}
 /* Blur a separate background plane so text/logo stay opaque and the mobile panel
    can blur the page independently, without a nested backdrop-filter root. */
@@ -19,6 +19,13 @@
 .site-header .nav-download:after{content:'';position:absolute;inset:-8px -8px;background:url('assets/store-leaf-corners-v6.png') center/contain no-repeat;pointer-events:none}
 .site-header :focus-visible{outline:3px solid #ffd47c;outline-offset:3px}
 .journey-page .download-section,.journey-page .story-summary{scroll-margin-top:112px}
+/* Keep desktop navigation grouped around its content, centered on each page. */
+@media(min-width:700px){
+ .site-header,:is(.guide-page,.contact-page,.legal-page) .site-header{width:max-content;max-width:calc(100% - 32px);gap:20px}
+ .nav-brand{margin-right:0}
+ .header-menu{gap:20px}
+ .site-header .nav-download{margin-inline:0}
+}
 @media(max-width:699px){
  .site-header{top:max(10px,env(safe-area-inset-top));min-height:0;padding:12px 16px;gap:16px;flex-wrap:wrap;border-radius:22px}
  .nav-brand img{width:92px}

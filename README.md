@@ -1,5 +1,11 @@
 # FiTama website
 
+## October 28, 2026 — compact header spacing
+
+Desktop navigation now fits its content and stays centered, with 20px between the logo, Tama-Guide, social-icon group and Play Fitama button. The mobile disclosure, 44px social targets and dark-green translucent background remain. Shared CSS and cache references are synchronized with the source mirror.
+
+Verification: 10 existing navigation/disclosure tests passed. Browser checks at 320, 390, 699, 700 and 1440px found no page overflow; desktop gaps measure 20px and the header is approximately 566px wide. Small-phone menu opening and Escape handling were checked. The layout detector reported no findings.
+
 ## October 28, 2026 — owner-supplied social cover
 
 Replaced the social-preview image reference on all six public pages with `assets/fitama-share-cover-v2.png`, the owner's `social.png` copied without pixel changes (1200×630; 1,033,007 bytes). Open Graph and Twitter URLs, MIME type and alt text match the PNG. The old cover remains available for existing links. Source mirror updated wherever matching metadata exists. No page-body, layout, navigation or policy-copy changes.
