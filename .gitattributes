@@ -1,0 +1,2 @@
+# Locally generated SDK bundle retains intentional whitespace in vendor string literals.
+docs/fitamaster/portal.js -whitespace linguist-generated=true

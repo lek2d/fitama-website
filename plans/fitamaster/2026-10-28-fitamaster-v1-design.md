@@ -1,0 +1,28 @@
+# Fitamaster owner portal v1
+
+Owner request (2026-10-28): fitama.app/fitamaster, only the owner initially. Login with 2FA, player list/details, diagnostics reports and admin action history. No item grants, bans, deletion or native app work in v1.
+
+## Approved scope and implementation choices
+- Keep existing GitHub Pages site and all approved art/layout untouched. Add docs/fitamaster/index.html and isolated assets only. Public login shell; all data requires DB authorization.
+- Use existing Supabase Auth plus mandatory TOTP MFA. A private database singleton allowlist binds exactly one auth.users UUID, configured only by operator SQL. No self-registration, browser privilege keys, or user-editable metadata authorization.
+- Use narrow PostgreSQL SECURITY DEFINER RPCs as the server API. Every data RPC verifies allowlist, signed JWT aal2, live auth.sessions ownership and a currently verified TOTP factor, then rate limits and appends an admin audit event. Revocation checked on each request. Ordinary gameplay policies unchanged.
+- Portal sessions stored in sessionStorage, cleared on signout/expiry; no personal data cached. Use pinned locally bundled Supabase JS; no third-party scripts. Email/password sign-in and email-link fallback with PKCE; exact redirect allowlist needed before live fallback works. Owner chooses email separately, no passwords/2FA secrets in chat.
+- Player list uses bounded server pagination (25, max50), UUID cursor and escaped prefix search username/friend code, with UUID exact lookup. Details are whitelisted server-confirmed fields: public profile, current reset generation XP baseline/grants and totals, inventory counts/equipment, coin balance, last update/source labels. No auth email/password/identities, raw cloud save, Health samples or mutating gameplay getters.
+- Diagnostics v1 imports existing player-shared minimal sync text into a support case, tied to a target player and marked admin-imported/unverified. No remote retrieval or app upload. Reject rich recovery JSON, unsupported formats, oversize files and token-like text. Record capture time/build only if supplied; actual received_at is server time. Private storage in the database (text max32KiB), no public bucket. Expired after30days, hidden and opportunistically purged by report RPCs (not a promise of exact timed deletion); document operator cleanup.
+- History logs successful portal access/reads/report imports/reviews with real actor/session UUID, target, request UUID and timestamp; stores no credentials/report body/search text. Failed login/denied access belongs to Auth logs and is not claimed as this ledger. No endpoint for arbitrary log inserts or editing logs.
+- Use request identities for report import/review retry deduplication and conflict rejection. Do not treat diagnostics as entitlement to change rewards.
+- Visual: inherit Fitama forest green, Fredoka headings and existing logo; quiet readable light data surface, dense but mobile usable. Login, MFA enroll/challenge, access denied, loading, empty/error, list/detail/report/history views must work with keyboard and 320px layout. No fake players or production metrics.
+
+## API contract
+All public functions prefixed fitamaster_, all accept p_request_id uuid except status. JSON camelCase.
+- fitamaster_access_status(): {allowed:true,mfaRequired:boolean}; denies non-owner; aal1 allowed only for owner enrollment gating.
+- fitamaster_players(p_request_id uuid,p_query text default '',p_after uuid default null,p_limit integer default25): {players:[{id,username,friendCode,petName,petVariant,petStage,level,todayTp,tpExpiresAt,updatedAt}],nextCursor:uuid|null,observedAt}
+- fitamaster_player(p_request_id uuid,p_player_id uuid): {profile:{id,username,friendCode,displayName,petName,petVariant,petStage,level,todayTp,tpStartedAt,tpExpiresAt,updatedAt,createdAt,countryCode},generation, xp:{baseline,granted,total,migrationStatus,revision}|null,care:{updatedAt,revision,hearts,heartUnits,bondXp,inventory:{treat,healthPotion,hiHeartPotion,proteinBar,restStopper,talakitok,xpBooks}}|null,equipment:[{itemId,instanceId,equipped,slot,grantedAt}],coins:number|null,observedAt}. Unknown state null, never invented zero.
+- fitamaster_reports(p_request_id uuid,p_player_id uuid default null,p_after uuid default null,p_limit integer default25): {reports:[{id,playerId,username,title,status,capturedAt,build,receivedAt,expiresAt}],nextCursor,observedAt}; no body.
+- fitamaster_report(p_request_id uuid,p_report_id uuid): metadata plus {body,source:'admin_import',verified:false}.
+- fitamaster_import_report(p_request_id uuid,p_player_id uuid,p_title text,p_body text,p_captured_at timestamptz default null,p_build text default null): {id,...metadata}. Enforce safe known sync-report grammar, size limits, canonical duplicate intent on request retry.
+- fitamaster_review_report(p_request_id uuid,p_report_id uuid,p_status text): {id,status}; only new/reviewed, retry safe.
+- fitamaster_history(p_request_id uuid,p_after bigint default null,p_limit integer default25): {events:[{id,actorId,action,playerId,reportId,createdAt,requestId}],nextCursor,observedAt}. IDs serialized strings, newest first; before-id pagination.
+
+## Release boundaries
+Implement and test locally before any production migration/publication. Existing live schema inspection approved for metadata only; owner identity and a reviewed deployment package required before bootstrap. Do not infer production rows, enrollment, credentials, or a working live admin from local mocks. Preserve publisher/mirror/native uncommitted work. No paused QA/automation resumption.

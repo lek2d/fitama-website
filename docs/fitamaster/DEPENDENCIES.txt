@@ -1,0 +1,3 @@
+Locally bundled dependencies are pinned by package-lock.json.
+Supabase JS 2.112.4 — MIT
+esbuild is a build-time dependency.
