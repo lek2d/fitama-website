@@ -2,6 +2,7 @@ import {createClient} from '@supabase/supabase-js';
 import {createPortal,createSessionStorage,validateConfig,AUTH_STORAGE_KEY,clearAuthForPhase,parseAuthCallback,sessionIdentity} from './core.mjs';
 import {renderPortal} from './view.mjs';
 import {mountSavedPet} from './pet-card.mjs';
+import {createItemGrantController} from './grant-controller.mjs';
 import portalConfig from '../../docs/fitamaster/config.mjs';
 
 export async function startPortal({window:browser=globalThis.window,document=browser.document,location=browser.location,history=browser.history,storage=browser.sessionStorage,client:injectedClient}={}){
@@ -17,36 +18,45 @@ export async function startPortal({window:browser=globalThis.window,document=bro
   const run=async action=>{try{return await action();}catch(error){portal.setError(error.message||'The request could not be completed. Try again.');return null;}};
   const load=(kind,after=null)=>kind==='players'?portal.players({after}):kind==='reports'?portal.reports({after,playerId:portal.state.selectedPlayer}):portal.history({after});
   const resetPage=kind=>{ui.pages[kind]=[];ui.cursors[kind]=null;};
+  const grant=createItemGrantController(portal,{onChange:({focus})=>{renderCurrent(portal.state);if(focus)root.querySelector?.('.grant-panel h3, #grant-item')?.focus();},onConfirmed:async receipt=>{
+    if(portal.state.phase!=='ready'||portal.state.selectedPlayer!==receipt.playerId)return;
+    await run(()=>portal.player(receipt.playerId));
+    if(portal.state.phase==='ready'&&portal.state.selectedPlayer===receipt.playerId)await run(()=>portal.reports({playerId:receipt.playerId}));
+  }});
+  const leaveGrant=()=>{if(!grant.blocksNavigation)return true;portal.setError('Check this item delivery before leaving the player. Retry only the same addition if no delivery is found.');return false;};
   const actions={
+    itemGrant:grant.actions,
     login:(email,password)=>run(()=>portal.login(email,password)),emailLink:email=>{ui.emailLinkOpen=true;ui.emailLinkEmail=email;return run(()=>portal.emailLink(email,location.origin+location.pathname));},enroll:()=>run(()=>portal.enroll()),verify:code=>run(()=>portal.verify(code)),
     setEmailLinkOpen:value=>{ui.emailLinkOpen=!!value;},updateEmailLinkEmail:value=>{ui.emailLinkEmail=String(value);ui.emailLinkOpen=true;},
     retryVerification:()=>run(()=>portal.refresh()),
     updateDraft:(name,value)=>{if(['playerId','title','body','capturedAt','build'].includes(name)){ui.importDraft={playerId:portal.state.selectedPlayer||'',...ui.importDraft,[name]:value};ui.importOpen=true;}},
     setImportOpen:value=>{ui.importOpen=!!value;},
     signOut:async()=>{expiryVersion++;clearTimeout(expiryTimer);try{await portal.signOut();}finally{authStorage.clear();}},
-    navigate:view=>{portal.setView(view);resetPage(view==='history'?'history':view==='reports'?'reports':'players');run(()=>load(view==='history'?'history':view==='reports'?'reports':'players'));},
-    search:query=>{resetPage('players');run(()=>portal.players({query}));},
-    player:async id=>{resetPage('reports');ui.importDraft=null;ui.importOpen=false;importIntent=null;await run(()=>portal.player(id));if(portal.state.selectedPlayer===id)run(()=>portal.reports({playerId:id}));},
-    backPlayers:()=>{portal.setView('players');run(()=>load('players',ui.cursors.players));},
+    navigate:view=>{if(!leaveGrant())return;portal.setView(view);resetPage(view==='history'?'history':view==='reports'?'reports':'players');run(()=>load(view==='history'?'history':view==='reports'?'reports':'players'));},
+    search:query=>{if(!leaveGrant())return;resetPage('players');run(()=>portal.players({query}));},
+    player:async id=>{if(!leaveGrant())return;resetPage('reports');ui.importDraft=null;ui.importOpen=false;importIntent=null;await run(()=>portal.player(id));if(portal.state.selectedPlayer===id)run(()=>portal.reports({playerId:id}));},
+    backPlayers:()=>{if(!leaveGrant())return;portal.setView('players');run(()=>load('players',ui.cursors.players));},
     report:id=>run(()=>portal.report(id)),
-    page:(kind,direction,next)=>{let cursor;if(direction==='next'){if(!next)return;ui.pages[kind].push(ui.cursors[kind]);cursor=next;}else{if(!ui.pages[kind].length)return;cursor=ui.pages[kind].pop();}ui.cursors[kind]=cursor;run(()=>load(kind,cursor));},
+    page:(kind,direction,next)=>{if(kind==='players'&&!leaveGrant())return;let cursor;if(direction==='next'){if(!next)return;ui.pages[kind].push(ui.cursors[kind]);cursor=next;}else{if(!ui.pages[kind].length)return;cursor=ui.pages[kind].pop();}ui.cursors[kind]=cursor;run(()=>load(kind,cursor));},
     importReport:async draft=>{ui.importDraft=draft;const canonical=JSON.stringify(draft);if(importIntent?.canonical!==canonical)importIntent={canonical,id:crypto.randomUUID()};
       const report=await run(()=>portal.importReport({...draft,requestId:importIntent.id}));if(report?.id){ui.importDraft=null;importIntent=null;resetPage('reports');await run(()=>portal.reports({playerId:portal.state.selectedPlayer}));await run(()=>portal.report(report.id));}},
     review:async(id,status)=>{const key=id+':'+status;if(!reviewIntents.has(key))reviewIntents.set(key,crypto.randomUUID());const result=await run(()=>portal.reviewReport(id,status,reviewIntents.get(key)));if(result){reviewIntents.delete(key);await run(()=>portal.report(id));await run(()=>load('reports',ui.cursors.reports));}}
   };
-  portal.subscribe(state=>{
-    clearAuthForPhase(authStorage,state.phase);
-    if(state.phase!=='login'){ui.emailLinkOpen=false;ui.emailLinkEmail='';}
-    if(state.phase!=='ready'){ui.importDraft=null;ui.importOpen=false;importIntent=null;reviewIntents.clear();ui.pages={players:[],reports:[],history:[]};ui.cursors={players:null,reports:null,history:null};}
+  function renderCurrent(state){
+    if(disposed)return;
+    ui.itemGrant=grant.state;
     petRenderer?.dispose();petRenderer=null;clearTimeout(cardExpiryTimer);
     const rendered=renderPortal(document,root,state,actions,ui);
     if(rendered?.petArtwork)petRenderer=mountSavedPet({document,...rendered.petArtwork});
     const cardExpiry=Date.parse(state.player?.petCard?.tpExpiresAt);
-    if(state.phase==='ready'&&cardExpiry>Date.now())cardExpiryTimer=setTimeout(()=>{
-      if(disposed||portal.state.phase!=='ready')return;
-      petRenderer?.dispose();const next=renderPortal(document,root,portal.state,actions,ui);
-      petRenderer=next?.petArtwork?mountSavedPet({document,...next.petArtwork}):null;
-    },Math.min(2147483647,cardExpiry-Date.now()+10));
+    if(state.phase==='ready'&&cardExpiry>Date.now())cardExpiryTimer=setTimeout(()=>renderCurrent(portal.state),Math.min(2147483647,cardExpiry-Date.now()+10));
+  }
+  portal.subscribe(state=>{
+    grant.sync(state);
+    clearAuthForPhase(authStorage,state.phase);
+    if(state.phase!=='login'){ui.emailLinkOpen=false;ui.emailLinkEmail='';}
+    if(state.phase!=='ready'){ui.importDraft=null;ui.importOpen=false;importIntent=null;reviewIntents.clear();ui.pages={players:[],reports:[],history:[]};ui.cursors={players:null,reports:null,history:null};}
+    renderCurrent(state);
     if(state.phase==='ready'&&!wasReady){wasReady=true;queueMicrotask(()=>run(()=>portal.players()));}else if(state.phase!=='ready')wasReady=false;
   });
   async function scheduleExpiry(){const version=++expiryVersion;clearTimeout(expiryTimer);try{const {data}=await client.auth.getSession();if(version!==expiryVersion||disposed)return;const expires=data?.session?.expires_at;if(expires)expiryTimer=setTimeout(()=>{portal.invalidate('login','Your session expired. Sign in again.');authStorage.clear();},Math.max(0,expires*1000-Date.now()));}catch{}}
@@ -76,11 +86,13 @@ export async function startPortal({window:browser=globalThis.window,document=bro
   authReady=true;
   if(!callbackError){await portal.refresh();await scheduleExpiry();}
   const onVisibility=()=>{if(document.visibilityState==='visible')run(()=>portal.refresh());};
+  const onBeforeUnload=event=>{if(grant.blocksNavigation){event.preventDefault();event.returnValue='';}};
   const onPageHide=()=>portal.invalidate('loading');
   const onPageShow=event=>{if(event.persisted)run(()=>portal.refresh());};
   document.addEventListener('visibilitychange',onVisibility);
+  browser.addEventListener('beforeunload',onBeforeUnload);
   browser.addEventListener('pagehide',onPageHide);
   browser.addEventListener('pageshow',onPageShow);
-  return {portal,client,dispose(){disposed=true;expiryVersion++;clearTimeout(expiryTimer);clearTimeout(cardExpiryTimer);petRenderer?.dispose();authSubscription?.data?.subscription?.unsubscribe();document.removeEventListener('visibilitychange',onVisibility);browser.removeEventListener('pagehide',onPageHide);browser.removeEventListener('pageshow',onPageShow);}};
+  return {portal,client,dispose(){disposed=true;grant.dispose();expiryVersion++;clearTimeout(expiryTimer);clearTimeout(cardExpiryTimer);petRenderer?.dispose();authSubscription?.data?.subscription?.unsubscribe();document.removeEventListener('visibilitychange',onVisibility);browser.removeEventListener('beforeunload',onBeforeUnload);browser.removeEventListener('pagehide',onPageHide);browser.removeEventListener('pageshow',onPageShow);}};
 }
 if(typeof window!=='undefined')startPortal();

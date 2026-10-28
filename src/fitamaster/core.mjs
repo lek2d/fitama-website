@@ -1,3 +1,4 @@
+import {ITEM_CATALOG} from './inventory.mjs';
 export const SUPABASE_ORIGIN='https://ormclcexntojipbyrlnh.supabase.co';
 export const AUTH_STORAGE_KEY='fitamaster-auth';
 const UUID=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -34,6 +35,8 @@ export function clearAuthForPhase(storage,phase){
 }
 export function publicError(error) {
   const code=String(error?.code||''); const message=String(error?.message||'');
+  const grantMessages={FITAMASTER_GRANT_INVENTORY_UNAVAILABLE:'Ask this player to open and sync Fitama before adding this item.',FITAMASTER_GRANT_TARGET_CHANGED:'The player changed or reset. Reload their details and review again.',FITAMASTER_GRANT_BUSY:'The player inventory is busy. Check delivery status before retrying.',FITAMASTER_GRANT_OVERFLOW:'This item would exceed the inventory limit.',FITAMASTER_GRANT_REQUEST_CONFLICT:'This send differs from an earlier request. Check admin history before starting another.',FITAMASTER_GRANT_BALANCE_REVIEW:'This box balance needs review before adding this item.',FITAMASTER_GRANT_DISABLED:'Item additions are temporarily unavailable.',FITAMASTER_GRANT_INVALID_ITEM:'Choose an available item.',FITAMASTER_GRANT_INVALID_QUANTITY:'Check the item quantity.',FITAMASTER_GRANT_INVALID_REASON:'Enter a single-line reason of 1–240 characters.'};
+  if(Object.hasOwn(grantMessages,message))return grantMessages[message];
   if(code==='over_email_send_rate_limit')return 'Email sign-in is temporarily limited. Check your inbox for the newest unused link, or wait before requesting another.';
   if(code==='over_request_rate_limit'||code==='429'||error?.status===429||/rate.limit/i.test(message))return 'Too many requests. Wait before trying again.';
   if(code==='invalid_credentials')return 'Sign-in failed. Check your email and password.';
@@ -53,7 +56,23 @@ export function validateReport(body) {
   if(lines.some(line=>!row.test(line))||/(?:eyJ[A-Za-z0-9_-]{12,}|sb_secret_|bearer\s|access[_ -]?token|refresh[_ -]?token|password|secret|authorization)/i.test(normalized))throw new Error('Use only the minimal sync diagnostics text. Remove credentials and rich recovery data.');
   return normalized;
 }
-const empty=()=>({players:null,player:null,reports:null,report:null,history:null,selectedPlayer:null,enrollment:null,factorId:null,error:'',notice:'',busy:false,view:'players',query:''});
+const grantCatalog=new Map(ITEM_CATALOG.filter(item=>item.kind==='stack'||item.kind==='equipment').map(item=>[item.itemId,item]));
+export function validateItemGrant(input){
+  if(!input||typeof input!=='object'||!UUID.test(input.playerId||'')||!UUID.test(input.requestId||''))throw new Error('Reload the player details and review this item again.');
+  if(!Number.isSafeInteger(input.generation)||input.generation<0)throw new Error('Reload the player details before adding an item.');
+  const item=grantCatalog.get(input.itemId);if(!item)throw new Error('Choose an available item.');
+  const quantity=typeof input.quantity==='number'?input.quantity:typeof input.quantity==='string'&&/^[0-9]{1,2}$/.test(input.quantity)?Number(input.quantity):NaN;
+  if(!Number.isInteger(quantity)||quantity<1||quantity>(item.kind==='equipment'?1:99))throw new Error(item.kind==='equipment'?'Add one equipment copy at a time.':'Choose a quantity from 1 to 99.');
+  const raw=input.reason;if(typeof raw!=='string'||/[\p{Cc}\p{Cf}\p{Cs}\p{Zl}\p{Zp}]/u.test(raw))throw new Error('Use a single-line reason without control characters.');
+  const reason=raw.trim();if([...reason].length<1||[...reason].length>240)throw new Error('Enter a reason of 1–240 characters.');
+  return{playerId:input.playerId.toLowerCase(),generation:input.generation,itemId:item.itemId,quantity,reason,requestId:input.requestId.toLowerCase()};
+}
+function grantReceipt(value,intent){
+  if(!value||typeof value!=='object'||typeof value.grantedAt!=='string'||!Number.isFinite(Date.parse(value.grantedAt)))throw new Error('Grant outcome could not be confirmed.');
+  for(const key of ['requestId','playerId','generation','itemId','quantity','reason'])if(value[key]!==intent[key])throw new Error('Grant outcome could not be confirmed.');
+  return{...intent,grantedAt:value.grantedAt};
+}
+const empty=()=>({players:null,player:null,reports:null,report:null,history:null,selectedPlayer:null,enrollment:null,factorId:null,error:'',notice:'',busy:false,view:'players',query:'',grantReceipt:null,grantCheck:null,grantOutcome:null});
 // Every view lives only in memory. Epochs prevent late network responses from restoring erased content.
 export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now()}={}) {
   let state={...empty(),phase:'loading'};let epoch=0,currentIdentity=null,emailLinkInFlight=false;const versions=new Map();const pending=new Map();const listeners=new Set();
@@ -95,21 +114,22 @@ export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now
     }catch(error){if(same(stamp))verificationFailure(error);return false;}
   }
   async function refresh(){await gate(epoch);}
-  async function request(name,args,key,patch={}) {
+  async function request(name,args,key,patch={},options={}) {
     const stamp=epoch;const version=(versions.get(key)||0)+1;versions.set(key,version);
     pending.set(key,version);
-    emit({...patch,[key]:null,busy:true,error:'',notice:''});
+    emit({...patch,[key]:null,...(options.write?{grantOutcome:null}:{}),busy:true,error:'',notice:''});
     try {
       if(!await gate(stamp)||!same(stamp)||versions.get(key)!==version){if(same(stamp)&&versions.get(key)===version)emit(settle(key));return null;}
       const {data,error}=await client.rpc('fitamaster_'+name,{p_request_id:id(),...args});
       if(!same(stamp)||versions.get(key)!==version)return null;
       if(error){if(['42501','PGRST301','401','403'].includes(String(error.code))){invalidate('denied',publicError(error));return null;}throw error;}
-      emit({[key]:data,...settle(key)});return data;
-    }catch(error){if(same(stamp)&&versions.get(key)===version)emit({...settle(key),error:publicError(error)});return null;}
+      const result=options.parse?options.parse(data):data;
+      emit({[key]:result,...(options.write?{grantOutcome:'confirmed'}:{}),...settle(key)});return result;
+    }catch(error){if(same(stamp)&&versions.get(key)===version){const code=String(error?.code||'');const definitive=['P0001','22023','22003','23502','23503','23505','23514','40001','40P01','55P03','57014','PGRST202'].includes(code)||(!code&&[400,404,409,413,422,429].includes(error?.status));emit({...settle(key),error:options.write&&!definitive?'Delivery could not be confirmed. Check delivery status before trying again.':publicError(error),...(options.write?{grantOutcome:definitive?'rejected':'uncertain'}:{})});}return null;}
   }
   async function authAction(action){const stamp=epoch;emit({busy:true,error:'',notice:''});try{const result=await action();if(!same(stamp))return;if(result?.error)throw result.error;emit({busy:false});return result?.data;}catch(error){if(same(stamp))emit({busy:false,error:publicError(error)});}}
   const api={get state(){return state;},subscribe(listener){listeners.add(listener);listener(state);return()=>listeners.delete(listener);},invalidate,refresh,
-    setError(message){emit({error:message,busy:false});},setView(view){epoch++;versions.clear();pending.clear();emit({view,error:'',notice:'',busy:false,players:null,player:null,reports:null,report:null,history:null,selectedPlayer:null});},
+    setError(message){emit({error:message,busy:false});},setView(view){epoch++;versions.clear();pending.clear();emit({view,error:'',notice:'',busy:false,players:null,player:null,reports:null,report:null,history:null,selectedPlayer:null,grantReceipt:null,grantCheck:null,grantOutcome:null});},
     async login(email,password){const result=await authAction(()=>client.auth.signInWithPassword({email,password}));if(result)await refresh();},
     async emailLink(email,redirectTo){if(emailLinkInFlight)return;emailLinkInFlight=true;try{const result=await authAction(()=>client.auth.signInWithOtp({email,options:{shouldCreateUser:false,emailRedirectTo:redirectTo}}));if(result)emit({notice:'If this email can sign in, a link has been sent. Open the newest link from your email in any tab or browser, then complete authenticator verification.'});}finally{emailLinkInFlight=false;}},
     async enroll(){const stamp=epoch;await gate(stamp);
@@ -119,11 +139,23 @@ export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now
     },
     async verify(code){if(!/^\d{6}$/.test(code)){emit({error:'Enter the six-digit code from your authenticator.'});return;}const factorId=state.factorId;if(!factorId)return;const result=await authAction(()=>client.auth.mfa.challengeAndVerify({factorId,code}));if(result){emit({enrollment:null});await refresh();}},
     async signOut(){invalidate('signing-out');try{await client.auth.signOut({scope:'local'});}catch{}finally{invalidate('login');}},
-    players({query=state.query,after=null}={}){if(typeof query!=='string'||query.length>80||/[\x00-\x1f\x7f]/.test(query))throw new Error('Use a player search of 80 characters or fewer, without control characters.');cancel(['player','reports','report']);return request('players',{p_query:query,p_after:after,p_limit:25},'players',{query,view:'players',player:null,report:null,reports:null,selectedPlayer:null});},
-    player(playerId){cancel(['players','reports','report']);return request('player',{p_player_id:playerId},'player',{selectedPlayer:playerId,report:null,reports:null});},
+    players({query=state.query,after=null}={}){if(typeof query!=='string'||query.length>80||/[\x00-\x1f\x7f]/.test(query))throw new Error('Use a player search of 80 characters or fewer, without control characters.');cancel(['player','reports','report','grantReceipt','grantCheck']);return request('players',{p_query:query,p_after:after,p_limit:25},'players',{query,view:'players',player:null,report:null,reports:null,selectedPlayer:null,grantReceipt:null,grantCheck:null,grantOutcome:null});},
+    player(playerId){cancel(['players','reports','report','grantReceipt','grantCheck']);return request('player',{p_player_id:playerId},'player',{selectedPlayer:playerId,report:null,reports:null,grantReceipt:null,grantCheck:null,grantOutcome:null});},
     reports({playerId=null,after=null}={}){return request('reports',{p_player_id:playerId,p_after:after,p_limit:25},'reports');},
     report(reportId){return request('report',{p_report_id:reportId},'report');},
     history({after=null}={}){return request('history',{p_after:after,p_limit:25},'history',{view:'history'});},
+    grantItem(input){
+      const intent=validateItemGrant(input);
+      if(state.phase!=='ready'||state.selectedPlayer!==intent.playerId||state.player?.profile?.id!==intent.playerId||state.player?.generation!==intent.generation)throw new Error('Player details changed. Reload and review this item again.');
+      if(pending.has('grantReceipt')||pending.has('grantCheck'))return Promise.resolve(null);
+      return request('grant_item',{p_request_id:intent.requestId,p_player_id:intent.playerId,p_generation:intent.generation,p_item_id:intent.itemId,p_quantity:intent.quantity,p_reason:intent.reason},'grantReceipt',{}, {write:true,parse:value=>grantReceipt(value,intent)});
+    },
+    grantStatus(input){
+      const intent=validateItemGrant(input);
+      if(state.phase!=='ready'||state.selectedPlayer!==intent.playerId||state.player?.profile?.id!==intent.playerId||state.player?.generation!==intent.generation)throw new Error('Player details changed. Reload and review this item again.');
+      if(pending.has('grantReceipt')||pending.has('grantCheck'))return Promise.resolve(null);
+      return request('grant_status',{p_grant_request_id:intent.requestId},'grantCheck',{}, {parse:value=>({receipt:value===null?null:grantReceipt(value,intent)})});
+    },
     async importReport({playerId,title,body,capturedAt=null,build=null,requestId=id()}){
       if(!UUID.test(playerId))throw new Error('Enter the target player UUID.');
       const safeTitle=title?.trim()||'',safeBuild=build?.trim()||null;

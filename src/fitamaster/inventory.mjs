@@ -144,8 +144,6 @@ export function renderInventory(document, player) {
   const itemRow = entry => h('li', {class: 'inventory-item'}, icon(entry), h('div', {class: 'inventory-item-copy'}, name(entry),
     h('div', {class: 'inventory-quantity'}, entry.quantity === null ? 'Quantity unavailable' : 'Quantity: ' + entry.quantity)));
   const itemList = entries => h('ul', {class: 'inventory-items'}, ...entries.map(itemRow));
-  const collapsed = (label, entries, className) => entries.length ? h('details', {class: 'inventory-secondary ' + className},
-    h('summary', {}, label + ' (' + entries.length + ')'), itemList(entries)) : null;
   function equipmentRow(entry) {
     const copies = entry.copyCount + (entry.copyCount === 1 ? ' copy' : ' copies');
     const equipped = entry.equippedCount + ' equipped' + (entry.unknownEquippedCount ? ' · ' + entry.unknownEquippedCount + ' status unknown' : '');
@@ -158,20 +156,21 @@ export function renderInventory(document, player) {
       ]))))));
   }
   const bottle = model.powerBottle;
-  const bottleRow = h('li', {class: 'inventory-unique inventory-bottle'}, icon(bottle), h('div', {class: 'inventory-item-copy'}, name(bottle),
-    bottle.recorded ? facts([['Level', bottle.level], ['Stored TP', bottle.storedTp], ['Capacity', bottle.capacity],
-      ['Ready TP', bottle.readyTp], ['Pending TP', bottle.pendingTp], ['Pending until', timeText(bottle.pendingUntil)]]) : note('State not recorded')));
+  const bottleRow = bottle.recorded && bottle.level !== null ? h('li', {class: 'inventory-unique inventory-bottle'}, icon(bottle), h('div', {class: 'inventory-item-copy'}, name(bottle),
+    facts([['Level', bottle.level], ['Stored TP', bottle.storedTp], ['Capacity', bottle.capacity],
+      ['Ready TP', bottle.readyTp], ['Pending TP', bottle.pendingTp], ['Pending until', timeText(bottle.pendingUntil)]]))) : null;
   const entitlementRow = (entry, text) => h('li', {class: 'inventory-unique'}, icon(entry), h('div', {class: 'inventory-item-copy'}, name(entry),
     h('div', {class: 'inventory-quantity'}, text)));
+  const unique = [bottleRow,
+    model.magicPotion.available === true ? entitlementRow(model.magicPotion, 'Unlimited') : null,
+    model.ancientCompass.available === true ? entitlementRow(model.ancientCompass, 'Available') : null].filter(Boolean);
+  const hasOwned = model.items.length || unique.length || model.equipment.length;
+  const incomplete = model.unavailableItems.length > 0 || !model.equipmentAvailable;
   return h('section', {class: 'section inventory-section'}, h('h2', {}, 'Inventory'),
-    note('Saved cloud quantities and equipment instances. Missing quantities remain unavailable.'),
-    h('h3', {}, 'Items'), model.items.length ? itemList(model.items) : note('No positive item quantities recorded.'),
-    collapsed('Items with no stock', model.zeroItems, 'inventory-zero-stock'),
-    collapsed('Quantities unavailable', model.unavailableItems, 'inventory-unavailable'),
-    h('h3', {class: 'inventory-subheading'}, 'Unique items'), h('ul', {class: 'inventory-unique-list'}, bottleRow,
-      entitlementRow(model.magicPotion, model.magicPotion.available === true ? 'Unlimited' : model.magicPotion.available === false ? 'Not available' : 'Availability not recorded'),
-      entitlementRow(model.ancientCompass, model.ancientCompass.available === true ? 'Available' : 'Availability not recorded')),
-    h('h3', {class: 'inventory-subheading'}, 'Equipment'),
-    !model.equipmentAvailable ? note('Equipment data not available.') : model.equipment.length
-      ? h('ul', {class: 'inventory-equipment-list'}, ...model.equipment.map(equipmentRow)) : note('No equipment recorded.'));
+    note(incomplete ? 'Some inventory data is not recorded; only confirmed items are shown.' : 'Owned items from the latest server snapshot.'),
+    !hasOwned ? note('No confirmed items to display.') : null,
+    model.items.length ? h('div', {}, h('h3', {}, 'Items'), itemList(model.items)) : null,
+    unique.length ? h('div', {}, h('h3', {class: 'inventory-subheading'}, 'Unique items'), h('ul', {class: 'inventory-unique-list'}, ...unique)) : null,
+    model.equipment.length ? h('div', {}, h('h3', {class: 'inventory-subheading'}, 'Equipment'),
+      h('ul', {class: 'inventory-equipment-list'}, ...model.equipment.map(equipmentRow))) : null);
 }

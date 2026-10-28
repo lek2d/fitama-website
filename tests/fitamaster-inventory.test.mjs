@@ -134,7 +134,7 @@ test('unique entitlements distinguish unlimited, unavailable and unrecorded avai
   const rendered = renderInventory(document, {inventory: {magicPotion: {available: true}, ancientCompass: {available: null},
     powerBottle: {level: 2, storedTp: 180, capacity: 400, pendingTp: 80, pendingUntil: null, readyTp: 100}}});
   assert.match(rendered.textContent, /Magic PotionUnlimited/);
-  assert.match(rendered.textContent, /Ancient CompassAvailability not recorded/);
+  assert.doesNotMatch(rendered.textContent, /Ancient Compass/);
   assert.match(rendered.textContent, /Level2/);
   assert.match(rendered.textContent, /Stored TP180/);
   assert.match(rendered.textContent, /Capacity400/);
@@ -142,14 +142,15 @@ test('unique entitlements distinguish unlimited, unavailable and unrecorded avai
   assert.match(rendered.textContent, /Ready TP100/);
 });
 
-test('rendered inventory keeps zero stock expandable and groups gear under one accessible details control', () => {
+test('rendered inventory shows owned items only and keeps grouped equipment details', () => {
   const root = renderInventory(document, {inventory: {items: [{itemId: 'treat', quantity: 2}, {itemId: 'health-potion', quantity: 0}]},
     equipment: [{itemId: 'rep-ripper', instanceId: 'copy-a', equipped: false, slot: 'weapon', grantedAt: null},
       {itemId: 'rep-ripper', instanceId: 'copy-b', equipped: true, slot: 'weapon', grantedAt: '2026-10-02T00:00:00Z'}]});
   assert.equal(root.tagName, 'section');
-  const zeros = byClass(root, 'inventory-zero-stock')[0];
-  assert.equal(zeros.tagName, 'details');
-  assert.match(zeros.children[0].textContent, /Items with no stock \(1\)/);
+  assert.equal(byClass(root, 'inventory-zero-stock').length, 0);
+  assert.equal(byClass(root, 'inventory-unavailable').length, 0);
+  assert.match(root.textContent, /TreatQuantity: 2/);
+  assert.doesNotMatch(root.textContent, /Health Potion|Quantity: 0|Items with no stock|Quantities unavailable/);
   const gear = byClass(root, 'inventory-equipment');
   assert.equal(gear.length, 1);
   assert.match(gear[0].textContent, /Rep Ripper2 copies · 1 equipped/);
@@ -172,8 +173,10 @@ test('remote IDs and equipment metadata are literal text and never create markup
     assert.equal(image.attributes.alt, '');
   }
   assert.equal(nodes(root).some(node => node.tagName === 'script' || 'onerror' in node.attributes), false);
-  assert.match(renderInventory(document, {}).textContent, /Quantity unavailable/);
-  assert.match(renderInventory(document, {}).textContent, /Equipment data not available/);
+  const empty = renderInventory(document, {});
+  assert.doesNotMatch(empty.textContent, /Quantity unavailable|State not recorded|Availability not recorded|Power Bottle|Magic Potion|Ancient Compass/);
+  assert.match(empty.textContent, /No confirmed items to display/);
+  assert.match(empty.textContent, /only confirmed items are shown/);
 });
 
 test('catalog thumbnails preserve PNG provenance and matching hashes within the 2 MB delivery budget', async () => {
@@ -201,4 +204,12 @@ test('catalog thumbnails preserve PNG provenance and matching hashes within the 
     assert.ok(manifest.items.some(entry => entry.itemId === definition.itemId && entry.name === definition.name));
     if (definition.icon) assert.ok(manifest.assets.some(asset => definition.icon.endsWith('/' + asset.file)));
   }
+});
+
+test('absent special items are hidden and owned special items remain visible', () => {
+  const absent = renderInventory(document, {inventory: {items: [{itemId: 'treat', quantity: 1}], powerBottle: null, magicPotion: {available: false}, ancientCompass: {available: null}}, equipment: []});
+  assert.doesNotMatch(absent.textContent, /Unique items|Power Bottle|Magic Potion|Ancient Compass|Equipment|No equipment/);
+  const present = renderInventory(document, {inventory: {items: [], powerBottle: {level: 1, storedTp: 0, capacity: 200, pendingTp: 0, readyTp: 0}, magicPotion: {available: true}, ancientCompass: {available: true}}, equipment: []});
+  assert.match(present.textContent, /Power Bottle/);assert.match(present.textContent, /Magic PotionUnlimited/);assert.match(present.textContent, /Ancient CompassAvailable/);
+  assert.equal(byClass(present, 'inventory-unique').length, 3);
 });

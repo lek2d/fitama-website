@@ -217,7 +217,7 @@ function controllerFixture(){
   const document={...fakeDocument,getElementById:()=>root,visibilityState:'visible',addEventListener:(name,handler)=>events.set(name,handler),removeEventListener:name=>events.delete(name)};
   const browser={document,location:new URL('https://fitama.app/fitamaster/'),history:{replaceState(){}},sessionStorage:storage,addEventListener:(name,handler)=>windowEvents.set(name,handler),removeEventListener:name=>windowEvents.delete(name)};
   const client={auth:{getSession:async()=>({data:{session}}),getUser:async()=>({data:{user:session.user}}),onAuthStateChange:handler=>{authCallback=handler;return {data:{subscription:{unsubscribe(){}}}};},mfa:{getAuthenticatorAssuranceLevel:async()=>({data:{currentLevel:'aal2'}})}},rpc:async name=>({data:name==='fitamaster_access_status'?{allowed:true,mfaRequired:false}:name==='fitamaster_reports'?{reports:[],nextCursor:null}:{players:[],nextCursor:null}})};
-  return {root,browser,client,events,clearSession(){session=null;},emitAuth(event,newId){if(newId)session=sessionFor(newId);authCallback(event,session);}};
+  return {root,browser,client,events,windowEvents,clearSession(){session=null;},emitAuth(event,newId){if(newId)session=sessionFor(newId);authCallback(event,session);}};
 }
 const flush=async()=>{for(let i=0;i<4;i++)await new Promise(resolve=>setTimeout(resolve,0));};
 test('real controller preserves an unsubmitted in-memory draft across same-session refresh only',async()=>{
@@ -329,4 +329,32 @@ test('selected player renders the saved card and illustrated inventory, then cle
  assert.ok(allNodes(root).some(node=>node.tagName==='img'&&node.attributes.src?.includes('fitamaster-items/treat.webp')));
  const login=renderPortal(fakeDocument,root,{phase:'login'},{},{});
  assert.equal(login.petArtwork,null);assert.equal(root.textContent.includes(payload),false);assert.equal(root.textContent.includes('Quantity: 7'),false);
+});
+function grantControllerFixture(){
+  const f=controllerFixture(),calls=[];let quantity=1;f.fields={itemId:'health-potion',quantity:'2',reason:'Synthetic support #12'};
+  f.browser.document.defaultView={FormData:class{getAll(name){return [f.fields[name]];}}};
+  f.client.rpc=async(name,args)=>{calls.push([name,args]);return{data:name==='fitamaster_access_status'?{allowed:true,mfaRequired:false}:name==='fitamaster_player'?{profile:{id:uuid,username:'Synthetic QA',friendCode:'SAMPLE'},generation:0,inventory:{items:[{itemId:'health-potion',quantity}]},equipment:[]}:name==='fitamaster_grant_item'?(quantity+=args.p_quantity,{requestId:args.p_request_id,playerId:args.p_player_id,generation:args.p_generation,itemId:args.p_item_id,quantity:args.p_quantity,reason:args.p_reason,grantedAt:'2026-10-28T09:00:00Z'}):name==='fitamaster_grant_status'?null:name==='fitamaster_reports'?{reports:[],nextCursor:null}:{players:[],nextCursor:null}};};
+  f.calls=calls;return f;
+}
+const grantButton=(root,label)=>allNodes(root).find(node=>node.tagName==='button'&&node.textContent===label);
+const submitGrant=f=>allNodes(f.root).find(node=>node.className==='grant-form').events.submit({preventDefault(){},currentTarget:{}});
+test('wired portal review never sends until confirmation; receipt survives inventory refresh and history renders grant facts',async()=>{
+  const f=grantControllerFixture(),running=await startPortal({window:f.browser,client:f.client});
+  try{
+    await flush();await running.portal.player(uuid);submitGrant(f);assert.equal(f.calls.some(([name])=>name==='fitamaster_grant_item'),false);assert.match(f.root.textContent,/Review item addition/);
+    grantButton(f.root,'Confirm add item').events.click();await flush();assert.equal(f.calls.filter(([name])=>name==='fitamaster_grant_item').length,1);assert.match(f.root.textContent,/Added to server inventory/);assert.match(f.root.textContent,/Quantity: 3/);
+    grantButton(f.root,'Add another item').events.click();assert.equal(allNodes(f.root).find(node=>node.attributes.id==='grant-item').value,'');
+    renderPortal(f.browser.document,f.root,{phase:'ready',view:'history',history:{events:[{action:'item_grant',itemGrant:{itemId:'health-potion',quantity:2,reason:'Synthetic support #12',generation:0,grantedAt:'2026-10-28T09:00:00Z'}}]}},{});
+    assert.match(f.root.textContent,/Health Potion/);assert.match(f.root.textContent,/Synthetic support #12/);
+  }finally{running.dispose();}
+});
+test('wired unknown delivery blocks navigation and unload; status checked absence permits identical retry only',async()=>{
+  const f=grantControllerFixture(),original=f.client.rpc;f.client.rpc=async(name,args)=>name==='fitamaster_grant_item'?(f.calls.push([name,args]),{error:{code:'08006',message:'Lost response'}}):original(name,args);
+  const running=await startPortal({window:f.browser,client:f.client});
+  try{
+    await flush();await running.portal.player(uuid);submitGrant(f);grantButton(f.root,'Confirm add item').events.click();await flush();assert.match(f.root.textContent,/Check item delivery/);assert.equal(grantButton(f.root,'Edit item'),undefined);
+    grantButton(f.root,'Players').events.click();assert.equal(running.portal.state.selectedPlayer,uuid);let prevented=false;const event={preventDefault(){prevented=true;}};f.windowEvents.get('beforeunload')(event);assert.equal(prevented,true);
+    grantButton(f.root,'Check delivery status').events.click();await flush();grantButton(f.root,'Retry same addition').events.click();await flush();const sends=f.calls.filter(([name])=>name==='fitamaster_grant_item');assert.equal(sends.length,2);assert.deepEqual(sends[0],sends[1]);
+    f.emitAuth('SIGNED_OUT');assert.equal(f.root.textContent.includes('Synthetic support #12'),false);assert.equal(grantButton(f.root,'Retry same addition'),undefined);
+  }finally{running.dispose();}
 });
