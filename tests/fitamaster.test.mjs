@@ -178,6 +178,21 @@ test('email fragment sessions and legacy PKCE codes are bounded while invalid ca
   }
   assert.equal(parseAuthCallback(new URL(base+'#main')).hasCallback,false);
 });
+// Supabase Auth AsRedirectURL emits this field set, including its empty sb marker.
+const officialMagiclinkFragment='#access_token=synthetic.access.token&expires_at=2000000000&expires_in=3600&refresh_token=synthetic-refresh&sb=&token_type=bearer&type=magiclink';
+test('official Supabase magiclink fragment accepts a single empty sb marker',()=>{
+  const result=parseAuthCallback(new URL('https://fitama.app/fitamaster/'+officialMagiclinkFragment));
+  assert.equal(result.hasCallback,true);assert.equal(result.failed,false);
+  assert.deepEqual(result.session,{access_token:'synthetic.access.token',refresh_token:'synthetic-refresh'});
+  assert.equal(result.cleanUrl,'https://fitama.app/fitamaster/');
+});
+test('Supabase callback rejects duplicate or nonempty sb markers',()=>{
+  for(const fragment of [officialMagiclinkFragment+'&sb=',officialMagiclinkFragment+'&sb=other',officialMagiclinkFragment.replace('&sb=','&sb=other')]){
+    const result=parseAuthCallback(new URL('https://fitama.app/fitamaster/'+fragment));
+    assert.equal(result.hasCallback,true);assert.equal(result.failed,true);assert.equal(result.session,null);
+    assert.equal(result.cleanUrl,'https://fitama.app/fitamaster/');
+  }
+});
 test('pending signout view contains no enabled sign-in controls',()=>{
   const root=new Element('root');renderPortal(fakeDocument,root,{phase:'signing-out'},{});
   assert.ok(root.textContent.includes('Signing out…'));assert.equal(allNodes(root).some(n=>n.tagName==='input'||n.tagName==='button'),false);
@@ -253,6 +268,26 @@ test('a clicked email link in a fresh tab imports a verified session but require
     const running=await startPortal({window:f.browser,client:f.client});
     try{await flush();assert.equal(imports,1);assert.equal(running.portal.state.phase,allowed?'challenge':'denied');assert.ok(calls.includes('fitamaster_access_status'));assert.equal(calls.some(name=>name!=='fitamaster_access_status'),false);assert.equal(f.root.textContent.includes('synthetic-refresh'),false);if(!allowed)assert.equal(f.browser.sessionStorage.getItem('fitamaster-auth'),null);}
     finally{running.dispose();}
+  }
+});
+test('official Supabase magiclink callback reaches owner MFA enrollment or challenge before player reads',async()=>{
+  for(const enrolled of [false,true]){
+    const f=controllerFixture();f.clearSession();let scrubbed=false,imports=0;const calls=[];
+    const session={user:{id:uuid},expires_at:Math.floor(Date.now()/1000)+3600,access_token:'synthetic.access.token'};
+    f.browser.location=new URL('https://fitama.app/fitamaster/'+officialMagiclinkFragment);
+    f.browser.history.replaceState=(state,title,url)=>{assert.equal(url,'https://fitama.app/fitamaster/');scrubbed=true;};
+    f.client.auth.setSession=async tokens=>{assert.equal(scrubbed,true);assert.deepEqual(tokens,{access_token:session.access_token,refresh_token:'synthetic-refresh'});imports++;f.client.auth.getSession=async()=>({data:{session}});return {data:{session},error:null};};
+    f.client.auth.getUser=async()=>({data:{user:session.user}});
+    f.client.auth.mfa.getAuthenticatorAssuranceLevel=async()=>({data:{currentLevel:'aal1'}});
+    f.client.auth.mfa.listFactors=async()=>({data:{totp:enrolled?[{id:uuid,status:'verified'}]:[]}});
+    f.client.rpc=async name=>{calls.push(name);return {data:{allowed:true,mfaRequired:true}};};
+    const running=await startPortal({window:f.browser,client:f.client});
+    try{
+      await flush();assert.equal(imports,1);assert.equal(running.portal.state.phase,enrolled?'challenge':'enroll');
+      assert.ok(calls.includes('fitamaster_access_status'));assert.equal(calls.some(name=>name!=='fitamaster_access_status'),false);
+      assert.equal(running.portal.state.players,null);assert.equal(running.portal.state.enrollment,null);
+      assert.equal(f.root.textContent.includes('synthetic-refresh'),false);
+    }finally{running.dispose();}
   }
 });
 test('malformed or rejected email callbacks never expose callback data or preexisting player views',async()=>{

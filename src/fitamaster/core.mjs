@@ -3,15 +3,16 @@ export const AUTH_STORAGE_KEY='fitamaster-auth';
 const UUID=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 export function parseAuthCallback(location){
   const query=new URLSearchParams(location.search),hash=new URLSearchParams(location.hash?.replace(/^#/,''));
-  const keys=['code','error','error_code','error_description','access_token','refresh_token','token_type','token_hash','expires_in','expires_at','provider_token','provider_refresh_token','type','sb_flow_id'];
+  const keys=['code','error','error_code','error_description','access_token','refresh_token','token_type','token_hash','expires_in','expires_at','provider_token','provider_refresh_token','type','sb_flow_id','sb'];
   const queryKeys=[...query.keys()].map(key=>key.toLowerCase()),hashKeys=[...hash.keys()].map(key=>key.toLowerCase());
   const hasCallback=queryKeys.some(key=>keys.includes(key))||hashKeys.some(key=>keys.includes(key));
   const codes=query.getAll('code');
   const bounded=(location.search?.length||0)+(location.hash?.length||0)<=24576;
   const legacyCode=bounded&&!hashKeys.some(key=>keys.includes(key))&&!queryKeys.some(key=>keys.includes(key)&&key!=='code')&&codes.length===1&&/^[A-Za-z0-9_-]{1,1024}$/.test(codes[0]);
-  const allowedFragment=['access_token','refresh_token','token_type','type','expires_in','expires_at'];
+  // Supabase Auth's AsRedirectURL includes a single empty sb identifier.
+  const allowedFragment=['access_token','refresh_token','token_type','type','expires_in','expires_at','sb'];
   const access=hash.get('access_token'),refresh=hash.get('refresh_token');
-  const emailSession=bounded&&!queryKeys.some(key=>keys.includes(key))&&[...hash.keys()].every(key=>allowedFragment.includes(key)&&hash.getAll(key).length===1)&&hash.get('type')==='magiclink'&&hash.get('token_type')==='bearer'&&/^[A-Za-z0-9._-]{1,16384}$/.test(access||'')&&/^[A-Za-z0-9_-]{1,4096}$/.test(refresh||'')&&['expires_in','expires_at'].every(key=>!hash.has(key)||/^[0-9]{1,10}$/.test(hash.get(key)));
+  const emailSession=bounded&&!queryKeys.some(key=>keys.includes(key))&&[...hash.keys()].every(key=>allowedFragment.includes(key)&&hash.getAll(key).length===1)&&(!hash.has('sb')||hash.get('sb')==='')&&hash.get('type')==='magiclink'&&hash.get('token_type')==='bearer'&&/^[A-Za-z0-9._-]{1,16384}$/.test(access||'')&&/^[A-Za-z0-9_-]{1,4096}$/.test(refresh||'')&&['expires_in','expires_at'].every(key=>!hash.has(key)||/^[0-9]{1,10}$/.test(hash.get(key)));
   return {hasCallback,code:legacyCode?codes[0]:null,session:emailSession?{access_token:access,refresh_token:refresh}:null,failed:hasCallback&&!legacyCode&&!emailSession,cleanUrl:location.origin+location.pathname};
 }
 export function sessionIdentity(session){
