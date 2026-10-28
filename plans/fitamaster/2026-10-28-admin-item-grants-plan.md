@@ -35,9 +35,13 @@ Review focus: Exact owner/session/TOTP/AAL2; lifecycle/reset/target-generation r
 
 ## Task4: Review and approval-ready delivery
 - [x] Independent security/behavior review and fixes. Verify source/art/build/test evidence.
-- [ ] Prepare exact migration/operator preflight and a concrete reviewable result; request production migration+publication approval at the final activation step.
+- [x] Prepare exact migration/operator preflight and a concrete reviewable result; request production migration+publication approval at the final activation step.
 - [ ] After approval only, install, verify metadata and unauthorized denials; publish matching site. Do not issue a real grant unless separately selected/confirmed by the owner.
 
 ## Current evidence
 
 Final local website build and171tests pass. Backend cumulative PostgreSQL65/65 and related client inventory29/29 pass. Independent integrated website review64/64 pass; no unresolved blockers. Browser synthetic picker/review/confirmation/status-recovery and320/390/1440px checks pass. Broader legacy database fixtures have44 setup failures before007 (missing authenticator role); these are recorded, not claimed green. Migration source SHA256:8bb514989de928881d6bd845532ff7427f22510b77dd30ef7eb9bd49287d21d2. No production grant or activation.
+
+## Concurrent source preservation and approved activation
+
+Owner approved live migration/source/site publication. A concurrent monthly-rank update occupied007 before our install; preflight stopped without writes. Grant SQL was renamed008 with identical reviewedbytes/hash. The exact live007 monthly-rank source was recovered and preserved in the source chain. Fresh cumulative007→008 grant verification21/21passes. Newerwebsiteprivacy/404 RedpotsGames corrections were merged fromorigin/main and all171website tests rerunpass. Live008 preflight passed against PostgreSQL17.6 with8 revieweddependencies, singleowner and privateaccess denied. Installation/readback/publication evidence follow in the delivery package.
