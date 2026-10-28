@@ -14,7 +14,7 @@ Owner-only + mandatory TOTP; every read authorized; no rewards/ban/delete; no ra
 Non-admin or aal1 directly calling RPC; stale/revoked sessions or MFA; report XSS/credentials/oversize/retry conflict; stale async responses after signout/player change; truthful null/source/timestamp states and no mutation by player reads.
 
 ### Task 1: Guarded database API
-Files: app repo supabase/migrations/202610280001_fitamaster_owner_portal.sql, supabase/tests/fitamaster-owner-portal.test.mjs, docs/operations/2026-10-28-fitamaster.md.
+Files: app repo supabase/migrations/202610280002_fitamaster_owner_portal.sql, supabase/tests/fitamaster-owner-portal.test.mjs, docs/operations/2026-10-28-fitamaster.md.
 - [x] Write failing synthetic PostgreSQL integration tests for authorization bypasses, pagination, fields, log attribution, report validation/deduplication/expiry.
 - [x] Implement exact API contract; narrowly grant RPCs only to authenticated; no direct table grants even service_role; explicit fixed search_path.
 - [x] Run real local Postgres tests, no skips; record RED/GREEN and no existing gameplay schema data changes.
