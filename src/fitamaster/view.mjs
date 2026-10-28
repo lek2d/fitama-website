@@ -14,6 +14,7 @@ export function renderPortal(document,root,state,actions,ui={}) {
   const submit=(text)=>h('button',{type:'submit',disabled:state.busy},state.busy?'Working…':text);
   function form(handler,...content){return h('form',{onsubmit:event=>{event.preventDefault();if(!state.busy)handler(new FormData(event.currentTarget));}},...content);}
   function importForm(...content){const node=form(data=>actions.importReport(Object.fromEntries(data)),...content);node.addEventListener('input',event=>actions.updateDraft(event.target.name,event.target.value));return node;}
+  function emailLinkForm(){const node=form(data=>actions.emailLink(String(data.get('link-email'))),...field('Email','link-email','email',{autocomplete:'email',required:true,value:ui.emailLinkEmail||''}),submit('Send sign-in link'));node.addEventListener('input',event=>{if(event.target.name==='link-email')actions.updateEmailLinkEmail(event.target.value);});return node;}
   const pager=(kind,data)=>h('div',{class:'pager'},button('Previous',()=>actions.page(kind,'previous'),{disabled:state.busy||!ui.pages?.[kind]?.length}),button('Next',()=>actions.page(kind,'next',data?.nextCursor),{disabled:state.busy||!data?.nextCursor}));
   const observed=data=>note('Server observed: '+timeValue(data?.observedAt),'timestamp');
   function playerList(){
@@ -62,7 +63,7 @@ export function renderPortal(document,root,state,actions,ui={}) {
       }
       auth.append(button('Sign out',actions.signOut,{class:'secondary'}));
     } else {
-      auth.append(heading('Owner sign-in',1),note('Sign in to look up players and review shared sync diagnostics. An authenticator code is required after sign-in.'),form(data=>actions.login(String(data.get('email')),String(data.get('password'))),...field('Email','email','email',{autocomplete:'username',required:true}),...field('Password','password','password',{autocomplete:'current-password',required:true}),submit('Sign in')),h('details',{class:'email-fallback'},h('summary',{},'Use an email sign-in link'),note('Open the newest sign-in link from your email. It can open in a new tab or another browser. You will still need your authenticator code.'),form(data=>actions.emailLink(String(data.get('link-email'))),...field('Email','link-email','email',{autocomplete:'email',required:true}),submit('Send sign-in link'))));
+      auth.append(heading('Owner sign-in',1),note('Sign in to look up players and review shared sync diagnostics. An authenticator code is required after sign-in.'),form(data=>actions.login(String(data.get('email')),String(data.get('password'))),...field('Email','email','email',{autocomplete:'username',required:true}),...field('Password','password','password',{autocomplete:'current-password',required:true}),submit('Sign in')),h('details',{class:'email-fallback',...(ui.emailLinkOpen?{open:''}:{}),ontoggle:event=>actions.setEmailLinkOpen(event.currentTarget.open)},h('summary',{},'Use an email sign-in link'),note('Open the newest sign-in link from your email. It can open in a new tab or another browser. You will still need your authenticator code.'),emailLinkForm()));
     }
     main.append(auth);
   }

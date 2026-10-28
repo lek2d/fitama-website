@@ -50,6 +50,20 @@ test('errors never echo server messages, credentials, or HTML',()=>{
   assert.equal(publicError({message:'<img src=x onerror=alert(1)> secret-token'}),'The request could not be completed. Try again.');
   assert.match(publicError({code:'P0001',message:'fitamaster_rate_limited'}),/Too many/);
 });
+test('email quota errors are distinct from request throttling and never promise a one-minute reset',()=>{
+  const message=publicError({code:'over_email_send_rate_limit',status:429,message:'email rate limit exceeded private-value'});
+  assert.match(message,/Email.*limited/);assert.doesNotMatch(message,/minute|private-value/);
+  for(const error of [{code:'over_request_rate_limit'},{status:429},{message:'rate limit exceeded'}]){
+    assert.match(publicError(error),/Too many requests/);assert.doesNotMatch(publicError(error),/a minute/);
+  }
+});
+test('concurrent email link submissions make only one Auth request',async()=>{
+  const f=fixture();let sends=0;const pending=[];
+  f.client.auth.signInWithOtp=()=>{sends++;return new Promise(done=>pending.push(done));};
+  const first=f.portal.emailLink('owner@example.invalid','https://fitama.app/fitamaster/');
+  const second=f.portal.emailLink('owner@example.invalid','https://fitama.app/fitamaster/');
+  for(const resolve of pending)resolve({data:{}});await Promise.all([first,second]);assert.equal(sends,1);
+});
 test('auth storage only persists in the supplied session storage and clears its namespace',()=>{
   const map=new Map([['other','keep']]);const storage={get length(){return map.size;},key:i=>[...map.keys()][i],getItem:k=>map.get(k)??null,setItem:(k,v)=>map.set(k,v),removeItem:k=>map.delete(k)};
   const auth=createSessionStorage(storage);auth.setItem('fitamaster-auth','token');auth.setItem('fitamaster-auth-code-verifier','verifier');auth.clear();assert.deepEqual([...map],[['other','keep']]);
@@ -251,4 +265,23 @@ test('malformed or rejected email callbacks never expose callback data or preexi
     try{assert.equal(imported,malformed?0:1);assert.equal(running.portal.state.phase,'login');assert.equal(calls.length,0);assert.equal(f.root.textContent.includes('synthetic-refresh'),false);assert.match(f.root.textContent,/Request a new link/);}
     finally{running.dispose();}
   }
+});
+test('email rate-limit redraws keep the email panel and email in memory without retaining the password',async()=>{
+  const f=controllerFixture();f.clearSession();
+  f.client.auth.signInWithOtp=async()=>({error:{code:'over_email_send_rate_limit',status:429}});
+  const running=await startPortal({window:f.browser,client:f.client});
+  try{
+    const details=allNodes(f.root).find(node=>node.tagName==='details'&&node.className==='email-fallback');
+    assert.equal(typeof details.events.toggle,'function','Email panel must track its open state');
+    details.events.toggle({currentTarget:{open:true}});
+    const emailForm=allNodes(details).find(node=>node.tagName==='form');
+    emailForm.events.input({target:{name:'link-email',value:'owner@example.invalid'}});
+    // Busy and error states rebuild the real controller's login form.
+    await running.portal.emailLink('owner@example.invalid','https://fitama.app/fitamaster/');
+    const opened=allNodes(f.root).find(node=>node.tagName==='details'&&node.className==='email-fallback');
+    assert.equal(opened.attributes.open,'');assert.equal(allNodes(opened).find(node=>node.attributes.id==='link-email').attributes.value,'owner@example.invalid');
+    assert.match(f.root.textContent,/Email.*limited/);
+    assert.equal(allNodes(f.root).find(node=>node.attributes.id==='link-email').attributes.value,'owner@example.invalid');
+    assert.equal(allNodes(f.root).find(node=>node.attributes.id==='password').attributes.value,undefined);
+  }finally{running.dispose();}
 });

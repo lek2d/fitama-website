@@ -33,7 +33,8 @@ export function clearAuthForPhase(storage,phase){
 }
 export function publicError(error) {
   const code=String(error?.code||''); const message=String(error?.message||'');
-  if(code==='over_request_rate_limit'||code==='429'||/rate.limit/i.test(message))return 'Too many requests. Wait a minute, then try again.';
+  if(code==='over_email_send_rate_limit')return 'Email sign-in is temporarily limited. Check your inbox for the newest unused link, or wait before requesting another.';
+  if(code==='over_request_rate_limit'||code==='429'||error?.status===429||/rate.limit/i.test(message))return 'Too many requests. Wait before trying again.';
   if(code==='invalid_credentials')return 'Sign-in failed. Check your email and password.';
   if(/mfa.*(invalid|expired)|invalid.*(mfa|code)/i.test(code+' '+message))return 'That verification code was not accepted. Enter a current code.';
   if(code==='23505'||/request.*conflict/i.test(message))return 'This retry conflicts with an earlier request. Reload the report list before trying again.';
@@ -54,7 +55,7 @@ export function validateReport(body) {
 const empty=()=>({players:null,player:null,reports:null,report:null,history:null,selectedPlayer:null,enrollment:null,factorId:null,error:'',notice:'',busy:false,view:'players',query:''});
 // Every view lives only in memory. Epochs prevent late network responses from restoring erased content.
 export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now()}={}) {
-  let state={...empty(),phase:'loading'};let epoch=0,currentIdentity=null;const versions=new Map();const pending=new Map();const listeners=new Set();
+  let state={...empty(),phase:'loading'};let epoch=0,currentIdentity=null,emailLinkInFlight=false;const versions=new Map();const pending=new Map();const listeners=new Set();
   const emit=patch=>{state={...state,...patch};for(const listener of listeners)listener(state);};
   const invalidate=(phase='login',error='')=>{epoch++;versions.clear();pending.clear();if(['login','denied','signing-out'].includes(phase))currentIdentity=null;emit({...empty(),phase,error});};
   const cancel=keys=>{for(const key of keys){versions.set(key,(versions.get(key)||0)+1);pending.delete(key);}};
@@ -109,7 +110,7 @@ export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now
   const api={get state(){return state;},subscribe(listener){listeners.add(listener);listener(state);return()=>listeners.delete(listener);},invalidate,refresh,
     setError(message){emit({error:message,busy:false});},setView(view){epoch++;versions.clear();pending.clear();emit({view,error:'',notice:'',busy:false,players:null,player:null,reports:null,report:null,history:null,selectedPlayer:null});},
     async login(email,password){const result=await authAction(()=>client.auth.signInWithPassword({email,password}));if(result)await refresh();},
-    async emailLink(email,redirectTo){const result=await authAction(()=>client.auth.signInWithOtp({email,options:{shouldCreateUser:false,emailRedirectTo:redirectTo}}));if(result)emit({notice:'If this email can sign in, a link has been sent. Open the newest link from your email in any tab or browser, then complete authenticator verification.'});},
+    async emailLink(email,redirectTo){if(emailLinkInFlight)return;emailLinkInFlight=true;try{const result=await authAction(()=>client.auth.signInWithOtp({email,options:{shouldCreateUser:false,emailRedirectTo:redirectTo}}));if(result)emit({notice:'If this email can sign in, a link has been sent. Open the newest link from your email in any tab or browser, then complete authenticator verification.'});}finally{emailLinkInFlight=false;}},
     async enroll(){const stamp=epoch;await gate(stamp);
       if(state.phase!=='enroll'||!same(stamp))return;
       const result=await authAction(()=>client.auth.mfa.enroll({factorType:'totp',friendlyName:'Fitamaster owner'}));

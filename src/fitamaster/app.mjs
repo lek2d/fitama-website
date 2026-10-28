@@ -11,13 +11,14 @@ export async function startPortal({window:browser=globalThis.window,document=bro
   const authStorage=createSessionStorage(storage);
   if(!injectedClient){try{config=validateConfig(portalConfig);}catch{authStorage.clear();renderPortal(document,root,{phase:'config'},{},{});return;}}
   const client=injectedClient||createClient(config.url,config.key,{auth:{storage:authStorage,storageKey:AUTH_STORAGE_KEY,flowType:'implicit',persistSession:true,autoRefreshToken:true,detectSessionInUrl:false},global:{fetch:(url,options={})=>fetch(url,{...options,cache:'no-store',referrerPolicy:'no-referrer'})}});
-  const portal=createPortal(client);const ui={pages:{players:[],reports:[],history:[]},cursors:{players:null,reports:null,history:null},importDraft:null,importOpen:false};let wasReady=false,expiryTimer,expiryVersion=0,activeIdentity=null,disposed=false;
+  const portal=createPortal(client);const ui={pages:{players:[],reports:[],history:[]},cursors:{players:null,reports:null,history:null},importDraft:null,importOpen:false,emailLinkOpen:false,emailLinkEmail:''};let wasReady=false,expiryTimer,expiryVersion=0,activeIdentity=null,disposed=false;
   let importIntent=null;const reviewIntents=new Map();
   const run=async action=>{try{return await action();}catch(error){portal.setError(error.message||'The request could not be completed. Try again.');return null;}};
   const load=(kind,after=null)=>kind==='players'?portal.players({after}):kind==='reports'?portal.reports({after,playerId:portal.state.selectedPlayer}):portal.history({after});
   const resetPage=kind=>{ui.pages[kind]=[];ui.cursors[kind]=null;};
   const actions={
-    login:(email,password)=>run(()=>portal.login(email,password)),emailLink:email=>run(()=>portal.emailLink(email,location.origin+location.pathname)),enroll:()=>run(()=>portal.enroll()),verify:code=>run(()=>portal.verify(code)),
+    login:(email,password)=>run(()=>portal.login(email,password)),emailLink:email=>{ui.emailLinkOpen=true;ui.emailLinkEmail=email;return run(()=>portal.emailLink(email,location.origin+location.pathname));},enroll:()=>run(()=>portal.enroll()),verify:code=>run(()=>portal.verify(code)),
+    setEmailLinkOpen:value=>{ui.emailLinkOpen=!!value;},updateEmailLinkEmail:value=>{ui.emailLinkEmail=String(value);ui.emailLinkOpen=true;},
     retryVerification:()=>run(()=>portal.refresh()),
     updateDraft:(name,value)=>{if(['playerId','title','body','capturedAt','build'].includes(name)){ui.importDraft={playerId:portal.state.selectedPlayer||'',...ui.importDraft,[name]:value};ui.importOpen=true;}},
     setImportOpen:value=>{ui.importOpen=!!value;},
@@ -34,6 +35,7 @@ export async function startPortal({window:browser=globalThis.window,document=bro
   };
   portal.subscribe(state=>{
     clearAuthForPhase(authStorage,state.phase);
+    if(state.phase!=='login'){ui.emailLinkOpen=false;ui.emailLinkEmail='';}
     if(state.phase!=='ready'){ui.importDraft=null;ui.importOpen=false;importIntent=null;reviewIntents.clear();ui.pages={players:[],reports:[],history:[]};ui.cursors={players:null,reports:null,history:null};}
     renderPortal(document,root,state,actions,ui);
     if(state.phase==='ready'&&!wasReady){wasReady=true;queueMicrotask(()=>run(()=>portal.players()));}else if(state.phase!=='ready')wasReady=false;
