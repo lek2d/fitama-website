@@ -1,5 +1,11 @@
 # FiTama website
 
+## October 28, 2026 — owner-supplied social cover
+
+Replaced the social-preview image reference on all six public pages with `assets/fitama-share-cover-v2.png`, the owner's `social.png` copied without pixel changes (1200×630; 1,033,007 bytes). Open Graph and Twitter URLs, MIME type and alt text match the PNG. The old cover remains available for existing links. Source mirror updated wherever matching metadata exists. No page-body, layout, navigation or policy-copy changes.
+
+A new image URL separates this cover from the old image cache; it does not guarantee that Messenger has refreshed its page-preview cache. The Meta Sharing Debugger required Facebook login in the available browser, so actual Messenger rendering remains unverified.
+
 ## October 28, 2026 — Tama-Guide source reconciliation
 
 Reconciled public Guide copy against the latest GitHub `lek2d/Fitama` default branch, `main` at `da5498044911a3e8e962d918701552fca306114a` (verified October 28). Updated 28 existing articles and added Invite Friends, bringing the guide to 41 topics. Items, potion limits, dungeon entry/rest/leave/loot rules, NPC goals, ranking rewards, referrals and Parcel terminology now reflect that source. The 21 shop prices, 24 equipment entries and 12 enemy cards were compared and retained where already correct. Existing accepted quest/run cards remain authoritative for version-dependent rules.
