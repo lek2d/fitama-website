@@ -1,0 +1,36 @@
+{
+  "sourceRepository": "lek2d/Fitama",
+  "sourceCommit": "92fb4afe3f5d6c6858d98ce0d2091d9dda5bc25e",
+  "assets": [
+    {
+      "file": "blukie-default.png",
+      "source": "assets/figma/pet-blukie-default.png",
+      "sha256": "b9aefd78bdf0de241214286d8619e75209df8accfa9c8f3196da5565adc42715"
+    },
+    {
+      "file": "blukie-sleep.png",
+      "source": "assets/figma/pet-blukie-sleep.png",
+      "sha256": "5f3189304c53bf0551d1dc4ce613c11423fa1b9fb1f067076333065b47320992"
+    },
+    {
+      "file": "clovie-default.png",
+      "source": "assets/figma/pet-clover-default.png",
+      "sha256": "c55a93f6a59238e4353dffcd0c4e5b50e12940e75ff9a532fa867067e6674d99"
+    },
+    {
+      "file": "clovie-sleep.png",
+      "source": "assets/figma/pet-clover-sleep.png",
+      "sha256": "55904cecb61160adf54180f92a44355d6e2c7da4010027bd4f782bf5af356484"
+    },
+    {
+      "file": "ignie-default.png",
+      "source": "assets/figma/pet-ember-default.png",
+      "sha256": "c6385228bd379f92458dadf6cfdb63f99ca74ff9a1034488891d0fa1d170804d"
+    },
+    {
+      "file": "ignie-sleep.png",
+      "source": "assets/figma/pet-ember-sleep.png",
+      "sha256": "785b42bf0ba28fd9126dc56bf86876cc60016f5ab1cb2de41b5173da889707dd"
+    }
+  ]
+}

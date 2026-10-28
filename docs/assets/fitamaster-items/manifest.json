@@ -1,0 +1,805 @@
+{
+  "sourceProject": "fitamaster-app",
+  "copiedWithoutModification": false,
+  "catalogSources": [
+    "src/assets/equipmentCatalog.ts",
+    "src/assets/fitamaAssets.ts",
+    "src/assets/tamaShopAssets.ts",
+    "src/domain/xpBooks.ts",
+    "src/assets/powerBottleImages.ts",
+    "src/domain/powerBottle.ts",
+    "src/components/ClosingStoryAssets.ts",
+    "src/screens/EquipmentScreen.tsx"
+  ],
+  "items": [
+    {
+      "itemId": "treat",
+      "name": "Treat",
+      "kind": "stack",
+      "artwork": [
+        "treat.webp"
+      ]
+    },
+    {
+      "itemId": "health-potion",
+      "name": "Health Potion",
+      "kind": "stack",
+      "artwork": [
+        "health-potion.webp"
+      ]
+    },
+    {
+      "itemId": "hi-heart-potion",
+      "name": "Super Health Potion",
+      "kind": "stack",
+      "artwork": [
+        "hi-heart-potion.webp"
+      ]
+    },
+    {
+      "itemId": "protein-bar",
+      "name": "Protein Bar",
+      "kind": "stack",
+      "artwork": [
+        "protein-bar.webp"
+      ]
+    },
+    {
+      "itemId": "rest-stopper",
+      "name": "Rest Stopper",
+      "kind": "stack",
+      "artwork": [
+        "rest-stopper.webp"
+      ]
+    },
+    {
+      "itemId": "grilled-talakitok",
+      "name": "Grilled Talakitok",
+      "kind": "stack",
+      "artwork": [
+        "grilled-talakitok.webp"
+      ]
+    },
+    {
+      "itemId": "xp-book-1",
+      "name": "Small Brain Energy",
+      "kind": "stack",
+      "artwork": [
+        "xp-book-1.webp"
+      ]
+    },
+    {
+      "itemId": "xp-book-2",
+      "name": "Getting Wiser",
+      "kind": "stack",
+      "artwork": [
+        "xp-book-2.webp"
+      ]
+    },
+    {
+      "itemId": "xp-book-3",
+      "name": "Certified Big Brain",
+      "kind": "stack",
+      "artwork": [
+        "xp-book-3.webp"
+      ]
+    },
+    {
+      "itemId": "tama-coin",
+      "name": "Tama Coin",
+      "kind": "stack",
+      "artwork": [
+        "tama-coin.webp"
+      ]
+    },
+    {
+      "itemId": "mystery-package",
+      "name": "Mystery Package",
+      "kind": "stack",
+      "artwork": [
+        "mystery-package.webp"
+      ]
+    },
+    {
+      "itemId": "treasure-box",
+      "name": "Treasure Box",
+      "kind": "stack",
+      "artwork": [
+        "treasure-box.webp"
+      ]
+    },
+    {
+      "itemId": "power-bottle",
+      "name": "Power Bottle",
+      "kind": "unique",
+      "artwork": [
+        "power-bottle-empty.webp",
+        "power-bottle-low.webp",
+        "power-bottle-half.webp",
+        "power-bottle-full.webp"
+      ]
+    },
+    {
+      "itemId": "magic-potion",
+      "name": "Magic Potion",
+      "kind": "unique",
+      "artwork": [
+        "magic-potion.webp"
+      ]
+    },
+    {
+      "itemId": "ancient-compass",
+      "name": "Ancient Compass",
+      "kind": "unique",
+      "artwork": [
+        "ancient-compass.webp"
+      ]
+    },
+    {
+      "itemId": "vitaslash",
+      "name": "VitaSlash",
+      "kind": "equipment",
+      "artwork": [
+        "vitaslash.webp"
+      ]
+    },
+    {
+      "itemId": "rep-ripper",
+      "name": "Rep Ripper",
+      "kind": "equipment",
+      "artwork": [
+        "rep-ripper.webp"
+      ]
+    },
+    {
+      "itemId": "vitamin-g",
+      "name": "Vitamin G",
+      "kind": "equipment",
+      "artwork": [
+        "vitamin-g.webp"
+      ]
+    },
+    {
+      "itemId": "axercise",
+      "name": "Axercise",
+      "kind": "equipment",
+      "artwork": [
+        "axercise.webp"
+      ]
+    },
+    {
+      "itemId": "point-of-wellness",
+      "name": "Point of Wellness",
+      "kind": "equipment",
+      "artwork": [
+        "point-of-wellness.webp"
+      ]
+    },
+    {
+      "itemId": "draw-your-limits",
+      "name": "Draw Your Limits",
+      "kind": "equipment",
+      "artwork": [
+        "draw-your-limits.webp"
+      ]
+    },
+    {
+      "itemId": "sore-tomorrow",
+      "name": "Sore Tomorrow",
+      "kind": "equipment",
+      "artwork": [
+        "sore-tomorrow.webp"
+      ]
+    },
+    {
+      "itemId": "sir-takes-a-lot",
+      "name": "Sir Takes-a-Lot",
+      "kind": "equipment",
+      "artwork": [
+        "sir-takes-a-lot.webp"
+      ]
+    },
+    {
+      "itemId": "heartpour-flask",
+      "name": "Heartpour Flask",
+      "kind": "equipment",
+      "artwork": [
+        "heartpour-flask.webp"
+      ]
+    },
+    {
+      "itemId": "hardheaded-hero",
+      "name": "Hardheaded Hero",
+      "kind": "equipment",
+      "artwork": [
+        "hardheaded-hero.webp"
+      ]
+    },
+    {
+      "itemId": "wit-happens",
+      "name": "Wit Happens",
+      "kind": "equipment",
+      "artwork": [
+        "wit-happens.webp"
+      ]
+    },
+    {
+      "itemId": "leaf-me-alone",
+      "name": "Leaf Me Alone",
+      "kind": "equipment",
+      "artwork": [
+        "leaf-me-alone.webp"
+      ]
+    },
+    {
+      "itemId": "quest-inspector",
+      "name": "Quest Inspector",
+      "kind": "equipment",
+      "artwork": [
+        "quest-inspector.webp"
+      ]
+    },
+    {
+      "itemId": "not-today-bonk",
+      "name": "Not Today, Bonk",
+      "kind": "equipment",
+      "artwork": [
+        "not-today-bonk.webp"
+      ]
+    },
+    {
+      "itemId": "sweat-dreams",
+      "name": "Sweat Dreams",
+      "kind": "equipment",
+      "artwork": [
+        "sweat-dreams.webp"
+      ]
+    },
+    {
+      "itemId": "reigning-champ",
+      "name": "Reigning Champ",
+      "kind": "equipment",
+      "artwork": [
+        "reigning-champ.webp"
+      ]
+    },
+    {
+      "itemId": "hood-riddance",
+      "name": "Hood Riddance",
+      "kind": "equipment",
+      "artwork": [
+        "hood-riddance.webp"
+      ]
+    },
+    {
+      "itemId": "heart-to-get",
+      "name": "Heart to Get",
+      "kind": "equipment",
+      "artwork": [
+        "heart-to-get.webp"
+      ]
+    },
+    {
+      "itemId": "grow-getter",
+      "name": "Grow Getter",
+      "kind": "equipment",
+      "artwork": [
+        "grow-getter.webp"
+      ]
+    },
+    {
+      "itemId": "watt-a-workout",
+      "name": "Watt a Workout",
+      "kind": "equipment",
+      "artwork": [
+        "watt-a-workout.webp"
+      ]
+    },
+    {
+      "itemId": "luck-around",
+      "name": "Luck Around & Find Out",
+      "kind": "equipment",
+      "artwork": [
+        "luck-around.webp"
+      ]
+    },
+    {
+      "itemId": "restie-bestie",
+      "name": "Restie Bestie",
+      "kind": "equipment",
+      "artwork": [
+        "restie-bestie.webp"
+      ]
+    },
+    {
+      "itemId": "pack-to-the-grind",
+      "name": "Pack to the Grind",
+      "kind": "equipment",
+      "artwork": [
+        "pack-to-the-grind.webp"
+      ]
+    },
+    {
+      "itemId": "pill-good-inc",
+      "name": "Pill Good Inc.",
+      "kind": "equipment",
+      "artwork": [
+        "pill-good-inc.webp"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "file": "treat.webp",
+      "source": "assets/items/treat.png",
+      "sourceSha256": "26de29980725af564ebb380e163064376ec15762d49dfc1817f71fe50953b819",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 15104,
+      "sha256": "12f5d947983363eb07b8bf09688c28430265f1f94bade9c4e100cf0d6eaa3d03"
+    },
+    {
+      "file": "health-potion.webp",
+      "source": "assets/figma/handoff/health-potion.png",
+      "sourceSha256": "c0d2fea7242c94a3cfaeb6e46c6b122dfc394e9168be0d636d3236d1f68de46c",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 16974,
+      "sha256": "304e1f341b829e1a7505df7622caa666d1329f8cc2fdc8f8958f3dd4805a9016"
+    },
+    {
+      "file": "hi-heart-potion.webp",
+      "source": "assets/hi-heart-potion.png",
+      "sourceSha256": "caf083bd72456a7e8fa0f0ce692076bca34fb87f58b97360821b9a09e72233e4",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 19730,
+      "sha256": "ba9853bb61f43ad587b50ae53b931b292b946782cdaea3da14e1eaccb896329a"
+    },
+    {
+      "file": "protein-bar.webp",
+      "source": "assets/protein-bar.png",
+      "sourceSha256": "20296c39f7922b2c19f267f7532e2410a650353b2501d5782909989355a8e1f0",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 16636,
+      "sha256": "9d37579bf52b8c62b572a798e7ef29b02e9dae8c4bce7d4689822413abd1e624"
+    },
+    {
+      "file": "rest-stopper.webp",
+      "source": "assets/items/rest-stopper.png",
+      "sourceSha256": "ac8285e92204d9710f5ac9f64bc86e704e492e2c930fc6b0999437cab16e768f",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 26672,
+      "sha256": "f873ada5e640415060d909a7bd0b4fbb16077222bf0456c20fe44f9c21a65585"
+    },
+    {
+      "file": "grilled-talakitok.webp",
+      "source": "assets/items/grilled-talakitok.png",
+      "sourceSha256": "7573f605e2addb6e2997f83d0013e70e81ed2c46f74821f0fa9c8ef822b1e1ce",
+      "sourceWidth": 256,
+      "sourceHeight": 256,
+      "width": 256,
+      "height": 256,
+      "bytes": 15900,
+      "sha256": "dabea81371c2d4205f02ea0a4f6e55c1893661a0946a03370b9b6ad8f4e8a14c"
+    },
+    {
+      "file": "xp-book-1.webp",
+      "source": "assets/items/xp-book-1.png",
+      "sourceSha256": "c18df80c80fa9f37cb8902da861ce2ec46b0a6bc48b95a7034f00e24f204e4e5",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 23040,
+      "sha256": "a82db2192afff5ae89ab5952af853be3b3bf1e1a52229c144bebeef3944dcf36"
+    },
+    {
+      "file": "xp-book-2.webp",
+      "source": "assets/items/xp-book-2.png",
+      "sourceSha256": "928048682805ef17bb9b48a057ebc8f43fc4a733ce437c4ed8127a156ec06bda",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 26882,
+      "sha256": "2fbdfebc350e0956742d6b0c465b7fc2d8bd9fcbb7b66f041f4c859e28030a20"
+    },
+    {
+      "file": "xp-book-3.webp",
+      "source": "assets/items/xp-book-3.png",
+      "sourceSha256": "02a04a2e3c03f9d534fa102087fa985d65efe06269bf9a8548b41c8fffb2ad7e",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 29948,
+      "sha256": "fa70ae49fbed16df551926754eff204c015b16371c1e2e1c7d2b7b52c0c4672c"
+    },
+    {
+      "file": "tama-coin.webp",
+      "source": "assets/tama-coin.png",
+      "sourceSha256": "5b5b27dd6a1594fa43244a3bd011461b529096a0da4e6bf26a96abdc5f7fd348",
+      "sourceWidth": 150,
+      "sourceHeight": 155,
+      "width": 150,
+      "height": 155,
+      "bytes": 8394,
+      "sha256": "1459539c46773f157bfaafea0823363b84184e431bd062fef9e955249b9dd42a"
+    },
+    {
+      "file": "mystery-package.webp",
+      "source": "assets/items/mystery-package-v2.png",
+      "sourceSha256": "388bfd7bafbbf6f40b6ca6a291ebd3681e039d0ae4ede11e8eeb0e67a3acb328",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 21540,
+      "sha256": "84c6bd31e4a78a703c114d2ad036e30211c2b5c979151ba3e68123dba9b58f08"
+    },
+    {
+      "file": "treasure-box.webp",
+      "source": "assets/items/monthly-top-five-treasure-box-v1.png",
+      "sourceSha256": "512f5a770257f23ec1059fb9fe6f453589be02b37fd270ceb192d35c27c946b1",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 20832,
+      "sha256": "6fe8a95e7caf17f308f10f32ac482872acfbf0121621095c16cddb24471189e8"
+    },
+    {
+      "file": "power-bottle-empty.webp",
+      "source": "assets/items/power-bottle-empty.png",
+      "sourceSha256": "7641fad5c00527044e5689accb02100c0bb4d2e0d4cdea10e6758230c777cf23",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 23210,
+      "sha256": "00dd84436a803844d2a2bc40c98a5fd77a6abac8e3fc66c23bc86f8e7b783a2b"
+    },
+    {
+      "file": "power-bottle-low.webp",
+      "source": "assets/items/power-bottle-low.png",
+      "sourceSha256": "ac74fa12c90b7c13069109b63b4fc255e891f01ffb3a315a6ae73a5460a2a7fe",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 19158,
+      "sha256": "2a79c5b522681b2c01ceff94fbba6120a15e7d5e93829d35ce002020a27f9bf6"
+    },
+    {
+      "file": "power-bottle-half.webp",
+      "source": "assets/items/power-bottle-half.png",
+      "sourceSha256": "62e39c81c602ab9a5541f1ed34cb31431ebc7869fd67bf1877e893889dcc77a7",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 20480,
+      "sha256": "bbf4d25066c23832674bd3ecf3f70894d5075844616e86e8db90e4fdf4f015b2"
+    },
+    {
+      "file": "power-bottle-full.webp",
+      "source": "assets/items/power-bottle-full.png",
+      "sourceSha256": "faa4fa9fe5297c3f4c1223664c15530a04bdcb59e74fef37a1a846eba22e3ada",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 20038,
+      "sha256": "651bd2994fd2a79b41091ab3353ed4db3a50e4b9d625e9c37cea1346a43f789b"
+    },
+    {
+      "file": "magic-potion.webp",
+      "source": "assets/magic-potion-test.png",
+      "sourceSha256": "97a7d4443da8e1ed8e69923d0b12009359ca37c8685c923ccd76761b3a8fb7bf",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 20030,
+      "sha256": "baff81c7d05fbfec54bf99f5e73d67e7ffc04ebe302443ce99d77ff7d9cb743b"
+    },
+    {
+      "file": "ancient-compass.webp",
+      "source": "assets/concepts/items/ancient-compass-draft-v1.png",
+      "sourceSha256": "af24ecac6804f9a5d170d627288df5c407c6e26648bd9c732c7b74ce3852b2ce",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 17456,
+      "sha256": "127dcb9a30e30834ae8739c8b38c8631a9f3953a269796fdc43cc4e87424f65c"
+    },
+    {
+      "file": "vitaslash.webp",
+      "source": "assets/equipment/vitaslash.png",
+      "sourceSha256": "aff2bee1b8dc371122b43d8278057d2a9f168a8ca59e7e7492fd8b39712ad687",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 16604,
+      "sha256": "b2f6f3367c18c675e14eaeb1d2956194f38605e91f601305eff5e856584eabf8"
+    },
+    {
+      "file": "rep-ripper.webp",
+      "source": "assets/equipment/rep-ripper.png",
+      "sourceSha256": "dcc0674a834a5a4812f8a50a4627bf198656ace29b51e66e03ebd36f5eb60f6e",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 12620,
+      "sha256": "ef9332a867596149a1447bf51ee56e8825cf2e46e422d9d6e78e3bb6299c6b6b"
+    },
+    {
+      "file": "vitamin-g.webp",
+      "source": "assets/equipment/vitamin-g.png",
+      "sourceSha256": "eb5c95e66267499924e1f6c890ae7a22187e8daba3485b7225908518cdacd6ad",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 12860,
+      "sha256": "d2c221816488e44b8f204a136696babc94386f48a7bc71691b9ca3319ef680fe"
+    },
+    {
+      "file": "axercise.webp",
+      "source": "assets/equipment/axercise.png",
+      "sourceSha256": "ecb810149c39e66de196c1db192345013c454b18fedd2ee4bb6998ca8e6798a7",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 14456,
+      "sha256": "dd8830212492f9b34e467a3ba9156c7e4104519b4fde01e843a2646df3db28cc"
+    },
+    {
+      "file": "point-of-wellness.webp",
+      "source": "assets/equipment/point-of-wellness.png",
+      "sourceSha256": "53042dbd3739bcbaee17322827e33e6d42814e2506933b1442b7691a287a1255",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 12334,
+      "sha256": "88bcea7dda497d2415bd113bf303e5bf9d4091b64ec9f219c424a25569417c9c"
+    },
+    {
+      "file": "draw-your-limits.webp",
+      "source": "assets/equipment/draw-your-limits.png",
+      "sourceSha256": "7b70b469a0ecd26fac64f203dffed75c59cd7b7c4d00bb884e2dc6d1b5117eea",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 18392,
+      "sha256": "d733cafe7fc566b004b33e4343623b2dbadde7cb510be34b6015686c4092950e"
+    },
+    {
+      "file": "sore-tomorrow.webp",
+      "source": "assets/equipment/sore-tomorrow.png",
+      "sourceSha256": "91b2ecc65a60f265617d664452e45900ff97e4400b9220a23824a7496135a6f1",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 19068,
+      "sha256": "ce187d4d7b61940ce7e56c391f17a05d9be46acdcfd8a80949165ff46a61b470"
+    },
+    {
+      "file": "sir-takes-a-lot.webp",
+      "source": "assets/equipment/sir-takes-a-lot.png",
+      "sourceSha256": "a95cf1890193672d7ba05d6dd18a225fff12a2c4d43f550e12e4397b984ac3b3",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 21326,
+      "sha256": "e5f7993039084e85342f4642a5edc66e39f498567b3c4e9ade2f7b39990ceb4d"
+    },
+    {
+      "file": "heartpour-flask.webp",
+      "source": "assets/equipment/heartpour-flask.png",
+      "sourceSha256": "63459715c96e14063aeeb2981bd62ea9e42f0b1e499a4e532294daa062c8fead",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "width": 256,
+      "height": 256,
+      "bytes": 21292,
+      "sha256": "2b20f0e8f00399331c5d44d0e0cb2abea2f50dffca9fc6070442c96ea661687f"
+    },
+    {
+      "file": "hardheaded-hero.webp",
+      "source": "assets/equipment/hardheaded-hero.png",
+      "sourceSha256": "8b71abff18ea056955cb14adc9d580f87ad0f8a14aa51940fe2cd013acda6d80",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 17780,
+      "sha256": "15d43ee3aa0e922e31160c46b05eee981b489de3fc289a8b760950b2a75f88f1"
+    },
+    {
+      "file": "wit-happens.webp",
+      "source": "assets/equipment/wit-happens.png",
+      "sourceSha256": "a8360bdd88320754d1be250e5177c6939a047eaccc2690547157f0918581f95a",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 14030,
+      "sha256": "b6213790a550bc2d661b794c1d450208aee06f5ea2ea25c3c8de158069cb6948"
+    },
+    {
+      "file": "leaf-me-alone.webp",
+      "source": "assets/equipment/leaf-me-alone.png",
+      "sourceSha256": "73af86601aea412da2f21f6dccc300c9dbde20cd83c3ea63d04b50b2ad9bbb28",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 21976,
+      "sha256": "46931b43be574c40cb389dd8c19942f89364a165a75d8b77a4fec672bb710e8d"
+    },
+    {
+      "file": "quest-inspector.webp",
+      "source": "assets/equipment/quest-inspector.png",
+      "sourceSha256": "769ccebb446936837e81ec0189ae553293d5fb73cb811b0b7f1e250281c9b93b",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 22762,
+      "sha256": "7fe6706039307218d20ade11129fa3ca79a1d0a42d19398b45c071df69006d70"
+    },
+    {
+      "file": "not-today-bonk.webp",
+      "source": "assets/equipment/not-today-bonk.png",
+      "sourceSha256": "50b959bc3bad1581a4bd5f4fa79c66d3571f6f8d4ee6ff439a3f78953198fd29",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 19630,
+      "sha256": "907bb81ee6f231c0aa47f4826ce64c5f22989ab1ea714354530aaaf437f97ba6"
+    },
+    {
+      "file": "sweat-dreams.webp",
+      "source": "assets/equipment/sweat-dreams.png",
+      "sourceSha256": "2785f40d7299784468d3183a4e3d6ce313c555d5cf1ec942f4ca3c23ed2a9103",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 17678,
+      "sha256": "27e9fa1eaf54f6a399ecb92de31e8a671ae223884e9e4172706d0990c81ba89c"
+    },
+    {
+      "file": "reigning-champ.webp",
+      "source": "assets/equipment/reigning-champ.png",
+      "sourceSha256": "dcde16cb5e2dedff707010511fe1868f6995376e282d55f1ed45c536fa37db17",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 17132,
+      "sha256": "546421bd153a9019eaa8dfa7dcad1f1878e0339639efa3853e7568d2229e468d"
+    },
+    {
+      "file": "hood-riddance.webp",
+      "source": "assets/equipment/hood-riddance.png",
+      "sourceSha256": "fc804f6d6d30192d1c979baef9270d9f1b332f438efce0c57deab7b62235c13a",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 23004,
+      "sha256": "c1c6abbf06e4f0e29cf919cc9878e26aa6792129f65aead0a519bc2e31d87a02"
+    },
+    {
+      "file": "heart-to-get.webp",
+      "source": "assets/equipment/heart-to-get.png",
+      "sourceSha256": "3328fc668015706ffe74eb222a57c6a3df62686de542ddf1edfbcd9e6872d355",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 17806,
+      "sha256": "d15d8b8002c5301bbedf194863906736ced23045edee4586143fc763ac880170"
+    },
+    {
+      "file": "grow-getter.webp",
+      "source": "assets/equipment/grow-getter.png",
+      "sourceSha256": "56f28c90465839d1e53c4501c2239eccb7febd3c263b54eb981afac4d6437793",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 16296,
+      "sha256": "0a521b6acc1dea74a6332a2ca27c4100c5915cf3df2d790341a710951301fb8a"
+    },
+    {
+      "file": "watt-a-workout.webp",
+      "source": "assets/equipment/watt-a-workout.png",
+      "sourceSha256": "e3335e701991885f1b2afdd94ad2b7424248d4001b4108c7d9a368ae50b43d72",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 18776,
+      "sha256": "20291b5ea35ac72bd031a70d6b7c1438d5999edd6111f59b20fe102ca2a1a5da"
+    },
+    {
+      "file": "luck-around.webp",
+      "source": "assets/equipment/luck-around.png",
+      "sourceSha256": "170afe07fb8696f70534dfb6e93366990d7f4b1806e7b8a7ae956c9e478a8983",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 18318,
+      "sha256": "66adaf0d0e0838e12a7600787628283615fc095a6405cf2827ca47be65a25d70"
+    },
+    {
+      "file": "restie-bestie.webp",
+      "source": "assets/equipment/restie-bestie.png",
+      "sourceSha256": "dfe1913179df35acc2ba2ece76bd43ea7484f0b54548c0753aaeb1996b8536b7",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 26018,
+      "sha256": "98cde0db260e9b9971bbadf3fd8e0ea73baea62985bb85a21b675ef8c04aa990"
+    },
+    {
+      "file": "pack-to-the-grind.webp",
+      "source": "assets/equipment/pack-to-the-grind.png",
+      "sourceSha256": "57538d7266fce7c9e605858454bcaf76ab4023de3d58c60549cfc17e550d3943",
+      "sourceWidth": 641,
+      "sourceHeight": 641,
+      "width": 256,
+      "height": 256,
+      "bytes": 23148,
+      "sha256": "6f6011b5c5bcd196d671fd5940cb618163e80dbe61fcf8ea9ddb7eac76f4f18b"
+    },
+    {
+      "file": "pill-good-inc.webp",
+      "source": "assets/equipment/pill-good-inc.png",
+      "sourceSha256": "789d4648e959c9a03df816b8b265b8bc4cc511ab238b808bba6f51b048f79d42",
+      "sourceWidth": 641,
+      "sourceHeight": 712,
+      "width": 230,
+      "height": 256,
+      "bytes": 17298,
+      "sha256": "5fd8a1ae99966578da74ef58b1ac183e40d5dc1fea4c19bb8f0e547ffc609e46"
+    }
+  ],
+  "derivation": {
+    "encoder": "Pillow 12.3.0; libwebp 1.6.0",
+    "format": "WebP",
+    "maxDimension": 256,
+    "quality": 90,
+    "alphaQuality": 100,
+    "method": 6,
+    "resampling": "Lanczos; preserve aspect ratio; no crop; no upscale",
+    "reason": "64px portal inventory artwork; canonical PNG sources remain in the app repository"
+  }
+}

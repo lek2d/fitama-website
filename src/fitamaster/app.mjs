@@ -1,6 +1,7 @@
 import {createClient} from '@supabase/supabase-js';
 import {createPortal,createSessionStorage,validateConfig,AUTH_STORAGE_KEY,clearAuthForPhase,parseAuthCallback,sessionIdentity} from './core.mjs';
 import {renderPortal} from './view.mjs';
+import {mountSavedPet} from './pet-card.mjs';
 import portalConfig from '../../docs/fitamaster/config.mjs';
 
 export async function startPortal({window:browser=globalThis.window,document=browser.document,location=browser.location,history=browser.history,storage=browser.sessionStorage,client:injectedClient}={}){
@@ -11,7 +12,7 @@ export async function startPortal({window:browser=globalThis.window,document=bro
   const authStorage=createSessionStorage(storage);
   if(!injectedClient){try{config=validateConfig(portalConfig);}catch{authStorage.clear();renderPortal(document,root,{phase:'config'},{},{});return;}}
   const client=injectedClient||createClient(config.url,config.key,{auth:{storage:authStorage,storageKey:AUTH_STORAGE_KEY,flowType:'implicit',persistSession:true,autoRefreshToken:true,detectSessionInUrl:false},global:{fetch:(url,options={})=>fetch(url,{...options,cache:'no-store',referrerPolicy:'no-referrer'})}});
-  const portal=createPortal(client);const ui={pages:{players:[],reports:[],history:[]},cursors:{players:null,reports:null,history:null},importDraft:null,importOpen:false,emailLinkOpen:false,emailLinkEmail:''};let wasReady=false,expiryTimer,expiryVersion=0,activeIdentity=null,disposed=false;
+  const portal=createPortal(client);const ui={pages:{players:[],reports:[],history:[]},cursors:{players:null,reports:null,history:null},importDraft:null,importOpen:false,emailLinkOpen:false,emailLinkEmail:''};let wasReady=false,expiryTimer,expiryVersion=0,activeIdentity=null,disposed=false,petRenderer=null,cardExpiryTimer;
   let importIntent=null;const reviewIntents=new Map();
   const run=async action=>{try{return await action();}catch(error){portal.setError(error.message||'The request could not be completed. Try again.');return null;}};
   const load=(kind,after=null)=>kind==='players'?portal.players({after}):kind==='reports'?portal.reports({after,playerId:portal.state.selectedPlayer}):portal.history({after});
@@ -37,7 +38,15 @@ export async function startPortal({window:browser=globalThis.window,document=bro
     clearAuthForPhase(authStorage,state.phase);
     if(state.phase!=='login'){ui.emailLinkOpen=false;ui.emailLinkEmail='';}
     if(state.phase!=='ready'){ui.importDraft=null;ui.importOpen=false;importIntent=null;reviewIntents.clear();ui.pages={players:[],reports:[],history:[]};ui.cursors={players:null,reports:null,history:null};}
-    renderPortal(document,root,state,actions,ui);
+    petRenderer?.dispose();petRenderer=null;clearTimeout(cardExpiryTimer);
+    const rendered=renderPortal(document,root,state,actions,ui);
+    if(rendered?.petArtwork)petRenderer=mountSavedPet({document,...rendered.petArtwork});
+    const cardExpiry=Date.parse(state.player?.petCard?.tpExpiresAt);
+    if(state.phase==='ready'&&cardExpiry>Date.now())cardExpiryTimer=setTimeout(()=>{
+      if(disposed||portal.state.phase!=='ready')return;
+      petRenderer?.dispose();const next=renderPortal(document,root,portal.state,actions,ui);
+      petRenderer=next?.petArtwork?mountSavedPet({document,...next.petArtwork}):null;
+    },Math.min(2147483647,cardExpiry-Date.now()+10));
     if(state.phase==='ready'&&!wasReady){wasReady=true;queueMicrotask(()=>run(()=>portal.players()));}else if(state.phase!=='ready')wasReady=false;
   });
   async function scheduleExpiry(){const version=++expiryVersion;clearTimeout(expiryTimer);try{const {data}=await client.auth.getSession();if(version!==expiryVersion||disposed)return;const expires=data?.session?.expires_at;if(expires)expiryTimer=setTimeout(()=>{portal.invalidate('login','Your session expired. Sign in again.');authStorage.clear();},Math.max(0,expires*1000-Date.now()));}catch{}}
@@ -72,6 +81,6 @@ export async function startPortal({window:browser=globalThis.window,document=bro
   document.addEventListener('visibilitychange',onVisibility);
   browser.addEventListener('pagehide',onPageHide);
   browser.addEventListener('pageshow',onPageShow);
-  return {portal,client,dispose(){disposed=true;expiryVersion++;clearTimeout(expiryTimer);authSubscription?.data?.subscription?.unsubscribe();document.removeEventListener('visibilitychange',onVisibility);browser.removeEventListener('pagehide',onPageHide);browser.removeEventListener('pageshow',onPageShow);}};
+  return {portal,client,dispose(){disposed=true;expiryVersion++;clearTimeout(expiryTimer);clearTimeout(cardExpiryTimer);petRenderer?.dispose();authSubscription?.data?.subscription?.unsubscribe();document.removeEventListener('visibilitychange',onVisibility);browser.removeEventListener('pagehide',onPageHide);browser.removeEventListener('pageshow',onPageShow);}};
 }
 if(typeof window!=='undefined')startPortal();

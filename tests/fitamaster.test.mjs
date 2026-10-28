@@ -320,3 +320,13 @@ test('email rate-limit redraws keep the email panel and email in memory without 
     assert.equal(allNodes(f.root).find(node=>node.attributes.id==='password').attributes.value,undefined);
   }finally{running.dispose();}
 });
+test('selected player renders the saved card and illustrated inventory, then clears both on auth loss',()=>{
+ const root=new Element('root'),payload='<script>saved-pet</script>';
+ const player={profile:{id:uuid,username:'owner'},petCard:{stage:'pet',variant:'blue',name:payload,appearance:{version:1,kind:'original'},level:4,weeklyRank:null,dailyTp:500,tpExpiresAt:'2099-01-01T00:00:00Z'},inventory:{items:[{itemId:'treat',quantity:7}]},equipment:[]};
+ const rendered=renderPortal(fakeDocument,root,{phase:'ready',view:'players',selectedPlayer:uuid,player,reports:{reports:[]}},{},{});
+ assert.ok(rendered.petArtwork);assert.ok(root.textContent.includes(payload));assert.ok(root.textContent.includes('TreatQuantity: 7'));
+ assert.equal(allNodes(root).some(node=>node.tagName==='script'),false);
+ assert.ok(allNodes(root).some(node=>node.tagName==='img'&&node.attributes.src?.includes('fitamaster-items/treat.webp')));
+ const login=renderPortal(fakeDocument,root,{phase:'login'},{},{});
+ assert.equal(login.petArtwork,null);assert.equal(root.textContent.includes(payload),false);assert.equal(root.textContent.includes('Quantity: 7'),false);
+});
