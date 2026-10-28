@@ -31,5 +31,5 @@ Power Bottle level is not a quantity; Magic Potion is an unlimited entitlement; 
 
 ## Task 4: Review and activation
 - [x] Independent review of database guards/counts, renderer races and accessibility. Fix material findings and repeat covering tests.
-- [ ] Activation pending explicit production migration approval after automatic review rejection. Live PostgreSQL17.6 metadata/PREPARE preflight passed; exact target/SQL/hash/preservation guards prepared. No gameplay edits.
-- [ ] Publish after explicit migration approval, then confirm Pages, exact live assets and unauthenticated denials. Local evidence is in outputs.
+- [x] Owner explicitly approved migration006 after the initial review rejection. Installed and readback-verified on PostgreSQL17.6; exact target/SQL/hash/preservation checks passed. No gameplay edits.
+- [x] Published feature commitf6e6a46 via successful Pages workflow40661463604. All74 live checks passed (65assets, canonical route,8unauthenticated RPCdenials). One protected owner-session petcard/inventory view rendered successfully. Final evidence is in the task outputs.
