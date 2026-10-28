@@ -38,6 +38,11 @@
  .journey-page .download-section,.journey-page .story-summary{scroll-margin-top:142px}
  .journey-page .stage :is(.follow-copy,.landing-copy){top:max(142px,9svh)}
 }
+@media(max-width:399px){
+ .nav-enhanced .header-menu{grid-template-columns:1fr}
+ .nav-enhanced .nav-guide{justify-self:center}
+ .nav-enhanced .header-socials{justify-self:center;margin-left:0}
+}
 @media(prefers-reduced-motion:reduce){.site-header{transition:none}}
 .motion-off .site-header{transition:none}
 /* Programmatic story focus is a section target, not a visible control. */
