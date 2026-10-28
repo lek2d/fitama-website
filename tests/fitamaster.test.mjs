@@ -151,11 +151,16 @@ test('client search and report metadata enforce the deployed backend limits befo
   }
   assert.equal(f.calls.some(([name])=>name==='fitamaster_import_report'||name==='fitamaster_players'),false);
 });
-test('only a query PKCE code is accepted; implicit tokens and callback errors are scrubbed',()=>{
+test('email fragment sessions and legacy PKCE codes are bounded while invalid callback material is scrubbed',()=>{
   const base='https://fitama.app/fitamaster/';
-  assert.deepEqual(parseAuthCallback(new URL(base+'?code=valid-code')),{hasCallback:true,code:'valid-code',failed:false,cleanUrl:base});
+  assert.equal(parseAuthCallback(new URL(base+'?code=valid-code')).code,'valid-code');
+  const fragment='#access_token=synthetic.access.token&refresh_token=synthetic-refresh&token_type=bearer&type=magiclink&expires_in=3600&expires_at=2000000000';
+  assert.deepEqual(parseAuthCallback(new URL(base+fragment)).session,{access_token:'synthetic.access.token',refresh_token:'synthetic-refresh'});
   for(const suffix of ['#access_token=private&refresh_token=private','?access_token=private','?error=denied&error_description=private','#error=denied','?code=valid#access_token=private','?code=one&code=two','#code=hash-code']){
     const result=parseAuthCallback(new URL(base+suffix));assert.equal(result.hasCallback,true);assert.equal(result.code,null);assert.equal(result.failed,true);assert.equal(result.cleanUrl,base);
+  }
+  for(const suffix of [fragment+'&access_token=another',fragment+'&provider_token=private',fragment.replace('magiclink','recovery'),fragment.replace('magiclink','invite'),fragment.replace('bearer','other'),fragment.replace('access_token','ACCESS_TOKEN'),fragment.replace('synthetic-refresh','a'.repeat(4097)),'?code=old'+fragment,'?error=denied'+fragment,fragment+'&unknown=extra',fragment.replace('3600','NaN')]){
+    const result=parseAuthCallback(new URL(base+suffix));assert.equal(result.failed,true);assert.equal(result.session,null);assert.equal(result.cleanUrl,base);
   }
   assert.equal(parseAuthCallback(new URL(base+'#main')).hasCallback,false);
 });
@@ -216,6 +221,34 @@ test('callback recovery guidance survives startup and later logged-out access ch
   const f=controllerFixture();f.clearSession();f.browser.location=new URL('https://fitama.app/fitamaster/?code=expired');let scrubbed;
   f.browser.history.replaceState=(state,title,url)=>{scrubbed=url;};f.client.auth.exchangeCodeForSession=async()=>({error:{code:'bad_code'}});
   const running=await startPortal({window:f.browser,client:f.client});
-  try{f.emitAuth('INITIAL_SESSION');await flush();f.events.get('visibilitychange')();await flush();assert.equal(scrubbed,'https://fitama.app/fitamaster/');assert.match(f.root.textContent,/Request a new link.*original portal tab/);assert.equal(running.portal.state.phase,'login');}
+  try{f.emitAuth('INITIAL_SESSION');await flush();f.events.get('visibilitychange')();await flush();assert.equal(scrubbed,'https://fitama.app/fitamaster/');assert.match(f.root.textContent,/Request a new link/);assert.equal(running.portal.state.phase,'login');}
   finally{running.dispose();}
+});
+
+test('a clicked email link in a fresh tab imports a verified session but requires owner TOTP before player reads',async()=>{
+  for(const allowed of [true,false]){
+    const f=controllerFixture();f.clearSession();let scrubbed=false,imports=0;const calls=[];
+    const session={user:{id:uuid},expires_at:Math.floor(Date.now()/1000)+3600,access_token:'synthetic.access.token'};
+    f.browser.location=new URL('https://fitama.app/fitamaster/#access_token=synthetic.access.token&refresh_token=synthetic-refresh&token_type=bearer&type=magiclink&expires_in=3600');
+    f.browser.history.replaceState=()=>{scrubbed=true;};
+    f.client.auth.setSession=async tokens=>{assert.equal(scrubbed,true);assert.equal(f.browser.sessionStorage.length,0);assert.deepEqual(tokens,{access_token:session.access_token,refresh_token:'synthetic-refresh'});imports++;f.client.auth.getSession=async()=>({data:{session}});f.browser.sessionStorage.setItem('fitamaster-auth','synthetic-session');return {data:{session},error:null};};
+    f.client.auth.getUser=async()=>({data:{user:session.user}});
+    f.client.auth.mfa.getAuthenticatorAssuranceLevel=async()=>({data:{currentLevel:'aal1'}});
+    f.client.auth.mfa.listFactors=async()=>({data:{totp:[{id:uuid,status:'verified'}]}});
+    f.client.rpc=async name=>{calls.push(name);return {data:{allowed,mfaRequired:true}};};
+    const running=await startPortal({window:f.browser,client:f.client});
+    try{await flush();assert.equal(imports,1);assert.equal(running.portal.state.phase,allowed?'challenge':'denied');assert.ok(calls.includes('fitamaster_access_status'));assert.equal(calls.some(name=>name!=='fitamaster_access_status'),false);assert.equal(f.root.textContent.includes('synthetic-refresh'),false);if(!allowed)assert.equal(f.browser.sessionStorage.getItem('fitamaster-auth'),null);}
+    finally{running.dispose();}
+  }
+});
+test('malformed or rejected email callbacks never expose callback data or preexisting player views',async()=>{
+  for(const malformed of [true,false]){
+    const f=controllerFixture();let imported=0;const calls=[];
+    f.browser.location=new URL('https://fitama.app/fitamaster/#access_token=synthetic.access.token&refresh_token=synthetic-refresh&token_type=bearer&type='+(malformed?'recovery':'magiclink'));
+    f.client.auth.setSession=async()=>{imported++;return {error:{code:'invalid_token',message:'synthetic-refresh'}};};
+    f.client.rpc=async name=>{calls.push(name);return {data:{allowed:true,mfaRequired:false,players:[]}};};
+    const running=await startPortal({window:f.browser,client:f.client});
+    try{assert.equal(imported,malformed?0:1);assert.equal(running.portal.state.phase,'login');assert.equal(calls.length,0);assert.equal(f.root.textContent.includes('synthetic-refresh'),false);assert.match(f.root.textContent,/Request a new link/);}
+    finally{running.dispose();}
+  }
 });

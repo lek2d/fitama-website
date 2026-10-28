@@ -6,11 +6,11 @@ import portalConfig from '../../docs/fitamaster/config.mjs';
 export async function startPortal({window:browser=globalThis.window,document=browser.document,location=browser.location,history=browser.history,storage=browser.sessionStorage,client:injectedClient}={}){
   const root=document.getElementById('portal');let config;
   const callback=parseAuthCallback(location);
-  // Remove callback material before configuration checks or any network activity. Never accept implicit tokens.
+  // Scrub callback credentials before configuration checks, Auth initialization or any network activity.
   if(callback.hasCallback)history.replaceState(null,'',callback.cleanUrl);
   const authStorage=createSessionStorage(storage);
   if(!injectedClient){try{config=validateConfig(portalConfig);}catch{authStorage.clear();renderPortal(document,root,{phase:'config'},{},{});return;}}
-  const client=injectedClient||createClient(config.url,config.key,{auth:{storage:authStorage,storageKey:AUTH_STORAGE_KEY,flowType:'pkce',persistSession:true,autoRefreshToken:true,detectSessionInUrl:false},global:{fetch:(url,options={})=>fetch(url,{...options,cache:'no-store',referrerPolicy:'no-referrer'})}});
+  const client=injectedClient||createClient(config.url,config.key,{auth:{storage:authStorage,storageKey:AUTH_STORAGE_KEY,flowType:'implicit',persistSession:true,autoRefreshToken:true,detectSessionInUrl:false},global:{fetch:(url,options={})=>fetch(url,{...options,cache:'no-store',referrerPolicy:'no-referrer'})}});
   const portal=createPortal(client);const ui={pages:{players:[],reports:[],history:[]},cursors:{players:null,reports:null,history:null},importDraft:null,importOpen:false};let wasReady=false,expiryTimer,expiryVersion=0,activeIdentity=null,disposed=false;
   let importIntent=null;const reviewIntents=new Map();
   const run=async action=>{try{return await action();}catch(error){portal.setError(error.message||'The request could not be completed. Try again.');return null;}};
@@ -39,22 +39,31 @@ export async function startPortal({window:browser=globalThis.window,document=bro
     if(state.phase==='ready'&&!wasReady){wasReady=true;queueMicrotask(()=>run(()=>portal.players()));}else if(state.phase!=='ready')wasReady=false;
   });
   async function scheduleExpiry(){const version=++expiryVersion;clearTimeout(expiryTimer);try{const {data}=await client.auth.getSession();if(version!==expiryVersion||disposed)return;const expires=data?.session?.expires_at;if(expires)expiryTimer=setTimeout(()=>{portal.invalidate('login','Your session expired. Sign in again.');authStorage.clear();},Math.max(0,expires*1000-Date.now()));}catch{}}
+  let authReady=false;
   const authSubscription=client.auth.onAuthStateChange((event,session)=>{
     // Supabase holds an auth lock while invoking this callback. Async auth calls must run after it returns.
     if(disposed)return;
     const identity=sessionIdentity(session),sameSession=identity&&identity===activeIdentity;
     activeIdentity=identity;
+    // Finish validating a clicked callback before checking or displaying any stored session.
+    if(!authReady)return;
     const initialLoggedOut=event==='INITIAL_SESSION'&&!session&&portal.state.phase==='login';
     if(event==='SIGNED_OUT'||(!sameSession&&!initialLoggedOut))portal.invalidate(event==='SIGNED_OUT'?'login':'loading');
     if(event==='SIGNED_OUT'){expiryVersion++;authStorage.clear();clearTimeout(expiryTimer);}else setTimeout(()=>{if(!disposed){run(()=>portal.refresh());scheduleExpiry();}},0);
   });
   let callbackError='';
   if(callback.hasCallback){
-    if(callback.code){try{const {error}=await client.auth.exchangeCodeForSession(callback.code);if(error)throw error;}catch{callbackError='The sign-in link could not be used. Request a new link, then copy it from your email and paste it into this original portal tab.';}}
-    else callbackError='The sign-in link could not be used. Request a new link, then copy it from your email and paste it into this original portal tab.';
+    try{
+      if(callback.session){const {error}=await client.auth.setSession(callback.session);if(error)throw error;}
+      else if(callback.code&&authStorage.getItem(AUTH_STORAGE_KEY+'-code-verifier')){const {error}=await client.auth.exchangeCodeForSession(callback.code);if(error)throw error;}
+      else throw new Error('Unsupported sign-in link');
+    }catch{callbackError='The sign-in link could not be used. Request a new link and open the newest email. Used, expired or older sign-in links cannot be reused.';}
   }
-  await portal.refresh();await scheduleExpiry();
+  // Drop callback token references once Auth has validated/imported them. They never enter UI state.
+  callback.session=null;callback.code=null;
   if(callbackError)portal.invalidate('login',callbackError);
+  authReady=true;
+  if(!callbackError){await portal.refresh();await scheduleExpiry();}
   const onVisibility=()=>{if(document.visibilityState==='visible')run(()=>portal.refresh());};
   const onPageHide=()=>portal.invalidate('loading');
   const onPageShow=event=>{if(event.persisted)run(()=>portal.refresh());};

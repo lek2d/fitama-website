@@ -23,7 +23,7 @@ Files: app repo supabase/migrations/202610280002_fitamaster_owner_portal.sql, su
 ### Task 2: Owner auth and support interface
 Files: website docs/fitamaster/*, tools/build-fitamaster.mjs, tests/fitamaster*.test.mjs, package files if needed.
 - [x] Write behavioral tests for auth gating, session loss, stale requests, diagnostics limits and safe rendering.
-- [x] Implement login/password+PKCE email link, TOTP enroll/challenge, session-only storage; block all data before backend aal2 permission.
+- [x] Implement login/password+email link, TOTP enroll/challenge, session-only storage; block all data before backend aal2 permission. October 28 follow-up: browser email links work across tabs/browsers using validated fragment sessions; legacy PKCE requires its original verifier.
 - [x] Implement real API-backed player table/detail, diagnostic import/view/review, history paging, errors/empty states; no fake production data.
 - [x] Bundle dependency locally; add strict meta CSP/noindex/referrer policy; preserve existing pages/art.
 - [x] Run existing website tests plus new tests and desktop/mobile synthetic browser flows.

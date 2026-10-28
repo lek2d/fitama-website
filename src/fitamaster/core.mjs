@@ -3,12 +3,16 @@ export const AUTH_STORAGE_KEY='fitamaster-auth';
 const UUID=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 export function parseAuthCallback(location){
   const query=new URLSearchParams(location.search),hash=new URLSearchParams(location.hash?.replace(/^#/,''));
-  const keys=['code','error','error_code','error_description','access_token','refresh_token','token_type','token_hash','expires_in','expires_at','provider_token','provider_refresh_token','type'];
+  const keys=['code','error','error_code','error_description','access_token','refresh_token','token_type','token_hash','expires_in','expires_at','provider_token','provider_refresh_token','type','sb_flow_id'];
   const queryKeys=[...query.keys()].map(key=>key.toLowerCase()),hashKeys=[...hash.keys()].map(key=>key.toLowerCase());
   const hasCallback=queryKeys.some(key=>keys.includes(key))||hashKeys.some(key=>keys.includes(key));
   const codes=query.getAll('code');
-  const failed=hasCallback&&(hashKeys.some(key=>keys.includes(key))||queryKeys.some(key=>keys.includes(key)&&key!=='code')||codes.length!==1||!codes[0]);
-  return {hasCallback,code:hasCallback&&!failed?codes[0]:null,failed:!!failed,cleanUrl:location.origin+location.pathname};
+  const bounded=(location.search?.length||0)+(location.hash?.length||0)<=24576;
+  const legacyCode=bounded&&!hashKeys.some(key=>keys.includes(key))&&!queryKeys.some(key=>keys.includes(key)&&key!=='code')&&codes.length===1&&/^[A-Za-z0-9_-]{1,1024}$/.test(codes[0]);
+  const allowedFragment=['access_token','refresh_token','token_type','type','expires_in','expires_at'];
+  const access=hash.get('access_token'),refresh=hash.get('refresh_token');
+  const emailSession=bounded&&!queryKeys.some(key=>keys.includes(key))&&[...hash.keys()].every(key=>allowedFragment.includes(key)&&hash.getAll(key).length===1)&&hash.get('type')==='magiclink'&&hash.get('token_type')==='bearer'&&/^[A-Za-z0-9._-]{1,16384}$/.test(access||'')&&/^[A-Za-z0-9_-]{1,4096}$/.test(refresh||'')&&['expires_in','expires_at'].every(key=>!hash.has(key)||/^[0-9]{1,10}$/.test(hash.get(key)));
+  return {hasCallback,code:legacyCode?codes[0]:null,session:emailSession?{access_token:access,refresh_token:refresh}:null,failed:hasCallback&&!legacyCode&&!emailSession,cleanUrl:location.origin+location.pathname};
 }
 export function sessionIdentity(session){
   try{const claims=JSON.parse(atob(session.access_token.split('.')[1].replace(/-/g,'+').replace(/_/g,'/')));return session.user?.id&&typeof claims.session_id==='string'?JSON.stringify([session.user.id,claims.session_id]):null;}catch{return null;}
@@ -23,7 +27,7 @@ export function createSessionStorage(storage) {
   return {getItem:key=>storage.getItem(key),setItem:(key,value)=>storage.setItem(key,value),removeItem:key=>storage.removeItem(key),clear(){for(let i=storage.length-1;i>=0;i--){const key=storage.key(i);if(key?.startsWith(AUTH_STORAGE_KEY))storage.removeItem(key);}}};
 }
 export function clearAuthForPhase(storage,phase){
-  // A logged-out email-link request still needs its original tab's PKCE verifier.
+  // Retain a verifier only for an older PKCE link still pending in this tab.
   if(phase==='login')storage.removeItem(AUTH_STORAGE_KEY);
   if(phase==='denied')storage.clear();
 }
@@ -105,7 +109,7 @@ export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now
   const api={get state(){return state;},subscribe(listener){listeners.add(listener);listener(state);return()=>listeners.delete(listener);},invalidate,refresh,
     setError(message){emit({error:message,busy:false});},setView(view){epoch++;versions.clear();pending.clear();emit({view,error:'',notice:'',busy:false,players:null,player:null,reports:null,report:null,history:null,selectedPlayer:null});},
     async login(email,password){const result=await authAction(()=>client.auth.signInWithPassword({email,password}));if(result)await refresh();},
-    async emailLink(email,redirectTo){const result=await authAction(()=>client.auth.signInWithOtp({email,options:{shouldCreateUser:false,emailRedirectTo:redirectTo}}));if(result)emit({notice:'If this email can sign in, a link has been sent. Copy the sign-in link from your email, then paste it into this original portal tab to continue.'});},
+    async emailLink(email,redirectTo){const result=await authAction(()=>client.auth.signInWithOtp({email,options:{shouldCreateUser:false,emailRedirectTo:redirectTo}}));if(result)emit({notice:'If this email can sign in, a link has been sent. Open the newest link from your email in any tab or browser, then complete authenticator verification.'});},
     async enroll(){const stamp=epoch;await gate(stamp);
       if(state.phase!=='enroll'||!same(stamp))return;
       const result=await authAction(()=>client.auth.mfa.enroll({factorType:'totp',friendlyName:'Fitamaster owner'}));
