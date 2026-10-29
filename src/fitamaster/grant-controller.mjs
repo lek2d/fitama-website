@@ -1,5 +1,5 @@
 import {validateItemGrant} from './core.mjs';
-import {ITEM_CATALOG} from './inventory.mjs';
+import {GRANTABLE_ITEMS} from './grant-catalog.mjs';
 
 const blank=()=>({open:false,draft:{itemId:'',quantity:1,reason:''},review:null,result:null,uncertain:false,statusChecked:false,busy:false});
 /** Only confirmed intent reaches the write RPC. An unknown result retains its nonce until reconciled. */
@@ -21,7 +21,7 @@ export function createItemGrantController(portal,{id=()=>crypto.randomUUID(),onC
     change(name,value){
       if(locked()||state.review||state.result||state.uncertain||!['itemId','quantity','reason'].includes(name))return;
       const draft={...state.draft,[name]:value};
-      if(name==='itemId'&&ITEM_CATALOG.find(item=>item.itemId===value)?.kind==='equipment')draft.quantity=1;
+      if(name==='itemId'&&GRANTABLE_ITEMS.find(item=>item.itemId===value)?.maxQuantity===1)draft.quantity=1;
       state={...state,draft};if(name==='itemId')draw();
     },
     review(draft){

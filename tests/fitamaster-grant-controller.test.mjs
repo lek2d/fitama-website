@@ -18,6 +18,15 @@ test('review creates a frozen explicit player intent and never sends before conf
 test('edit preserves unsent draft; selecting equipment resets quantity to one',()=>{
   const f=fixture(),c=f.controller;c.actions.review(draft);c.actions.edit();assert.equal(c.state.draft.itemId,draft.itemId);assert.equal(c.state.draft.reason,draft.reason);c.actions.change('itemId','vitaslash');assert.equal(c.state.draft.quantity,1);
 });
+test('selecting Magic Potion fixes the unlock quantity and preserves the reason through review',()=>{
+ const f=fixture(),c=f.controller;c.actions.change('quantity','88');c.actions.change('reason','Approved tester access');
+ c.actions.change('itemId','magic-potion');
+ assert.equal(c.state.draft.quantity,1);
+ assert.equal(c.state.draft.reason,'Approved tester access');
+ c.actions.review(c.state.draft);
+ assert.equal(c.state.review.itemId,'magic-potion');assert.equal(c.state.review.quantity,1);
+ assert.equal(c.state.review.reason,'Approved tester access');assert.equal(f.calls.length,0);
+});
 test('lost response requires status check; absent result retries the same immutable request',async()=>{
   const f=fixture(),c=f.controller;f.portal.grantItem=async input=>{f.calls.push(['grant',input]);f.portal.state.grantOutcome='uncertain';return null;};
   c.actions.review(draft);await c.actions.confirm();assert.equal(c.state.uncertain,true);c.actions.edit();c.actions.change('reason','different');assert.equal(c.state.review.reason,draft.reason);
