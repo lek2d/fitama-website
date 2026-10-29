@@ -338,12 +338,19 @@ function grantControllerFixture(){
 }
 const grantButton=(root,label)=>allNodes(root).find(node=>node.tagName==='button'&&node.textContent===label);
 const submitGrant=f=>allNodes(f.root).find(node=>node.className==='grant-form').events.submit({preventDefault(){},currentTarget:{}});
+test('Magic Potion history describes tester access rather than consumable quantity',()=>{
+ const root=new Element('div');
+ renderPortal(fakeDocument,root,{phase:'ready',view:'history',history:{events:[{action:'item_grant',itemGrant:{itemId:'magic-potion',quantity:1,reason:'Approved test access',generation:0,grantedAt:'2026-10-29T09:00:00Z'}}]}},{});
+ assert.match(root.textContent,/Magic Potion/);assert.match(root.textContent,/Enabled tester access/);
+ assert.doesNotMatch(root.textContent,/Quantity/);
+});
 test('wired portal review never sends until confirmation; receipt survives inventory refresh and history renders grant facts',async()=>{
   const f=grantControllerFixture(),running=await startPortal({window:f.browser,client:f.client});
   try{
     await flush();await running.portal.player(uuid);submitGrant(f);assert.equal(f.calls.some(([name])=>name==='fitamaster_grant_item'),false);assert.match(f.root.textContent,/Review item addition/);
     grantButton(f.root,'Confirm add item').events.click();await flush();assert.equal(f.calls.filter(([name])=>name==='fitamaster_grant_item').length,1);assert.match(f.root.textContent,/Added to server inventory/);assert.match(f.root.textContent,/Quantity: 3/);
-    grantButton(f.root,'Add another item').events.click();assert.equal(allNodes(f.root).find(node=>node.attributes.id==='grant-item').value,'');
+    grantButton(f.root,'Add another item').events.click();assert.equal(allNodes(f.root).find(node=>node.attributes.id==='grant-item').textContent,'Choose an item');
+    assert.equal(allNodes(f.root).some(node=>node.attributes.type==='radio'&&node.checked),false);
     renderPortal(f.browser.document,f.root,{phase:'ready',view:'history',history:{events:[{action:'item_grant',itemGrant:{itemId:'health-potion',quantity:2,reason:'Synthetic support #12',generation:0,grantedAt:'2026-10-28T09:00:00Z'}}]}},{});
     assert.match(f.root.textContent,/Health Potion/);assert.match(f.root.textContent,/Synthetic support #12/);
   }finally{running.dispose();}

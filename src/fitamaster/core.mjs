@@ -1,4 +1,4 @@
-import {ITEM_CATALOG} from './inventory.mjs';
+import {GRANTABLE_ITEMS} from './grant-catalog.mjs';
 export const SUPABASE_ORIGIN='https://ormclcexntojipbyrlnh.supabase.co';
 export const AUTH_STORAGE_KEY='fitamaster-auth';
 const UUID=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -35,6 +35,7 @@ export function clearAuthForPhase(storage,phase){
 }
 export function publicError(error) {
   const code=String(error?.code||''); const message=String(error?.message||'');
+  if(message==='FITAMASTER_GRANT_ALREADY_ENABLED')return 'Magic Potion test access is already unlocked for this account.';
   const grantMessages={FITAMASTER_GRANT_INVENTORY_UNAVAILABLE:'Ask this player to open and sync Fitama before adding this item.',FITAMASTER_GRANT_TARGET_CHANGED:'The player changed or reset. Reload their details and review again.',FITAMASTER_GRANT_BUSY:'The player inventory is busy. Check delivery status before retrying.',FITAMASTER_GRANT_OVERFLOW:'This item would exceed the inventory limit.',FITAMASTER_GRANT_REQUEST_CONFLICT:'This send differs from an earlier request. Check admin history before starting another.',FITAMASTER_GRANT_BALANCE_REVIEW:'This box balance needs review before adding this item.',FITAMASTER_GRANT_DISABLED:'Item additions are temporarily unavailable.',FITAMASTER_GRANT_INVALID_ITEM:'Choose an available item.',FITAMASTER_GRANT_INVALID_QUANTITY:'Check the item quantity.',FITAMASTER_GRANT_INVALID_REASON:'Enter a single-line reason of 1–240 characters.'};
   if(Object.hasOwn(grantMessages,message))return grantMessages[message];
   if(code==='over_email_send_rate_limit')return 'Email sign-in is temporarily limited. Check your inbox for the newest unused link, or wait before requesting another.';
@@ -56,13 +57,13 @@ export function validateReport(body) {
   if(lines.some(line=>!row.test(line))||/(?:eyJ[A-Za-z0-9_-]{12,}|sb_secret_|bearer\s|access[_ -]?token|refresh[_ -]?token|password|secret|authorization)/i.test(normalized))throw new Error('Use only the minimal sync diagnostics text. Remove credentials and rich recovery data.');
   return normalized;
 }
-const grantCatalog=new Map(ITEM_CATALOG.filter(item=>item.kind==='stack'||item.kind==='equipment').map(item=>[item.itemId,item]));
+const grantCatalog=new Map(GRANTABLE_ITEMS.map(item=>[item.itemId,item]));
 export function validateItemGrant(input){
   if(!input||typeof input!=='object'||!UUID.test(input.playerId||'')||!UUID.test(input.requestId||''))throw new Error('Reload the player details and review this item again.');
   if(!Number.isSafeInteger(input.generation)||input.generation<0)throw new Error('Reload the player details before adding an item.');
   const item=grantCatalog.get(input.itemId);if(!item)throw new Error('Choose an available item.');
   const quantity=typeof input.quantity==='number'?input.quantity:typeof input.quantity==='string'&&/^[0-9]{1,2}$/.test(input.quantity)?Number(input.quantity):NaN;
-  if(!Number.isInteger(quantity)||quantity<1||quantity>(item.kind==='equipment'?1:99))throw new Error(item.kind==='equipment'?'Add one equipment copy at a time.':'Choose a quantity from 1 to 99.');
+  if(!Number.isInteger(quantity)||quantity<1||quantity>item.maxQuantity)throw new Error(item.grantKind==='unlock'?'Unlock Magic Potion test access once per account.':item.grantKind==='equipment'?'Add one equipment copy at a time.':'Choose a quantity from 1 to 99.');
   const raw=input.reason;if(typeof raw!=='string'||/[\p{Cc}\p{Cf}\p{Cs}\p{Zl}\p{Zp}]/u.test(raw))throw new Error('Use a single-line reason without control characters.');
   const reason=raw.trim();if([...reason].length<1||[...reason].length>240)throw new Error('Enter a reason of 1–240 characters.');
   return{playerId:input.playerId.toLowerCase(),generation:input.generation,itemId:item.itemId,quantity,reason,requestId:input.requestId.toLowerCase()};

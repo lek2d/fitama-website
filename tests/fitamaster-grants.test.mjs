@@ -12,8 +12,22 @@ function fixture({allowed=true,aal='aal2'}={}){
 async function loaded(options){const f=fixture(options);await f.portal.refresh();await f.portal.player(playerId);return f;}
 test('grant validation accepts only normal catalog items and exact bounded intent',()=>{
  assert.equal(typeof core.validateItemGrant,'function');assert.deepEqual(core.validateItemGrant({...intent,quantity:'3',reason:'  Support compensation  '}),intent);
- for(const change of [{itemId:'magic-potion'},{itemId:'ancient-compass'},{itemId:'power-bottle'},{itemId:'future-item'},{quantity:0},{quantity:100},{quantity:1.5},{quantity:'1e1'},{generation:-1},{playerId:'bad'},{requestId:'bad'},{reason:''},{reason:'x'.repeat(241)},{reason:'\nSupport'},{reason:'Support\u200b'}])assert.throws(()=>core.validateItemGrant({...intent,...change}));
+ for(const change of [{itemId:'ancient-compass'},{itemId:'power-bottle'},{itemId:'future-item'},{quantity:0},{quantity:100},{quantity:1.5},{quantity:'1e1'},{generation:-1},{playerId:'bad'},{requestId:'bad'},{reason:''},{reason:'x'.repeat(241)},{reason:'\nSupport'},{reason:'Support\u200b'}])assert.throws(()=>core.validateItemGrant({...intent,...change}));
  assert.equal(core.validateItemGrant({...intent,itemId:'vitaslash',quantity:1}).quantity,1);assert.throws(()=>core.validateItemGrant({...intent,itemId:'vitaslash',quantity:2}));
+});
+test('Magic Potion enables one tester entitlement and cannot be granted as potion stock',()=>{
+ const unlock={...intent,itemId:'magic-potion',quantity:1};
+ assert.deepEqual(core.validateItemGrant(unlock),unlock);
+ assert.deepEqual(core.validateItemGrant({...unlock,quantity:'1'}),unlock);
+ for(const quantity of [0,2,99,100,1.5,'2','1e0'])assert.throws(()=>core.validateItemGrant({...unlock,quantity}));
+ assert.equal(core.publicError({code:'P0001',message:'FITAMASTER_GRANT_ALREADY_ENABLED'}),'Magic Potion test access is already unlocked for this account.');
+});
+test('Magic Potion uses the same explicit target, immutable receipt and status RPC contract',async()=>{
+ const f=await loaded(),unlock={...intent,itemId:'magic-potion',quantity:1},delivered={...unlock,grantedAt:receipt.grantedAt};
+ f.responder=async name=>({data:name==='fitamaster_grant_status'?delivered:delivered});
+ assert.deepEqual(await f.portal.grantItem(unlock),delivered);
+ assert.deepEqual(f.calls.at(-1),['fitamaster_grant_item',{p_request_id:requestId,p_player_id:playerId,p_generation:2,p_item_id:'magic-potion',p_quantity:1,p_reason:intent.reason}]);
+ assert.deepEqual(await f.portal.grantStatus(unlock),{receipt:delivered});
 });
 test('grant uses reviewed target/generation and the same immutable request ID',async()=>{
  const f=await loaded();assert.equal(typeof f.portal.grantItem,'function');const result=await f.portal.grantItem(intent);
