@@ -132,6 +132,7 @@ export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now
       if(!await gate(stamp)||!same(stamp)||versions.get(key)!==version){if(same(stamp)&&versions.get(key)===version)emit(settle(key));return null;}
       const {data,error}=await client.rpc('fitamaster_'+name,{p_request_id:id(),...args});
       if(!same(stamp)||versions.get(key)!==version)return null;
+      if(name==='player_activity'&&error?.code==='P0001'&&error.message==='Activity reset changed; refresh')throw new Error('FITAMASTER_ACTIVITY_TARGET_CHANGED');
       if(error){if(['42501','PGRST301','401','403'].includes(String(error.code))){invalidate('denied',publicError(error));return null;}throw error;}
       const result=options.parse?options.parse(data):data;
       emit({[key]:result,...(options.write?{grantOutcome:'confirmed'}:{}),...settle(key)});return result;

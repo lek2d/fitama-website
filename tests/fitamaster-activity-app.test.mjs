@@ -65,3 +65,12 @@ test('a reset generation mismatch offers explicit player reload and disables fut
   assert.doesNotMatch(section(f.root).textContent,/Fully active|Ranking TP credited300/);
  }finally{running.dispose();}
 });
+test('the actual backend reset-race payload immediately offers player details reload',async()=>{
+ const f=fixture(),running=await open(f);try{
+  f.responder=()=>({error:{code:'P0001',message:'Activity reset changed; refresh'}});
+  await click(button(section(f.root),'Refresh activity'));await flush();
+  assert.equal(running.portal.state.activityNeedsReload,true);assert.match(section(f.root).textContent,/Reload their details/);
+  assert.equal(button(section(f.root),'Refresh activity').disabled,true);assert.ok(button(f.root,'Reload player details'));
+  assert.doesNotMatch(section(f.root).textContent,/Fully active|Ranking TP credited300/);
+ }finally{running.dispose();}
+});

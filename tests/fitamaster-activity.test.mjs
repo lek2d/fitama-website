@@ -121,3 +121,15 @@ test('last observation days agree with daily records and own actions cannot prec
  dto.days[0].questClaims=0;dto.summary.questClaims=0;dto.activity.code='app_active';reject(dto);
  dto.summary.lastRecordedActionAt='2026-10-27T11:00:00Z';assert.equal(parse(dto).summary.visitDays,2);
 });
+test('the backend reset-race error requires reload only for the current activity detail request',async()=>{
+ const error={code:'P0001',message:'Activity reset changed; refresh'};
+ const f=await loaded();await f.portal.playerActivity();f.responder=async()=>({error});await f.portal.playerActivity();
+ assert.equal(f.portal.state.activity,null);assert.equal(f.portal.state.activityNeedsReload,true);assert.match(f.portal.state.activityError,/Reload their details/);assert.equal(f.portal.state.error,'');
+ const list=await loaded();list.responder=async()=>({error});await list.portal.players();
+ assert.equal(list.portal.state.activityNeedsReload,false);assert.equal(list.portal.state.activityError,'');assert.doesNotMatch(list.portal.state.error,/Reload their details/);assert.ok(list.portal.state.error);
+ for(const change of [async stale=>{stale.responder=async()=>({data:activityDto()});await stale.portal.playerActivity();},async stale=>{stale.responder=async(name,args)=>({data:{profile:{id:args.p_player_id},generation:2}});await stale.portal.player(otherId);},stale=>stale.portal.invalidate('login')]){
+  const stale=await loaded();let resolve;stale.responder=()=>new Promise(done=>resolve=done);
+  const pending=stale.portal.playerActivity();await tick();await change(stale);resolve({error});await pending;
+  assert.equal(stale.portal.state.activityNeedsReload,false);assert.equal(stale.portal.state.activityError,'');assert.equal(stale.portal.state.error,'');
+ }
+});
