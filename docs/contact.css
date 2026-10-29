@@ -30,3 +30,9 @@
 /* Match the Guide search field: highlight its own rounded border on focus. */
 .contact-page .contact-field :is(input,select,textarea):focus{outline:none;border-color:#326954;box-shadow:0 0 0 1px #326954}
 @media(forced-colors:active){.contact-page .contact-field :is(input,select,textarea):focus{border-color:Highlight;outline:1px solid Highlight;outline-offset:0;box-shadow:none}}
+
+/* Quick answers (2026-10-29): three common questions, linked into the Guide. */
+.contact-quick{width:100%;max-width:360px;display:grid;gap:10px;padding:0 4px}
+.contact-intro .contact-quick p{font-size:12px;line-height:1.5;margin:0;color:#4b5b46}
+.contact-quick a{font-size:15px;font-weight:700;line-height:1.4;color:#302018;text-underline-offset:4px}
+.contact-quick a:hover{color:#285845}
