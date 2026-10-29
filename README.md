@@ -1,5 +1,13 @@
 # FiTama website
 
+## October 29, 2026 — homepage search and sharing metadata
+
+Root redirect and Journey now use the owner's exact search title/description and Open Graph title/description. Twitter/X uses the same social copy and `summary_large_image`. Each response contains one static metadata set before any root redirect; canonical and Open Graph URLs retain the production Journey URL, `https://fitama.app/journey.html`. Interior page metadata remains page-specific. The site is plain HTML/CSS/JavaScript served by GitHub Pages from `docs/`; no framework metadata API or page build is involved.
+
+Retained the existing dedicated 1200×630 `docs/assets/fitama-share-cover-v2.png` without changing or rescaling its bytes. It contains the glossy FiTama logo and three eggs in the landscape, but does not contain “Hatching soon.” No existing production cover matching that complete brief was found. The outstanding replacement is a native 1200×630 branded composition using the same logo and three eggs plus that exact headline, with artwork scaled proportionally and text kept clear of crop edges. No replacement image was generated or advertised as complete.
+
+Verified: all 171 existing publisher tests passed after restoring the exact lockfile dependencies with install scripts disabled. Six local HTTP page checks (normal, Facebook and Twitter user agents across root/Journey) found exact copy and one nonconflicting metadata set in each response; three image requests returned the unchanged 1200×630 PNG. Browser inspection confirmed the rendered Journey head. Hash comparisons prove page bodies and non-metadata head content unchanged; `git diff --check` passed. There is no general page build for this static site; the separate Fitamaster bundle was not rebuilt. Initial test execution could not load the absent Supabase dependency; after dependency restoration the complete suite passed. Source-only, not committed, pushed or deployed; actual platform cache refresh remains unverified. Reproducible evidence is retained in the owner app workspace at `output/seo/2026-10-29/metadata-verification.json`.
+
 ## October 28, 2026 — compact header spacing
 
 Desktop navigation now fits its content and stays centered, with 20px between the logo, Tama-Guide, social-icon group and Play Fitama button. The mobile disclosure, 44px social targets and dark-green translucent background remain. Shared CSS and cache references are synchronized with the source mirror.
