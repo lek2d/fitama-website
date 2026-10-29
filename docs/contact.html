@@ -39,10 +39,9 @@
       <fieldset><legend class="visually-hidden">Your message — all fields are required</legend>
         <div class="contact-field"><label for="contact-email">Email address</label><input id="contact-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" placeholder="you@example.com" required></div>
         <div class="contact-field"><label for="contact-topic">What can we help with?</label><select id="contact-topic" name="topic" required><option value="" disabled selected>Choose a topic</option><option value="general">General question</option><option value="bug">Bug report</option><option value="privacy">Account &amp; privacy</option><option value="other">Other</option></select></div>
-        <div class="contact-field"><label for="contact-message">Message</label><textarea id="contact-message" name="message" rows="5" maxlength="4000" placeholder="Tell us what’s on your mind." aria-describedby="contact-hint" required></textarea></div>
+        <div class="contact-field"><label for="contact-message">Message</label><textarea id="contact-message" name="message" rows="5" maxlength="4000" placeholder="Tell us what’s on your mind." required></textarea></div>
         <div class="contact-trap" aria-hidden="true"><label for="contact-website">Leave this blank</label><input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
       </fieldset>
-      <p id="contact-hint" class="contact-note">We’ll use your email to reply. Please leave out passwords and sensitive health details. <a href="privacy/#website">Privacy Policy</a></p>
       <button class="contact-send" type="submit">Send message</button>
       <p id="contact-status" class="contact-status" role="status" aria-live="polite" aria-atomic="true"></p>
       <noscript><p>Enable JavaScript to use this form.</p><style>.contact-send{display:none}</style></noscript>
