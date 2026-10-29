@@ -3,12 +3,12 @@ import {GRANTABLE_ITEMS} from './grant-catalog.mjs';
 
 const blank=()=>({open:false,draft:{itemId:'',quantity:1,reason:''},review:null,result:null,uncertain:false,statusChecked:false,busy:false});
 /** Only confirmed intent reaches the write RPC. An unknown result retains its nonce until reconciled. */
-export function createItemGrantController(portal,{id=()=>crypto.randomUUID(),onChange=()=>{},onConfirmed=async()=>{}}={}){
+export function createItemGrantController(portal,{id=()=>crypto.randomUUID(),onChange=()=>{},onConfirmed=async()=>{},isBlocked=()=>false}={}){
   let state=blank(),epoch=0,targetId=null,generation=null;
   const reset=()=>{epoch++;state=blank();};
   const validTarget=()=>portal.state.phase==='ready'&&portal.state.selectedPlayer===targetId&&portal.state.player?.profile?.id===targetId&&portal.state.player.generation===generation;
   const active=stamp=>stamp===epoch&&validTarget();
-  const locked=()=>state.busy||portal.state.busy;
+  const locked=()=>state.busy||portal.state.busy||isBlocked();
   const draw=(focus=false)=>onChange({focus});
   async function complete(result,stamp){
     if(!active(stamp))return;

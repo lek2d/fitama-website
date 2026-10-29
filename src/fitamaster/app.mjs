@@ -3,6 +3,7 @@ import {createPortal,createSessionStorage,validateConfig,AUTH_STORAGE_KEY,clearA
 import {renderPortal} from './view.mjs';
 import {mountSavedPet} from './pet-card.mjs';
 import {createItemGrantController} from './grant-controller.mjs';
+import {createRestController} from './rest-controller.mjs';
 import portalConfig from '../../docs/fitamaster/config.mjs';
 
 export async function startPortal({window:browser=globalThis.window,document=browser.document,location=browser.location,history=browser.history,storage=browser.sessionStorage,client:injectedClient}={}){
@@ -14,7 +15,7 @@ export async function startPortal({window:browser=globalThis.window,document=bro
   if(!injectedClient){try{config=validateConfig(portalConfig);}catch{authStorage.clear();renderPortal(document,root,{phase:'config'},{},{});return;}}
   const client=injectedClient||createClient(config.url,config.key,{auth:{storage:authStorage,storageKey:AUTH_STORAGE_KEY,flowType:'implicit',persistSession:true,autoRefreshToken:true,detectSessionInUrl:false},global:{fetch:(url,options={})=>fetch(url,{...options,cache:'no-store',referrerPolicy:'no-referrer'})}});
   const portal=createPortal(client);const ui={pages:{players:[],reports:[],history:[],itemHistory:[]},cursors:{players:null,reports:null,history:null,itemHistory:null},importDraft:null,importOpen:false,emailLinkOpen:false,emailLinkEmail:''};let wasReady=false,expiryTimer,expiryVersion=0,activeIdentity=null,disposed=false,petRenderer=null,cardExpiryTimer;
-  let importIntent=null,historyPlayer=null,historyLoadVersion=0,historyReloadPeriod=null,activityPlayer=null,activityLoadVersion=0;const reviewIntents=new Map();
+  let importIntent=null,historyPlayer=null,historyLoadVersion=0,historyReloadPeriod=null,activityPlayer=null,activityLoadVersion=0,conditionPlayer=null,conditionLoadVersion=0;const reviewIntents=new Map();
   const run=async action=>{try{return await action();}catch(error){portal.setError(error.message||'The request could not be completed. Try again.');return null;}};
   const load=(kind,after=null)=>kind==='players'?portal.players({after}):kind==='reports'?portal.reports({after,playerId:portal.state.selectedPlayer}):portal.history({after});
   const resetPage=kind=>{ui.pages[kind]=[];ui.cursors[kind]=null;};
@@ -42,13 +43,20 @@ export async function startPortal({window:browser=globalThis.window,document=bro
     if(portal.state.phase==='ready'&&portal.state.selectedPlayer===id&&portal.state.player?.profile?.id===id)
       await run(()=>portal.reports({playerId:id}));
   };
-  const grant=createItemGrantController(portal,{onChange:({focus})=>{renderCurrent(portal.state);if(focus)root.querySelector?.('.grant-panel h3, #grant-item')?.focus();},onConfirmed:async receipt=>{
+  let rest;
+  const grant=createItemGrantController(portal,{isBlocked:()=>!!rest?.blocksNavigation,onChange:({focus})=>{renderCurrent(portal.state);if(focus)root.querySelector?.('.grant-panel h3, #grant-item')?.focus();},onConfirmed:async receipt=>{
     if(portal.state.phase!=='ready'||portal.state.selectedPlayer!==receipt.playerId)return;
     await reloadPlayer(receipt.playerId,portal.state.itemHistoryDays||7);
   }});
-  const leaveGrant=()=>{if(!grant.blocksNavigation)return true;portal.setError('Check this item delivery before leaving the player. Retry only the same addition if no delivery is found.');return false;};
+  rest=createRestController(portal,{isBlocked:()=>grant.blocksNavigation,onChange:({focus})=>{renderCurrent(portal.state);if(focus)root.querySelector?.('.rest-panel h3, #rest-reason')?.focus();},onConfirmed:async receipt=>{
+    if(portal.state.phase!=='ready'||portal.state.selectedPlayer!==receipt.playerId)return;
+    await reloadPlayer(receipt.playerId,portal.state.itemHistoryDays||7);
+  }});
+  const leaveGrant=()=>{if(!grant.blocksNavigation&&!rest.blocksNavigation)return true;portal.setError(rest.blocksNavigation?'Check this rest clearance before leaving or changing this player. Retry only the same clearance if no completed request is found.':'Check this item delivery before leaving the player. Retry only the same addition if no delivery is found.');return false;};
   const actions={
     itemGrant:grant.actions,
+    endRest:rest.actions,
+    petCondition:{refresh(){if(!leaveGrant()||portal.state.busy||!historyTarget())return;return run(()=>portal.petCondition());}},
     activity:{
       period(period){if(!['weekly','monthly'].includes(period)||period===portal.state.activityPeriod)return;return activityAction({period,offset:0},'activity-period');},
       offset(offset){if(!Number.isInteger(offset)||offset<0||offset>5||offset===portal.state.activityOffset)return;return activityAction({offset},offset>portal.state.activityOffset?'activity-previous':'activity-next');},
@@ -81,14 +89,14 @@ export async function startPortal({window:browser=globalThis.window,document=bro
     player:async id=>{if(!leaveGrant())return;resetPage('reports');ui.importDraft=null;ui.importOpen=false;importIntent=null;await reloadPlayer(id);},
     backPlayers:()=>{if(!leaveGrant())return;portal.setView('players');run(()=>load('players',ui.cursors.players));},
     report:id=>run(()=>portal.report(id)),
-    page:(kind,direction,next)=>{if(kind==='players'&&!leaveGrant())return;let cursor;if(direction==='next'){if(!next)return;ui.pages[kind].push(ui.cursors[kind]);cursor=next;}else{if(!ui.pages[kind].length)return;cursor=ui.pages[kind].pop();}ui.cursors[kind]=cursor;run(()=>load(kind,cursor));},
-    importReport:async draft=>{ui.importDraft=draft;const canonical=JSON.stringify(draft);if(importIntent?.canonical!==canonical)importIntent={canonical,id:crypto.randomUUID()};
+    page:(kind,direction,next)=>{if(!leaveGrant())return;let cursor;if(direction==='next'){if(!next)return;ui.pages[kind].push(ui.cursors[kind]);cursor=next;}else{if(!ui.pages[kind].length)return;cursor=ui.pages[kind].pop();}ui.cursors[kind]=cursor;run(()=>load(kind,cursor));},
+    importReport:async draft=>{if(!leaveGrant())return;ui.importDraft=draft;const canonical=JSON.stringify(draft);if(importIntent?.canonical!==canonical)importIntent={canonical,id:crypto.randomUUID()};
       const report=await run(()=>portal.importReport({...draft,requestId:importIntent.id}));if(report?.id){ui.importDraft=null;importIntent=null;resetPage('reports');await run(()=>portal.reports({playerId:portal.state.selectedPlayer}));await run(()=>portal.report(report.id));}},
-    review:async(id,status)=>{const key=id+':'+status;if(!reviewIntents.has(key))reviewIntents.set(key,crypto.randomUUID());const result=await run(()=>portal.reviewReport(id,status,reviewIntents.get(key)));if(result){reviewIntents.delete(key);await run(()=>portal.report(id));await run(()=>load('reports',ui.cursors.reports));}}
+    review:async(id,status)=>{if(!leaveGrant())return;const key=id+':'+status;if(!reviewIntents.has(key))reviewIntents.set(key,crypto.randomUUID());const result=await run(()=>portal.reviewReport(id,status,reviewIntents.get(key)));if(result){reviewIntents.delete(key);await run(()=>portal.report(id));await run(()=>load('reports',ui.cursors.reports));}}
   };
   function renderCurrent(state){
     if(disposed)return;
-    ui.itemGrant=grant.state;
+    ui.itemGrant=grant.state;ui.endRest=rest.state;
     petRenderer?.dispose();petRenderer=null;clearTimeout(cardExpiryTimer);
     const rendered=renderPortal(document,root,state,actions,ui);
     if(rendered?.petArtwork)petRenderer=mountSavedPet({document,...rendered.petArtwork});
@@ -96,7 +104,7 @@ export async function startPortal({window:browser=globalThis.window,document=bro
     if(state.phase==='ready'&&cardExpiry>Date.now())cardExpiryTimer=setTimeout(()=>renderCurrent(portal.state),Math.min(2147483647,cardExpiry-Date.now()+10));
   }
   portal.subscribe(state=>{
-    grant.sync(state);
+    grant.sync(state);rest.sync(state);
     clearAuthForPhase(authStorage,state.phase);
     if(state.phase!=='login'){ui.emailLinkOpen=false;ui.emailLinkEmail='';}
     if(state.phase!=='ready'){ui.importDraft=null;ui.importOpen=false;importIntent=null;reviewIntents.clear();historyReloadPeriod=null;ui.pages={players:[],reports:[],history:[],itemHistory:[]};ui.cursors={players:null,reports:null,history:null,itemHistory:null};}
@@ -111,6 +119,11 @@ export async function startPortal({window:browser=globalThis.window,document=bro
     else if(state.player!==activityPlayer){
       activityPlayer=state.player;const version=++activityLoadVersion,p=state.player;
       queueMicrotask(()=>{if(!disposed&&version===activityLoadVersion&&portal.state.player===p&&historyTarget())loadActivity({period:'weekly',offset:0});});
+    }
+    if(!target){conditionLoadVersion++;conditionPlayer=null;}
+    else if(state.player!==conditionPlayer){
+      conditionPlayer=state.player;const version=++conditionLoadVersion,p=state.player;
+      queueMicrotask(()=>{if(!disposed&&version===conditionLoadVersion&&portal.state.player===p&&historyTarget())run(()=>portal.petCondition());});
     }
     renderCurrent(state);
     if(state.phase==='ready'&&!wasReady){wasReady=true;queueMicrotask(()=>run(()=>portal.players()));}else if(state.phase!=='ready')wasReady=false;
@@ -142,13 +155,13 @@ export async function startPortal({window:browser=globalThis.window,document=bro
   authReady=true;
   if(!callbackError){await portal.refresh();await scheduleExpiry();}
   const onVisibility=()=>{if(document.visibilityState==='visible')run(()=>portal.refresh());};
-  const onBeforeUnload=event=>{if(grant.blocksNavigation){event.preventDefault();event.returnValue='';}};
+  const onBeforeUnload=event=>{if(grant.blocksNavigation||rest.blocksNavigation){event.preventDefault();event.returnValue='';}};
   const onPageHide=()=>portal.invalidate('loading');
   const onPageShow=event=>{if(event.persisted)run(()=>portal.refresh());};
   document.addEventListener('visibilitychange',onVisibility);
   browser.addEventListener('beforeunload',onBeforeUnload);
   browser.addEventListener('pagehide',onPageHide);
   browser.addEventListener('pageshow',onPageShow);
-  return {portal,client,dispose(){disposed=true;activityLoadVersion++;activityPlayer=null;historyLoadVersion++;historyReloadPeriod=null;resetPage('itemHistory');grant.dispose();expiryVersion++;clearTimeout(expiryTimer);clearTimeout(cardExpiryTimer);petRenderer?.dispose();authSubscription?.data?.subscription?.unsubscribe();document.removeEventListener('visibilitychange',onVisibility);browser.removeEventListener('beforeunload',onBeforeUnload);browser.removeEventListener('pagehide',onPageHide);browser.removeEventListener('pageshow',onPageShow);}};
+  return {portal,client,dispose(){disposed=true;conditionLoadVersion++;conditionPlayer=null;rest.dispose();activityLoadVersion++;activityPlayer=null;historyLoadVersion++;historyReloadPeriod=null;resetPage('itemHistory');grant.dispose();expiryVersion++;clearTimeout(expiryTimer);clearTimeout(cardExpiryTimer);petRenderer?.dispose();authSubscription?.data?.subscription?.unsubscribe();document.removeEventListener('visibilitychange',onVisibility);browser.removeEventListener('beforeunload',onBeforeUnload);browser.removeEventListener('pagehide',onPageHide);browser.removeEventListener('pageshow',onPageShow);}};
 }
 if(typeof window!=='undefined')startPortal();

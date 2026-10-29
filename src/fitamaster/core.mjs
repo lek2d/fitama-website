@@ -1,3 +1,4 @@
+import {parsePetCondition,validateEndRest,parseRestReceipt,parseRestResult} from './condition.mjs';
 import {GRANTABLE_ITEMS} from './grant-catalog.mjs';
 import {validateItemHistoryRequest,parseItemHistory} from './item-history.mjs';
 import {validateActivityRequest,parsePlayerActivity} from './activity.mjs';
@@ -45,6 +46,12 @@ export function publicError(error) {
   if(message==='FITAMASTER_HISTORY_TARGET_CHANGED')return 'This player’s progress changed. Reload their details.';
   if(message==='FITAMASTER_HISTORY_INVALID_ARGUMENT')return 'Reload the player details and choose a 7- or 30-day history period.';
   if(message==='FITAMASTER_GRANT_ALREADY_ENABLED')return 'Magic Potion test access is already unlocked for this account.';
+  const restMessages={FITAMASTER_REST_TARGET_CHANGED:'The player changed or reset. Reload their details and review again.',FITAMASTER_REST_SOURCE_CHANGED:'Dungeon rest changed. Refresh condition and review again.',FITAMASTER_REST_NOT_RESTING:'Dungeon rest ended or expired. Refresh condition.',FITAMASTER_REST_ACTIVE_DUNGEON:'This player has an active or unresolved dungeon. End rest is unavailable.',FITAMASTER_REST_CARE_UNAVAILABLE:'Ask this player to open and sync Fitama before reviewing dungeon rest.',FITAMASTER_REST_EGG:'Eggs do not have dungeon rest to end.',FITAMASTER_REST_BUSY:'The player is busy. Check clearance status before retrying.',FITAMASTER_REST_REQUEST_CONFLICT:'This clearance differs from an earlier request. Check admin history before starting another.',FITAMASTER_REST_DISABLED:'Ending dungeon rest is temporarily unavailable.',FITAMASTER_REST_INVALID_REASON:'Enter a single-line reason of 1–240 characters.'};
+  if(Object.hasOwn(restMessages,message))return restMessages[message];
+  const restRefusal=/^FITAMASTER_REST_NOT_ALLOWED: (egg|care_unavailable|active_dungeon|source_changed|not_resting)$/.exec(message);
+  if(restRefusal){const key={egg:'EGG',care_unavailable:'CARE_UNAVAILABLE',active_dungeon:'ACTIVE_DUNGEON',source_changed:'SOURCE_CHANGED',not_resting:'NOT_RESTING'}[restRefusal[1]];return restMessages['FITAMASTER_REST_'+key];}
+  if(message==='FITAMASTER_REST_OVERFLOW')return 'This care record needs review before ending rest.';
+  if(code==='FITAMASTER_CONDITION_INVALID_RESPONSE'||code==='FITAMASTER_REST_INVALID_RESPONSE')return message;
   const grantMessages={FITAMASTER_GRANT_INVENTORY_UNAVAILABLE:'Ask this player to open and sync Fitama before adding this item.',FITAMASTER_GRANT_TARGET_CHANGED:'The player changed or reset. Reload their details and review again.',FITAMASTER_GRANT_BUSY:'The player inventory is busy. Check delivery status before retrying.',FITAMASTER_GRANT_OVERFLOW:'This item would exceed the inventory limit.',FITAMASTER_GRANT_REQUEST_CONFLICT:'This send differs from an earlier request. Check admin history before starting another.',FITAMASTER_GRANT_BALANCE_REVIEW:'This box balance needs review before adding this item.',FITAMASTER_GRANT_DISABLED:'Item additions are temporarily unavailable.',FITAMASTER_GRANT_INVALID_ITEM:'Choose an available item.',FITAMASTER_GRANT_INVALID_QUANTITY:'Check the item quantity.',FITAMASTER_GRANT_INVALID_REASON:'Enter a single-line reason of 1–240 characters.'};
   if(Object.hasOwn(grantMessages,message))return grantMessages[message];
   if(code==='over_email_send_rate_limit')return 'Email sign-in is temporarily limited. Check your inbox for the newest unused link, or wait before requesting another.';
@@ -82,7 +89,7 @@ function grantReceipt(value,intent){
   for(const key of ['requestId','playerId','generation','itemId','quantity','reason'])if(value[key]!==intent[key])throw new Error('Grant outcome could not be confirmed.');
   return{...intent,grantedAt:value.grantedAt};
 }
-const empty=()=>({players:null,player:null,reports:null,report:null,history:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,activity:null,activityError:'',activityPeriod:'weekly',activityOffset:0,activityBusy:false,activityNeedsReload:false,selectedPlayer:null,enrollment:null,factorId:null,error:'',notice:'',busy:false,view:'players',query:'',grantReceipt:null,grantCheck:null,grantOutcome:null});
+const empty=()=>({players:null,player:null,reports:null,report:null,history:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,activity:null,activityError:'',activityPeriod:'weekly',activityOffset:0,activityBusy:false,activityNeedsReload:false,selectedPlayer:null,enrollment:null,factorId:null,error:'',notice:'',busy:false,view:'players',query:'',grantReceipt:null,grantCheck:null,grantOutcome:null,condition:null,conditionError:'',restReceipt:null,restCheck:null,restOutcome:null});
 // Every view lives only in memory. Epochs prevent late network responses from restoring erased content.
 export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now()}={}) {
   let state={...empty(),phase:'loading'};let epoch=0,currentIdentity=null,emailLinkInFlight=false;const versions=new Map();const pending=new Map();const listeners=new Set();
@@ -127,7 +134,7 @@ export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now
   async function request(name,args,key,patch={},options={}) {
     const stamp=epoch;const version=(versions.get(key)||0)+1;versions.set(key,version);
     pending.set(key,version);
-    emit({...patch,[key]:null,...(options.errorKey?{[options.errorKey]:''}:{}),...(options.write?{grantOutcome:null}:{}),busy:[...pending.keys()].some(name=>name!=='activity'),error:'',notice:'',...(key==='activity'?{activityBusy:true}:{})});
+    emit({...patch,[key]:null,...(options.errorKey?{[options.errorKey]:''}:{}),...(options.write?{[options.outcomeKey||'grantOutcome']:null}:{}),busy:[...pending.keys()].some(name=>name!=='activity'),error:'',notice:'',...(key==='activity'?{activityBusy:true}:{})});
     try {
       if(!await gate(stamp)||!same(stamp)||versions.get(key)!==version){if(same(stamp)&&versions.get(key)===version)emit(settle(key));return null;}
       const {data,error}=await client.rpc('fitamaster_'+name,{p_request_id:id(),...args});
@@ -135,12 +142,12 @@ export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now
       if(name==='player_activity'&&error?.code==='P0001'&&error.message==='Activity reset changed; refresh')throw new Error('FITAMASTER_ACTIVITY_TARGET_CHANGED');
       if(error){if(['42501','PGRST301','401','403'].includes(String(error.code))){invalidate('denied',publicError(error));return null;}throw error;}
       const result=options.parse?options.parse(data):data;
-      emit({[key]:result,...(options.write?{grantOutcome:'confirmed'}:{}),...settle(key)});return result;
-    }catch(error){if(same(stamp)&&versions.get(key)===version){const code=String(error?.code||'');const definitive=['P0001','22023','22003','23502','23503','23505','23514','40001','40P01','55P03','57014','PGRST202'].includes(code)||(!code&&[400,404,409,413,422,429].includes(error?.status));emit({...settle(key),[options.errorKey||'error']:options.write&&!definitive?'Delivery could not be confirmed. Check delivery status before trying again.':publicError(error),...(options.write?{grantOutcome:definitive?'rejected':'uncertain'}:{}),...(key==='itemHistory'&&error?.message==='FITAMASTER_HISTORY_TARGET_CHANGED'?{itemHistoryNeedsReload:true}:{}),...(key==='activity'&&error?.message==='FITAMASTER_ACTIVITY_TARGET_CHANGED'?{activityNeedsReload:true}:{})});}return null;}
+      emit({[key]:result,...(options.resultPatch?options.resultPatch(result):{}),...(options.write?{[options.outcomeKey||'grantOutcome']:'confirmed'}:{}),...settle(key)});return result;
+    }catch(error){if(same(stamp)&&versions.get(key)===version){const code=String(error?.code||'');const definitive=['P0001','22023','22003','23502','23503','23505','23514','40001','40P01','55P03','57014','PGRST202'].includes(code)||(!code&&[400,404,409,413,422,429].includes(error?.status));emit({...settle(key),[options.errorKey||'error']:options.write&&!definitive?(options.uncertainMessage||'Delivery could not be confirmed. Check delivery status before trying again.'):publicError(error),...(options.write?{[options.outcomeKey||'grantOutcome']:definitive?'rejected':'uncertain'}:{}),...(key==='itemHistory'&&error?.message==='FITAMASTER_HISTORY_TARGET_CHANGED'?{itemHistoryNeedsReload:true}:{}),...(key==='activity'&&error?.message==='FITAMASTER_ACTIVITY_TARGET_CHANGED'?{activityNeedsReload:true}:{})});}return null;}
   }
   async function authAction(action){const stamp=epoch;emit({busy:true,error:'',notice:''});try{const result=await action();if(!same(stamp))return;if(result?.error)throw result.error;emit({busy:false});return result?.data;}catch(error){if(same(stamp))emit({busy:false,error:publicError(error)});}}
   const api={get state(){return state;},subscribe(listener){listeners.add(listener);listener(state);return()=>listeners.delete(listener);},invalidate,refresh,
-    setError(message){emit({error:message,busy:false});},setView(view){epoch++;versions.clear();pending.clear();emit({view,error:'',notice:'',busy:false,players:null,player:null,reports:null,report:null,history:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,activity:null,activityError:'',activityPeriod:'weekly',activityOffset:0,activityBusy:false,activityNeedsReload:false,selectedPlayer:null,grantReceipt:null,grantCheck:null,grantOutcome:null});},
+    setError(message){emit({error:message,busy:false});},setView(view){epoch++;versions.clear();pending.clear();emit({view,error:'',notice:'',busy:false,players:null,player:null,reports:null,report:null,history:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,activity:null,activityError:'',activityPeriod:'weekly',activityOffset:0,activityBusy:false,activityNeedsReload:false,selectedPlayer:null,grantReceipt:null,grantCheck:null,grantOutcome:null,condition:null,conditionError:'',restReceipt:null,restCheck:null,restOutcome:null});},
     async login(email,password){const result=await authAction(()=>client.auth.signInWithPassword({email,password}));if(result)await refresh();},
     async emailLink(email,redirectTo){if(emailLinkInFlight)return;emailLinkInFlight=true;try{const result=await authAction(()=>client.auth.signInWithOtp({email,options:{shouldCreateUser:false,emailRedirectTo:redirectTo}}));if(result)emit({notice:'If this email can sign in, a link has been sent. Open the newest link from your email in any tab or browser, then complete authenticator verification.'});}finally{emailLinkInFlight=false;}},
     async enroll(){const stamp=epoch;await gate(stamp);
@@ -150,8 +157,8 @@ export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now
     },
     async verify(code){if(!/^\d{6}$/.test(code)){emit({error:'Enter the six-digit code from your authenticator.'});return;}const factorId=state.factorId;if(!factorId)return;const result=await authAction(()=>client.auth.mfa.challengeAndVerify({factorId,code}));if(result){emit({enrollment:null});await refresh();}},
     async signOut(){invalidate('signing-out');try{await client.auth.signOut({scope:'local'});}catch{}finally{invalidate('login');}},
-    players({query=state.query,after=null}={}){if(typeof query!=='string'||query.length>80||/[\x00-\x1f\x7f]/.test(query))throw new Error('Use a player search of 80 characters or fewer, without control characters.');cancel(['player','reports','report','grantReceipt','grantCheck','itemHistory','activity']);return request('players',{p_query:query,p_after:after,p_limit:25},'players',{query,view:'players',player:null,report:null,reports:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,activity:null,activityError:'',activityPeriod:'weekly',activityOffset:0,activityBusy:false,activityNeedsReload:false,selectedPlayer:null,grantReceipt:null,grantCheck:null,grantOutcome:null});},
-    player(playerId){cancel(['players','reports','report','grantReceipt','grantCheck','itemHistory','activity']);return request('player',{p_player_id:playerId},'player',{selectedPlayer:playerId,report:null,reports:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,activity:null,activityError:'',activityPeriod:'weekly',activityOffset:0,activityBusy:false,activityNeedsReload:false,grantReceipt:null,grantCheck:null,grantOutcome:null});},
+    players({query=state.query,after=null}={}){if(typeof query!=='string'||query.length>80||/[\x00-\x1f\x7f]/.test(query))throw new Error('Use a player search of 80 characters or fewer, without control characters.');cancel(['player','reports','report','grantReceipt','grantCheck','condition','restReceipt','restCheck','itemHistory','activity']);return request('players',{p_query:query,p_after:after,p_limit:25},'players',{query,view:'players',player:null,report:null,reports:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,activity:null,activityError:'',activityPeriod:'weekly',activityOffset:0,activityBusy:false,activityNeedsReload:false,selectedPlayer:null,grantReceipt:null,grantCheck:null,grantOutcome:null,condition:null,conditionError:'',restReceipt:null,restCheck:null,restOutcome:null});},
+    player(playerId){cancel(['players','reports','report','grantReceipt','grantCheck','condition','restReceipt','restCheck','itemHistory','activity']);return request('player',{p_player_id:playerId},'player',{selectedPlayer:playerId,report:null,reports:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,activity:null,activityError:'',activityPeriod:'weekly',activityOffset:0,activityBusy:false,activityNeedsReload:false,grantReceipt:null,grantCheck:null,grantOutcome:null,condition:null,conditionError:'',restReceipt:null,restCheck:null,restOutcome:null});},
     playerActivity({playerId=state.selectedPlayer,period=state.activityPeriod,offset=state.activityOffset}={}){
       const intent=validateActivityRequest({playerId,period,offset}),generation=state.player?.generation;
       if(state.phase!=='ready'||state.activityNeedsReload||state.selectedPlayer!==intent.playerId||state.player?.profile?.id!==intent.playerId||!Number.isSafeInteger(generation)||generation<0)throw new Error('Player details changed. Reload their details before viewing activity.');
@@ -173,18 +180,43 @@ export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now
     },
     reports({playerId=null,after=null}={}){return request('reports',{p_player_id:playerId,p_after:after,p_limit:25},'reports');},
     report(reportId){return request('report',{p_report_id:reportId},'report');},
-    history({after=null}={}){return request('history',{p_after:after,p_limit:25},'history',{view:'history'});},
+    history({after=null}={}){return request('history',{p_after:after,p_limit:25},'history',{view:'history'},{parse:value=>{
+      if(!Array.isArray(value?.events))throw new Error('Admin history could not be verified. Refresh history.');
+      return {...value,events:value.events.map(event=>{
+        if(event.action!=='end_dungeon_rest'&&event.restEnd==null)return event;
+        const restEnd=parseRestReceipt(event.restEnd);
+        if(event.action!=='end_dungeon_rest'||event.playerId!=null&&event.playerId!==restEnd.playerId||event.requestId!==restEnd.requestId)throw new Error('Admin rest history could not be verified. Refresh history.');
+        return {...event,restEnd};
+      })};
+    }});},
+    petCondition(){
+      const playerId=state.selectedPlayer,generation=state.player?.generation;
+      if(state.phase!=='ready'||state.player?.profile?.id!==playerId||!Number.isSafeInteger(generation)||generation<0)throw new Error('Reload player details before viewing condition.');
+      return request('pet_condition',{p_player_id:playerId},'condition',{}, {parse:value=>parsePetCondition(value,{playerId,generation}),errorKey:'conditionError'});
+    },
+    endDungeonRest(input){
+      const intent=validateEndRest(input);
+      if(state.phase!=='ready'||state.selectedPlayer!==intent.playerId||state.player?.profile?.id!==intent.playerId||state.player?.generation!==intent.generation)throw new Error('Player details changed. Reload and review dungeon rest again.');
+      if(pending.has('restReceipt')||pending.has('restCheck')||pending.has('grantReceipt')||pending.has('grantCheck')||state.grantOutcome==='uncertain')return Promise.resolve(null);
+      return request('end_dungeon_rest',{p_request_id:intent.requestId,p_player_id:intent.playerId,p_generation:intent.generation,p_source_battle_id:intent.sourceBattleId,p_rested_at:intent.restedAt,p_rest_until:intent.restUntil,p_reason:intent.reason},'restReceipt',{}, {write:true,outcomeKey:'restOutcome',uncertainMessage:'Rest clearance could not be confirmed. Check clearance status before trying again.',parse:value=>parseRestResult(value,intent)});
+    },
+    restEndStatus(input){
+      const intent=validateEndRest(input);
+      if(state.phase!=='ready'||state.selectedPlayer!==intent.playerId||state.player?.profile?.id!==intent.playerId||state.player?.generation!==intent.generation)throw new Error('Player details changed. Reload and review dungeon rest again.');
+      if(pending.has('restReceipt')||pending.has('restCheck')||pending.has('grantReceipt')||pending.has('grantCheck')||state.grantOutcome==='uncertain')return Promise.resolve(null);
+      return request('rest_end_status',{p_end_request_id:intent.requestId},'restCheck',{}, {parse:value=>({receipt:value===null?null:parseRestReceipt(value,intent)}),resultPatch:result=>result.receipt?{restOutcome:'confirmed'}:{}});
+    },
     grantItem(input){
       const intent=validateItemGrant(input);
       if(state.phase!=='ready'||state.selectedPlayer!==intent.playerId||state.player?.profile?.id!==intent.playerId||state.player?.generation!==intent.generation)throw new Error('Player details changed. Reload and review this item again.');
-      if(pending.has('grantReceipt')||pending.has('grantCheck'))return Promise.resolve(null);
+      if(pending.has('grantReceipt')||pending.has('grantCheck')||pending.has('restReceipt')||pending.has('restCheck')||state.restOutcome==='uncertain')return Promise.resolve(null);
       return request('grant_item',{p_request_id:intent.requestId,p_player_id:intent.playerId,p_generation:intent.generation,p_item_id:intent.itemId,p_quantity:intent.quantity,p_reason:intent.reason},'grantReceipt',{}, {write:true,parse:value=>grantReceipt(value,intent)});
     },
     grantStatus(input){
       const intent=validateItemGrant(input);
       if(state.phase!=='ready'||state.selectedPlayer!==intent.playerId||state.player?.profile?.id!==intent.playerId||state.player?.generation!==intent.generation)throw new Error('Player details changed. Reload and review this item again.');
-      if(pending.has('grantReceipt')||pending.has('grantCheck'))return Promise.resolve(null);
-      return request('grant_status',{p_grant_request_id:intent.requestId},'grantCheck',{}, {parse:value=>({receipt:value===null?null:grantReceipt(value,intent)})});
+      if(pending.has('grantReceipt')||pending.has('grantCheck')||pending.has('restReceipt')||pending.has('restCheck')||state.restOutcome==='uncertain')return Promise.resolve(null);
+      return request('grant_status',{p_grant_request_id:intent.requestId},'grantCheck',{}, {parse:value=>({receipt:value===null?null:grantReceipt(value,intent)}),resultPatch:result=>result.receipt?{grantOutcome:'confirmed'}:{}});
     },
     async importReport({playerId,title,body,capturedAt=null,build=null,requestId=id()}){
       if(!UUID.test(playerId))throw new Error('Enter the target player UUID.');

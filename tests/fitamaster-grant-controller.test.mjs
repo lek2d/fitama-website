@@ -48,3 +48,6 @@ test('server rejection allows editing and generation changes invalidate old conf
   const f=fixture(),c=f.controller;f.portal.grantItem=async()=>{f.portal.state.grantOutcome='rejected';return null;};c.actions.review(draft);await c.actions.confirm();assert.equal(c.state.uncertain,false);c.actions.edit();assert.equal(c.state.review,null);c.actions.review(draft);
   f.portal.state.player.generation++;c.sync(f.portal.state);await c.actions.confirm();assert.equal(c.state.review,null);
 });
+test('an unresolved competing rest clearance blocks a new grant review and confirmation',async()=>{
+ const f=fixture();let blocked=true;const c=createItemGrantController(f.portal,{id:()=>requestId,isBlocked:()=>blocked});c.sync(f.portal.state);c.actions.review(draft);assert.equal(c.state.review,null);blocked=false;c.actions.review(draft);assert.ok(c.state.review);blocked=true;await c.actions.confirm();assert.equal(f.calls.length,0);
+});
