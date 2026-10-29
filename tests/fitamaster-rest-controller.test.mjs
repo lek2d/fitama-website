@@ -39,3 +39,10 @@ test('confirmed receipt survives refresh failure and same-target reload',async()
 test('a cooldown that expires after review is not sent for clearance',async()=>{
  let clock=Date.parse('2026-10-29T09:00:00Z');const f=fixture({now:()=>clock}),c=f.controller;c.actions.review({reason:'Support case #12'});assert.ok(c.state.review);clock=Date.parse('2026-10-29T12:00:00Z');await c.actions.confirm();assert.equal(f.calls.some(([name])=>name==='end'),false);assert.equal(c.state.review,null);
 });
+test('a confirmed receipt persists until an explicit reset for a different current rest',async()=>{
+ const f=fixture(),c=f.controller;c.actions.review({reason:'Support case #12'});await c.actions.confirm();assert.equal(c.state.result.requestId,requestId);
+ c.actions.edit();assert.equal(c.state.result.requestId,requestId,'the same stale rest cannot restart review');
+ f.portal.state.condition={...condition(),observedAt:'2026-10-29T09:02:00Z',dungeonRest:{...condition().dungeonRest,sourceBattleId:'44444444-4444-4444-8444-444444444444'}};c.sync(f.portal.state);assert.equal(c.state.result.requestId,requestId);assert.equal(c.state.review,null);assert.equal(f.calls.filter(([name])=>name==='end').length,1);
+ c.actions.edit();assert.equal(c.state.result,null);assert.deepEqual(c.state.draft,{reason:''});assert.equal(c.state.review,null);assert.equal(f.calls.filter(([name])=>name==='end').length,1);
+ c.actions.review({reason:'New support case'});assert.equal(c.state.review.sourceBattleId,'44444444-4444-4444-8444-444444444444');assert.equal(f.calls.filter(([name])=>name==='end').length,1);
+});

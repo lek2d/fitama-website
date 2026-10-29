@@ -1,4 +1,4 @@
-import {validateEndRest,sameRest} from './condition.mjs';
+import {validateEndRest,sameRest,hasNewRest} from './condition.mjs';
 const blank=()=>({open:false,draft:{reason:''},review:null,result:null,uncertain:false,statusChecked:false,busy:false});
 /** The nonce and source tuple survive every redraw until their outcome is known. */
 export function createRestController(portal,{id=()=>crypto.randomUUID(),now=()=>Date.now(),onChange=()=>{},onConfirmed=async()=>{},isBlocked=()=>false}={}){
@@ -25,7 +25,7 @@ export function createRestController(portal,{id=()=>crypto.randomUUID(),now=()=>
     state={...state,open:true,draft:{reason:parsed.reason},review:Object.freeze({...parsed,username:profile.username,friendCode:profile.friendCode,timeZone:rest.timeZone,hearts:portal.state.condition.health.hearts}),statusChecked:false};draw(true);
    }catch(error){portal.setError(error.message);}
   },
-  edit(){if(locked()||state.uncertain)return;state=state.result?{...blank(),open:true}:{...state,review:null,statusChecked:false};draw(true);},
+  edit(){if(locked()||state.uncertain||state.result&&(!currentRest()||!hasNewRest(portal.state.condition,state.result,now())))return;state=state.result?{...blank(),open:true}:{...state,review:null,statusChecked:false};draw(true);},
   async confirm(){
    if(locked()||!state.review||state.result||!validTarget()||state.uncertain&&!state.statusChecked)return;
    // Exact retries remain valid even if the projection has since changed: the server returns the immutable receipt.

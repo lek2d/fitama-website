@@ -1,4 +1,4 @@
-import {sameRest} from './condition.mjs';
+import {sameRest,hasNewRest} from './condition.mjs';
 const reasonLabels={egg:'Eggs do not have dungeon rest to end.',care_unavailable:'Care is unavailable or stale. Ask the player to open and sync Fitama.',not_resting:'There is no current dungeon cooldown to end.',active_dungeon:'This player has an active or unresolved dungeon.',source_changed:'The rest source changed. Refresh condition and review again.'};
 const time=value=>value?new Date(value).toLocaleString(undefined,{dateStyle:'medium',timeStyle:'medium'})+' (local time)':'Not available';
 /** Presentation only. The controller owns intent, status recovery and all mutation guards. */
@@ -29,6 +29,7 @@ export function renderPetCondition(document,{player,data,busy=false,error='',res
    ['Before — previous rest until',time(receipt.previousRestUntil)],['After — cooldown from this battle','Ended'],['Ended at',time(receipt.endedAt)],
    ['Player UUID',receipt.playerId],['Source battle',receipt.sourceBattleId],['Reason',receipt.reason],['Rest timezone',receipt.timeZone],['Care revision',receipt.careRevision],['Receipt',receipt.requestId],
   ]),note('Saved in admin history. Ask the player to reopen or refresh Fitama online and wait for a successful sync. If rest still appears, refresh again or report the issue. This action applies to the server-recorded dungeon cooldown.'),note('This cleared only the recorded dungeon cooldown. Hearts, TP, items, daily entries and dungeon results were not changed.')));
+  if(player?.profile?.id===data?.playerId&&player?.generation===data?.generation&&hasNewRest(data,receipt,now))panel.append(h('div',{class:'actions rest-actions'},button('Review current rest',actions.edit)));
  }else if(review||rest.uncertain){
   panel.append(h('h3',{tabindex:-1},rest.uncertain?'Check rest clearance':'Review end dungeon rest'),facts([
    ['Player',review?.username],['Friend code',review?.friendCode],['Player UUID',review?.playerId],['Reset generation',review?.generation],['Source battle',review?.sourceBattleId],['Rest began',time(review?.restedAt)],['Before — rest until',time(review?.restUntil)],['Rest timezone',review?.timeZone],['Hearts',review?.hearts],['Reason',review?.reason],

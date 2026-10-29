@@ -62,3 +62,10 @@ export function parseRestResult(value,expected){
  return {receipt,condition};
 }
 export function sameRest(condition,intent){return condition?.playerId===intent?.playerId&&condition?.generation===intent?.generation&&condition?.dungeonRest?.sourceBattleId===intent?.sourceBattleId&&condition.dungeonRest.restedAt===intent.restedAt&&condition.dungeonRest.restUntil===intent.restUntil;}
+
+/** Offer a fresh review only after a different, currently verified rest replaces the receipted one. */
+export function hasNewRest(condition,receipt,now=Date.now()){
+ if(!condition?.endRest.allowed||condition.playerId!==receipt?.playerId||condition.generation!==receipt?.generation||Date.parse(condition.dungeonRest?.restUntil)<=now)return false;
+ const rest=condition.dungeonRest;
+ try{return instantMicros(condition.observedAt)>=instantMicros(receipt.endedAt)&&(rest.sourceBattleId!==receipt.sourceBattleId||instantMicros(rest.restedAt)!==instantMicros(receipt.restedAt)||instantMicros(rest.restUntil)!==instantMicros(receipt.previousRestUntil));}catch{return false;}
+}

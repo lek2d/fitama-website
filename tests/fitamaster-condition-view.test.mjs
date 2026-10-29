@@ -25,3 +25,12 @@ test('portal places Pet condition directly after the saved card and shows valida
  assert.match(root.textContent,/Fitama Card.*Pet condition.*Activity/s);
  renderPortal(document,root,{phase:'ready',view:'history',history:{events:[{id:playerId,action:'end_dungeon_rest',restEnd:receipt()}]}},{},{});assert.match(root.textContent,/Previous rest until/);assert.match(root.textContent,/Ended at/);assert.match(root.textContent,/Support case #12/);
 });
+test('receipt offers explicit review only for a verified different eligible unexpired cooldown',()=>{
+ let edits=0;const prior=receipt();let root=render({rest:{result:prior}}, {edit:()=>edits++});assert.equal(button(root,'Review current rest'),undefined);
+ const next={...condition(),observedAt:'2026-10-29T09:02:00Z',dungeonRest:{...condition().dungeonRest,sourceBattleId:'44444444-4444-4444-8444-444444444444'}};
+ root=render({data:next,rest:{result:prior}}, {edit:()=>edits++});assert.match(root.textContent,/Dungeon rest ended/);assert.equal(edits,0);click(button(root,'Review current rest'));assert.equal(edits,1);
+ const equivalent={...condition(),dungeonRest:{...condition().dungeonRest,restedAt:'2026-10-29T16:00:00.000000+08:00',restUntil:'2026-10-29T20:00:00.000000+08:00'}};
+ for(const props of [{data:{...next,observedAt:'2026-10-29T09:00:00Z'}},{data:equivalent},{data:null},{data:{...next,endRest:{allowed:false,blockedReason:'active_dungeon'}}},{data:next,now:Date.parse('2026-10-29T12:00:00Z')},{data:{...next,generation:3}},{data:next,player:null}]){
+  root=render({...props,rest:{result:prior}}, {edit:()=>edits++});assert.equal(button(root,'Review current rest'),undefined);assert.match(root.textContent,/Dungeon rest ended/);
+ }
+});
