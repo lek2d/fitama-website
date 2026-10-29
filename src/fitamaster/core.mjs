@@ -183,6 +183,11 @@ export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now
     history({after=null}={}){return request('history',{p_after:after,p_limit:25},'history',{view:'history'},{parse:value=>{
       if(!Array.isArray(value?.events))throw new Error('Admin history could not be verified. Refresh history.');
       return {...value,events:value.events.map(event=>{
+        if(event.restEndRestricted!==undefined&&typeof event.restEndRestricted!=='boolean')throw new Error('Admin rest history could not be verified. Refresh history.');
+        if(event.restEndRestricted===true){
+          if(event.action!=='end_dungeon_rest'||event.restEnd!==null)throw new Error('Admin rest history could not be verified. Refresh history.');
+          return {...event,restEnd:null,restEndRestricted:true};
+        }
         if(event.action!=='end_dungeon_rest'&&event.restEnd==null)return event;
         const restEnd=parseRestReceipt(event.restEnd);
         if(event.action!=='end_dungeon_rest'||event.playerId!=null&&event.playerId!==restEnd.playerId||event.requestId!==restEnd.requestId)throw new Error('Admin rest history could not be verified. Refresh history.');

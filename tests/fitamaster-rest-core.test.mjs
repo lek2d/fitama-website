@@ -41,3 +41,14 @@ test('admin rest history validates full immutable receipt before displaying it',
 test('backend rest guard failures explain the actual refusal without implying another dungeon can be entered',async()=>{
  const f=await fixture();f.responder=async()=>({error:{code:'P0001',message:'FITAMASTER_REST_NOT_ALLOWED: active_dungeon'}});await f.portal.endDungeonRest(intent());assert.match(f.portal.state.error,/active or unresolved dungeon/i);
 });
+test('restricted prior-owner rest rows preserve global history while current-owner receipts remain validated',async()=>{
+ const f=await fixture();const restricted={id:7,action:'end_dungeon_rest',actorId:'44444444-4444-4444-8444-444444444444',playerId,requestId,restEnd:null,restEndRestricted:true};
+ const own={id:8,action:'end_dungeon_rest',playerId,requestId,restEnd:receipt(),restEndRestricted:false};
+ const other={id:9,action:'item_grant',playerId,requestId,itemGrant:{itemId:'treat',quantity:1,reason:'Existing grant'}};
+ const expected={observedAt:'2026-10-29T09:03:00Z',nextCursor:'7',events:[restricted,own,other]};f.responder=async()=>({data:expected});const result=await f.portal.history();assert.ok(result);assert.deepEqual(result,expected);
+ for(const event of [
+  {...restricted,restEnd:receipt()}, {...restricted,action:'player_read'}, {...restricted,restEnd:undefined}, {...restricted,restEndRestricted:'true'},
+  {...restricted,restEndRestricted:false}, {...restricted,restEndRestricted:undefined}, {...restricted,restEndRestricted:null},
+  {...own,restEnd:{...receipt(),reason:'Invalid\nreason'}}, {...own,restEnd:{...receipt(),careRevision:-1}},
+ ]){f.responder=async()=>({data:{...expected,events:[event]}});assert.equal(await f.portal.history(),null);assert.equal(f.portal.state.history,null);}
+});

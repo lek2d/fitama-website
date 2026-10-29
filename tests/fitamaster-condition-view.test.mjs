@@ -34,3 +34,11 @@ test('receipt offers explicit review only for a verified different eligible unex
   root=render({...props,rest:{result:prior}}, {edit:()=>edits++});assert.equal(button(root,'Review current rest'),undefined);assert.match(root.textContent,/Dungeon rest ended/);
  }
 });
+test('global history labels prior-owner rest details as restricted and keeps other rows visible',()=>{
+ const root=new Element('root');renderPortal(document,root,{phase:'ready',view:'history',history:{events:[
+  {id:7,action:'end_dungeon_rest',playerId,actorId:'44444444-4444-4444-8444-444444444444',restEnd:null,restEndRestricted:true},
+  {id:8,action:'end_dungeon_rest',playerId,restEnd:receipt(),restEndRestricted:false},
+  {id:9,action:'item_grant',playerId,itemGrant:{itemId:'treat',quantity:2,reason:'Earlier grant'}},
+ ]}},{},{});
+ const rows=nodes(root).filter(node=>node.tagName==='li');assert.equal(rows.length,3);assert.match(rows[0].textContent,/Clearance details are restricted to the issuing owner\./);assert.doesNotMatch(rows[0].textContent,/Support case #12|Previous rest until/);assert.match(rows[1].textContent,/Support case #12/);assert.match(rows[2].textContent,/Earlier grant/);
+});
