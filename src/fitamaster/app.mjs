@@ -14,7 +14,7 @@ export async function startPortal({window:browser=globalThis.window,document=bro
   if(!injectedClient){try{config=validateConfig(portalConfig);}catch{authStorage.clear();renderPortal(document,root,{phase:'config'},{},{});return;}}
   const client=injectedClient||createClient(config.url,config.key,{auth:{storage:authStorage,storageKey:AUTH_STORAGE_KEY,flowType:'implicit',persistSession:true,autoRefreshToken:true,detectSessionInUrl:false},global:{fetch:(url,options={})=>fetch(url,{...options,cache:'no-store',referrerPolicy:'no-referrer'})}});
   const portal=createPortal(client);const ui={pages:{players:[],reports:[],history:[],itemHistory:[]},cursors:{players:null,reports:null,history:null,itemHistory:null},importDraft:null,importOpen:false,emailLinkOpen:false,emailLinkEmail:''};let wasReady=false,expiryTimer,expiryVersion=0,activeIdentity=null,disposed=false,petRenderer=null,cardExpiryTimer;
-  let importIntent=null,historyPlayer=null,historyLoadVersion=0,historyReloadPeriod=null;const reviewIntents=new Map();
+  let importIntent=null,historyPlayer=null,historyLoadVersion=0,historyReloadPeriod=null,activityPlayer=null,activityLoadVersion=0;const reviewIntents=new Map();
   const run=async action=>{try{return await action();}catch(error){portal.setError(error.message||'The request could not be completed. Try again.');return null;}};
   const load=(kind,after=null)=>kind==='players'?portal.players({after}):kind==='reports'?portal.reports({after,playerId:portal.state.selectedPlayer}):portal.history({after});
   const resetPage=kind=>{ui.pages[kind]=[];ui.cursors[kind]=null;};
@@ -26,6 +26,15 @@ export async function startPortal({window:browser=globalThis.window,document=bro
   const loadItemHistory=({days=portal.state.itemHistoryDays||7,after=null}={})=>{
     const target=historyTarget();if(!target||portal.state.itemHistoryNeedsReload)return Promise.resolve(null);
     return run(()=>portal.playerItemHistory({...target,days,after,limit:25}));
+  };
+  const loadActivity=({period=portal.state.activityPeriod||'weekly',offset=portal.state.activityOffset||0}={})=>{
+    const target=historyTarget();if(!target||portal.state.activityNeedsReload)return Promise.resolve(null);
+    return run(()=>portal.playerActivity({playerId:target.playerId,period,offset}));
+  };
+  const activityAction=async(options,focus)=>{
+    const target=historyTarget();if(!target||portal.state.busy||portal.state.activityBusy||portal.state.activityNeedsReload)return;
+    await loadActivity(options);
+    if(historyTarget()?.playerId===target.playerId)root.querySelector?.('#'+focus)?.focus();
   };
   const reloadPlayer=async(id,days=7)=>{
     historyReloadPeriod={playerId:id,days};resetPage('itemHistory');
@@ -40,6 +49,11 @@ export async function startPortal({window:browser=globalThis.window,document=bro
   const leaveGrant=()=>{if(!grant.blocksNavigation)return true;portal.setError('Check this item delivery before leaving the player. Retry only the same addition if no delivery is found.');return false;};
   const actions={
     itemGrant:grant.actions,
+    activity:{
+      period(period){if(!['weekly','monthly'].includes(period)||period===portal.state.activityPeriod)return;return activityAction({period,offset:0},'activity-period');},
+      offset(offset){if(!Number.isInteger(offset)||offset<0||offset>5||offset===portal.state.activityOffset)return;return activityAction({offset},offset>portal.state.activityOffset?'activity-previous':'activity-next');},
+      refresh(){return activityAction({},'activity-refresh');}
+    },
     itemHistory:{
       period(days){if(![7,30].includes(days)||portal.state.busy||!historyTarget()||portal.state.itemHistoryNeedsReload||days===portal.state.itemHistoryDays)return;resetPage('itemHistory');return loadItemHistory({days});},
       refresh(){if(portal.state.busy||!historyTarget()||portal.state.itemHistoryNeedsReload)return;resetPage('itemHistory');return loadItemHistory();},
@@ -93,6 +107,11 @@ export async function startPortal({window:browser=globalThis.window,document=bro
       const days=historyReloadPeriod?.playerId===target.playerId?historyReloadPeriod.days:7;historyReloadPeriod=null;
       queueMicrotask(()=>{if(!disposed&&version===historyLoadVersion&&portal.state.player===p&&historyTarget())loadItemHistory({days});});
     }
+    if(!target){activityLoadVersion++;activityPlayer=null;}
+    else if(state.player!==activityPlayer){
+      activityPlayer=state.player;const version=++activityLoadVersion,p=state.player;
+      queueMicrotask(()=>{if(!disposed&&version===activityLoadVersion&&portal.state.player===p&&historyTarget())loadActivity({period:'weekly',offset:0});});
+    }
     renderCurrent(state);
     if(state.phase==='ready'&&!wasReady){wasReady=true;queueMicrotask(()=>run(()=>portal.players()));}else if(state.phase!=='ready')wasReady=false;
   });
@@ -130,6 +149,6 @@ export async function startPortal({window:browser=globalThis.window,document=bro
   browser.addEventListener('beforeunload',onBeforeUnload);
   browser.addEventListener('pagehide',onPageHide);
   browser.addEventListener('pageshow',onPageShow);
-  return {portal,client,dispose(){disposed=true;historyLoadVersion++;historyReloadPeriod=null;resetPage('itemHistory');grant.dispose();expiryVersion++;clearTimeout(expiryTimer);clearTimeout(cardExpiryTimer);petRenderer?.dispose();authSubscription?.data?.subscription?.unsubscribe();document.removeEventListener('visibilitychange',onVisibility);browser.removeEventListener('beforeunload',onBeforeUnload);browser.removeEventListener('pagehide',onPageHide);browser.removeEventListener('pageshow',onPageShow);}};
+  return {portal,client,dispose(){disposed=true;activityLoadVersion++;activityPlayer=null;historyLoadVersion++;historyReloadPeriod=null;resetPage('itemHistory');grant.dispose();expiryVersion++;clearTimeout(expiryTimer);clearTimeout(cardExpiryTimer);petRenderer?.dispose();authSubscription?.data?.subscription?.unsubscribe();document.removeEventListener('visibilitychange',onVisibility);browser.removeEventListener('beforeunload',onBeforeUnload);browser.removeEventListener('pagehide',onPageHide);browser.removeEventListener('pageshow',onPageShow);}};
 }
 if(typeof window!=='undefined')startPortal();

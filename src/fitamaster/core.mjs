@@ -1,5 +1,6 @@
 import {GRANTABLE_ITEMS} from './grant-catalog.mjs';
 import {validateItemHistoryRequest,parseItemHistory} from './item-history.mjs';
+import {validateActivityRequest,parsePlayerActivity} from './activity.mjs';
 export const SUPABASE_ORIGIN='https://ormclcexntojipbyrlnh.supabase.co';
 export const AUTH_STORAGE_KEY='fitamaster-auth';
 const UUID=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -36,6 +37,9 @@ export function clearAuthForPhase(storage,phase){
 }
 export function publicError(error) {
   const code=String(error?.code||''); const message=String(error?.message||'');
+  if(code==='FITAMASTER_ACTIVITY_INVALID_RESPONSE')return 'Activity and TP could not be verified. Refresh activity to try again.';
+  if(message==='FITAMASTER_ACTIVITY_TARGET_CHANGED')return 'This player’s progress changed. Reload their details.';
+  if(message==='FITAMASTER_ACTIVITY_INVALID_ARGUMENT')return 'Choose a calendar week or month and one of the six available periods.';
   if(code==='FITAMASTER_HISTORY_INVALID_RESPONSE')return 'Item history could not be verified. Refresh history to try again.';
   if(message==='FITAMASTER_HISTORY_INVALID_CURSOR')return 'The history page expired or changed. Refresh history.';
   if(message==='FITAMASTER_HISTORY_TARGET_CHANGED')return 'This player’s progress changed. Reload their details.';
@@ -78,14 +82,14 @@ function grantReceipt(value,intent){
   for(const key of ['requestId','playerId','generation','itemId','quantity','reason'])if(value[key]!==intent[key])throw new Error('Grant outcome could not be confirmed.');
   return{...intent,grantedAt:value.grantedAt};
 }
-const empty=()=>({players:null,player:null,reports:null,report:null,history:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,selectedPlayer:null,enrollment:null,factorId:null,error:'',notice:'',busy:false,view:'players',query:'',grantReceipt:null,grantCheck:null,grantOutcome:null});
+const empty=()=>({players:null,player:null,reports:null,report:null,history:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,activity:null,activityError:'',activityPeriod:'weekly',activityOffset:0,activityBusy:false,activityNeedsReload:false,selectedPlayer:null,enrollment:null,factorId:null,error:'',notice:'',busy:false,view:'players',query:'',grantReceipt:null,grantCheck:null,grantOutcome:null});
 // Every view lives only in memory. Epochs prevent late network responses from restoring erased content.
 export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now()}={}) {
   let state={...empty(),phase:'loading'};let epoch=0,currentIdentity=null,emailLinkInFlight=false;const versions=new Map();const pending=new Map();const listeners=new Set();
   const emit=patch=>{state={...state,...patch};for(const listener of listeners)listener(state);};
   const invalidate=(phase='login',error='')=>{epoch++;versions.clear();pending.clear();if(['login','denied','signing-out'].includes(phase))currentIdentity=null;emit({...empty(),phase,error});};
   const cancel=keys=>{for(const key of keys){versions.set(key,(versions.get(key)||0)+1);pending.delete(key);}};
-  const settle=key=>{pending.delete(key);return {busy:pending.size>0};};
+  const settle=key=>{pending.delete(key);return {busy:[...pending.keys()].some(name=>name!=='activity'),...(key==='activity'?{activityBusy:false}:{})};};
   const same=stamp=>stamp===epoch;
   const authoritativeDenial=error=>['42501','PGRST301','401','403','session_not_found','user_not_found','refresh_token_not_found','invalid_token'].includes(String(error?.code))||[401,403].includes(error?.status);
   function verificationFailure(error){invalidate(authoritativeDenial(error)?'denied':'verification-error',authoritativeDenial(error)?'Your access is no longer available. Sign in again.':publicError(error));}
@@ -113,7 +117,7 @@ export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now
       const factor=factors?.totp?.find(f=>f.status==='verified');
       // Do not create a factor until the owner explicitly starts enrollment.
       const phase=factor?'challenge':'enroll';
-      if(state.phase!==phase||['players','player','reports','report','history','itemHistory'].some(key=>state[key]!==null))invalidate(phase);
+      if(state.phase!==phase||['players','player','reports','report','history','itemHistory','activity'].some(key=>state[key]!==null))invalidate(phase);
       emit({phase,factorId:factor?.id||state.enrollment?.id||null,busy:false});return false;
     }
     if(state.phase!=='ready')emit({phase:'ready',error:''});return true;
@@ -123,7 +127,7 @@ export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now
   async function request(name,args,key,patch={},options={}) {
     const stamp=epoch;const version=(versions.get(key)||0)+1;versions.set(key,version);
     pending.set(key,version);
-    emit({...patch,[key]:null,...(options.errorKey?{[options.errorKey]:''}:{}),...(options.write?{grantOutcome:null}:{}),busy:true,error:'',notice:''});
+    emit({...patch,[key]:null,...(options.errorKey?{[options.errorKey]:''}:{}),...(options.write?{grantOutcome:null}:{}),busy:[...pending.keys()].some(name=>name!=='activity'),error:'',notice:'',...(key==='activity'?{activityBusy:true}:{})});
     try {
       if(!await gate(stamp)||!same(stamp)||versions.get(key)!==version){if(same(stamp)&&versions.get(key)===version)emit(settle(key));return null;}
       const {data,error}=await client.rpc('fitamaster_'+name,{p_request_id:id(),...args});
@@ -131,11 +135,11 @@ export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now
       if(error){if(['42501','PGRST301','401','403'].includes(String(error.code))){invalidate('denied',publicError(error));return null;}throw error;}
       const result=options.parse?options.parse(data):data;
       emit({[key]:result,...(options.write?{grantOutcome:'confirmed'}:{}),...settle(key)});return result;
-    }catch(error){if(same(stamp)&&versions.get(key)===version){const code=String(error?.code||'');const definitive=['P0001','22023','22003','23502','23503','23505','23514','40001','40P01','55P03','57014','PGRST202'].includes(code)||(!code&&[400,404,409,413,422,429].includes(error?.status));emit({...settle(key),[options.errorKey||'error']:options.write&&!definitive?'Delivery could not be confirmed. Check delivery status before trying again.':publicError(error),...(options.write?{grantOutcome:definitive?'rejected':'uncertain'}:{}),...(key==='itemHistory'&&error?.message==='FITAMASTER_HISTORY_TARGET_CHANGED'?{itemHistoryNeedsReload:true}:{})});}return null;}
+    }catch(error){if(same(stamp)&&versions.get(key)===version){const code=String(error?.code||'');const definitive=['P0001','22023','22003','23502','23503','23505','23514','40001','40P01','55P03','57014','PGRST202'].includes(code)||(!code&&[400,404,409,413,422,429].includes(error?.status));emit({...settle(key),[options.errorKey||'error']:options.write&&!definitive?'Delivery could not be confirmed. Check delivery status before trying again.':publicError(error),...(options.write?{grantOutcome:definitive?'rejected':'uncertain'}:{}),...(key==='itemHistory'&&error?.message==='FITAMASTER_HISTORY_TARGET_CHANGED'?{itemHistoryNeedsReload:true}:{}),...(key==='activity'&&error?.message==='FITAMASTER_ACTIVITY_TARGET_CHANGED'?{activityNeedsReload:true}:{})});}return null;}
   }
   async function authAction(action){const stamp=epoch;emit({busy:true,error:'',notice:''});try{const result=await action();if(!same(stamp))return;if(result?.error)throw result.error;emit({busy:false});return result?.data;}catch(error){if(same(stamp))emit({busy:false,error:publicError(error)});}}
   const api={get state(){return state;},subscribe(listener){listeners.add(listener);listener(state);return()=>listeners.delete(listener);},invalidate,refresh,
-    setError(message){emit({error:message,busy:false});},setView(view){epoch++;versions.clear();pending.clear();emit({view,error:'',notice:'',busy:false,players:null,player:null,reports:null,report:null,history:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,selectedPlayer:null,grantReceipt:null,grantCheck:null,grantOutcome:null});},
+    setError(message){emit({error:message,busy:false});},setView(view){epoch++;versions.clear();pending.clear();emit({view,error:'',notice:'',busy:false,players:null,player:null,reports:null,report:null,history:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,activity:null,activityError:'',activityPeriod:'weekly',activityOffset:0,activityBusy:false,activityNeedsReload:false,selectedPlayer:null,grantReceipt:null,grantCheck:null,grantOutcome:null});},
     async login(email,password){const result=await authAction(()=>client.auth.signInWithPassword({email,password}));if(result)await refresh();},
     async emailLink(email,redirectTo){if(emailLinkInFlight)return;emailLinkInFlight=true;try{const result=await authAction(()=>client.auth.signInWithOtp({email,options:{shouldCreateUser:false,emailRedirectTo:redirectTo}}));if(result)emit({notice:'If this email can sign in, a link has been sent. Open the newest link from your email in any tab or browser, then complete authenticator verification.'});}finally{emailLinkInFlight=false;}},
     async enroll(){const stamp=epoch;await gate(stamp);
@@ -145,8 +149,17 @@ export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now
     },
     async verify(code){if(!/^\d{6}$/.test(code)){emit({error:'Enter the six-digit code from your authenticator.'});return;}const factorId=state.factorId;if(!factorId)return;const result=await authAction(()=>client.auth.mfa.challengeAndVerify({factorId,code}));if(result){emit({enrollment:null});await refresh();}},
     async signOut(){invalidate('signing-out');try{await client.auth.signOut({scope:'local'});}catch{}finally{invalidate('login');}},
-    players({query=state.query,after=null}={}){if(typeof query!=='string'||query.length>80||/[\x00-\x1f\x7f]/.test(query))throw new Error('Use a player search of 80 characters or fewer, without control characters.');cancel(['player','reports','report','grantReceipt','grantCheck','itemHistory']);return request('players',{p_query:query,p_after:after,p_limit:25},'players',{query,view:'players',player:null,report:null,reports:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,selectedPlayer:null,grantReceipt:null,grantCheck:null,grantOutcome:null});},
-    player(playerId){cancel(['players','reports','report','grantReceipt','grantCheck','itemHistory']);return request('player',{p_player_id:playerId},'player',{selectedPlayer:playerId,report:null,reports:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,grantReceipt:null,grantCheck:null,grantOutcome:null});},
+    players({query=state.query,after=null}={}){if(typeof query!=='string'||query.length>80||/[\x00-\x1f\x7f]/.test(query))throw new Error('Use a player search of 80 characters or fewer, without control characters.');cancel(['player','reports','report','grantReceipt','grantCheck','itemHistory','activity']);return request('players',{p_query:query,p_after:after,p_limit:25},'players',{query,view:'players',player:null,report:null,reports:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,activity:null,activityError:'',activityPeriod:'weekly',activityOffset:0,activityBusy:false,activityNeedsReload:false,selectedPlayer:null,grantReceipt:null,grantCheck:null,grantOutcome:null});},
+    player(playerId){cancel(['players','reports','report','grantReceipt','grantCheck','itemHistory','activity']);return request('player',{p_player_id:playerId},'player',{selectedPlayer:playerId,report:null,reports:null,itemHistory:null,itemHistoryError:'',itemHistoryDays:7,itemHistoryNeedsReload:false,activity:null,activityError:'',activityPeriod:'weekly',activityOffset:0,activityBusy:false,activityNeedsReload:false,grantReceipt:null,grantCheck:null,grantOutcome:null});},
+    playerActivity({playerId=state.selectedPlayer,period=state.activityPeriod,offset=state.activityOffset}={}){
+      const intent=validateActivityRequest({playerId,period,offset}),generation=state.player?.generation;
+      if(state.phase!=='ready'||state.activityNeedsReload||state.selectedPlayer!==intent.playerId||state.player?.profile?.id!==intent.playerId||!Number.isSafeInteger(generation)||generation<0)throw new Error('Player details changed. Reload their details before viewing activity.');
+      return request('player_activity',{p_player_id:intent.playerId,p_period:intent.period,p_offset:intent.offset},'activity',{activityPeriod:intent.period,activityOffset:intent.offset},{parse:value=>{
+        const result=parsePlayerActivity(value,intent);
+        if(result.generation!==generation)throw new Error('FITAMASTER_ACTIVITY_TARGET_CHANGED');
+        return result;
+      },errorKey:'activityError'});
+    },
     playerItemHistory({playerId=state.selectedPlayer,generation=state.player?.generation,days=state.itemHistoryDays,after=null,limit=25}={}){
       const intent=validateItemHistoryRequest({playerId,generation,days,after,limit});
       if(state.phase!=='ready'||state.itemHistoryNeedsReload||state.selectedPlayer!==intent.playerId||state.player?.profile?.id!==intent.playerId||state.player?.generation!==intent.generation)throw new Error('Player details changed. Reload their details before viewing item history.');
@@ -155,7 +168,7 @@ export function createPortal(client,{id=()=>crypto.randomUUID(),now=()=>Date.now
     restorePlayerItemHistory(data){
       const intent=validateItemHistoryRequest({playerId:state.selectedPlayer,generation:state.player?.generation,days:state.itemHistoryDays,after:null,limit:25});
       if(state.phase!=='ready'||state.itemHistoryNeedsReload||state.player?.profile?.id!==intent.playerId)throw new Error('Reload player details before viewing cached history.');
-      const result=parseItemHistory(data,intent);cancel(['itemHistory']);emit({itemHistory:result,itemHistoryError:'',busy:pending.size>0});return result;
+      const result=parseItemHistory(data,intent);cancel(['itemHistory']);emit({itemHistory:result,itemHistoryError:'',busy:[...pending.keys()].some(name=>name!=='activity')});return result;
     },
     reports({playerId=null,after=null}={}){return request('reports',{p_player_id:playerId,p_after:after,p_limit:25},'reports');},
     report(reportId){return request('report',{p_report_id:reportId},'report');},
