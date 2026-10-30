@@ -1,5 +1,9 @@
 # FiTama website
 
+## October 30, 2026 — single-pose Home screenshot correction
+
+The refreshed Home screenshot captured Blukie during the live Rive/saved-image handoff, baking a faint second head and horn outline into the image. The previous readiness check proved only that a canvas had painted. Recaptured the same sample Home screen after the live pet reached opacity 1 and its persistent fallback reached opacity 0; the saved proof confirms one ready pet canvas and a fully hidden fallback. The six responsive AVIF/WebP files use a new `screens-2026-10-30-home-fixed` path so old cached images cannot persist. Both Home placements and the source mirror are updated. No scroll choreography or app renderer change was needed. The capture helper now checks the completed handoff before future screenshots.
+
 ## October 30, 2026 — latest app screenshots and Tama-Guide
 
 Reconciled Journey and Tama-Guide against `lek2d/Fitama` main at `9b785bc6ff4868a5a43be15a358ce98d85973e52`, rechecked against GitHub immediately before publication. The guide now has 43 topics, including First Steps and Socials, current item names/art, shop prices, quest rewards, XP thresholds, inventory behavior and dungeon rules. Three-attack daily rules are described conditionally for runs showing three attack markers; earlier run cards remain authoritative. Power Bottle comes from claiming Solo Debut and stored TP becomes available after the next daily reset. Public earning copy describes workouts and movement without a TP conversion formula.

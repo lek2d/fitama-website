@@ -1,0 +1,21 @@
+{
+  "sourceCommit": "9b785bc6ff4868a5a43be15a358ce98d85973e52",
+  "capturedAt": "2026-10-30T10:07:04.457Z",
+  "viewport": [
+    390,
+    844
+  ],
+  "deviceScaleFactor": 4,
+  "petCanvases": [
+    {
+      "ready": "true",
+      "effectiveOpacity": 1
+    }
+  ],
+  "fallbacks": [
+    {
+      "effectiveOpacity": 0
+    }
+  ],
+  "blocked": []
+}

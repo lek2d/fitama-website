@@ -23,6 +23,15 @@ assert.ok(out,'Set CAPTURE_OUT to an existing evidence directory with raw/');
   }
   async function capture(name){
    await ready();
+   // Pixel initialization precedes the pet's live-to-still handoff. A snapshot
+   // must wait for exactly one fully visible pose, not just a painted canvas.
+   await page.waitForFunction(()=>[...document.querySelectorAll('canvas[data-pet-artboard]')]
+    .filter(c=>c.checkVisibility({checkOpacity:true,checkVisibilityCSS:true}))
+    .every(c=>{
+     const live=c.parentElement, still=live.nextElementSibling;
+     return c.dataset.petReady==='true' && Number(getComputedStyle(live).opacity)===1
+      && still && Number(getComputedStyle(still).opacity)===0;
+    }),null,{timeout:45000});
    const data=await page.evaluate(()=>({viewport:[innerWidth,innerHeight],dpr:devicePixelRatio,sampleAppearance:JSON.parse(localStorage.getItem('fitama.blukie-rive-preview.v1')||'null'),capturedAt:new Date().toISOString(),text:document.body.innerText,root:document.querySelector('#root').getBoundingClientRect().toJSON(),images:[...document.images].filter(i=>{const r=i.getBoundingClientRect();return r.width&&r.height&&r.bottom>0&&r.top<innerHeight}).map(i=>({src:i.currentSrc,w:i.naturalWidth,h:i.naturalHeight,complete:i.complete})),canvases:[...document.querySelectorAll('canvas')].map(c=>({w:c.width,h:c.height,rect:c.getBoundingClientRect().toJSON()}))}));
    assert.deepEqual(data.viewport,[390,844]);assert.equal(data.dpr,4);assert.ok(data.images.every(i=>i.complete&&i.w));
    const file=path.join(out,'raw',name+'.png');

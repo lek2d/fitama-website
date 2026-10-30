@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-30",
+  "sourceCommit": "9b785bc6ff4868a5a43be15a358ce98d85973e52",
+  "capture": "Actual latest app UI with isolated sample state. PNG1560x3376 captured at390x844, deviceScaleFactor4; no upscaling/redraw. Home capture waits for the live pet opacity1 and persistent fallback opacity0, removing the earlier mid-handoff double pose.",
+  "encoder": {
+    "Pillow": "12.3.0",
+    "libavif": "1.4.2",
+    "avifQuality": 94,
+    "avifChroma": "4:4:4",
+    "webp": "lossless"
+  },
+  "screens": [
+    {
+      "name": "home",
+      "sourceSha256": "e482480fd87e285b88897a751ae4dab4ef94bbc3a3850b01285e9ac67d396963",
+      "variants": [
+        {
+          "file": "home.2x.webp",
+          "width": 780,
+          "height": 1688,
+          "bytes": 421378,
+          "sha256": "f531c05d74fe78b705c783b438af689abff96bfdd9d8bb134279fe9db2e7f26a",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "home.2x.avif",
+          "width": 780,
+          "height": 1688,
+          "bytes": 160043,
+          "sha256": "e0b3e42b634d683b73268545e7ebba4993a97c964380effe727ccd85c146ba0e",
+          "psnrDb": 46.287,
+          "pixelIdentical": false
+        },
+        {
+          "file": "home.3x.webp",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 810982,
+          "sha256": "614754f4b2adfb75c99716da79f2e67bc4762bc39e5d4076ebd4a97f5053b291",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "home.3x.avif",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 278452,
+          "sha256": "8bbaaf29903afe00dee4a1868d79719342513ef249106b89201b5bd7fd226ad6",
+          "psnrDb": 46.634,
+          "pixelIdentical": false
+        },
+        {
+          "file": "home.webp",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 1141982,
+          "sha256": "04ae00a94559aa5aa377606d8f1549ca019cf1943f170a4adce27b08df2dad05",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "home.avif",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 365190,
+          "sha256": "96d5dbde4ee8f559ded7bda6cbfa0ee26a5b41a6e031ad42bfacae446d07dacc",
+          "psnrDb": 47.079,
+          "pixelIdentical": false
+        }
+      ]
+    }
+  ]
+}
