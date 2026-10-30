@@ -1,0 +1,627 @@
+{
+  "source_commit": "9b785bc6ff4868a5a43be15a358ce98d85973e52",
+  "date": "2026-10-30",
+  "transform": "Proportional maximum512px; lossless WebP, no redraw",
+  "items": [
+    {
+      "id": "vitaslash",
+      "app": "assets/equipment/vitaslash.runtime.avif",
+      "website": "assets/guide/vitaslash.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/vitaslash.webp",
+      "source_sha256": "ecac1a2d39ebfd9be200fd93ff01c4d25391fecc0db4bd3e3c66df7611a754b7",
+      "output_sha256": "200ce9645f23022c28a5b2e6a65ae7fe5b1a3a19d8b0a83010d3b43ad5dee6ba",
+      "source_size": [
+        768,
+        768
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 1
+    },
+    {
+      "id": "rep-ripper",
+      "app": "assets/equipment/rep-ripper.runtime.avif",
+      "website": "assets/guide/rep-ripper.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/rep-ripper.webp",
+      "source_sha256": "85ff5f17d270894fea2d447d6f37731242f13588d57d649ee5e29be1b8809ad2",
+      "output_sha256": "3a5bf619820bb1f94f41df3fe59ad923b81668700c35679ad249333001bf7af0",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 3
+    },
+    {
+      "id": "vitamin-g",
+      "app": "assets/equipment/vitamin-g.runtime.avif",
+      "website": "assets/guide/vitamin-g.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/vitamin-g.webp",
+      "source_sha256": "b2b5c0243fd2a94f67dcf71b6889e62226bc0601da5e5402f084d1a0f7b97a76",
+      "output_sha256": "ec68243350d1709e0e7d9d555b1c7560f66b6f6969c817f723ba19ef0adb3271",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 3
+    },
+    {
+      "id": "axercise",
+      "app": "assets/equipment/axercise.runtime.avif",
+      "website": "assets/guide/axercise.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/axercise.webp",
+      "source_sha256": "6567d5f3fb8e52fbacf571c0a72020fcd88117cab26db57d447c5cff6b8e0b2a",
+      "output_sha256": "80dee94d48d506bfae80cc78cdb5bf6bb1304a455043a1634fb651a8aacf2141",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 2
+    },
+    {
+      "id": "point-of-wellness",
+      "app": "assets/equipment/point-of-wellness.runtime.avif",
+      "website": "assets/guide/point-of-wellness.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/point-of-wellness.webp",
+      "source_sha256": "2c60608913208cf7772d92859bcc2b3225bb16de041863086347d71e8a0bd9e7",
+      "output_sha256": "38601f986be7c7e45d8dde65713cb0739538136dd01e2df1de04a637474981b7",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 3
+    },
+    {
+      "id": "draw-your-limits",
+      "app": "assets/equipment/draw-your-limits.runtime.avif",
+      "website": "assets/guide/draw-your-limits.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/draw-your-limits.webp",
+      "source_sha256": "968664fe1a28f277c9d88a7eb019ea86759c675f42c1a44b2532e153bd89ffd9",
+      "output_sha256": "b119efbdcab6b388519d8cccf69d055980d0310ca0b3ca4d5263e6fd71d0d9f2",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 2
+    },
+    {
+      "id": "sore-tomorrow",
+      "app": "assets/equipment/sore-tomorrow.runtime.avif",
+      "website": "assets/guide/sore-tomorrow.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/sore-tomorrow.webp",
+      "source_sha256": "c35df84ef8878587df9e4be7d4eca7142391c7506024a4770dad3c9b933574fb",
+      "output_sha256": "43d89b348774b35b311c121c089a8d95c83e8e3acfc94957a177ff6c0f1cef53",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 2
+    },
+    {
+      "id": "sir-takes-a-lot",
+      "app": "assets/equipment/sir-takes-a-lot.runtime.avif",
+      "website": "assets/guide/sir-takes-a-lot.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/sir-takes-a-lot.webp",
+      "source_sha256": "74ec3b055aa797263833b6c538c6729f4646c174feb4c53035dd4be58ece8d21",
+      "output_sha256": "2c283ac8268001dfd78d1f1d7266dd17966ae0a88f0f7a77148b3899e901d63f",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 2
+    },
+    {
+      "id": "heartpour-flask",
+      "app": "assets/equipment/heartpour-flask.runtime.avif",
+      "website": "assets/guide/heartpour-flask.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/heartpour-flask.webp",
+      "source_sha256": "1ee1b750a06c47e84ffa19d92a80c871f6270ec82a7d90e336da589f6266692f",
+      "output_sha256": "b876f0134472593991669c150ecd46e087f9b6a94ab37cb40be09d34960a9eb5",
+      "source_size": [
+        768,
+        768
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 2
+    },
+    {
+      "id": "hardheaded-hero",
+      "app": "assets/equipment/hardheaded-hero.runtime.avif",
+      "website": "assets/guide/hardheaded-hero.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/hardheaded-hero.webp",
+      "source_sha256": "f0782fde162d8a7f67ca7f33235ef1ec984ee27c4aa333a95c1dd8db870b33b9",
+      "output_sha256": "93f56b55906692627d5a8be569b8b3347553fe60fbae59db731672aa2d3c2724",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 2
+    },
+    {
+      "id": "wit-happens",
+      "app": "assets/equipment/wit-happens.runtime.avif",
+      "website": "assets/guide/wit-happens.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/wit-happens.webp",
+      "source_sha256": "f21bf22ff4596d1430b6d2103c177d425a4e554cf720a57c82a96c6d02e1cea4",
+      "output_sha256": "1b41bcd259ce73315590fc2c0fdba5561a7d452793e9accd20e1ee5246b94718",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 3
+    },
+    {
+      "id": "leaf-me-alone",
+      "app": "assets/equipment/leaf-me-alone.runtime.avif",
+      "website": "assets/guide/leaf-me-alone.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/leaf-me-alone.webp",
+      "source_sha256": "beaf46e2848a99d7f9dc773d1e0ac55f3b10684143bac8e28adab306d432a7f1",
+      "output_sha256": "d9e53d7570f53dc2ce8b13bc94ff2d4c823d44dc52b6ffaf36d35daf0e179fea",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 3
+    },
+    {
+      "id": "quest-inspector",
+      "app": "assets/equipment/quest-inspector.runtime.avif",
+      "website": "assets/guide/quest-inspector.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/quest-inspector.webp",
+      "source_sha256": "a95a71d7dc3633f0ec665934ff0e4ecaab0b82e7727fe3d3350cd78928ddbf0f",
+      "output_sha256": "b5fa0b25422145ceff2c28ed4b585de5c6e498853ddbd8acfe0f8e20c86fe806",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 4
+    },
+    {
+      "id": "not-today-bonk",
+      "app": "assets/equipment/not-today-bonk.runtime.avif",
+      "website": "assets/guide/not-today-bonk.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/not-today-bonk.webp",
+      "source_sha256": "8793ad801d72069c74fea240597f51078d716b1af6ef78cd685d4d4ceaaa463c",
+      "output_sha256": "15b07af75c4c3706790019d560801da8a10ddec53f21ddd957fa3aaf1a2ce963",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 3
+    },
+    {
+      "id": "sweat-dreams",
+      "app": "assets/equipment/sweat-dreams.runtime.avif",
+      "website": "assets/guide/sweat-dreams.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/sweat-dreams.webp",
+      "source_sha256": "e50f9bcce55581c3571a760dc321676bafb557150a296929347dd5de53ff5d54",
+      "output_sha256": "43abd91853de31197bf8ec2b492b4e6dae8d191c0067d80aeaea597a1b67aa3d",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 3
+    },
+    {
+      "id": "reigning-champ",
+      "app": "assets/equipment/reigning-champ.runtime.avif",
+      "website": "assets/guide/reigning-champ.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/reigning-champ.webp",
+      "source_sha256": "9ce5289543ff871c01c55f0c8f492e112ba447f3e2226436a43920c34b210aae",
+      "output_sha256": "57a4f74d6693e61636dd4abf77aed657bd2ab05ce16a230902c0ecf1a55cd9cd",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 3
+    },
+    {
+      "id": "hood-riddance",
+      "app": "assets/equipment/hood-riddance.runtime.avif",
+      "website": "assets/guide/hood-riddance.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/hood-riddance.webp",
+      "source_sha256": "69bb94bed0ad2591490c1338c72f99842902adcb03438e393188dc84dea182ee",
+      "output_sha256": "a08095d27fb31c696d81ccff75f82c57dd4982fce102cb4ef8c4c234d1d8717c",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 2
+    },
+    {
+      "id": "heart-to-get",
+      "app": "assets/equipment/heart-to-get.runtime.avif",
+      "website": "assets/guide/heart-to-get.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/heart-to-get.webp",
+      "source_sha256": "daa06730e35e19c1e4bc409af2b359fb499a9014be7df8e9730e67f7da2693d9",
+      "output_sha256": "34cef64800c20b3808029acbb83b1ae86035d4a745c9aebbc79534d929299e8e",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 3
+    },
+    {
+      "id": "grow-getter",
+      "app": "assets/equipment/grow-getter.runtime.avif",
+      "website": "assets/guide/grow-getter.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/grow-getter.webp",
+      "source_sha256": "7403fea7091636da0cb0b5a9ef0d2cbcaadfa1573ba5691bedae1aa61f35d6b3",
+      "output_sha256": "ca750c42b3ab6044a5a10312619e43b3a25b6376929e3c62f7f833f4c98a5294",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 3
+    },
+    {
+      "id": "watt-a-workout",
+      "app": "assets/equipment/watt-a-workout.runtime.avif",
+      "website": "assets/guide/watt-a-workout.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/watt-a-workout.webp",
+      "source_sha256": "ebd09df74ebf5dea6d5dc6dbc3c4da776e5ddcee6748b5d4814977dee77b0fbd",
+      "output_sha256": "44e318cf92cd16cd6f6aa633b64a8638510d1b7bd3e8da414114fe8e04e6a61e",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 3
+    },
+    {
+      "id": "luck-around",
+      "app": "assets/equipment/luck-around.runtime.avif",
+      "website": "assets/guide/luck-around.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/luck-around.webp",
+      "source_sha256": "72c554082afb327e3ce5cff1a9ce1254fb3d60320817340cc0d01197bfd4c936",
+      "output_sha256": "c7f7a5adb8ba1c8924b75fd468bd3512b598be85be6fbe4f50687984735f62c0",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 2
+    },
+    {
+      "id": "restie-bestie",
+      "app": "assets/equipment/restie-bestie.runtime.avif",
+      "website": "assets/guide/restie-bestie.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/restie-bestie.webp",
+      "source_sha256": "161b56b186596a02e07d237190517e11689b4384d829a1d480a93373a24cd916",
+      "output_sha256": "0531e71308046d43728517def3c70a8b44750fb3df732605286123db9f0e7128",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 2
+    },
+    {
+      "id": "pack-to-the-grind",
+      "app": "assets/equipment/pack-to-the-grind.runtime.avif",
+      "website": "assets/guide/pack-to-the-grind.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/pack-to-the-grind.webp",
+      "source_sha256": "e658a0e1b3c2adf728e13286bfc0ea4bd3489285fc57231d59d9e5ebd35e1878",
+      "output_sha256": "dd1f20294804ec2b0c71e376bccc38f4a3cd57a3500f3c8c2fb50f0f5bf6771c",
+      "source_size": [
+        641,
+        641
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 3
+    },
+    {
+      "id": "pill-good-inc",
+      "app": "assets/equipment/pill-good-inc.runtime.avif",
+      "website": "assets/guide/pill-good-inc.webp",
+      "evidence": "src/assets/equipmentCatalog.ts",
+      "output": "assets/guide-items-2026-10-30/pill-good-inc.webp",
+      "source_sha256": "e50593dac566b2ccaf5b71c1855d131c596759b3e6b9ed1e66b281797c00cee8",
+      "output_sha256": "a6bbaf48699d230dc9a0df5dbb63122f4566568d32cc2563e152bedb52d52c43",
+      "source_size": [
+        641,
+        712
+      ],
+      "output_size": [
+        461,
+        512
+      ],
+      "references": 2
+    },
+    {
+      "id": "health-potion",
+      "app": "assets/figma/handoff/health-potion.png",
+      "website": "assets/guide/health-potion.webp",
+      "output": "assets/guide-items-2026-10-30/health-potion.webp",
+      "source_sha256": "e9bf3851cdc67d0110c7ebc6a76c3d751825ab7872b8843bc6f2fcf6b6f05733",
+      "output_sha256": "03f9c6e7faaec10aa840c4ec1ba8ed3b479a41a6b551d7c157028244a774bd57",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 3
+    },
+    {
+      "id": "hi-heart-potion",
+      "app": "assets/hi-heart-potion.runtime.avif",
+      "website": "assets/guide/super-health-potion.webp",
+      "output": "assets/guide-items-2026-10-30/super-health-potion.webp",
+      "source_sha256": "d834d6aecb0ec1733ca065dd2ee6b07dc8ac9a5dd0a3caafacfdec30a730399e",
+      "output_sha256": "552432d01c9c5894bf475ef5de8071fa10c836bff288ebeeef164cab95562742",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 2
+    },
+    {
+      "id": "treat",
+      "app": "assets/items/treat.runtime.avif",
+      "website": "assets/guide/treat.webp",
+      "output": "assets/guide-items-2026-10-30/treat.webp",
+      "source_sha256": "e8fe493e4f41245a955b4378dd27cd4aeaec9a9854ab6efc373c11414358cb24",
+      "output_sha256": "26b6b7080a745b1551e0cfd2274fae825669137bca9e436cb148cf66f624c0a3",
+      "source_size": [
+        768,
+        768
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 16
+    },
+    {
+      "id": "protein-bar",
+      "app": "assets/protein-bar.runtime.avif",
+      "website": "assets/guide/protein-bar.webp",
+      "output": "assets/guide-items-2026-10-30/protein-bar.webp",
+      "source_sha256": "81f378bf5f795d52ce31566afcc049db22b8aba69da44440c0f0ab6fed4223f5",
+      "output_sha256": "151fd498f5fc21b929a590ade3936b2b7b147c222488191afc6b533ab7218202",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 2
+    },
+    {
+      "id": "rest-stopper",
+      "app": "assets/items/rest-stopper.runtime.avif",
+      "website": "assets/guide/rest-stopper.webp",
+      "output": "assets/guide-items-2026-10-30/rest-stopper.webp",
+      "source_sha256": "2ec1800fbc15540268b9d936df80e6da39ae2c21e0b7e062ad6fd44a742e9a2a",
+      "output_sha256": "eced7afa2227f16db0bd131b52340dfa131799f314e74503bc8b52fe64b41917",
+      "source_size": [
+        251,
+        251
+      ],
+      "output_size": [
+        251,
+        251
+      ],
+      "references": 2
+    },
+    {
+      "id": "xp-book-1",
+      "app": "assets/items/xp-book-1.runtime.avif",
+      "website": "assets/guide/small-brain-energy.webp",
+      "output": "assets/guide-items-2026-10-30/small-brain-energy.webp",
+      "source_sha256": "4e183b7f92d117631432cc8418a6e9f2d87a7cad07e0e4a867f573cf640c715d",
+      "output_sha256": "4929b0c25ad8aaf1c25ab8da1c07cba6ab219001a65578b72f856a67eba36740",
+      "source_size": [
+        768,
+        768
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 8
+    },
+    {
+      "id": "xp-book-2",
+      "app": "assets/items/xp-book-2.runtime.avif",
+      "website": "assets/guide/getting-wiser.webp",
+      "output": "assets/guide-items-2026-10-30/getting-wiser.webp",
+      "source_sha256": "0dc0a5edf7b1cd704f8a358486514b764152bdb99c28329455dee419dda7ac91",
+      "output_sha256": "4ef105d318dd2b721d065c9a8399e2bb13a74c87e5b8b158200d059f66bf4a88",
+      "source_size": [
+        768,
+        768
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 6
+    },
+    {
+      "id": "xp-book-3",
+      "app": "assets/items/xp-book-3.runtime.avif",
+      "website": "assets/guide/certified-big-brain.webp",
+      "output": "assets/guide-items-2026-10-30/certified-big-brain.webp",
+      "source_sha256": "5822627bdc9047aca253d23c334d7c5c182bcf9012cd256be74e5ac637a55b11",
+      "output_sha256": "5b0cbae3d266dd943ff438905dd1ddf729fd68c30763b8049c2ba8738e51ccd8",
+      "source_size": [
+        768,
+        768
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 6
+    },
+    {
+      "id": "mystery-package",
+      "app": "assets/items/mystery-package-v2.runtime.avif",
+      "website": "assets/guide/mystery-package.webp",
+      "output": "assets/guide-items-2026-10-30/mystery-package.webp",
+      "source_sha256": "3f96e75ab0a9ca2193cca404d272969f981331c03411abb9ed19971747f9e706",
+      "output_sha256": "a5835a5e152f592844c6188830e092f13e7e052f2b96df794c94f049a34f9322",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 2
+    },
+    {
+      "id": "treasure-box",
+      "app": "assets/items/monthly-top-five-treasure-box-v1.runtime.avif",
+      "website": "assets/guide/treasure-box.webp",
+      "output": "assets/guide-items-2026-10-30/treasure-box.webp",
+      "source_sha256": "d2b3bc151af9d442f7a43121bf9a5c998a0b1646734f73ec2e573cf6da18985d",
+      "output_sha256": "83d7bf2b3b644a45d3a23e8b12ae1833588ca47fc4a994b401cc646553567ac6",
+      "source_size": [
+        1254,
+        1254
+      ],
+      "output_size": [
+        512,
+        512
+      ],
+      "references": 1
+    },
+    {
+      "id": "tama-coin",
+      "app": "assets/tama-coin.png",
+      "website": "assets/guide/tama-coins-tama-coin.webp",
+      "evidence": "src/assets/itemCatalog.ts:52",
+      "output": "assets/guide-items-2026-10-30/tama-coins-tama-coin.webp",
+      "source_sha256": "5b5b27dd6a1594fa43244a3bd011461b529096a0da4e6bf26a96abdc5f7fd348",
+      "output_sha256": "f8123d741d4db55883beb6143bf02d2f32d9e538cae2e3fa3b892b5b0cd107df",
+      "source_size": [
+        150,
+        155
+      ],
+      "output_size": [
+        150,
+        155
+      ],
+      "references": 15
+    }
+  ]
+}

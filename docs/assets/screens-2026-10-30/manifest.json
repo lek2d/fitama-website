@@ -1,0 +1,554 @@
+{
+  "date": "2026-10-30",
+  "sourceCommit": "9b785bc6ff4868a5a43be15a358ce98d85973e52",
+  "capture": "Actual latest app UI with isolated sample state. PNG1560x3376 captured at390x844, deviceScaleFactor4; no upscaling/redraw. Quest and dungeon adapters provide current sample data to unmodified production components.",
+  "encoder": {
+    "Pillow": "12.3.0",
+    "libavif": "1.4.2",
+    "avifQuality": 94,
+    "avifChroma": "4:4:4",
+    "webp": "lossless"
+  },
+  "screens": [
+    {
+      "name": "egg-home",
+      "sourceSha256": "336863acb11f508a8d880e68503454c38edd37263591916e029ed44ab3f44122",
+      "variants": [
+        {
+          "file": "egg-home.2x.webp",
+          "width": 780,
+          "height": 1688,
+          "bytes": 391762,
+          "sha256": "b44d0b5b06947af7d80497502ac24c4e9c0c475765caef2437d1e67e78456e17",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "egg-home.2x.avif",
+          "width": 780,
+          "height": 1688,
+          "bytes": 140735,
+          "sha256": "2973c75e4c63ac5e80305c8eba688c2fa009bc3afb018d0e97ca751298908467",
+          "psnrDb": 46.562,
+          "pixelIdentical": false
+        },
+        {
+          "file": "egg-home.3x.webp",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 751674,
+          "sha256": "0f377df36dcf5d4138ce58455955c2df7c9af9761049f57ca9dc75957b1d3fc7",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "egg-home.3x.avif",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 246961,
+          "sha256": "a1b5e84030395eec21f5ef500d97d1366dbba8cc4d9db3bc7d2158ddf1c1de25",
+          "psnrDb": 46.859,
+          "pixelIdentical": false
+        },
+        {
+          "file": "egg-home.webp",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 1049998,
+          "sha256": "5ac17612315987a6e73d03ad08d816759c83929ca1e47a0f408df396bcb4f58c",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "egg-home.avif",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 316360,
+          "sha256": "9e38b3c59691cf84cbd88053e97e059786d2656744190e79bd1f5f024a6ede0b",
+          "psnrDb": 47.31,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "home",
+      "sourceSha256": "9745424b36c5a2867ef5b6fde574bb1a53656b4cdd00cd31ff5a8d8639e36ec1",
+      "variants": [
+        {
+          "file": "home.2x.webp",
+          "width": 780,
+          "height": 1688,
+          "bytes": 428962,
+          "sha256": "3092b5e976156263bd0072e853ac114a7b85898743e81bdf51fd6927dc7807fd",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "home.2x.avif",
+          "width": 780,
+          "height": 1688,
+          "bytes": 159986,
+          "sha256": "117ae2b334179535c2222687c6718267a3458f2adddd9447bd21e98a70d9d1a7",
+          "psnrDb": 46.275,
+          "pixelIdentical": false
+        },
+        {
+          "file": "home.3x.webp",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 832888,
+          "sha256": "cb47a6295b522f6a025069f52685b60e3d82c0438f194d9bf7bc7ed8cc4bbd74",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "home.3x.avif",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 277515,
+          "sha256": "b23f2600a5845024be014632900e02d1e966e18c18ef271ab5ab38b5935fb6b9",
+          "psnrDb": 46.627,
+          "pixelIdentical": false
+        },
+        {
+          "file": "home.webp",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 1182276,
+          "sha256": "a2696360482d92dd0b9caa25385ad33a1a230f2c802b1a8c4630d28ddb3ac1f1",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "home.avif",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 362570,
+          "sha256": "4b8736ed50c9375543e99aa206a0dfddedee6cfc7408b15aa3b4f65086a12cab",
+          "psnrDb": 47.078,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "health-activities",
+      "sourceSha256": "9c3ce3e89850ca1f4ccc3ffd18a0f7f10bff365178e9b4d7b8448e47c33d478a",
+      "variants": [
+        {
+          "file": "health-activities.2x.webp",
+          "width": 780,
+          "height": 1688,
+          "bytes": 169640,
+          "sha256": "52d3f5da4351ec0364625f5c250be9acd17c4ac2d0a735f4dbed8f12200bd82b",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "health-activities.2x.avif",
+          "width": 780,
+          "height": 1688,
+          "bytes": 86272,
+          "sha256": "1d4d91c64ea803ee0b841e66daeb277e7ec29c29c13f8a241b258e62a0c514ad",
+          "psnrDb": 47.891,
+          "pixelIdentical": false
+        },
+        {
+          "file": "health-activities.3x.webp",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 299174,
+          "sha256": "fde8c0ce3f84bd98d287ff420c6e627b3b79c121e432401550f607c63ea651c1",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "health-activities.3x.avif",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 144825,
+          "sha256": "7de61036a890198cb0a1e5547fef9bca44f2aab8f4f55b16ebe0212fa1abe8e3",
+          "psnrDb": 48.121,
+          "pixelIdentical": false
+        },
+        {
+          "file": "health-activities.webp",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 304626,
+          "sha256": "3d8772e7652bf2a06abd65ba77b79337e85a97561999c8dbe6b6a796f478dfcc",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "health-activities.avif",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 160626,
+          "sha256": "0e056e04be9adfbcb1f59d0861bfc41dbbaa2af5fd6cd7baddfb5aae0520621a",
+          "psnrDb": 48.483,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "map",
+      "sourceSha256": "830599634995eae144a96006f1e319131b298c039cdf580265ecbd5c39fcc196",
+      "variants": [
+        {
+          "file": "map.2x.webp",
+          "width": 780,
+          "height": 1688,
+          "bytes": 1373090,
+          "sha256": "f620124b81965664cf904735f01a4d7bb44322a8e31bb12c27792741610bd5ef",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "map.2x.avif",
+          "width": 780,
+          "height": 1688,
+          "bytes": 408167,
+          "sha256": "7d0e9a34c2de8bd35b6ebaa54a2149a5feb4b846df2a0c17a75b8eaf082a974a",
+          "psnrDb": 44.387,
+          "pixelIdentical": false
+        },
+        {
+          "file": "map.3x.webp",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 2577930,
+          "sha256": "a49c214c5add00f6f87552ff02e7e0dd3f6b9897706348b0a6c485fe2334b1db",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "map.3x.avif",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 664730,
+          "sha256": "225a1a6b4f0d6054234d9e74c41197ed30b20efcd4593434f570a140ffdb5b96",
+          "psnrDb": 45.376,
+          "pixelIdentical": false
+        },
+        {
+          "file": "map.webp",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 3608648,
+          "sha256": "1f76a4388306b3bd1cf250556972abda3476e7c634d9f7e287e131042358bc3f",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "map.avif",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 923851,
+          "sha256": "3c7c259d7e1c0f1ca83773522ae13c4e600b0fd00a8655c77a683ab23f053cc8",
+          "psnrDb": 46.196,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "battle-before",
+      "sourceSha256": "1d9ce5e512826a187cd8ca93385428403b5326ac94d886af3b24f91e022de728",
+      "variants": [
+        {
+          "file": "battle-before.2x.webp",
+          "width": 780,
+          "height": 1688,
+          "bytes": 1061986,
+          "sha256": "c1db1199c5efc40c65938638006e47e8c8da773d6408b81531d48ee72eb62323",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "battle-before.2x.avif",
+          "width": 780,
+          "height": 1688,
+          "bytes": 274870,
+          "sha256": "c95ea598108974ae1d5df781d5c39eb1f2b5f1d2bd7801d7e1ff7c4eabe196ef",
+          "psnrDb": 45.995,
+          "pixelIdentical": false
+        },
+        {
+          "file": "battle-before.3x.webp",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 2071550,
+          "sha256": "91940ae1d2dbf1f0aea4a2adf143abbd90942ce2c69a426248f10d1e5e883a61",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "battle-before.3x.avif",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 448626,
+          "sha256": "8a3b76f8861529d11393289f8160cfd9a11296d25e5f61393e91f98767525118",
+          "psnrDb": 46.688,
+          "pixelIdentical": false
+        },
+        {
+          "file": "battle-before.webp",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 3111638,
+          "sha256": "25cc747faf37bdf547ae5308c9d2b1d743fef538e045d191e0cc02bcc66b0270",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "battle-before.avif",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 610269,
+          "sha256": "d6fc69800a10b0b0004b404f358422358ef09ff2055e41159cd71b716c131bb7",
+          "psnrDb": 47.37,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "battle-result",
+      "sourceSha256": "b0c39332352952a525ad4a9156cedba82b285d0804e52a237626ee67a9ac2b54",
+      "variants": [
+        {
+          "file": "battle-result.2x.webp",
+          "width": 780,
+          "height": 1688,
+          "bytes": 239192,
+          "sha256": "25eeeefdec0493329db18e3d4a73eb85276f1ee5a87f34604e857caaa68f3ced",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "battle-result.2x.avif",
+          "width": 780,
+          "height": 1688,
+          "bytes": 72555,
+          "sha256": "b9887f4139c1ffbb7dff2533136d3d2e96336179a3d3dfdc29d5da246871f525",
+          "psnrDb": 48.213,
+          "pixelIdentical": false
+        },
+        {
+          "file": "battle-result.3x.webp",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 395198,
+          "sha256": "5dc758c0fe8768f7f8860ab6f4b36553fd26eee8043934098625684c260e5fcd",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "battle-result.3x.avif",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 128030,
+          "sha256": "76d7a70ff4ae3357b11af5017dc5872462aea74e3181877a542c0087c0b0932d",
+          "psnrDb": 48.356,
+          "pixelIdentical": false
+        },
+        {
+          "file": "battle-result.webp",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 467180,
+          "sha256": "722a21c6089074db2531464f6da51d07df66f3e1f2a91a0aba9c9823d862bb2c",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "battle-result.avif",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 162990,
+          "sha256": "feda28b1ca964de7a5c56dd6e702bd94eede313b2659a2115e3763927e48e00b",
+          "psnrDb": 48.591,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "equipment",
+      "sourceSha256": "0626224b616cfb82f5acb3674dd9edfe11ccbfbb92227912118b69bdb0414d0e",
+      "variants": [
+        {
+          "file": "equipment.2x.webp",
+          "width": 780,
+          "height": 1688,
+          "bytes": 462992,
+          "sha256": "23cc651a4f7e14a9d80b8dbb5a2e456d795e5c17ba70ee46c90600d6acc29696",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "equipment.2x.avif",
+          "width": 780,
+          "height": 1688,
+          "bytes": 188723,
+          "sha256": "860b45f37c8c1f630c8e13bde99cbeed9d465072ffd96a8d27f3721704fa26ac",
+          "psnrDb": 46.629,
+          "pixelIdentical": false
+        },
+        {
+          "file": "equipment.3x.webp",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 864746,
+          "sha256": "6a99570de2393ab519351d610ede314772d3fc134c2e41d2a9dfdf9cbf23eb62",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "equipment.3x.avif",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 316743,
+          "sha256": "a0731b404a70232919863feb7701026c8146f75c2bbb6bc2ac4cf2921befe0d3",
+          "psnrDb": 47.162,
+          "pixelIdentical": false
+        },
+        {
+          "file": "equipment.webp",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 1230402,
+          "sha256": "ee0a4d9d4ba1280c97ca96b2cdbb36aa3ad07ca09e5ef0458e185412b3c6dbc4",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "equipment.avif",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 427280,
+          "sha256": "4efb576ea8b4c237a831bea474485c58eadc152e0dc1839f4a28ce73758e162a",
+          "psnrDb": 47.872,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "shop-funded-v1",
+      "sourceSha256": "f512ce7d4ab07782143aa210c59e95d68bad39626361083cf57c2f124da0424f",
+      "variants": [
+        {
+          "file": "shop-funded-v1.2x.webp",
+          "width": 780,
+          "height": 1688,
+          "bytes": 1048600,
+          "sha256": "aeee9fb312db6035244179ba3e13c930fae5fd6bb90755a3995ab200c302820e",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "shop-funded-v1.2x.avif",
+          "width": 780,
+          "height": 1688,
+          "bytes": 327486,
+          "sha256": "ad40d790b9dfea9cbd42fccf5eaccb7afff8c5c8ee79507aea659507a566f28c",
+          "psnrDb": 45.141,
+          "pixelIdentical": false
+        },
+        {
+          "file": "shop-funded-v1.3x.webp",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 1985148,
+          "sha256": "8d5d4c1b1009189b90f96ddaf5cbf6c1f9b305866cb99c2426e2b6f6e946739a",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "shop-funded-v1.3x.avif",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 553382,
+          "sha256": "5558ad7ba78040d71140b8f736981c3c1507fca8113904ee8a7f01d2e67a0b64",
+          "psnrDb": 45.702,
+          "pixelIdentical": false
+        },
+        {
+          "file": "shop-funded-v1.webp",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 2736548,
+          "sha256": "fee3e5f81d5303d0bf56516529d277a10fd3aa3984592c84e77028d7ed3f458b",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "shop-funded-v1.avif",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 753148,
+          "sha256": "4fd05ee0bdd17d5e7ee0ada6a671d5ec9adcb6742cc5890d90aa86757165d25d",
+          "psnrDb": 46.333,
+          "pixelIdentical": false
+        }
+      ]
+    },
+    {
+      "name": "quests-claimed",
+      "sourceSha256": "d719f883c63cca430677b5e2292620eef7eacfbb4774e5e6aa00b715822d50d5",
+      "variants": [
+        {
+          "file": "quests-claimed.2x.webp",
+          "width": 780,
+          "height": 1688,
+          "bytes": 179954,
+          "sha256": "c75bbb6cb4503749cab8e21729a79c383fc5f0b60e8ce82f16addd2ab2d99d32",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "quests-claimed.2x.avif",
+          "width": 780,
+          "height": 1688,
+          "bytes": 97528,
+          "sha256": "edb99ab9f8b0a6673eb1cf991b78d526324c5592c5fe4019bf133e20976f1541",
+          "psnrDb": 46.186,
+          "pixelIdentical": false
+        },
+        {
+          "file": "quests-claimed.3x.webp",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 324352,
+          "sha256": "12ca4eff9e68fea69a85acf4c8ccefa70dcc935281940b42096971781ca0666c",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "quests-claimed.3x.avif",
+          "width": 1170,
+          "height": 2532,
+          "bytes": 170310,
+          "sha256": "88f0fe8976ca6f89b2424122e81eeffa83a20e8a79706ebc347faf1a6641296a",
+          "psnrDb": 46.346,
+          "pixelIdentical": false
+        },
+        {
+          "file": "quests-claimed.webp",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 335588,
+          "sha256": "90248af394afcf297d8b477f67142237ea187f4cf6bb02eacb93983846fa95f7",
+          "psnrDb": null,
+          "pixelIdentical": true
+        },
+        {
+          "file": "quests-claimed.avif",
+          "width": 1560,
+          "height": 3376,
+          "bytes": 184321,
+          "sha256": "071207c11cca4551384b4ae6d7a140b254926e6fc88f76316793ae67b0bc4b52",
+          "psnrDb": 46.563,
+          "pixelIdentical": false
+        }
+      ]
+    }
+  ]
+}

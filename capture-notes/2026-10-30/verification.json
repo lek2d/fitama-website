@@ -1,0 +1,22 @@
+{
+  "sourceCommit": "9b785bc6ff4868a5a43be15a358ce98d85973e52",
+  "pages": [
+    {
+      "page": "journey.html",
+      "ids": 23,
+      "assetReferences": 117,
+      "valid": true
+    },
+    {
+      "page": "guide.html",
+      "ids": 85,
+      "assetReferences": 188,
+      "valid": true
+    }
+  ],
+  "unchangedAppCodeFiles": 624,
+  "captureOnlyModifiedOriginals": [
+    "preview/PreviewApp.tsx"
+  ],
+  "nativeOrBackendChanges": false
+}

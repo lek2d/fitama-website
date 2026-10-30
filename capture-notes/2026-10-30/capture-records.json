@@ -1,0 +1,225 @@
+{
+  "records": [
+    {
+      "name": "shop-funded-v1",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "capturedAt": "2026-10-30T09:46:18.139Z",
+      "text": "Tama Shop\nAll\nEquipment\nConsumables\n5\n12\n3\n6\n18\n10\n18\n25\n35\n35\n40\n45\n55\n55\n60\n60\nBack\n1 / 2\nNext\n21 items \u00b7 Earned Tama-Coins only\n100",
+      "sampleAppearance": null
+    },
+    {
+      "name": "egg-home",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "capturedAt": "2026-10-30T09:46:19.939Z",
+      "text": "Tama-Egg\n900\n900\nReady to hatch\nEarn 100 TP through real-world activity.\n100 / 100 TP\nGet your Fitama\nFitama\nQuest\nMap\nYou",
+      "sampleAppearance": null
+    },
+    {
+      "name": "home",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "capturedAt": "2026-10-30T09:46:23.125Z",
+      "text": "Mochi\nLvl 4\n900\n900\nDaily\nWeekly\nDaily Check-in\nDay 1 \u00b7 Visit daily to keep your streak\n1 / 1 check-in\nView rewards\nFitama\nQuest\nMap\nYou",
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      }
+    },
+    {
+      "name": "map",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "capturedAt": "2026-10-30T09:46:24.833Z",
+      "text": "Mochi\nLvl 4\n900\n900\nDaily\nWeekly\nDaily Check-in\nDay 1 \u00b7 Visit daily to keep your streak\n1 / 1 check-in\nView rewards\nFitama\nQuest\nMap\nYou\nHermitanyo\nFishda\nKabutehan\nMonkey D. Licious\nEstranghero\nCoo coo.\nMumu\nKaibigang Oso\nD1\nLvl 1\nTraining Camp\nLvl 1\nFitama\nQuest\nMap\nYou",
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      }
+    },
+    {
+      "name": "health-activities",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "capturedAt": "2026-10-30T09:46:27.781Z",
+      "text": "L\nOverview\nActivities\nRanking\nSeptember 1, 2026\nCycling\nSample data\n240 added\n30 min\nDuration\n10.0 km\nDistance\n120 kcal\nActive Calories\n10:00 PM\nStarted\n10:30 PM\nFinished\n20 km/h\nAvg. speed\nRunning\nSample data\n240 added\nSwimming\nSample data\n240 added\nWalking\nSample data\n240 added\nStrength Training\nSample data\n240 added\nDaily Movement\nSample data\n900 added\nFitama\nQuest\nMap\nYou",
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      }
+    },
+    {
+      "name": "equipment",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "capturedAt": "2026-10-30T09:46:37.949Z",
+      "text": "Mochi\nLvl 4\nXP\n71%\nReady for more training\n115%\n2 Magic\n100\n0\nInventory\nAll\nEquipment\nConsumables\n2\n6\n5\n1\n2\n2\n2\n1\nE\n1\n1\n1\n1\n1\n1\n1\n1\n1\n1\nE\n1\n1\n1\n1\n1\nE\n1\n1\n1\n1\n1\n1\n1",
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      }
+    },
+    {
+      "name": "quests-claimed",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "capturedAt": "2026-10-30T09:51:58.851Z",
+      "text": "Daily\nWeekly\nInvite Friends\nEvery hero needs a party. Recruit a buddy!\n0 invited\nInvite\nDaily Check-in\nDay 1 \u00b7 Visit daily to keep your streak\n1 / 1 check-in\nView rewards\nVisit Fitama's Socials\nSay hi to us online for a little gift.\n0 / 5 visited\nVisit\nSolo Debut\nWin a dungeon on your own\n0 / 1\nPower Bottle\nBetter Together\nWin a dungeon with your party\n0 / 1\n2 Tama-Coins\nBring a Buddy\nBecome friends with another player\n0 / 1\n2 Tama-Coins\nSnack Time\nFeed your Fitama a Treat or Grilled Talakitok\n0 / 1\n2 Tama-Coins\nGood Neighbor\nFinish a bonus quest for someone in town\n0 / 1\n2 Tama-Coins\nWarm Up\nPower up 300 today\n300 / 300 TP\nClaim:\n48\nDaily Strength\nPower up 650 today\n650 / 650 TP\nClaim:\n84\nPeak Power\nPower up 1000 today\n900 / 1000 TP\n160 XP\nFitama\nQuest\nMap\nYou",
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      }
+    },
+    {
+      "name": "quest-first-steps",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "capturedAt": "2026-10-30T09:51:59.135Z",
+      "text": "Daily\nWeekly\nInvite Friends\nEvery hero needs a party. Recruit a buddy!\n0 invited\nInvite\nDaily Check-in\nDay 1 \u00b7 Visit daily to keep your streak\n1 / 1 check-in\nView rewards\nVisit Fitama's Socials\nSay hi to us online for a little gift.\n0 / 5 visited\nVisit\nSolo Debut\nWin a dungeon on your own\n0 / 1\nPower Bottle\nBetter Together\nWin a dungeon with your party\n0 / 1\n2 Tama-Coins\nBring a Buddy\nBecome friends with another player\n0 / 1\n2 Tama-Coins\nSnack Time\nFeed your Fitama a Treat or Grilled Talakitok\n0 / 1\n2 Tama-Coins\nGood Neighbor\nFinish a bonus quest for someone in town\n0 / 1\n2 Tama-Coins\nWarm Up\nPower up 300 today\n300 / 300 TP\nClaim:\n48\nDaily Strength\nPower up 650 today\n650 / 650 TP\nClaim:\n84\nPeak Power\nPower up 1000 today\n900 / 1000 TP\n160 XP\nFitama\nQuest\nMap\nYou",
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      }
+    },
+    {
+      "name": "quests-weekly",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "capturedAt": "2026-10-30T09:51:59.413Z",
+      "text": "Daily\nWeekly\nWeekly Progress\nAccumulate 3,220 TP this week\n900 / 3220 TP\n1000 XP\nWeekly Raid\nComplete 3 dungeon-days this week\n0 / 3 dungeon-days\nHeart Potion\nHelping Hand\nComplete 5 bonus quests this week\n0 / 5 bonus quests\nSecond Wind\nFitama\nQuest\nMap\nYou",
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      }
+    },
+    {
+      "name": "battle-before",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "capturedAt": "2026-10-30T09:52:01.572Z",
+      "text": "Mochi\nLvl 4\n900\n900\nDaily\nWeekly\nKeep It Going\nReach 320 TP today\n320 / 320 TP\nClaim:\n1\nFitama\nQuest\nMap\nYou\nDay 1 of 1\n10:08\nSour Candymaw\nLvl 1\n300/300\nMochi\nlvl 1\n250 / 370\n0 TP remain\n123 TP Attack",
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      }
+    },
+    {
+      "name": "battle-result",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 4,
+      "capturedAt": "2026-10-30T09:52:07.596Z",
+      "text": "Mochi\nLvl 4\n900\n900\nDaily\nWeekly\nKeep It Going\nReach 320 TP today\n320 / 320 TP\nClaim:\n1\nFitama\nQuest\nMap\nYou\nDay 1 of 1\n10:08\nSour Candymaw\nLvl 1\n0/300\n(D1) You hit 123 TP at 05:52 pm\n(D1) You hit 123 TP at 05:52 pm\n(D1) You hit 54 TP at 05:52 pm\nMochi\nLvl 1\n0 / 0 TP\nDungeon Cleared\nYou Win!\nYou defeated the enemy\nSolo\nTP DMG\nMochi (You)\nLvl 1\nItem used: None\n370\nRewards\n96.5 xp\nTama Coin\nReturn",
+      "sampleAppearance": {
+        "version": 1,
+        "kind": "blukie-v1",
+        "traits": {
+          "eyes": "Eye+brow_03",
+          "mouth": "Mouth_01",
+          "ears": "Ears_01",
+          "horns": "Horn_01",
+          "blush": "Blush_01",
+          "forehead": "Forehead_01"
+        }
+      }
+    }
+  ],
+  "blockedExternalOrigins": []
+}

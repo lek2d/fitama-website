@@ -1,5 +1,15 @@
 # FiTama website
 
+## October 30, 2026 — latest app screenshots and Tama-Guide
+
+Reconciled Journey and Tama-Guide against `lek2d/Fitama` main at `9b785bc6ff4868a5a43be15a358ce98d85973e52`, rechecked against GitHub immediately before publication. The guide now has 43 topics, including First Steps and Socials, current item names/art, shop prices, quest rewards, XP thresholds, inventory behavior and dungeon rules. Three-attack daily rules are described conditionally for runs showing three attack markers; earlier run cards remain authoritative. Power Bottle comes from claiming Solo Debut and stored TP becomes available after the next daily reset. Public earning copy describes workouts and movement without a TP conversion formula.
+
+Recaptured nine existing screen placements from actual app components at 390×844 with a 4× device scale (1560×3376 PNG masters). Published 780/1170/1560px AVIF variants plus lossless WebP fallbacks, preserving screenshot proportions and layout. AVIF uses quality 94, 4:4:4 and full range; the lowest measured PSNR is 44.38 dB. Thirty-five item assets come directly from the same app revision, encoded proportionally as lossless WebP. Asset manifests record source hashes and sizes.
+
+The app's standalone preview omitted newer QuestScreen inputs and used a legacy Solo result route. Capture-only adapters now supply local sample props to the unchanged production QuestScreen and one-member Solo dungeon renderer. The sample victory uses current reward helpers (96.5 XP and one possible Tama Coin roll), not the obsolete Power Bottle reward. All 624 original app code files compared outside the preview entry point are unchanged. No native app or backend deployment is part of this release. Capture adapters, audits and reproducibility notes are outside the public document root in `capture-notes/2026-10-30/`.
+
+Verification: 26 targeted navigation, Guide and walkthrough checks passed; all changed-page asset references, same-page anchors and IDs passed; an independent source/copy review found no remaining material errors. Local browser checks covered 320/390px phones, 768px tablet and 1440px desktop, updated shop/quest images, search indexing, readable tables and no horizontal overflow. The source website mirror contains the same focused content and asset changes. Existing publisher portal, Contact and SEO changes are preserved.
+
 ## October 29, 2026 — homepage search and sharing metadata
 
 Root redirect and Journey now use the owner's exact search title/description and Open Graph title/description. Twitter/X uses the same social copy and `summary_large_image`. Each response contains one static metadata set before any root redirect; canonical and Open Graph URLs retain the production Journey URL, `https://fitama.app/journey.html`. Interior page metadata remains page-specific. The site is plain HTML/CSS/JavaScript served by GitHub Pages from `docs/`; no framework metadata API or page build is involved.
